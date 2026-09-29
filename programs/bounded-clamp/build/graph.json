@@ -1,0 +1,58 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "bounded-clamp",
+  "title": "Bounded Clamp",
+  "purpose": "Clamp a signed value to configured inclusive bounds and reject reversed configuration",
+  "parameters": [{"name": "value", "value_type": "SInt64"}],
+  "constants": [
+    {"name": "lower_bound", "value_type": "SInt64", "value": "-5"},
+    {"name": "upper_bound", "value_type": "SInt64", "value": "5"},
+    {"name": "invalid_value", "value_type": "SInt64", "value": "0"},
+    {"name": "yes", "value_type": "Bool", "value": true},
+    {"name": "no", "value_type": "Bool", "value": false}
+  ],
+  "result": {"kind": "record", "fields": [
+    {"name": "clamped_value", "value_type": "SInt64"},
+    {"name": "invalid_bounds", "value_type": "Bool"},
+    {"name": "below_lower", "value_type": "Bool"},
+    {"name": "above_upper", "value_type": "Bool"}
+  ]},
+  "entry_block": "entry",
+  "blocks": [
+    {"name": "entry", "operations": [
+      {"op": "constant_ref", "name": "entry_lower", "constant": "lower_bound"},
+      {"op": "constant_ref", "name": "entry_upper", "constant": "upper_bound"},
+      {"op": "greater_than", "name": "bounds_reversed", "left": "op.entry_lower", "right": "op.entry_upper"}
+    ], "terminator": {"kind": "cond_branch", "condition": "op.bounds_reversed", "if_true": "invalid", "if_false": "compare_lower"}},
+    {"name": "invalid", "operations": [
+      {"op": "constant_ref", "name": "invalid_zero", "constant": "invalid_value"},
+      {"op": "constant_ref", "name": "invalid_yes", "constant": "yes"},
+      {"op": "constant_ref", "name": "invalid_no", "constant": "no"},
+      {"op": "record_new", "name": "invalid_result", "fields": ["op.invalid_zero", "op.invalid_yes", "op.invalid_no", "op.invalid_no"]}
+    ], "terminator": {"kind": "return", "value": "op.invalid_result"}},
+    {"name": "compare_lower", "operations": [
+      {"op": "constant_ref", "name": "check_lower", "constant": "lower_bound"},
+      {"op": "less_than", "name": "is_below", "left": "param.value", "right": "op.check_lower"}
+    ], "terminator": {"kind": "cond_branch", "condition": "op.is_below", "if_true": "below", "if_false": "compare_upper"}},
+    {"name": "below", "operations": [
+      {"op": "constant_ref", "name": "below_lower", "constant": "lower_bound"},
+      {"op": "constant_ref", "name": "below_yes", "constant": "yes"},
+      {"op": "constant_ref", "name": "below_no", "constant": "no"},
+      {"op": "record_new", "name": "below_result", "fields": ["op.below_lower", "op.below_no", "op.below_yes", "op.below_no"]}
+    ], "terminator": {"kind": "return", "value": "op.below_result"}},
+    {"name": "compare_upper", "operations": [
+      {"op": "constant_ref", "name": "check_upper", "constant": "upper_bound"},
+      {"op": "greater_than", "name": "is_above", "left": "param.value", "right": "op.check_upper"}
+    ], "terminator": {"kind": "cond_branch", "condition": "op.is_above", "if_true": "above", "if_false": "within"}},
+    {"name": "above", "operations": [
+      {"op": "constant_ref", "name": "above_upper", "constant": "upper_bound"},
+      {"op": "constant_ref", "name": "above_yes", "constant": "yes"},
+      {"op": "constant_ref", "name": "above_no", "constant": "no"},
+      {"op": "record_new", "name": "above_result", "fields": ["op.above_upper", "op.above_no", "op.above_no", "op.above_yes"]}
+    ], "terminator": {"kind": "return", "value": "op.above_result"}},
+    {"name": "within", "operations": [
+      {"op": "constant_ref", "name": "within_no", "constant": "no"},
+      {"op": "record_new", "name": "within_result", "fields": ["param.value", "op.within_no", "op.within_no", "op.within_no"]}
+    ], "terminator": {"kind": "return", "value": "op.within_result"}}
+  ]
+}

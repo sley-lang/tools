@@ -1,0 +1,10 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "zero", "input": ["0"], "expected": true},
+    {"id": "below-boundary", "input": ["9"], "expected": true},
+    {"id": "boundary-now-excluded", "input": ["10"], "expected": false},
+    {"id": "above-boundary", "input": ["11"], "expected": false},
+    {"id": "maximum", "input": ["4294967295"], "expected": false}
+  ]
+}

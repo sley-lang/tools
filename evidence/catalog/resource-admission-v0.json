@@ -1,0 +1,15 @@
+{
+  "artifact_bytes": 18616,
+  "artifact_object_count": 22,
+  "artifact_sha256": "41c4dc13e23e6320d444ee71ae73cec88dd36b86e9d617198c0c0059d5278e2c",
+  "contract": "sley-tools.catalog-resource-admission.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "fresh_workspace_authority": true,
+  "imported_external_assertions": 12,
+  "imported_state_root": "05960124f83565cd70caf23f6b86dab753e0b210b4d7a8a347e4fd70ee12e426",
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "result": "PASS",
+  "source_receipt_id": "d997fa5e8835de0b9a8d815a1599e52104042cb300070c39c9d11543acf3b81a",
+  "source_state_root": "434810c63d7682c8b04389b1d41122e56c10cda88a24984d46db27e5d97eff40",
+  "source_transaction_id": "11b25f1aa70e7182d0d9002f55e8e930440012acfe4a807158cdb83c08db1405"
+}

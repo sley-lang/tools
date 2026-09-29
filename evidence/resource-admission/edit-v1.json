@@ -1,0 +1,23 @@
+{
+  "boundary_cases": 4,
+  "candidate_id": "ce698c65fb5cc5e701e9fc5b6c6f483d1dab04d7ef38174d4f16ea3a63dfa72b",
+  "contract": "sley-tools.resource-edit-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "edited_artifact_reimport_passed": true,
+  "edited_artifact_sha256": "d7b6de169948eda69278bec559bac022b17a75b7ad0c7ae994c60717b8f52a87",
+  "edited_external_assertions": 12,
+  "edited_root": "c7db606f57a5ed16467a5239225c09ed53d6819699aadc800d5e3150b632071d",
+  "exact_fit_after": false,
+  "exact_fit_before": true,
+  "initial_root": "d83330e92b65d4bc189abc39626808c4a2114073ac1ad2f7c7e7fbf7be6f9d8b",
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "new_memory_object_id": "d6b4ae33d4cf3e39289bdf915c7748096402055153d4abbc3976028db79e04ac",
+  "old_memory_object_id": "ae08b8212c72020a81bf08c5c8243de0154ce789f96f661fabc5c81c583cafdc",
+  "receipt_id": "7e6e6ab8c16d5a72563eb8f1d248ce790509902600f7a38c98dab3d2376d7071",
+  "result": "PASS",
+  "reverse_edit_passed": true,
+  "root_unchanged_after_stale_rejection": true,
+  "source_artifact_sha256": "41c4dc13e23e6320d444ee71ae73cec88dd36b86e9d617198c0c0059d5278e2c",
+  "stale_candidate_id": "d806705f41b819aeaba629c981711bc27cd6c8ce377f4b8324981e2c3561959e",
+  "stale_rejection_symbol": "STALE_ROOT"
+}

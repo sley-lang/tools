@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sley_tools"
+version = "0.0.1"
+description = "Local client for the Sley tools backend"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = []
+
+[project.scripts]
+sley-data-pipe = "sley_tools.data_pipe:main"
+sley-schema = "sley_tools.schema_importer:main"
+sley-python = "sley_tools.python_importer:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sley_tools*"]

@@ -1,0 +1,56 @@
+{
+  "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "candidate_id": "501eb43ae019b9e896f80ccb23de84c9adefa5d3a2974b1fc1ed65a1b1bc530b",
+  "candidate_stored_matches_core": true,
+  "candidate_validation_result_magic": "SLEYCRS1",
+  "committed_state_root": "d60acf549bd242a100fcdf27bf9b3769448e69faae3bbc9725f4c668e3186f56",
+  "committed_transaction_id": "b0f864c9f5f591c8284361e8b47892e1f86cb15959927103a281e273b5c4c878",
+  "contract": "sley-tools.f0-genesis-probe.v1",
+  "edited_candidate_id": "88e486d2ed7ee2d5196374faf24626395037eacab6318bc48ac6a8753f23c3b2",
+  "edited_executions": [
+    {
+      "input": false,
+      "observed_output_hash": "bbd720c94ad40cea219d0b3dd88bf348fac6c3fb349be802aa436c22c32bc5cc",
+      "report_id": "71662bf7afed233fb0b9853f5adc38a4c39e1bebc3b6c6f0e4d6ab4442a5e780"
+    },
+    {
+      "input": true,
+      "observed_output_hash": "bdd2e415ce6170bb04c753966f53c320bd0beffbf4be480454c0d39527b2509a",
+      "report_id": "bceefa34ccb8170da787856c8608f90694204c1a5ee065242008a4b80b7ecbf1"
+    }
+  ],
+  "edited_state_root": "9854d58685f1bb97c9d59e13e8b69262eb1afe0212c3542eafaf206fbda1a2b5",
+  "edited_transaction_id": "6fce9584fdfec7a75eceaae226f1fe813d878656a6427352b6643d368e358dfa",
+  "executions": [
+    {
+      "input": false,
+      "observed_output_hash": "bdd2e415ce6170bb04c753966f53c320bd0beffbf4be480454c0d39527b2509a",
+      "report_id": "c0f30469df478f20de60d0492540ba091c17b28f87e3df85eaca344c37aebbcc"
+    },
+    {
+      "input": true,
+      "observed_output_hash": "bbd720c94ad40cea219d0b3dd88bf348fac6c3fb349be802aa436c22c32bc5cc",
+      "report_id": "29192415cfea3c05c22fc218a967a9805334d3f39b6d1d6e1556ffcae3d65e1e"
+    }
+  ],
+  "export_bytes": 13531,
+  "fresh_import_reproduced_report_ids": true,
+  "function_id": "04c1dcab31e82103eea8f285ecf34744a8db865e71abf639aebf2ccb5feab1cc",
+  "namespace_entity": "809b5c7a1a5f9f937ba30d60cd535a5b1e3c70ae813f3fb27e10b2b7f7beae44",
+  "native_tests_selected_v3_result": "NATIVE_EXECUTOR_UNAVAILABLE",
+  "object_count": 1,
+  "policy_root": "bf0695cb485dc89d06e183ed65c017b7fccfea8a81e28b35e03d98b812bbf824",
+  "principal_id": "25fbc7afaf05ec643afd9a4da448ab7e383623a253bde191a2e3f1b5503b2e76",
+  "receipt_id": "641e62e7b68efa36e11f127189cf601444708280f1fe85d996fca384a91c3386",
+  "rejected_candidate_id": "0ca62566f87392ca3c21dea5151b7531018507b6543b81f1ad9d09f02b8a0107",
+  "rejection_symbol": "CANDIDATE_VALIDATION_CONTROL_FLOW_ERROR",
+  "result": "PASS",
+  "root_unchanged_after_rejection": true,
+  "route": "public codecs at c748dda -> release binary SMP1 workspace.create, candidate.create, candidate.validate, commit, execute, exchange.export/import",
+  "schema_epoch": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "scope": "Fresh scoped workspace genesis, new Bool identity function, two caller-input executions, rejected type defect with unchanged root, accepted BoolNot edit, and export/import replay; native tests pending",
+  "state_root": "fd5bdd7428466c957d7576dc82162f642a2af5d0dcf9012922e56e2a71937d8b",
+  "transaction_id": "09d90579abc115b087e55bdf6cdcf833a2a85a5f58a8ecc7fcb0da4f2012d1ae",
+  "workspace_id": "48ae53346794999d73ba8ee6e2b0996fc18eb1eec86b22a1a7d3e654fb4bc39a",
+  "workspace_open_exact_identity_match": true
+}

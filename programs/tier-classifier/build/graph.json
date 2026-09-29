@@ -1,0 +1,270 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "tier-classifier",
+  "title": "Tier Classifier",
+  "purpose": "Classify any signed value into bronze, silver, or gold with ordered editable thresholds and an explicit invalid-configuration result",
+  "parameters": [
+    {
+      "name": "value",
+      "value_type": "SInt64"
+    }
+  ],
+  "constants": [
+    {
+      "name": "bronze_max",
+      "value_type": "SInt64",
+      "value": "10"
+    },
+    {
+      "name": "silver_max",
+      "value_type": "SInt64",
+      "value": "20"
+    },
+    {
+      "name": "middle_tier_enabled",
+      "value_type": "Bool",
+      "value": true
+    },
+    {
+      "name": "invalid_tier",
+      "value_type": "SInt64",
+      "value": "-1"
+    },
+    {
+      "name": "bronze_tier",
+      "value_type": "SInt64",
+      "value": "0"
+    },
+    {
+      "name": "silver_tier",
+      "value_type": "SInt64",
+      "value": "1"
+    },
+    {
+      "name": "gold_tier",
+      "value_type": "SInt64",
+      "value": "2"
+    },
+    {
+      "name": "yes",
+      "value_type": "Bool",
+      "value": true
+    },
+    {
+      "name": "no",
+      "value_type": "Bool",
+      "value": false
+    }
+  ],
+  "result": {
+    "kind": "record",
+    "fields": [
+      {
+        "name": "tier",
+        "value_type": "SInt64"
+      },
+      {
+        "name": "invalid_configuration",
+        "value_type": "Bool"
+      }
+    ]
+  },
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "entry_bronze_limit",
+          "constant": "bronze_max"
+        },
+        {
+          "op": "constant_ref",
+          "name": "entry_silver_limit",
+          "constant": "silver_max"
+        },
+        {
+          "op": "less_than",
+          "name": "ordered",
+          "left": "op.entry_bronze_limit",
+          "right": "op.entry_silver_limit"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.ordered",
+        "if_true": "bronze_check",
+        "if_false": "invalid_config"
+      }
+    },
+    {
+      "name": "invalid_config",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "invalid_value",
+          "constant": "invalid_tier"
+        },
+        {
+          "op": "constant_ref",
+          "name": "invalid_yes",
+          "constant": "yes"
+        },
+        {
+          "op": "record_new",
+          "name": "invalid_result",
+          "fields": [
+            "op.invalid_value",
+            "op.invalid_yes"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.invalid_result"
+      }
+    },
+    {
+      "name": "bronze_check",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "check_bronze_limit",
+          "constant": "bronze_max"
+        },
+        {
+          "op": "less_equal",
+          "name": "in_bronze",
+          "left": "param.value",
+          "right": "op.check_bronze_limit"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.in_bronze",
+        "if_true": "bronze_return",
+        "if_false": "silver_check"
+      }
+    },
+    {
+      "name": "bronze_return",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "bronze_value",
+          "constant": "bronze_tier"
+        },
+        {
+          "op": "constant_ref",
+          "name": "bronze_no",
+          "constant": "no"
+        },
+        {
+          "op": "record_new",
+          "name": "bronze_result",
+          "fields": [
+            "op.bronze_value",
+            "op.bronze_no"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.bronze_result"
+      }
+    },
+    {
+      "name": "silver_check",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "check_silver_limit",
+          "constant": "silver_max"
+        },
+        {
+          "op": "less_equal",
+          "name": "in_silver",
+          "left": "param.value",
+          "right": "op.check_silver_limit"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.in_silver",
+        "if_true": "middle_policy",
+        "if_false": "gold_return"
+      }
+    },
+    {
+      "name": "middle_policy",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "middle_enabled",
+          "constant": "middle_tier_enabled"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.middle_enabled",
+        "if_true": "silver_return",
+        "if_false": "gold_return"
+      }
+    },
+    {
+      "name": "silver_return",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "silver_value",
+          "constant": "silver_tier"
+        },
+        {
+          "op": "constant_ref",
+          "name": "silver_no",
+          "constant": "no"
+        },
+        {
+          "op": "record_new",
+          "name": "silver_result",
+          "fields": [
+            "op.silver_value",
+            "op.silver_no"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.silver_result"
+      }
+    },
+    {
+      "name": "gold_return",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "gold_value",
+          "constant": "gold_tier"
+        },
+        {
+          "op": "constant_ref",
+          "name": "gold_no",
+          "constant": "no"
+        },
+        {
+          "op": "record_new",
+          "name": "gold_result",
+          "fields": [
+            "op.gold_value",
+            "op.gold_no"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.gold_result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "builder_binary_sha256": "2f9e53e36f746c1bdc1d9ac5cad22f7ca7ddf40f5d17d2f76f6a7271a4bad719",
+  "cases_sha256": [
+    "40a198e8ef6f7231ceced71be658bd0aa23a9399497c8d400e94be01fa3ac7ad",
+    "25ef8c8f1e1e548280d5151244bdb347ba3ca9d551feb96bd9585e2a7b01b8b9",
+    "d41e36db6264119238a822c9dff45983cabd44a9d4ab42e02ea9bd82b6928a31"
+  ],
+  "contract": "sley-tools.graph-sdk-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "exact_signed_boundaries": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "one_worker_per_project_and_sdk": true,
+  "python_native_cases": 15,
+  "recipes_sha256": [
+    "e32fd0c3cda3cca26b92b4c104d1aaa959ccc8a01204a1ebd99d7a66b0fc00cc",
+    "708cf7163866c3ddd264808b9dd42f6dc969e161c74c67935e07ad36eca6f162",
+    "4a8585c93d9e219acfc124d602f4d3ebde03bc9d6fdb62718ebf9ecf5e98abd1"
+  ],
+  "record_and_primitive_results": true,
+  "result": "PASS",
+  "signed_and_unsigned_record_results": true,
+  "tampered_project_bindings_rejected": true,
+  "tampered_recipe_rejected": true,
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+  "typed_input_rejection": true,
+  "typescript_native_cases": 15
+}

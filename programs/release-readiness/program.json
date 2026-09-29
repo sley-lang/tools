@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-program-artifact.v0",
+    "path": "artifact/native-program.json",
+    "sha256": "19e829206cb66469d103982490ffec339f466408e02da6dc7f7ecd1981dcbecb"
+  },
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "931e34410e306bf2b6d7e85dff06a1b0df716b147963c68758e370d4de6bcf37",
+    "name": "evaluate",
+    "state_root": "4b53bbe0ff1e6999954c7e20a3f08f0e151ceec0f24138d74955cd93f7aed578"
+  },
+  "host_responsibility": "typed input validation, local workspace lifecycle, and presentation",
+  "inputs": {
+    "artifact_verified": "Bool",
+    "blocking_findings": "UInt32 0..4294967295",
+    "test_run_completed": "Bool",
+    "tests_failed": "UInt32 0..4294967295"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "four reason flags and allow decision",
+  "output": {
+    "fields": {
+      "allow": "Bool",
+      "artifact_unverified": "Bool",
+      "blocking_findings_exceeded": "Bool",
+      "test_run_incomplete": "Bool",
+      "tests_failed": "Bool"
+    },
+    "type": "Record"
+  },
+  "program_id": "release-readiness",
+  "program_version": "0.1.0",
+  "purpose": "Decide whether supplied test, artifact, and blocking-finding facts permit release",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "allow"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "test_run_incomplete"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "tests_failed"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "artifact_unverified"
+    },
+    {
+      "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+      "name": "blocking_findings_exceeded"
+    }
+  ],
+  "result_type_id": "55aa395ff8a885a4cc31638a697471d5524bf6c1fa22d5747ce8a5393e25537f",
+  "source_provenance": {
+    "builder": "crates/backend/src/main.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "crates/backend/src/bin/sley_tools/starter.rs::expected_flags",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Release Readiness",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "example_threshold": 2,
+    "initial_threshold": 0,
+    "operation": "replace max_blocking_findings constant by exact old-object precondition"
+  }
+}

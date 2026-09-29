@@ -1,0 +1,775 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-01",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 0,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-02",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 1,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-03",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 2,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-04",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 4294967295,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-05",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 0,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-06",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 1,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-07",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 2,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": false
+      },
+      "id": "case-08",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 4294967295,
+        "test_run_completed": false,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-09",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 0,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-10",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 1,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-11",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 2,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-12",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 4294967295,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-13",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 0,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-14",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 1,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-15",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 2,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-16",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 4294967295,
+        "test_run_completed": false,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-17",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 0,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-18",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 1,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-19",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 2,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-20",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 4294967295,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-21",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 0,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-22",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 1,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-23",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 2,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": true,
+        "tests_failed": true
+      },
+      "id": "case-24",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 4294967295,
+        "test_run_completed": false,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-25",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 0,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-26",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 1,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-27",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 2,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-28",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 4294967295,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-29",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 0,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-30",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 1,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-31",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 2,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": false
+      },
+      "id": "case-32",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 4294967295,
+        "test_run_completed": true,
+        "tests_failed": 0
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-33",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 0,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-34",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 1,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-35",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 2,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-36",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 4294967295,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-37",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 0,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-38",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 1,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-39",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 2,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-40",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 4294967295,
+        "test_run_completed": true,
+        "tests_failed": 1
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-41",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 0,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-42",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 1,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-43",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 2,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": true,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-44",
+      "input": {
+        "artifact_verified": false,
+        "blocking_findings": 4294967295,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": false,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-45",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 0,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-46",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 1,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-47",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 2,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "artifact_unverified": false,
+        "blocking_findings_exceeded": true,
+        "test_run_incomplete": false,
+        "tests_failed": true
+      },
+      "id": "case-48",
+      "input": {
+        "artifact_verified": true,
+        "blocking_findings": 4294967295,
+        "test_run_completed": true,
+        "tests_failed": 4294967295
+      }
+    }
+  ],
+  "contract": "sley-tools.release-readiness-fixtures.v1",
+  "max_blocking_findings": 0,
+  "program_id": "release-readiness"
+}

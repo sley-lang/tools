@@ -1,0 +1,199 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "range-predicate",
+  "title": "Range Predicate",
+  "purpose": "Decide inclusive interval membership, identify reversed bounds, and expose an editable upper-endpoint policy",
+  "parameters": [
+    {
+      "name": "value",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "lower",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "upper",
+      "value_type": "SInt64"
+    }
+  ],
+  "constants": [
+    {
+      "name": "yes",
+      "value_type": "Bool",
+      "value": true
+    },
+    {
+      "name": "no",
+      "value_type": "Bool",
+      "value": false
+    },
+    {
+      "name": "exclude_upper_endpoint",
+      "value_type": "Bool",
+      "value": false
+    }
+  ],
+  "result": {
+    "kind": "record",
+    "fields": [
+      {
+        "name": "within_range",
+        "value_type": "Bool"
+      },
+      {
+        "name": "invalid_bounds",
+        "value_type": "Bool"
+      },
+      {
+        "name": "below_lower",
+        "value_type": "Bool"
+      },
+      {
+        "name": "above_upper",
+        "value_type": "Bool"
+      },
+      {
+        "name": "excluded_upper",
+        "value_type": "Bool"
+      }
+    ]
+  },
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {
+          "op": "greater_than",
+          "name": "invalid",
+          "left": "param.lower",
+          "right": "param.upper"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.invalid",
+        "if_true": "invalid_bounds",
+        "if_false": "valid_bounds"
+      }
+    },
+    {
+      "name": "invalid_bounds",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "invalid_yes",
+          "constant": "yes"
+        },
+        {
+          "op": "constant_ref",
+          "name": "invalid_no",
+          "constant": "no"
+        },
+        {
+          "op": "record_new",
+          "name": "invalid_result",
+          "fields": [
+            "op.invalid_no",
+            "op.invalid_yes",
+            "op.invalid_no",
+            "op.invalid_no",
+            "op.invalid_no"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.invalid_result"
+      }
+    },
+    {
+      "name": "valid_bounds",
+      "operations": [
+        {
+          "op": "less_than",
+          "name": "below",
+          "left": "param.value",
+          "right": "param.lower"
+        },
+        {
+          "op": "greater_than",
+          "name": "above",
+          "left": "param.value",
+          "right": "param.upper"
+        },
+        {
+          "op": "less_than",
+          "name": "under_upper",
+          "left": "param.value",
+          "right": "param.upper"
+        },
+        {
+          "op": "bool_not",
+          "name": "not_under_upper",
+          "operand": "op.under_upper"
+        },
+        {
+          "op": "bool_not",
+          "name": "not_above",
+          "operand": "op.above"
+        },
+        {
+          "op": "bool_and",
+          "name": "at_upper",
+          "left": "op.not_under_upper",
+          "right": "op.not_above"
+        },
+        {
+          "op": "constant_ref",
+          "name": "exclude_policy",
+          "constant": "exclude_upper_endpoint"
+        },
+        {
+          "op": "bool_and",
+          "name": "excluded_upper",
+          "left": "op.at_upper",
+          "right": "op.exclude_policy"
+        },
+        {
+          "op": "bool_or",
+          "name": "strict_outside",
+          "left": "op.below",
+          "right": "op.above"
+        },
+        {
+          "op": "bool_or",
+          "name": "outside",
+          "left": "op.strict_outside",
+          "right": "op.excluded_upper"
+        },
+        {
+          "op": "bool_not",
+          "name": "inside",
+          "operand": "op.outside"
+        },
+        {
+          "op": "constant_ref",
+          "name": "valid_no",
+          "constant": "no"
+        },
+        {
+          "op": "record_new",
+          "name": "valid_result",
+          "fields": [
+            "op.inside",
+            "op.valid_no",
+            "op.below",
+            "op.above",
+            "op.excluded_upper"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.valid_result"
+      }
+    }
+  ]
+}

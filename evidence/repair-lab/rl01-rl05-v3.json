@@ -1,0 +1,207 @@
+{
+  "contract": "sley-tools.repair-lab-probe.v3",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "lab_sha256": "3e3e0610dcb5bda6db1579efc7e54a9e0708663038a9f961595d84aa71fd864c",
+  "materials_sha256": {
+    "rl01/HINTS.md": "e08a3a64b1dd6747bbe9921636220e4029ddbeacb06f5c1340d5ce4719d30780",
+    "rl01/SOLUTION.md": "d5a55d697abb618e9d5dc2e525b703eb6c86d8c347554225636ff25e80bb545c",
+    "rl01/TASK.md": "eb3e64fa77783e6a5913416d5d1f6759ccafb69f9676287f8fc38a199eea1473",
+    "rl01/starter-recipe.json": "534143d4a8929e45134403b26b79ed18c36138a22f852de3656b8b7cba167716",
+    "rl02/HINTS.md": "6b356f841421eaf8a009cc8a9e0189407ff39d6607bec68e418cd5114f19b3cd",
+    "rl02/SOLUTION.md": "eceb0de21a4f4c11c34fc8f6033ac3b01600c496950e2343b527d53b241b7368",
+    "rl02/TASK.md": "428b66179679f7e2d1c83883577d4233198c9b3f53214fa715d162d558dbe6c3",
+    "rl03/HINTS.md": "40818b0f2fe108f620c7c40584096b4816e86be6d0b3eba1f1a429a3e1a58379",
+    "rl03/SOLUTION.md": "1d7808c9797c1dd0a24aec9e8499c91de40784a8e108b7d4baa936731f2a6f99",
+    "rl03/TASK.md": "533ff25ed838d7388f28b1b3350003f89a412e68258cc7947e33d0209ba933ea",
+    "rl04/HINTS.md": "91098326d2892854c84caf6fa5b6dbe7c1122070eedab6c55eb0403e6cab3cd3",
+    "rl04/SOLUTION.md": "5b5670b70fe321c325f8acc648cbc6ea4081e335e0d464aa2d4316059c438fe9",
+    "rl04/TASK.md": "e4e6a7af6cad392fe75c4f27598ab99ed9f7624a1c4dda45fe6b998bf6df3fb6",
+    "rl04/missing-upper-cases.json": "60a38579cb650ceb05ee007a1723096ecab5e408914df8bed23d6c4d56e1b194",
+    "rl04/solution-cases.json": "0a066515e7f961a1178d04213874f310a6a1597668b1f9153f98441b86e5bf2f",
+    "rl05/HINTS.md": "f40fb717d18adc92d33d77b8437703c895928f241b113eb34205b33ee518f651",
+    "rl05/SOLUTION.md": "ff04192adef52ee113df7aea852ec4aeff693181c3675803495e47366e7aa070",
+    "rl05/TASK.md": "40fab6d95cb49962fa5522038b2b3519f665f668ab0d1542d89f297710ee79f2",
+    "rl05/wrong-value.json": "a1fb50e6c86fae1679ef3351296fd6713411a08cf8dd1790a4fd05fae8688164"
+  },
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "probe_sha256": "ca886f57fd9359de1d1bbc6cd23a934ec1f2184ae34853ad91dae8f40fb2865f",
+  "public_exercises_available": [
+    "rl01",
+    "rl02",
+    "rl03",
+    "rl04",
+    "rl05"
+  ],
+  "range_artifact_sha256": "1a4610d7f749e5efeb013fa5e49d5c14bcf6eecc257dd9176ec9ce3c94f764cd",
+  "remaining_exercises_pending": [
+    "rl06",
+    "rl07",
+    "rl08"
+  ],
+  "reset_confined_to_marked_projects": true,
+  "result": "PASS",
+  "rl01": {
+    "accepted_root": "6bb050d845e9597d2d409ae9a08519113478800681d64b05c275377ba0952272",
+    "artifact_sha256": "14da2b0b493f5e5e7a1627db05de77f07d7901b866ca3a16ff9d206c05f21e84",
+    "independent_native_cases": 16,
+    "published_cases": 8,
+    "replay_root": "d82091bbd48e1e8a1d014f72881a9c4edbcf22abfa9498e3885d3d82995b733c",
+    "replayed_native_cases": 16,
+    "sample": {
+      "input": [
+        "5",
+        "-5",
+        "5"
+      ],
+      "result": {
+        "above_upper": false,
+        "below_lower": false,
+        "invalid_bounds": false,
+        "within_range": true
+      },
+      "state_root": "6bb050d845e9597d2d409ae9a08519113478800681d64b05c275377ba0952272"
+    }
+  },
+  "rl01_imported_wrong_solution_rejected": true,
+  "rl02": {
+    "accepted_root": "8fd45b6b68aadc05909e61b97f33ae8d4f111a9d4406c5f10da01a39b9d87ee6",
+    "correction_candidate_id": "e86a11fb20558c33640d0bec8147a19d9150f7720ba2e02211bc584181db7bd4",
+    "correction_receipt_id": "632975e4febb21552fe90ca4627b442c1e5b2c7791b7150c4ab6cc419b8d1745",
+    "flaw_root": "45f7e81e573794e529f4f572584223f5a88067c4acd3766444abc58c796efc2f",
+    "independent_native_cases": 16,
+    "published_cases": 11,
+    "sample": {
+      "input": [
+        "5",
+        "-5",
+        "5"
+      ],
+      "result": {
+        "above_upper": false,
+        "below_lower": false,
+        "excluded_upper": false,
+        "invalid_bounds": false,
+        "within_range": true
+      },
+      "state_root": "8fd45b6b68aadc05909e61b97f33ae8d4f111a9d4406c5f10da01a39b9d87ee6"
+    },
+    "seed_root": "8fd45b6b68aadc05909e61b97f33ae8d4f111a9d4406c5f10da01a39b9d87ee6"
+  },
+  "rl02_exclusive_seed_rejected": true,
+  "rl03": {
+    "accepted_root": "e87af478cc803984bd71239cd36156c82b50396f5b9ae2e29478cf5d1ccb34f7",
+    "bronze_sample": {
+      "input": [
+        "10"
+      ],
+      "result": {
+        "invalid_configuration": false,
+        "tier": "0"
+      },
+      "state_root": "e87af478cc803984bd71239cd36156c82b50396f5b9ae2e29478cf5d1ccb34f7"
+    },
+    "correction_candidate_id": "6803451805c40c3cbbb0ec5b03e5e7835759a05704c517ac0140498dc9da5036",
+    "correction_receipt_id": "07ef5a2862fcf6acad2e59242cb8be22c1e10e8d088be9efb16f4227b417843f",
+    "flaw_root": "9766c998f5e47cd0951d3863e5b5ec2bcd5c989e2c4988b430849df21ff17eb8",
+    "gold_sample": {
+      "input": [
+        "21"
+      ],
+      "result": {
+        "invalid_configuration": false,
+        "tier": "2"
+      },
+      "state_root": "e87af478cc803984bd71239cd36156c82b50396f5b9ae2e29478cf5d1ccb34f7"
+    },
+    "independent_native_cases": 14,
+    "middle_sample": {
+      "input": [
+        "11"
+      ],
+      "result": {
+        "invalid_configuration": false,
+        "tier": "1"
+      },
+      "state_root": "e87af478cc803984bd71239cd36156c82b50396f5b9ae2e29478cf5d1ccb34f7"
+    },
+    "published_cases": 11,
+    "seed_root": "e87af478cc803984bd71239cd36156c82b50396f5b9ae2e29478cf5d1ccb34f7"
+  },
+  "rl03_disabled_seed_rejected": true,
+  "rl04": {
+    "accepted_root": "22641892179357f864668b284add9bbf4831f7f0036c55ff90d92c8608a850d0",
+    "bound_suite_cases": 7,
+    "case_file_sha256": "0a066515e7f961a1178d04213874f310a6a1597668b1f9153f98441b86e5bf2f",
+    "diagnostic_sha256": "9c363e552e7fdcf83120267a389c2a90baf9b5c4c184297a8721e38a7304919b",
+    "expected": {
+      "above_upper": false,
+      "below_lower": false,
+      "excluded_upper": false,
+      "invalid_bounds": false,
+      "within_range": true
+    },
+    "failed_case_id": "upper-at",
+    "matched_neighbors": 2,
+    "new_cases": 3,
+    "observed": {
+      "above_upper": false,
+      "below_lower": false,
+      "excluded_upper": true,
+      "invalid_bounds": false,
+      "within_range": false
+    }
+  },
+  "rl04_missing_boundary_rejected": true,
+  "rl04_missing_new_case_rejected": true,
+  "rl04_reset_reexposed_failure": true,
+  "rl04_wrong_expectation_rejected": true,
+  "rl05": {
+    "accepted_root": "96725c97458963eb287e9c73362ca28d375264a81c9a396b91950d9d62b308ce",
+    "bronze_sample": {
+      "input": [
+        "12"
+      ],
+      "result": {
+        "invalid_configuration": false,
+        "tier": "0"
+      },
+      "state_root": "96725c97458963eb287e9c73362ca28d375264a81c9a396b91950d9d62b308ce"
+    },
+    "correction_candidate_id": "6d20cff22ce811574f9149f2a604571a4eb3216d79bda3866cb92cf5680b1f5d",
+    "correction_receipt_id": "63d20767076b8713c5b04d47ec0bc95109d4c751f8190c0b436774fe8c40b6e8",
+    "diagnostic_category": "input_shape",
+    "diagnostic_code": "ST_INPUT_INVALID",
+    "diagnostic_sha256": "b6c1e9d674bfc008a6b72ddded7807ebe591d235c00028ba4c54157f63b4eee2",
+    "gold_sample": {
+      "input": [
+        "21"
+      ],
+      "result": {
+        "invalid_configuration": false,
+        "tier": "2"
+      },
+      "state_root": "96725c97458963eb287e9c73362ca28d375264a81c9a396b91950d9d62b308ce"
+    },
+    "independent_native_cases": 14,
+    "published_cases": 11,
+    "seed_root": "170e3eaf5a71a0f2fc43a718c446e4df6bd02c5ea48f51885396a1a744b996ed",
+    "silver_sample": {
+      "input": [
+        "13"
+      ],
+      "result": {
+        "invalid_configuration": false,
+        "tier": "1"
+      },
+      "state_root": "96725c97458963eb287e9c73362ca28d375264a81c9a396b91950d9d62b308ce"
+    }
+  },
+  "rl05_forged_diagnostic_rejected": true,
+  "rl05_reset_confined": true,
+  "rl05_unchanged_seed_rejected": true,
+  "rl05_wrong_type_rejected_without_candidate": true,
+  "symlinked_project_reset_rejected": true,
+  "tier_artifact_sha256": "1a835e5e6883daad85bea7bce502f140630a0cd0dcd4e6b9ea5d10470186ea7e",
+  "tools_binary_sha256": "6d94d4ac4b751c1a7e6a6b5e3218970f3a406f702c6bf419b6c2f4d4ddca12aa",
+  "unmarked_reset_rejected": true
+}

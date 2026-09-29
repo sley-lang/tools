@@ -1,0 +1,237 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "benchmark-comparator",
+  "title": "Benchmark Comparator",
+  "purpose": "Compare one matched benchmark row with exact native deltas and independent regression flags",
+  "parameters": [
+    {
+      "name": "baseline_wall_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "candidate_wall_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "baseline_cpu_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "candidate_cpu_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "baseline_archive_bytes",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "candidate_archive_bytes",
+      "value_type": "SInt64"
+    }
+  ],
+  "constants": [
+    {
+      "name": "zero",
+      "value_type": "SInt64",
+      "value": "0"
+    },
+    {
+      "name": "reject_negative_inputs",
+      "value_type": "Bool",
+      "value": true
+    }
+  ],
+  "result": {
+    "kind": "record",
+    "fields": [
+      {
+        "name": "wall_delta_us",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "cpu_delta_us",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "archive_delta_bytes",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "wall_regressed",
+        "value_type": "Bool"
+      },
+      {
+        "name": "cpu_regressed",
+        "value_type": "Bool"
+      },
+      {
+        "name": "archive_regressed",
+        "value_type": "Bool"
+      },
+      {
+        "name": "any_regression",
+        "value_type": "Bool"
+      },
+      {
+        "name": "invalid_input",
+        "value_type": "Bool"
+      }
+    ]
+  },
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "zero",
+          "constant": "zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_wall_base",
+          "left": "param.baseline_wall_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_wall_candidate",
+          "left": "param.candidate_wall_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_cpu_base",
+          "left": "param.baseline_cpu_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_cpu_candidate",
+          "left": "param.candidate_cpu_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_archive_base",
+          "left": "param.baseline_archive_bytes",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_archive_candidate",
+          "left": "param.candidate_archive_bytes",
+          "right": "op.zero"
+        },
+        {
+          "op": "bool_or",
+          "name": "invalid_wall",
+          "left": "op.negative_wall_base",
+          "right": "op.negative_wall_candidate"
+        },
+        {
+          "op": "bool_or",
+          "name": "invalid_cpu",
+          "left": "op.negative_cpu_base",
+          "right": "op.negative_cpu_candidate"
+        },
+        {
+          "op": "bool_or",
+          "name": "invalid_archive",
+          "left": "op.negative_archive_base",
+          "right": "op.negative_archive_candidate"
+        },
+        {
+          "op": "bool_or",
+          "name": "invalid_wall_cpu",
+          "left": "op.invalid_wall",
+          "right": "op.invalid_cpu"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_any",
+          "left": "op.invalid_wall_cpu",
+          "right": "op.invalid_archive"
+        },
+        {
+          "op": "int_sub_checked",
+          "name": "wall_delta",
+          "left": "param.candidate_wall_us",
+          "right": "param.baseline_wall_us"
+        },
+        {
+          "op": "int_sub_checked",
+          "name": "cpu_delta",
+          "left": "param.candidate_cpu_us",
+          "right": "param.baseline_cpu_us"
+        },
+        {
+          "op": "int_sub_checked",
+          "name": "archive_delta",
+          "left": "param.candidate_archive_bytes",
+          "right": "param.baseline_archive_bytes"
+        },
+        {
+          "op": "greater_than",
+          "name": "wall_regressed",
+          "left": "param.candidate_wall_us",
+          "right": "param.baseline_wall_us"
+        },
+        {
+          "op": "greater_than",
+          "name": "cpu_regressed",
+          "left": "param.candidate_cpu_us",
+          "right": "param.baseline_cpu_us"
+        },
+        {
+          "op": "greater_than",
+          "name": "archive_regressed",
+          "left": "param.candidate_archive_bytes",
+          "right": "param.baseline_archive_bytes"
+        },
+        {
+          "op": "bool_or",
+          "name": "wall_or_cpu",
+          "left": "op.wall_regressed",
+          "right": "op.cpu_regressed"
+        },
+        {
+          "op": "bool_or",
+          "name": "any_regression",
+          "left": "op.wall_or_cpu",
+          "right": "op.archive_regressed"
+        },
+        {
+          "op": "constant_ref",
+          "name": "reject_negatives",
+          "constant": "reject_negative_inputs"
+        },
+        {
+          "op": "bool_and",
+          "name": "invalid_input",
+          "left": "op.negative_any",
+          "right": "op.reject_negatives"
+        },
+        {
+          "op": "record_new",
+          "name": "result",
+          "fields": [
+            "op.wall_delta",
+            "op.cpu_delta",
+            "op.archive_delta",
+            "op.wall_regressed",
+            "op.cpu_regressed",
+            "op.archive_regressed",
+            "op.any_regression",
+            "op.invalid_input"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "08c01b3745082a7ae33cbed43838b49a2f2bcced7c25a6dc6d958b8ca4f644fc"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "823d6c98deda192ae3c7f26cbb1c69f0cd56ea3ebfaf2314cba51387b5debe8d",
+    "name": "evaluate",
+    "state_root": "288b73abb5e4ab1072be84490ed3494ee798edd78781fcbc09ceb7afb9a7e456"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "49bd942520663c4915fefc7ecdbd81e3349d2b2fe017200b741466c6771d8d7c"
+  },
+  "host_responsibility": "decode bounded JSON Lines, keep case IDs and row order, call accepted native comparator/selector/reducer graphs, and serialize results",
+  "inputs": {
+    "baseline_archive_bytes": "SInt64",
+    "baseline_cpu_us": "SInt64",
+    "baseline_wall_us": "SInt64",
+    "candidate_archive_bytes": "SInt64",
+    "candidate_cpu_us": "SInt64",
+    "candidate_wall_us": "SInt64"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "native checked signed deltas, independent regression flags, and a named negative-measurement policy",
+  "output": {
+    "fields": {
+      "any_regression": "Bool",
+      "archive_delta_bytes": "CheckedSInt64",
+      "archive_regressed": "Bool",
+      "cpu_delta_us": "CheckedSInt64",
+      "cpu_regressed": "Bool",
+      "invalid_input": "Bool",
+      "wall_delta_us": "CheckedSInt64",
+      "wall_regressed": "Bool"
+    },
+    "type": "Record"
+  },
+  "program_id": "benchmark-comparator",
+  "program_version": "0.1.0-local",
+  "purpose": "Compare one matched benchmark row with exact native deltas and independent regression flags",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "wall_delta_us",
+      "type": "CheckedSInt64"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "cpu_delta_us",
+      "type": "CheckedSInt64"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "archive_delta_bytes",
+      "type": "CheckedSInt64"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "wall_regressed",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+      "name": "cpu_regressed",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0606060606060606060606060606060606060606060606060606060606060606",
+      "name": "archive_regressed",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0707070707070707070707070707070707070707070707070707070707070707",
+      "name": "any_regression",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0808080808080808080808080808080808080808080808080808080808080808",
+      "name": "invalid_input",
+      "type": "Bool"
+    }
+  ],
+  "result_type_id": "f1cad368ee32733f75befdc5705651a560181621873430e06e44b105c92d04d5",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "scripts/probe_checked_graph.py::oracle",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Benchmark Comparator",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "constant": "reject_negative_inputs",
+    "evidence": "evidence/catalog/benchmark-comparator-v1.json",
+    "example_value": false,
+    "initial_value": true,
+    "operation": "replace_named_constant"
+  }
+}

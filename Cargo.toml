@@ -1,0 +1,8 @@
+[workspace]
+resolver = "3"
+members = ["crates/compatibility-probe", "crates/backend"]
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.93"
+license = "Apache-2.0"

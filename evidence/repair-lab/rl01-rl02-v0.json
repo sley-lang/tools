@@ -1,0 +1,82 @@
+{
+  "contract": "sley-tools.repair-lab-probe.v0",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "lab_sha256": "a0a4c161a9bbfe22745ce3254d5eeb275c1c207b9bd390d5dfae3b299ae2c92f",
+  "materials_sha256": {
+    "rl01/HINTS.md": "e08a3a64b1dd6747bbe9921636220e4029ddbeacb06f5c1340d5ce4719d30780",
+    "rl01/SOLUTION.md": "d5a55d697abb618e9d5dc2e525b703eb6c86d8c347554225636ff25e80bb545c",
+    "rl01/TASK.md": "eb3e64fa77783e6a5913416d5d1f6759ccafb69f9676287f8fc38a199eea1473",
+    "rl01/starter-recipe.json": "534143d4a8929e45134403b26b79ed18c36138a22f852de3656b8b7cba167716",
+    "rl02/HINTS.md": "6b356f841421eaf8a009cc8a9e0189407ff39d6607bec68e418cd5114f19b3cd",
+    "rl02/SOLUTION.md": "eceb0de21a4f4c11c34fc8f6033ac3b01600c496950e2343b527d53b241b7368",
+    "rl02/TASK.md": "428b66179679f7e2d1c83883577d4233198c9b3f53214fa715d162d558dbe6c3"
+  },
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "probe_sha256": "14d94a946b5205d5a94aedc96f0ad2e98cd9d9db1297e821c857eb3cff771ea9",
+  "public_exercises_available": [
+    "rl01",
+    "rl02"
+  ],
+  "range_artifact_sha256": "1a4610d7f749e5efeb013fa5e49d5c14bcf6eecc257dd9176ec9ce3c94f764cd",
+  "remaining_exercises_pending": [
+    "rl03",
+    "rl04",
+    "rl05",
+    "rl06",
+    "rl07",
+    "rl08"
+  ],
+  "reset_confined_to_marked_projects": true,
+  "result": "PASS",
+  "rl01": {
+    "accepted_root": "b1e09505a76da4e98d968fe9aa764a393a83e4fe5f89b930c3ea936ade248181",
+    "artifact_sha256": "515a8c8c2b8b91e8272ec0377e425ce5559fe46a635383a0dc89b743c2607207",
+    "independent_native_cases": 16,
+    "published_cases": 8,
+    "replay_root": "1ceb67fb4c9cc3f03407bb193a6a5411dac4ec15e1432e8d1c76621e8233f662",
+    "replayed_native_cases": 16,
+    "sample": {
+      "input": [
+        "5",
+        "-5",
+        "5"
+      ],
+      "result": {
+        "above_upper": false,
+        "below_lower": false,
+        "invalid_bounds": false,
+        "within_range": true
+      },
+      "state_root": "b1e09505a76da4e98d968fe9aa764a393a83e4fe5f89b930c3ea936ade248181"
+    }
+  },
+  "rl01_imported_wrong_solution_rejected": true,
+  "rl02": {
+    "accepted_root": "6f5ddb357ea4dc719c4fab2ea6497116513d0c51917944d41e2b45ec4ffd963b",
+    "correction_candidate_id": "2d2754f6444af7848233ce7f2f17b956c3b228af3600247c38ee44853269a943",
+    "correction_receipt_id": "2018c267292ffc48489a3b1c0fba0495432fa08ce95b710f9bfaca4ac02a4f50",
+    "flaw_root": "16ceb8e994b2651cad24d2d730c1f8fc44e519c39746d8d57baed4a17295457d",
+    "independent_native_cases": 16,
+    "published_cases": 11,
+    "sample": {
+      "input": [
+        "5",
+        "-5",
+        "5"
+      ],
+      "result": {
+        "above_upper": false,
+        "below_lower": false,
+        "excluded_upper": false,
+        "invalid_bounds": false,
+        "within_range": true
+      },
+      "state_root": "6f5ddb357ea4dc719c4fab2ea6497116513d0c51917944d41e2b45ec4ffd963b"
+    },
+    "seed_root": "6f5ddb357ea4dc719c4fab2ea6497116513d0c51917944d41e2b45ec4ffd963b"
+  },
+  "rl02_exclusive_seed_rejected": true,
+  "symlinked_project_reset_rejected": true,
+  "tools_binary_sha256": "6d94d4ac4b751c1a7e6a6b5e3218970f3a406f702c6bf419b6c2f4d4ddca12aa",
+  "unmarked_reset_rejected": true
+}

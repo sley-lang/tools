@@ -1,0 +1,149 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {
+      "id": "value-minus-9223372036854775808",
+      "input": [
+        "-9223372036854775808"
+      ],
+      "expected": {
+        "clamped_value": "-5",
+        "invalid_bounds": false,
+        "below_lower": true,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-minus-6",
+      "input": [
+        "-6"
+      ],
+      "expected": {
+        "clamped_value": "-5",
+        "invalid_bounds": false,
+        "below_lower": true,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-minus-5",
+      "input": [
+        "-5"
+      ],
+      "expected": {
+        "clamped_value": "-5",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-minus-4",
+      "input": [
+        "-4"
+      ],
+      "expected": {
+        "clamped_value": "-4",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-minus-1",
+      "input": [
+        "-1"
+      ],
+      "expected": {
+        "clamped_value": "-1",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-0",
+      "input": [
+        "0"
+      ],
+      "expected": {
+        "clamped_value": "0",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-1",
+      "input": [
+        "1"
+      ],
+      "expected": {
+        "clamped_value": "1",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-4",
+      "input": [
+        "4"
+      ],
+      "expected": {
+        "clamped_value": "4",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-5",
+      "input": [
+        "5"
+      ],
+      "expected": {
+        "clamped_value": "5",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-6",
+      "input": [
+        "6"
+      ],
+      "expected": {
+        "clamped_value": "6",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": false
+      }
+    },
+    {
+      "id": "value-7",
+      "input": [
+        "7"
+      ],
+      "expected": {
+        "clamped_value": "6",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": true
+      }
+    },
+    {
+      "id": "value-9223372036854775807",
+      "input": [
+        "9223372036854775807"
+      ],
+      "expected": {
+        "clamped_value": "6",
+        "invalid_bounds": false,
+        "below_lower": false,
+        "above_upper": true
+      }
+    }
+  ]
+}

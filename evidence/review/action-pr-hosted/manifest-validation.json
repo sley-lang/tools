@@ -1,0 +1,44 @@
+[
+  {
+    "artifacts": {
+      "artifact": {
+        "bytes": 15942,
+        "path": "artifact/before-review.json",
+        "sha256": "729c531a2e9a5daad242df5aeae8dc590fee90fe0418732ad1c2633b303e96b7"
+      },
+      "imported_source_artifact": {
+        "bytes": 15942,
+        "path": "artifact/native-program.json",
+        "sha256": "19e829206cb66469d103982490ffec339f466408e02da6dc7f7ecd1981dcbecb"
+      }
+    },
+    "contract": "sley-tools.program-manifest-validation.v1",
+    "manifest_sha256": "33c4ea9de6530c6fcc8eacb87a5db5fb5415773ee143530caeb161a5f1e63960",
+    "program_id": "release-readiness",
+    "program_version": "0.1.0-imported",
+    "result": "PASS",
+    "schema": "program-v0.schema.json",
+    "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370"
+  },
+  {
+    "artifacts": {
+      "artifact": {
+        "bytes": 15942,
+        "path": "artifact/after-review.json",
+        "sha256": "141ecd4cca5abdab16474b78a0213e6eb8a478a464878f888c7c64f32289b1a8"
+      },
+      "imported_source_artifact": {
+        "bytes": 15942,
+        "path": "artifact/before-review.json",
+        "sha256": "729c531a2e9a5daad242df5aeae8dc590fee90fe0418732ad1c2633b303e96b7"
+      }
+    },
+    "contract": "sley-tools.program-manifest-validation.v1",
+    "manifest_sha256": "fc92a6c8b533d70bff772a6d13e090e14e2ef67557844f38d5a540ae3e1977cc",
+    "program_id": "release-readiness",
+    "program_version": "0.1.1-local",
+    "result": "PASS",
+    "schema": "program-v0.schema.json",
+    "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370"
+  }
+]

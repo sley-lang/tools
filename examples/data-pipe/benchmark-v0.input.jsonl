@@ -1,0 +1,4 @@
+{"baseline":{"archive_bytes":"1000","cpu_us":"200","wall_us":"100"},"candidate":{"archive_bytes":"1000","cpu_us":"200","wall_us":"100"},"case_id":"equal","units":{"archive":"bytes","cpu":"us","wall":"us"}}
+{"baseline":{"archive_bytes":"1000","cpu_us":"200","wall_us":"100"},"candidate":{"archive_bytes":"990","cpu_us":"220","wall_us":"90"},"case_id":"cpu-regression","units":{"archive":"bytes","cpu":"us","wall":"us"}}
+{"baseline":{"archive_bytes":"0","cpu_us":"0","wall_us":"0"},"candidate":{"archive_bytes":"1","cpu_us":"1","wall_us":"1"},"case_id":"zero-baseline","units":{"archive":"bytes","cpu":"us","wall":"us"}}
+{"baseline":{"archive_bytes":"30","cpu_us":"20","wall_us":"10"},"candidate":{"archive_bytes":"15","cpu_us":"10","wall_us":"5"},"case_id":"improvement","units":{"archive":"bytes","cpu":"us","wall":"us"}}

@@ -1,0 +1,48 @@
+{
+  "contract": "sley-tools.authoring-lifecycle-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "negative_paths": {
+    "accepted_root_preserved_after_rejections": true,
+    "stale_base_rejected": true,
+    "stale_candidate_id": "bf3334e0774f85213504bff60339174868a19e5216826cc308f61e00342815a3",
+    "tamper_rejected": true,
+    "tampered_candidate_id": "0169dc2751dade9ec5aee55a301571b6ff10f751317bf1401408c6158fc07c38"
+  },
+  "programs": [
+    {
+      "after_allow": true,
+      "after_artifact_sha256": "012369519ab53284e2b1ff6df0133e737b28d07ecd86c5a2c14d9950f5185b9c",
+      "before_allow": false,
+      "before_artifact_sha256": "d064ab43313d8555ba4f6c731f691b32a1d77f9931863cea841e0d13957ea7ff",
+      "candidate_id": "b97d5e1d215edf6030c79f280e04c4d49e1154c20cad573512ca4c1d11af2054",
+      "changed_entity_versions": 1,
+      "commit_before_validation_rejected": true,
+      "committed_root": "5c09c8ab03373152b0b9b72acbca37945d43732146cfd87ad84da1bb6b70f939",
+      "concurrent_project_write_rejected": true,
+      "duplicate_proposal_rejected": true,
+      "exact_candidate_committed": true,
+      "external_assertions": 60,
+      "initial_root": "ca5bf7c30408932c5b05cb910a987e98877e5cc16e9da526d6ba48540834ed55",
+      "program_id": "release-readiness"
+    },
+    {
+      "after_allow": false,
+      "after_artifact_sha256": "14424fb785c822e53b721fec0616f4b71be3b585fed19bc26ba5d7463c177fcc",
+      "before_allow": true,
+      "before_artifact_sha256": "4ee30660f3093eb0262b8cc01bec7bec262f801dcbc40bb7f263461fb41599a0",
+      "candidate_id": "93108ebb4c93fdc1f1db7cb28a378310e627d9c51cbbed88f36b35102afc96c6",
+      "changed_entity_versions": 1,
+      "commit_before_validation_rejected": true,
+      "committed_root": "f69e757314bff2fb37a34bafcab47a5ba2456eda8041d8cfe5be224e5e90f952",
+      "concurrent_project_write_rejected": false,
+      "duplicate_proposal_rejected": true,
+      "exact_candidate_committed": true,
+      "external_assertions": 12,
+      "initial_root": "470d71e947fa2c50a86af7ae13c88b42a2047679a39a9ab56758eafd9faf9a45",
+      "program_id": "resource-admission"
+    }
+  ],
+  "result": "PASS",
+  "tools_binary_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2"
+}

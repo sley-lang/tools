@@ -1,0 +1,44 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "range-predicate",
+  "title": "Range Predicate",
+  "purpose": "Complete this recipe to satisfy RL-01; the block bodies are intentionally absent",
+  "parameters": [
+    {
+      "name": "value",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "lower",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "upper",
+      "value_type": "SInt64"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "kind": "record",
+    "fields": [
+      {
+        "name": "within_range",
+        "value_type": "Bool"
+      },
+      {
+        "name": "invalid_bounds",
+        "value_type": "Bool"
+      },
+      {
+        "name": "below_lower",
+        "value_type": "Bool"
+      },
+      {
+        "name": "above_upper",
+        "value_type": "Bool"
+      }
+    ]
+  },
+  "entry_block": "entry",
+  "blocks": []
+}

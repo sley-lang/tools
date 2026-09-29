@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>Sley Playground</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="masthead">
+      <div class="mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="brand"><strong>Sley</strong><span>Playground</span></div>
+      <div class="mode">Local mode <span class="mode-dot"></span> Native execution on this machine</div>
+    </header>
+
+    <div class="workbench">
+      <aside class="program-rail" aria-labelledby="program-heading">
+        <div class="rail-intro">
+          <h1 id="program-heading">Choose a program</h1>
+          <p>Run a real Sley graph, inspect its inputs, and make a guided change.</p>
+        </div>
+        <nav id="programs" aria-label="Bundled programs"></nav>
+        <div class="rail-foot">
+          <strong>What runs where</strong>
+          <p>Sley computes the result. This page sends typed inputs to a loopback service that manages a disposable workspace.</p>
+        </div>
+      </aside>
+
+      <main id="workspace" class="workspace" hidden>
+        <div class="program-head">
+          <div>
+            <p class="section-kicker">Accepted program</p>
+            <h2 id="program-title"></h2>
+            <p id="program-description" class="program-description"></p>
+          </div>
+          <div class="root-block">
+            <span id="root-label">Accepted root</span>
+            <code id="state-root" title="Exact accepted Sley state root"></code>
+            <button id="copy-root" class="text-button" type="button">Copy root</button>
+          </div>
+        </div>
+
+        <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+        <div class="main-grid">
+          <section class="input-panel" aria-labelledby="input-heading">
+            <div class="section-head">
+              <div><p class="section-kicker">Run</p><h3 id="input-heading">Inputs</h3></div>
+              <div id="samples" class="sample-list" aria-label="Example inputs"></div>
+            </div>
+            <form id="input-form">
+              <div id="input-fields" class="field-grid"></div>
+              <div class="action-row">
+                <button class="primary" id="run-button" type="submit">Run native program</button>
+                <button class="secondary" id="test-button" type="button">Run published cases</button>
+              </div>
+            </form>
+            <div class="result-panel">
+              <div class="result-heading"><h4>Result</h4><span id="result-root"></span></div>
+              <p id="result-caption">Run the program to see its computed result.</p>
+              <pre id="result-value" aria-label="Native result"></pre>
+              <p id="test-result" class="test-result"></p>
+            </div>
+          </section>
+
+          <div class="side-column">
+            <section class="change-panel" aria-labelledby="change-heading">
+              <div class="section-head"><div><p class="section-kicker">Change</p><h3 id="change-heading">Guided edit</h3></div></div>
+              <p id="edit-explanation" class="panel-copy"></p>
+              <div id="edit-controls"></div>
+              <div class="change-actions">
+                <button id="propose-button" class="secondary" type="button">Propose change</button>
+                <button id="validate-button" class="secondary" type="button">Validate candidate</button>
+                <button id="commit-button" class="primary" type="button">Commit validated change</button>
+                <button id="reconcile-button" class="secondary" type="button">Check commit outcome</button>
+                <button id="discard-button" class="text-button" type="button">Discard proposal</button>
+              </div>
+              <div id="candidate-info" class="candidate-info"></div>
+            </section>
+
+            <section class="inspector-panel" aria-labelledby="inspector-heading">
+              <div class="section-head"><div><p class="section-kicker">Inspect</p><h3 id="inspector-heading">Program structure</h3></div></div>
+              <div id="inspector"></div>
+            </section>
+          </div>
+        </div>
+
+        <section id="review-panel" class="review-panel" aria-labelledby="review-heading" hidden>
+          <div class="section-head"><div><p class="section-kicker">Accepted change</p><h3 id="review-heading">Before and after</h3></div></div>
+          <div id="review-meta" class="review-meta"></div>
+          <div class="review-grid"><div><h4>Before</h4><pre id="review-before"></pre></div><div><h4>After</h4><pre id="review-after"></pre></div></div>
+        </section>
+
+        <footer class="workspace-foot">
+          <div><strong>Take this program with you</strong><p>Export the accepted native artifact, manifest, and published cases as a portable archive.</p></div>
+          <button id="export-button" class="secondary" type="button">Export accepted program</button>
+        </footer>
+      </main>
+
+      <section id="welcome" class="welcome">
+        <div class="welcome-graph" aria-hidden="true"><span class="node">input</span><i></i><span class="node central">Sley</span><i></i><span class="node">result</span></div>
+        <h2>See a program change state.</h2>
+        <p>Pick an example. Run it, inspect the accepted graph, then propose and validate a change before committing it.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

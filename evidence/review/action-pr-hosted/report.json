@@ -1,0 +1,725 @@
+{
+  "behavioral_evidence": {
+    "baseline_fixture_matches": true,
+    "case_count": 48,
+    "changed_case_count": 24,
+    "changed_cases": [
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "id": "case-02",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 1,
+          "test_run_completed": false,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "id": "case-03",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 2,
+          "test_run_completed": false,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "id": "case-06",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 1,
+          "test_run_completed": false,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": false
+        },
+        "id": "case-07",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": false,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-10",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 1,
+          "test_run_completed": false,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-11",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 2,
+          "test_run_completed": false,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-14",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 1,
+          "test_run_completed": false,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-15",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": false,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-18",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 1,
+          "test_run_completed": false,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-19",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 2,
+          "test_run_completed": false,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-22",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 1,
+          "test_run_completed": false,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": true,
+          "tests_failed": true
+        },
+        "id": "case-23",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": false,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "id": "case-26",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 1,
+          "test_run_completed": true,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "id": "case-27",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": true,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "id": "case-30",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 1,
+          "test_run_completed": true,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": true,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "id": "case-31",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 0
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-34",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 1,
+          "test_run_completed": true,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-35",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-38",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 1,
+          "test_run_completed": true,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-39",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 1
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-42",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 1,
+          "test_run_completed": true,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": true,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-43",
+        "input": {
+          "artifact_verified": false,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-46",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 1,
+          "test_run_completed": true,
+          "tests_failed": 4294967295
+        }
+      },
+      {
+        "after": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "before": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": true
+        },
+        "id": "case-47",
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 4294967295
+        }
+      }
+    ],
+    "meaning": "observed results on finite declared inputs, not a proof of equivalence"
+  },
+  "contract": "sley-tools.review.v0",
+  "identity": {
+    "after": {
+      "artifact_sha256": "141ecd4cca5abdab16474b78a0213e6eb8a478a464878f888c7c64f32289b1a8",
+      "claimed_source_root": "5f4d290712e4972ec50436d49750bd5db148af7b46a10f0dfd2c4ed3a6deca90",
+      "manifest_sha256": "fc92a6c8b533d70bff772a6d13e090e14e2ef67557844f38d5a540ae3e1977cc",
+      "source_function_id": "5e0293e49a7d41a198ec44cb9bf7151bba1dc258cebda1ea88d87ece9defe08a"
+    },
+    "before": {
+      "artifact_sha256": "729c531a2e9a5daad242df5aeae8dc590fee90fe0418732ad1c2633b303e96b7",
+      "claimed_source_root": "e213dc57d733ea4982ceccb6804082ca6263753a120fe765b34c5fff622a34e1",
+      "manifest_sha256": "33c4ea9de6530c6fcc8eacb87a5db5fb5415773ee143530caeb161a5f1e63960",
+      "source_function_id": "5e0293e49a7d41a198ec44cb9bf7151bba1dc258cebda1ea88d87ece9defe08a"
+    },
+    "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "core_profile": "extended_v1",
+    "fixtures_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+    "program_id": "release-readiness",
+    "tools_binary_sha256": "9f7dea861612c864d5774e15bad29f5d37f102da2065988112faeecb294dfe94",
+    "tools_source_revision": null
+  },
+  "integrity": {
+    "after_manifest_artifact_binding": "PASS",
+    "artifact_native_object_validation": "PASS on fresh imports",
+    "before_manifest_artifact_binding": "PASS",
+    "full_manifest_json_schema": "NOT_RUN: standalone CLI has no JSON Schema validator",
+    "generated_from_current_inputs": true,
+    "manifest_interface_matches_imported_native_profile": "PASS"
+  },
+  "interface_change": {
+    "after": {
+      "entrypoint_name": "evaluate",
+      "inputs": {
+        "artifact_verified": "Bool",
+        "blocking_findings": "UInt32 0..4294967295",
+        "test_run_completed": "Bool",
+        "tests_failed": "UInt32 0..4294967295"
+      },
+      "output": {
+        "fields": {
+          "allow": "Bool",
+          "artifact_unverified": "Bool",
+          "blocking_findings_exceeded": "Bool",
+          "test_run_incomplete": "Bool",
+          "tests_failed": "Bool"
+        },
+        "type": "Record"
+      },
+      "result_fields": [
+        {
+          "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+          "name": "allow"
+        },
+        {
+          "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+          "name": "test_run_incomplete"
+        },
+        {
+          "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+          "name": "tests_failed"
+        },
+        {
+          "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+          "name": "artifact_unverified"
+        },
+        {
+          "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+          "name": "blocking_findings_exceeded"
+        }
+      ]
+    },
+    "before": {
+      "entrypoint_name": "evaluate",
+      "inputs": {
+        "artifact_verified": "Bool",
+        "blocking_findings": "UInt32 0..4294967295",
+        "test_run_completed": "Bool",
+        "tests_failed": "UInt32 0..4294967295"
+      },
+      "output": {
+        "fields": {
+          "allow": "Bool",
+          "artifact_unverified": "Bool",
+          "blocking_findings_exceeded": "Bool",
+          "test_run_incomplete": "Bool",
+          "tests_failed": "Bool"
+        },
+        "type": "Record"
+      },
+      "result_fields": [
+        {
+          "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+          "name": "allow"
+        },
+        {
+          "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+          "name": "test_run_incomplete"
+        },
+        {
+          "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+          "name": "tests_failed"
+        },
+        {
+          "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+          "name": "artifact_unverified"
+        },
+        {
+          "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+          "name": "blocking_findings_exceeded"
+        }
+      ]
+    },
+    "changed": false
+  },
+  "limitations": [
+    "Source roots are exporter claims; v0 artifacts carry no signed source receipt.",
+    "Entity matching uses exact IDs only; cross-workspace renames are not inferred.",
+    "Finite executed cases do not prove equivalence for all inputs.",
+    "Fresh import roots differ by workspace authority and are omitted from the reproducible report.",
+    "Native core test admission and full manifest JSON Schema validation are not available in this command.",
+    "The executable SHA-256 identifies the tools build; a source revision is not embedded."
+  ],
+  "profile_interpretation": {
+    "after": {
+      "max_blocking_findings": 2
+    },
+    "basis": "native objects parsed during fresh core-validated artifact imports",
+    "before": {
+      "max_blocking_findings": 0
+    }
+  },
+  "result": "PASS_BOUNDED_LOCAL",
+  "structural_change": {
+    "added": [],
+    "changed": [
+      {
+        "entity_id": "1ee88c510a9d266525dd524e93609cb1b5522c6e8f4c8ba268ab9cc9a22cd2e7",
+        "kind_after": "constant",
+        "kind_before": "constant",
+        "object_id_after": "e2d324bc4395dcf553842e0f393f7583290477e6a7f100c1957934504d5530a9",
+        "object_id_before": "c60d8c23f36ed7d04febd5a08ce317244e24f1b21a72dd5cc9b5678cddd52c6a"
+      }
+    ],
+    "matching_rule": "exact entity ID only; no inferred renames or cross-workspace semantic matching",
+    "removed": [],
+    "shared_entity_ids": 20
+  },
+  "summary": "release-readiness: 24 of 48 executed cases changed; 1 exact entity versions changed",
+  "validation": {
+    "after": {
+      "external_assertions_against_native_execution": 60,
+      "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+      "result": "PASS"
+    },
+    "before": {
+      "external_assertions_against_native_execution": 36,
+      "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+      "result": "PASS"
+    },
+    "core_candidate_validate_and_commit": "PASS on fresh imports",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

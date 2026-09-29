@@ -1,0 +1,61 @@
+{
+  "artifact_sha256": "19e829206cb66469d103982490ffec339f466408e02da6dc7f7ecd1981dcbecb",
+  "contract": "sley-tools.bridge-timing-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "fixtures_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+  "interpretation": "local observations only; cold loads are single samples, warm summaries are 48 correctness-checked calls per SDK; no cross-language speed ranking or general performance claim",
+  "python": {
+    "cold_load_ms": 1086.155716,
+    "cold_load_scope": "open_runtime construction through artifact import and first opened RPC/native worker; excludes first call",
+    "fixture_cases_checked": 48,
+    "rpc_dispatch_to_worker_result": {
+      "max_ms": 3,
+      "median_ms": 2,
+      "min_ms": 2,
+      "p95_ms": 3,
+      "samples": 48
+    },
+    "rpc_scope": "coarse integer milliseconds from RPC dispatch through native worker result; includes worker serialization and result receipt",
+    "warm_client_call": {
+      "max_ms": 4.023572,
+      "median_ms": 2.805471,
+      "min_ms": 2.742512,
+      "p95_ms": 3.731187,
+      "samples": 48
+    },
+    "worker_reused": true
+  },
+  "python_probe_sha256": "250ade1e635c1b37498f1eec90608ca0087fbd709c832f261ce499b35c7c6bc0",
+  "python_sdk_sha256": "defbd59a95f624ec7be2de776bf2ad9b76f334c63eca5d14c0646f28bfec702b",
+  "result": "PASS",
+  "sample_order": "48 fixture cases in file order; no warmup discarded",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+  "typescript": {
+    "cold_load_ms": 1093.53292,
+    "cold_load_scope": "openRuntime construction through artifact import and first opened RPC/native worker; excludes first call",
+    "fixture_cases_checked": 48,
+    "rpc_dispatch_to_worker_result": {
+      "max_ms": 3,
+      "median_ms": 2,
+      "min_ms": 2,
+      "p95_ms": 2,
+      "samples": 48
+    },
+    "rpc_scope": "coarse integer milliseconds from RPC dispatch through native worker result; includes worker serialization and result receipt",
+    "warm_client_call": {
+      "max_ms": 4.27589,
+      "median_ms": 2.903537,
+      "min_ms": 2.791645,
+      "p95_ms": 3.211261,
+      "samples": 48
+    },
+    "worker_reused": true
+  },
+  "typescript_probe_sha256": "2a7595ca85bc7c1872014818b30db7d6220f6511f7c42441844c1d7495a59ab5",
+  "typescript_sdk_sha256": "8d47cac2c5005811dc1303b8dee4575d85980d20a38cad137c701081572ba390",
+  "unavailable_subdivisions": {
+    "core_execution_ms": "native worker does not time execute_function separately from repository loading and result conversion",
+    "decoding_ms": "SDK decoding has no separate timer; included in client call",
+    "encoding_ms": "SDK encoding has no separate timer; included in client call"
+  }
+}

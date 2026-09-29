@@ -1,0 +1,91 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "1a4610d7f749e5efeb013fa5e49d5c14bcf6eecc257dd9176ec9ce3c94f764cd"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "57a1dbd4889d269250aa6d07471a739526ba4f8ab2cd65bbd93c611b9b4d984a",
+    "name": "evaluate",
+    "state_root": "93513defcb360b7fc5491cef9803b43145bcfba2995af6dfac239481b08b455a"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "d0a75c5217ec91e4b81fc8fd0a7b372709846ee405b7c9d1b35859f64f6a5327"
+  },
+  "host_responsibility": "decode typed signed inputs, manage the local workspace, and compare public expected results",
+  "inputs": {
+    "lower": "SInt64",
+    "upper": "SInt64",
+    "value": "SInt64"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "native reversed-bound branch, strict lower/upper checks, editable upper-endpoint policy, and reason flags",
+  "output": {
+    "fields": {
+      "above_upper": "Bool",
+      "below_lower": "Bool",
+      "excluded_upper": "Bool",
+      "invalid_bounds": "Bool",
+      "within_range": "Bool"
+    },
+    "type": "Record"
+  },
+  "program_id": "range-predicate",
+  "program_version": "0.1.0-local",
+  "purpose": "Decide inclusive interval membership, identify reversed bounds, and expose an editable upper-endpoint policy",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "within_range",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "invalid_bounds",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "below_lower",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "above_upper",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+      "name": "excluded_upper",
+      "type": "Bool"
+    }
+  ],
+  "result_type_id": "1f3313783aa887c0937203d349746732e2d2b9412f831b0e9e88fefe74bd221c",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "scripts/probe_range_catalog.py::range_oracle",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Range Predicate",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "constant": "exclude_upper_endpoint",
+    "evidence": "evidence/catalog/range-predicate-v1.json",
+    "example_value": true,
+    "initial_value": false,
+    "operation": "replace_named_constant"
+  }
+}

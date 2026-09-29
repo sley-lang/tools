@@ -1,0 +1,75 @@
+{
+  "additional_native_syntax_cases": [
+    "boolean-branches",
+    "if-expression",
+    "multiply",
+    "negate"
+  ],
+  "contract": "sley-tools.python-importer-probe.v1",
+  "core_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "differential_cases": 219,
+  "examples": [
+    {
+      "accepted_root": "a48444e8018ed60b6729a1efd2cea4ffd118b0a353d04b406b4ab909539a4204",
+      "artifact_sha256": "9065d7a6240d627ceac6acf4a11834ab7e8b8ad01e9569b3d11e27734d58310d",
+      "differential_cases": 21,
+      "domain_sha256": "2363d43baa9327f48b1d48274d98efe48262207c031c48abc947859824f67f7e",
+      "generated_domain_cases": 2,
+      "isolated_reference": "bubblewrap networkless runtime-only mounts",
+      "name": "range",
+      "source_sha256": "8ecf1d338ad7e62d0b80d39e526fe63c5f33af23bff2578e64688431244c2093"
+    },
+    {
+      "accepted_root": "f6afbdf06065a5ab6d0651cae17cc79f8beaf59d70da7d85694dce04b73a0b7b",
+      "artifact_sha256": "acb0d24ca7aa1e5e8a96062cc808edf2c1dcc345a5af7cb48becd66c07d5ee5c",
+      "differential_cases": 41,
+      "domain_sha256": "666e32f4457999f6490b7eac083d481bda31d787cef2b47705d76a343e380d29",
+      "generated_domain_cases": 2,
+      "isolated_reference": "bubblewrap networkless runtime-only mounts",
+      "name": "clamp",
+      "source_sha256": "18655f65204a436188e3ff08cea2f34b2816152fd5ee1db6c2dce0a046977102"
+    },
+    {
+      "accepted_root": "3d529b11f0d3c981ee1903ed062ad95d102dd93d695b900995916f82243047b0",
+      "artifact_sha256": "fd546e5470dd5bb56e12b780df54d89f606715dcf0b38b1726227eecf08afa4e",
+      "differential_cases": 56,
+      "domain_sha256": "4d055e176261964eb413700ac38a725015380f5a20360aa418d2e1966e702348",
+      "generated_domain_cases": 4,
+      "isolated_reference": "bubblewrap networkless runtime-only mounts",
+      "name": "quota",
+      "source_sha256": "a8954e097267c53e58e3c43047de7a245cb08c6e21bf524595071e8f6598eeae"
+    },
+    {
+      "accepted_root": "6898acf8d67d48d3323cf922d8c846ff18ff0535ace8b14e9a264d267ea7c286",
+      "artifact_sha256": "9c7556d5da63d9fb9983c259cc2fc04625bc67112dfcd7f23481bad00e3e098c",
+      "differential_cases": 101,
+      "domain_sha256": "7305acfc58194932bfb1114b849c463d805f23796e1bc426218ae7e783d99714",
+      "generated_domain_cases": 2,
+      "isolated_reference": "bubblewrap networkless runtime-only mounts",
+      "name": "tier",
+      "source_sha256": "b475797e8fc410d2fca40db3e245d228227437d1be6f513e2a9d439299266b17"
+    }
+  ],
+  "importer_sha256": "905b7b58c08e1e6e389efeda5ff87d9d291c8df6dfb1e7ca43e3cb8a83675fd2",
+  "missing_domain_rejected": true,
+  "named_adapter_native_edit_and_source_binding": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_domain_guard_verified": true,
+  "native_edit_without_reimport": {
+    "after_root": "3baf603590ed4f6f57bae352545502744e75d0f55e03fa9c5fbf68ad13bfecc8",
+    "artifact_sha256": "d6f4f4400188cf6805527e0ae344a4178e591710c087e275c6a9727afb6f753c",
+    "before_root": "6898acf8d67d48d3323cf922d8c846ff18ff0535ace8b14e9a264d267ea7c286"
+  },
+  "native_run_without_pythonpath": true,
+  "probe_sha256": "94b1c6336e3cbb76127c1c49b52da63cda68b56b41426eb8e3162300724de19a",
+  "result": "PASS",
+  "source_never_executed_during_import": true,
+  "tools_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2",
+  "unsafe_arithmetic_rejected": true,
+  "unsupported_rejections": [
+    "call",
+    "truthiness",
+    "nested-arithmetic",
+    "missing-return"
+  ]
+}

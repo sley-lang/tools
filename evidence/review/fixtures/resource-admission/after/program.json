@@ -1,0 +1,102 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-program-artifact.v0",
+    "path": "artifact/after-review.json",
+    "sha256": "cf86bac6304c682af36b1813d7c6cfaf2899f09de13e709a858e875ae9e422ca"
+  },
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "87ebedc29ed3b0cf0dd6799f7fccff235b2dd96bb33f3b9f52827eb8fcf9221a",
+    "name": "evaluate",
+    "state_root": "baaf3f814cbba75422d6e5445e8b545c64c13fe01adb9261426683da174acd59"
+  },
+  "host_responsibility": "typed input validation, local workspace lifecycle, and presentation",
+  "imported_source_artifact": {
+    "contract": "sley-tools.native-program-artifact.v0",
+    "path": "artifact/before-review.json",
+    "sha256": "6192f536af2f05236ffa44eb0ed1b37bc49049a2b3ea9303f04c3e613fe515fe"
+  },
+  "inputs": {
+    "available_memory_mib": "SInt64 0..9223372036854775807",
+    "available_workers": "SInt64 0..9223372036854775807",
+    "requested_memory_mib": "SInt64 0..9223372036854775807",
+    "requested_workers": "SInt64 0..9223372036854775807"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "signed comparisons; exact memory fit requires spare capacity",
+  "output": {
+    "fields": {
+      "allow": "Bool",
+      "available_memory_mib": "SInt64",
+      "insufficient_memory": "Bool",
+      "insufficient_workers": "Bool",
+      "invalid_capacity": "Bool",
+      "invalid_request": "Bool",
+      "requested_memory_mib": "SInt64"
+    },
+    "type": "Record"
+  },
+  "program_id": "resource-admission",
+  "program_version": "0.1.1-local",
+  "purpose": "Decide whether a requested bounded job fits supplied worker and memory capacity",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "allow",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "invalid_request",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "invalid_capacity",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "insufficient_workers",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+      "name": "insufficient_memory",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0606060606060606060606060606060606060606060606060606060606060606",
+      "name": "requested_memory_mib",
+      "type": "SInt64"
+    },
+    {
+      "member_id": "0707070707070707070707070707070707070707070707070707070707070707",
+      "name": "available_memory_mib",
+      "type": "SInt64"
+    }
+  ],
+  "result_type_id": "6ae474f5ef935ff9dd40d120d79864fa2f50d3cb57db4b73302c0342a437444e",
+  "source_provenance": {
+    "builder": "crates/backend/src/resource.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "crates/backend/src/bin/sley_tools/starter.rs::test_resource",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Resource Admission",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "example_require_memory_spare": true,
+    "initial_require_memory_spare": false,
+    "operation": "replace exact memory capacity comparison under old-object precondition"
+  }
+}

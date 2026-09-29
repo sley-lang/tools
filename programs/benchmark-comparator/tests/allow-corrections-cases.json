@@ -1,0 +1,333 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {
+      "id": "all-zero",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "0"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": false,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "mixed-cpu-regression",
+      "input": [
+        "100",
+        "90",
+        "200",
+        "220",
+        "1000",
+        "999"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "-10"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "20"
+        },
+        "cpu_regressed": true,
+        "archive_delta_bytes": {
+          "ok": "-1"
+        },
+        "archive_regressed": false,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "zero-baselines",
+      "input": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "1"
+        },
+        "wall_regressed": true,
+        "cpu_delta_us": {
+          "ok": "1"
+        },
+        "cpu_regressed": true,
+        "archive_delta_bytes": {
+          "ok": "1"
+        },
+        "archive_regressed": true,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "max-increase",
+      "input": [
+        "0",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "9223372036854775807"
+        },
+        "wall_regressed": true,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "max-decrease",
+      "input": [
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "-9223372036854775807"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": false,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "archive-only-regression",
+      "input": [
+        "100",
+        "90",
+        "200",
+        "190",
+        "1000",
+        "1001"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "-10"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "-10"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "1"
+        },
+        "archive_regressed": true,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-domain",
+      "input": [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "1"
+        },
+        "wall_regressed": true,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "overflow",
+      "input": [
+        "-1",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "error": {
+            "code": 1
+          }
+        },
+        "wall_regressed": true,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "minimum-boundary-overflow",
+      "input": [
+        "-9223372036854775808",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "error": {
+            "code": 1
+          }
+        },
+        "wall_regressed": true,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-cpu",
+      "input": [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "0"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "1"
+        },
+        "cpu_regressed": true,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-archive",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "0"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "1"
+        },
+        "archive_regressed": true,
+        "any_regression": true,
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-candidate",
+      "input": [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "wall_delta_us": {
+          "ok": "-1"
+        },
+        "wall_regressed": false,
+        "cpu_delta_us": {
+          "ok": "0"
+        },
+        "cpu_regressed": false,
+        "archive_delta_bytes": {
+          "ok": "0"
+        },
+        "archive_regressed": false,
+        "any_regression": false,
+        "invalid_input": false
+      }
+    }
+  ]
+}

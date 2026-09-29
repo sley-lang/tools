@@ -1,0 +1,11 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "zero-preserved", "input": ["0"], "expected": true},
+    {"id": "old-boundary-preserved", "input": ["10"], "expected": true},
+    {"id": "changed-boundary", "input": ["11"], "expected": true},
+    {"id": "new-boundary", "input": ["12"], "expected": true},
+    {"id": "first-excluded", "input": ["13"], "expected": false},
+    {"id": "maximum-preserved", "input": ["4294967295"], "expected": false}
+  ]
+}

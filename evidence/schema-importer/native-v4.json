@@ -1,0 +1,377 @@
+{
+  "contract": "sley-tools.schema-importer-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "exact_number_sweep_cases": 512,
+  "importer_sha256": "a92d0c15c92b607186551fec14f705fa15bf130d8d59451a66d7250e45d63400",
+  "incompatible_core_rejected": true,
+  "maximum_record": {
+    "accepted_state_root": "1bd6cc97556492e14ddb6dada31059aac397c46fe6742aadac2da85d233d8bd4",
+    "artifact_sha256": "fa0fc2da285644593e65be1ab386cf08ff322071203195df6dd4bb0c4f211a41",
+    "cases": [
+      {
+        "case": "valid",
+        "native_value_hash": "b1c573b892e340202e4c1f343f4cb9af214628f975d0179be1ea7efb81f2e0c8",
+        "reasons": [],
+        "valid": true
+      },
+      {
+        "case": "integral-decimal",
+        "native_value_hash": "b1c573b892e340202e4c1f343f4cb9af214628f975d0179be1ea7efb81f2e0c8",
+        "reasons": [],
+        "valid": true
+      },
+      {
+        "case": "missing",
+        "native_value_hash": "d76deab87c4cb990cf0d432f6dfd2208c403da8a6e0302b47780200b91dac9ab",
+        "reasons": [
+          "p2_missing"
+        ],
+        "valid": false
+      },
+      {
+        "case": "extra",
+        "native_value_hash": "27a11b537bd209021305823d5d3376891655eb52ec606ecdd07f14f3d60af30e",
+        "reasons": [
+          "extra_properties"
+        ],
+        "valid": false
+      },
+      {
+        "case": "wide",
+        "native_value_hash": "86c8ca6c70ab609348980995bba84fd671322be957d321f231a49468f90a86a9",
+        "reasons": [
+          "p1_outside_native_range"
+        ],
+        "valid": false
+      }
+    ],
+    "escaped_pointer": "/properties/a~1b~0c",
+    "parameter_count": 14,
+    "result_field_count": 15
+  },
+  "native": {
+    "copied_state_root": "5006cf3a4a62524f5659d225995ecc313faa677e171cf3b62a9a8f5aa395b974",
+    "edited_artifact_sha256": "d6d28867055526cd417d35ba80b13f02803ccaf2353c6e725bdf6e3436863718",
+    "edited_state_root": "72df86ee28253d5286590c11b93a6e04c52d760ccdf5d4ec12d8ed882e5532e8",
+    "normal_constant_edit": "sley-tools.edit.v0",
+    "source_artifact_sha256": "e32f2690e319823341c918219b48fb700f275d6ed9186aa05cf6b05ca6843d0b",
+    "source_state_root": "dfd6bd2c626bef3f74e88fe460770f1822f4fbc6603a56995958379f167ad044"
+  },
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "object_cases": [
+    {
+      "case": "valid-min",
+      "native_value_hash": "a4003d55c12b046a57b1e0c291bdf6f30a9e6a3a324da4ba9bcfd31033bf61a7",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "valid-max",
+      "native_value_hash": "a4003d55c12b046a57b1e0c291bdf6f30a9e6a3a324da4ba9bcfd31033bf61a7",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "integral-decimal",
+      "native_value_hash": "a4003d55c12b046a57b1e0c291bdf6f30a9e6a3a324da4ba9bcfd31033bf61a7",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "integral-exponent",
+      "native_value_hash": "a4003d55c12b046a57b1e0c291bdf6f30a9e6a3a324da4ba9bcfd31033bf61a7",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "missing",
+      "native_value_hash": "dd9f090de4843682e0ad9aeb1f7bfaec0a14f3b37e8a6d7dc493b70c9c7002d3",
+      "reasons": [
+        "p1_missing"
+      ],
+      "valid": false
+    },
+    {
+      "case": "extra",
+      "native_value_hash": "3c315cbecc72a4d490ff7aade851e77490ea58bd947f8dcfca2c6bc9c2b2f215",
+      "reasons": [
+        "extra_properties"
+      ],
+      "valid": false
+    },
+    {
+      "case": "wrong-root",
+      "native_value_hash": "15ca84568ffb8d0a6dd6911181fd15279536c2a6f978479bf1c7475e28e18994",
+      "reasons": [
+        "wrong_root"
+      ],
+      "valid": false
+    },
+    {
+      "case": "boolean-as-integer",
+      "native_value_hash": "98e08ccb4da62d97810536b0d0cb69f92924f11e8c6f20b449d17e94f9a88ae0",
+      "reasons": [
+        "p1_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "fractional",
+      "native_value_hash": "98e08ccb4da62d97810536b0d0cb69f92924f11e8c6f20b449d17e94f9a88ae0",
+      "reasons": [
+        "p1_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "string-as-integer",
+      "native_value_hash": "98e08ccb4da62d97810536b0d0cb69f92924f11e8c6f20b449d17e94f9a88ae0",
+      "reasons": [
+        "p1_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "wrong-boolean",
+      "native_value_hash": "961dfe8a1d8cf0ef1842156cb3462d9eedb3c4bd5ab3ca5d0a8b329438c8e1fe",
+      "reasons": [
+        "p0_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "below-min",
+      "native_value_hash": "9518c8d67ab72c518d9c97ffc43db415534ebdff678ece2ec132ba66e5f9ecf1",
+      "reasons": [
+        "p1_out_of_bounds"
+      ],
+      "valid": false
+    },
+    {
+      "case": "above-max",
+      "native_value_hash": "9518c8d67ab72c518d9c97ffc43db415534ebdff678ece2ec132ba66e5f9ecf1",
+      "reasons": [
+        "p1_out_of_bounds"
+      ],
+      "valid": false
+    },
+    {
+      "case": "outside-i64",
+      "native_value_hash": "24e3b0381ebbb87a4978dc81d02cefb5cf305af92cf4331887876ae60bd7b905",
+      "reasons": [
+        "p1_outside_native_range"
+      ],
+      "valid": false
+    },
+    {
+      "case": "zero-huge-exponent",
+      "native_value_hash": "a4003d55c12b046a57b1e0c291bdf6f30a9e6a3a324da4ba9bcfd31033bf61a7",
+      "reasons": [],
+      "valid": true
+    }
+  ],
+  "parser_rejections": [
+    "duplicate-key",
+    "malformed",
+    "oversized",
+    "too-deep",
+    "too-many-keys"
+  ],
+  "probe_sha256": "0d91369af603fb5b3f52daec2bd0517f4523caa09f2ba63a4d614a31d5add432",
+  "profile": "json-schema-records-v1",
+  "raw_input_failures": [
+    {
+      "case": "malformed",
+      "code": "ST_INPUT_INVALID"
+    },
+    {
+      "case": "duplicate-key",
+      "code": "ST_INPUT_INVALID"
+    },
+    {
+      "case": "oversized",
+      "code": "ST_RESOURCE_LIMIT"
+    }
+  ],
+  "reference": {
+    "decoder": "json.loads with Decimal for integers and fractions; integer type checker accepts finite integral Decimal",
+    "draft": "2020-12",
+    "library": "jsonschema",
+    "version": "4.25.1"
+  },
+  "requirements_dev_sha256": "02fccaea494f92907e57c3927f509a6f778d02ca91f6411598a2becb005ef0fa",
+  "result": "PASS",
+  "scalar_profiles": [
+    {
+      "accepted_state_root": "bef2dd734f558c4b5ef43a86f75f9dcedc0edc4507339896894dfc663bc7e83a",
+      "artifact_sha256": "7396ec9074a57f177f4b638ba54befc342b20d41cb2398139251952f83af1630",
+      "cases": [
+        {
+          "case": "true",
+          "native_value_hash": "7ad292313440aca32a136dae5d7b688d59e09945ffebd9379631fcf1799870a5",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "false",
+          "native_value_hash": "7ad292313440aca32a136dae5d7b688d59e09945ffebd9379631fcf1799870a5",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "wrong",
+          "native_value_hash": "efa6dcd1df221df18637547782c97c8be421d36c21fd40f1d8c08cf5ef247f3c",
+          "reasons": [
+            "wrong_type"
+          ],
+          "valid": false
+        }
+      ],
+      "profile": "boolean"
+    },
+    {
+      "accepted_state_root": "b580ea2f63373c41a63c6c96a506c32548f443bc41f783be40846423ca64a307",
+      "artifact_sha256": "a0432d755a1ee572c9cec356494f784c7561f9005b7d76ea962011b8396d98f3",
+      "cases": [
+        {
+          "case": "minimum",
+          "native_value_hash": "02bfbe195081049b1f9e8c604d12014b1e9cf75761bc55f55218a09af8843d3d",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "maximum",
+          "native_value_hash": "02bfbe195081049b1f9e8c604d12014b1e9cf75761bc55f55218a09af8843d3d",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "integral-decimal",
+          "native_value_hash": "02bfbe195081049b1f9e8c604d12014b1e9cf75761bc55f55218a09af8843d3d",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "integral-exponent",
+          "native_value_hash": "02bfbe195081049b1f9e8c604d12014b1e9cf75761bc55f55218a09af8843d3d",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "fraction",
+          "native_value_hash": "34efcd0362e24978567351b544d9102b1cd5c6bba7330791492a39ffc92390d7",
+          "reasons": [
+            "wrong_type"
+          ],
+          "valid": false
+        },
+        {
+          "case": "boolean",
+          "native_value_hash": "34efcd0362e24978567351b544d9102b1cd5c6bba7330791492a39ffc92390d7",
+          "reasons": [
+            "wrong_type"
+          ],
+          "valid": false
+        },
+        {
+          "case": "string",
+          "native_value_hash": "34efcd0362e24978567351b544d9102b1cd5c6bba7330791492a39ffc92390d7",
+          "reasons": [
+            "wrong_type"
+          ],
+          "valid": false
+        },
+        {
+          "case": "wide-positive",
+          "native_value_hash": "91ee5be398a048696845214acf9ea7181a601b34f89f042c7b9b73f7952e0bbf",
+          "reasons": [
+            "outside_native_range"
+          ],
+          "valid": false
+        },
+        {
+          "case": "wide-negative",
+          "native_value_hash": "91ee5be398a048696845214acf9ea7181a601b34f89f042c7b9b73f7952e0bbf",
+          "reasons": [
+            "outside_native_range"
+          ],
+          "valid": false
+        }
+      ],
+      "profile": "integer"
+    },
+    {
+      "accepted_state_root": "b1edf3b2c715ce7c1b4a0e495368019f507124339e25e3517af0ac5e398fbfd6",
+      "artifact_sha256": "5d7878fa9c763fb0699666ac0fab9c191d5fa0124b73860eb10224e82333190c",
+      "cases": [
+        {
+          "case": "empty",
+          "native_value_hash": "5094e9ef7464b556c74ae0fb7233be7f132e683f9ba03e6f40a3c365147953ed",
+          "reasons": [],
+          "valid": true
+        },
+        {
+          "case": "extra",
+          "native_value_hash": "fe69e07631977f6afe1745a936b148b28625df03ed49719ab75eadbcd0da346c",
+          "reasons": [
+            "extra_properties"
+          ],
+          "valid": false
+        },
+        {
+          "case": "wrong",
+          "native_value_hash": "941de64e5056574b77b8e3a16590a716cb732414e7ea13aa61bebe26134a3850",
+          "reasons": [
+            "wrong_root"
+          ],
+          "valid": false
+        }
+      ],
+      "profile": "empty-record"
+    }
+  ],
+  "schema_sha256": "f26085b56f0e4e0da3cffbd83bea3a87431a02a80cad52d51ad80645d49c4135",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+  "unsupported_schema_locations": [
+    {
+      "message": "root type must be boolean, integer, or object",
+      "pointer": "/type"
+    },
+    {
+      "message": "unsupported schema keyword 'pattern'",
+      "pointer": "/pattern"
+    },
+    {
+      "message": "integer bound must be integral and fit signed 64 bits",
+      "pointer": "/minimum"
+    },
+    {
+      "message": "integer bound must be integral and fit signed 64 bits",
+      "pointer": "/maximum"
+    },
+    {
+      "message": "required must list exactly every property once",
+      "pointer": "/required"
+    },
+    {
+      "message": "additionalProperties must explicitly be false",
+      "pointer": "/additionalProperties"
+    },
+    {
+      "message": "property type must be boolean or integer",
+      "pointer": "/properties/x/type"
+    },
+    {
+      "message": "unsupported schema keyword '$ref'",
+      "pointer": "/$ref"
+    },
+    {
+      "message": "only JSON Schema draft 2020-12 is supported",
+      "pointer": "/$schema"
+    },
+    {
+      "message": "root schema must be an object; literal true/false schemas are unsupported",
+      "pointer": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "contract": "sley-tools.review-action-pr-hosted.v1",
+  "result": "PASS_BOUNDED_REVIEW",
+  "repository": "sley-lang/tools",
+  "pull_request": 1,
+  "pull_request_draft": true,
+  "pull_request_head_sha": "ead0d8635b6a61125c8789248d6f942e23c5fade",
+  "pull_request_base_sha": "72a050a9dbc88140d6804a667fdea269123c5bb3",
+  "workflow_event": "pull_request",
+  "workflow_run_id": 36410811338,
+  "workflow_run_url": "https://github.com/sley-lang/tools/actions/runs/36410811338",
+  "workflow_conclusion": "success",
+  "workflow_permissions": {
+    "contents": "read"
+  },
+  "review_action_commit": "5c60a1499343f648918715026b3fb349810582af",
+  "uploaded_artifact_name": "sley-native-review-pr",
+  "uploaded_artifact_downloaded": true,
+  "uploaded_exit_code": 0,
+  "uploaded_files_sha256": {
+    "report.json": "2f5da790a74438a398d2dd0bcda6348bf5814cc794c36e5fbdd2e86f1d359192",
+    "status.json": "dc5ebf195ce076178d8b1a9aed6a24ad5d4c363aa941f709a14adb1b92f2ff80",
+    "verification.json": "aa4698ee3dc8b8d9b69f92e114a2e89d05aa469a45cb3dd585d4d31671549c5f",
+    "manifest-validation.json": "96b058f20828e7d6344d42ec7bda21e816d9cfd370176ce52be42ac5c32f3c47"
+  },
+  "before_manifest_sha256": "33c4ea9de6530c6fcc8eacb87a5db5fb5415773ee143530caeb161a5f1e63960",
+  "after_manifest_sha256": "fc92a6c8b533d70bff772a6d13e090e14e2ef67557844f38d5a540ae3e1977cc",
+  "before_artifact_sha256": "729c531a2e9a5daad242df5aeae8dc590fee90fe0418732ad1c2633b303e96b7",
+  "after_artifact_sha256": "141ecd4cca5abdab16474b78a0213e6eb8a478a464878f888c7c64f32289b1a8",
+  "manifest_schema_validation": "PASS_BOTH",
+  "core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "tools_binary_sha256": "9f7dea861612c864d5774e15bad29f5d37f102da2065988112faeecb294dfe94",
+  "executed_cases": 48,
+  "changed_cases": 24,
+  "exact_changed_entity_versions": 1,
+  "report_sha256": "2f5da790a74438a398d2dd0bcda6348bf5814cc794c36e5fbdd2e86f1d359192",
+  "report_recomputed_from_inputs": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "scope": "private-repository pull_request event, fresh manifest-bound Release Readiness fixture, read-only pinned Action, bounded native review and uploaded report; no native core test admission or public release"
+}

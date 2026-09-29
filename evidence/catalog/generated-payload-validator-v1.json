@@ -1,0 +1,136 @@
+{
+  "artifact_sha256": "cff347554d0b361d7cadcb9027aa70cd7bc9de8a9c1174a94d24e71d1f9d9823",
+  "catalog_sha256": "14164169aee05a0ace80b56c6d4b841359766eb7e78d90348dde408fc35a1e13",
+  "contract": "sley-tools.generated-validator-catalog-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "edit_candidate_id": "a47f25653c83cf1679dac4a77651d824128b9ea775b0abe82853b910bf30cd5b",
+  "edit_receipt_id": "3db1f0a9c2e8ac639e02e49d258fcbcc885d3a05b6844d2be063b6d3c0112636",
+  "edited_artifact_replayed": true,
+  "edited_cases_sha256": "52138b1afafe33e7c3426e6e33f6a7e15eed5eea5527e80d841ea27b3ed17d88",
+  "edited_root": "1135483b1e74c20e35c83a6655e39c93b36710775da08c23b0ab804ebdd2e05f",
+  "fresh_authoring_cases": 5,
+  "imported_root": "c7dfd7234b02bd39aaf31fe398c1381e042b4738fc7d261cc32f1b84e285af77",
+  "independently_checked_edited_cases": 18,
+  "independently_checked_initial_cases": 16,
+  "initial_observations": [
+    {
+      "case": "minimum",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "maximum",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "decimal-integer",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "exponent-integer",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "zero-large-exponent",
+      "reasons": [],
+      "valid": true
+    },
+    {
+      "case": "missing-active",
+      "reasons": [
+        "p0_missing"
+      ],
+      "valid": false
+    },
+    {
+      "case": "missing-count",
+      "reasons": [
+        "p1_missing"
+      ],
+      "valid": false
+    },
+    {
+      "case": "extra-field",
+      "reasons": [
+        "extra_properties"
+      ],
+      "valid": false
+    },
+    {
+      "case": "wrong-root",
+      "reasons": [
+        "wrong_root"
+      ],
+      "valid": false
+    },
+    {
+      "case": "boolean-as-integer",
+      "reasons": [
+        "p1_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "fractional",
+      "reasons": [
+        "p1_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "string-as-integer",
+      "reasons": [
+        "p1_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "wrong-boolean",
+      "reasons": [
+        "p0_wrong_type"
+      ],
+      "valid": false
+    },
+    {
+      "case": "below-minimum",
+      "reasons": [
+        "p1_out_of_bounds"
+      ],
+      "valid": false
+    },
+    {
+      "case": "above-maximum",
+      "reasons": [
+        "p1_out_of_bounds"
+      ],
+      "valid": false
+    },
+    {
+      "case": "outside-signed-range",
+      "reasons": [
+        "p1_outside_native_range"
+      ],
+      "valid": false
+    }
+  ],
+  "malformed_inputs_rejected": 2,
+  "manifest_sha256": "74ce9a837b2b7ca7e8013e958462808a226a571306fe8d44f16311d0f35513d6",
+  "mapping_sha256": "17cd0b4fef57533f8bf3f8f6c2bab96587e24902ef6637f885edb5600a56cf36",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_object_count": 51,
+  "probe_sha256": "56d27c8b5e075577ac6dc822b4f95f66d0eee0b122fbaba86308a5cb7fbb416c",
+  "python_example_sha256": "ee6f987d525569354e12da25f9f50774a7e2c493e9e3402bee83ed4d87202abb",
+  "python_native_example_passed": true,
+  "raw_cases_sha256": "ac96eab98f87a22e74b21e2a407b815ab599eedb3d8ce057878a84d3fbb2ad60",
+  "recipe_sha256": "f9fde8e7d039c529114addc62a878c730a14c1e9327f43baa866e942b89ac88d",
+  "replay_root": "3bd17338ed8f61fa4e2e5f6e29b186904179eb8e614222fea8100fffca451fae",
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "source_root": "89a361661cb92a4302706194b3f44af23841bb0b21d53055cb89e76e46a6d31c",
+  "source_schema_sha256": "f26085b56f0e4e0da3cffbd83bea3a87431a02a80cad52d51ad80645d49c4135",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+  "typed_cases_sha256": "a110b3ba05bb082a4ec45f593d6e375e21593168d29e2d6b5865597991af8498"
+}

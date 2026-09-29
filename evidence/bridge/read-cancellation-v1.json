@@ -1,0 +1,18 @@
+{
+  "artifact_sha256": "19e829206cb66469d103982490ffec339f466408e02da6dc7f7ecd1981dcbecb",
+  "contract": "sley-tools.bridge-read-cancellation-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "inflight_cancel_stopped_rpc_and_worker": true,
+  "invalid_cancel_input_rejected": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "pre_dispatch_preserved_session": true,
+  "python_probe_sha256": "2880805dcbbba07dff824744707534134eb178f33a40a25ccaef10be2491d6f9",
+  "python_sdk_sha256": "defbd59a95f624ec7be2de776bf2ad9b76f334c63eca5d14c0646f28bfec702b",
+  "read_only_calls_only": true,
+  "result": "PASS",
+  "tools_binary_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2",
+  "typescript_probe_sha256": "0cf7d1a19150a681d074602483b85c02ea6255d3ea479c55648cead5b49372a2",
+  "typescript_sdk_sha256": "8d47cac2c5005811dc1303b8dee4575d85980d20a38cad137c701081572ba390",
+  "typescript_types_sha256": "5aa2256e8a2328618c70bddc4f0ec77e01eaecc24d91795d07521c0afa46a6d2",
+  "write_cancel_rejected": true
+}

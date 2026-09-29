@@ -1,0 +1,23 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "numeric-echo",
+  "title": "Numeric Echo",
+  "purpose": "Exercise exact signed and unsigned native result transport",
+  "parameters": [
+    {"name": "signed", "value_type": "SInt64"},
+    {"name": "unsigned", "value_type": "UInt32"}
+  ],
+  "constants": [],
+  "result": {"kind": "record", "fields": [
+    {"name": "signed", "value_type": "SInt64"},
+    {"name": "unsigned", "value_type": "UInt32"}
+  ]},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "record_new", "name": "result", "fields": ["param.signed", "param.unsigned"]}
+    ],
+    "terminator": {"kind": "return", "value": "op.result"}
+  }]
+}

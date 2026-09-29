@@ -1,0 +1,16 @@
+{
+  "contract": "sley-tools.mcp-launcher-probe.v1",
+  "result": "PASS",
+  "tools_binary_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "adapter_sha256": "e5f0ae1a7e6dc870c930e3814f60005a7b3f108d31396b1d05750c278a2a650b",
+  "probe_entry_sha256": "772044313caea1245dfcdd5ec9b19d3f684f2136f6988a8c5c00d5d1a4474ffa",
+  "missing_adapter_rejected": true,
+  "missing_adapter_file_rejected": true,
+  "incomplete_review_rejected": true,
+  "tools_override_rejected": true,
+  "old_root": "7fd6bf6a7470ecbd2e6321afc7dea07eccced828a6ee61d37f9a3dd91af20b3e",
+  "new_root": "e79c330f3adbbf3bc5ed68dfaddb50afcb84e9d6cd4bbc4eabb0c0821161c521",
+  "native_boundary_changed": true,
+  "protocol_client_connected": true
+}

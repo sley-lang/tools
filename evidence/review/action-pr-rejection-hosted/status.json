@@ -1,0 +1,5 @@
+{
+  "contract": "sley-tools.ci-review-check.v1",
+  "reason": "python exited 1: manifest validation failed: artifact size or SHA-256 differs from manifest",
+  "result": "FAIL"
+}

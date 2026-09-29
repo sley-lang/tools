@@ -1,0 +1,45 @@
+{
+  "contract": "sley-tools.playground-local-probe.v0",
+  "result": "PASS",
+  "tools_binary_sha256": "8c7c7e140468695d51989ae4b38ede8ff81623f8c5a910f62ef266ae5fcf0b48",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "server_sha256": "6734deabc0e19daaef85bb73731c96a73e572b59cc267c90a119497c05674cc2",
+  "html_sha256": "8cf50b1008d714129189f79494de2b18bec2c8496dec1db773c65db943fe924c",
+  "client_sha256": "e96ea99abbc8f0fe1f705e9deb8881e7791c8823df13f8ea26649a5114392e99",
+  "style_sha256": "0bc78310493a447b536ed79578dc52e9f44934d186b9226e7c4dd1bc7605da76",
+  "probe_script_sha256": "0420896c35019848038774cc49cb0031fba2c9e94a9fca7ce9dbc5fa9563f440",
+  "examples": [
+    "release-readiness",
+    "benchmark-comparator",
+    "range-predicate"
+  ],
+  "release": {
+    "before_root": "72ee57fc29f6a79ea948844f8af292308aa5e16bb8a1b57634e1eb6956d6d57a",
+    "after_root": "970b0ee2535088814b319bc064b67339454a9f40e347ccae13bf2c62055d52dc",
+    "candidate_id": "ac0a82ed649a0800c9272580079aa4068abcf028f477955c24a49fd29dc8018a",
+    "receipt_id": "fe2f14e8e1a05471acaba9b66c4039ebf6fdbceb61906d0011aff225bd099b62",
+    "export": {
+      "sha256": "cdb2ae7b12fd4ffa15c467aea152e42ba5ad559392c7b36952c283427f7ef668",
+      "imported_root": "736e94c4cdc95aeb8067162b785483d6448469512b0ba1993dc5122958736ed4"
+    }
+  },
+  "comparator": {
+    "before_root": "99fb7c76d1a2ce1dffe2550913568aefebb5592af2c41ab36a1c950b0ce43c7c",
+    "after_root": "ccc266521fe75b2feb2354b97ad2937f4bac0f4eff4e407cbf9cea8673482c16",
+    "candidate_id": "a4828b474eb4afee2f2b74d3bab65efd26c781f3ea3a8ca5f93a96192a296854",
+    "receipt_id": "94801b5fadafafb3734bb583d96582584788447f7041ddbabdbf00341f27d5a6",
+    "export": {
+      "sha256": "14e991ca2ae8d024f039d169dee26c57e976e8766865f156338d8d9f8687b92a",
+      "imported_root": "acc7e189b9d26f0e0cc09b9a7e48d0a29c383050ec6bd0b235ffcfd223de77a6"
+    }
+  },
+  "range_root": "caf473da7dde5796c198eeebcb27698ba25c03a7e7bd176d07d4101d8e6b7bc6",
+  "ui_served": true,
+  "portable_export_replayed": true,
+  "origin_and_host_rejection": true,
+  "bounded_request_rejection": true,
+  "input_and_change_errors_distinguished": true,
+  "separate_session_cookies": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "hosted_ready": false
+}

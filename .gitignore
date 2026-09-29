@@ -1,0 +1,8 @@
+/target/
+/.venv/
+__pycache__/
+**/node_modules/
+/packages/python/build/
+/packages/python/*.egg-info/
+/evidence/compatibility/local-*.json
+/.playwright-cli/

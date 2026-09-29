@@ -1,0 +1,70 @@
+name: Sley native artifact review
+description: Validate and compare two manifest-bound Sley native packages on the pinned core
+inputs:
+  before:
+    description: Workspace-relative path to the before program.json
+    required: true
+  after:
+    description: Workspace-relative path to the after program.json
+    required: true
+  cases:
+    description: Workspace-relative path to the declared baseline case file
+    required: true
+  core-archive:
+    description: Optional workspace-relative path to the pinned Sley 2.0.1 archive
+    required: false
+    default: ''
+  artifact-name:
+    description: Name of the uploaded report artifact
+    required: false
+    default: sley-native-review
+outputs:
+  report-path:
+    description: Absolute path to the generated JSON report when review succeeds
+    value: ${{ steps.prepare.outputs.artifact-dir }}/report.json
+  evidence-path:
+    description: Absolute path to the uploaded evidence directory
+    value: ${{ steps.prepare.outputs.artifact-dir }}
+runs:
+  using: composite
+  steps:
+    - name: Prepare report directory
+      id: prepare
+      shell: bash
+      run: |
+        set -euo pipefail
+        directory="$(mktemp -d "$RUNNER_TEMP/sley-review.XXXXXX")"
+        printf 'artifact-dir=%s\n' "$directory" >> "$GITHUB_OUTPUT"
+    - name: Validate and review native packages
+      shell: bash
+      env:
+        SLEY_ACTION_ROOT: ${{ github.action_path }}
+        SLEY_BEFORE: ${{ inputs.before }}
+        SLEY_AFTER: ${{ inputs.after }}
+        SLEY_CASES: ${{ inputs.cases }}
+        SLEY_CORE_ARCHIVE: ${{ inputs.core-archive }}
+        SLEY_REPORT_DIR: ${{ steps.prepare.outputs.artifact-dir }}
+      run: |
+        set +e
+        python3 "$SLEY_ACTION_ROOT/check.py" > "$SLEY_REPORT_DIR/runner.log" 2>&1
+        result=$?
+        printf '%s\n' "$result" > "$SLEY_REPORT_DIR/exit-code"
+        exit 0
+    - name: Upload report and diagnostics
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ steps.prepare.outputs.artifact-dir }}
+        if-no-files-found: error
+    - name: Enforce review result
+      if: ${{ always() }}
+      shell: bash
+      env:
+        SLEY_REPORT_DIR: ${{ steps.prepare.outputs.artifact-dir }}
+      run: |
+        set -euo pipefail
+        test "$(cat "$SLEY_REPORT_DIR/exit-code")" = 0 || {
+          cat "$SLEY_REPORT_DIR/runner.log"
+          exit 1
+        }

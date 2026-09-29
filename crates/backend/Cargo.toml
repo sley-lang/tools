@@ -1,0 +1,32 @@
+[package]
+name = "sley-tools-backend"
+version = "0.0.1"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.145"
+sha2 = "=0.10.9"
+sley-check = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-id = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-mutate = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-policy = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-protocol = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-repo = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-scb1 = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-ssmc = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-tests = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-state-root = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-txn = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-vm = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+
+[[bin]]
+name = "sley-tools-native-builder"
+path = "src/main.rs"
+
+[[bin]]
+name = "sley-tools"
+path = "src/bin/sley-tools.rs"

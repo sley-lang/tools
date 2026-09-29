@@ -1,0 +1,243 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "quota-remaining",
+  "title": "Quota Remaining",
+  "purpose": "Compute nonnegative remaining quota, report exhaustion, and expose an editable usage notification threshold",
+  "parameters": [
+    {
+      "name": "limit",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "used",
+      "value_type": "SInt64"
+    }
+  ],
+  "constants": [
+    {
+      "name": "zero",
+      "value_type": "SInt64",
+      "value": "0"
+    },
+    {
+      "name": "notify_at_used",
+      "value_type": "SInt64",
+      "value": "8"
+    },
+    {
+      "name": "yes",
+      "value_type": "Bool",
+      "value": true
+    },
+    {
+      "name": "no",
+      "value_type": "Bool",
+      "value": false
+    }
+  ],
+  "result": {
+    "kind": "record",
+    "fields": [
+      {
+        "name": "remaining",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "exhausted",
+        "value_type": "Bool"
+      },
+      {
+        "name": "invalid_input",
+        "value_type": "Bool"
+      },
+      {
+        "name": "at_notification_level",
+        "value_type": "Bool"
+      }
+    ]
+  },
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "entry_zero",
+          "constant": "zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_limit",
+          "left": "param.limit",
+          "right": "op.entry_zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_used",
+          "left": "param.used",
+          "right": "op.entry_zero"
+        },
+        {
+          "op": "bool_or",
+          "name": "any_negative",
+          "left": "op.negative_limit",
+          "right": "op.negative_used"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.any_negative",
+        "if_true": "invalid",
+        "if_false": "check_exhaustion"
+      }
+    },
+    {
+      "name": "invalid",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "invalid_zero",
+          "constant": "zero"
+        },
+        {
+          "op": "result_ok",
+          "name": "invalid_remaining",
+          "operand": "op.invalid_zero"
+        },
+        {
+          "op": "constant_ref",
+          "name": "invalid_yes",
+          "constant": "yes"
+        },
+        {
+          "op": "constant_ref",
+          "name": "invalid_no",
+          "constant": "no"
+        },
+        {
+          "op": "record_new",
+          "name": "invalid_result",
+          "fields": [
+            "op.invalid_remaining",
+            "op.invalid_no",
+            "op.invalid_yes",
+            "op.invalid_no"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.invalid_result"
+      }
+    },
+    {
+      "name": "check_exhaustion",
+      "operations": [
+        {
+          "op": "greater_equal",
+          "name": "is_exhausted",
+          "left": "param.used",
+          "right": "param.limit"
+        }
+      ],
+      "terminator": {
+        "kind": "cond_branch",
+        "condition": "op.is_exhausted",
+        "if_true": "exhausted",
+        "if_false": "remaining"
+      }
+    },
+    {
+      "name": "exhausted",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "exhausted_zero",
+          "constant": "zero"
+        },
+        {
+          "op": "result_ok",
+          "name": "exhausted_remaining",
+          "operand": "op.exhausted_zero"
+        },
+        {
+          "op": "constant_ref",
+          "name": "exhausted_yes",
+          "constant": "yes"
+        },
+        {
+          "op": "constant_ref",
+          "name": "exhausted_no",
+          "constant": "no"
+        },
+        {
+          "op": "constant_ref",
+          "name": "exhausted_notify_level",
+          "constant": "notify_at_used"
+        },
+        {
+          "op": "greater_equal",
+          "name": "exhausted_notify",
+          "left": "param.used",
+          "right": "op.exhausted_notify_level"
+        },
+        {
+          "op": "record_new",
+          "name": "exhausted_result",
+          "fields": [
+            "op.exhausted_remaining",
+            "op.exhausted_yes",
+            "op.exhausted_no",
+            "op.exhausted_notify"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.exhausted_result"
+      }
+    },
+    {
+      "name": "remaining",
+      "operations": [
+        {
+          "op": "int_sub_checked",
+          "name": "remaining_amount",
+          "left": "param.limit",
+          "right": "param.used"
+        },
+        {
+          "op": "constant_ref",
+          "name": "remaining_no",
+          "constant": "no"
+        },
+        {
+          "op": "constant_ref",
+          "name": "remaining_notify_level",
+          "constant": "notify_at_used"
+        },
+        {
+          "op": "greater_equal",
+          "name": "remaining_notify",
+          "left": "param.used",
+          "right": "op.remaining_notify_level"
+        },
+        {
+          "op": "record_new",
+          "name": "remaining_result",
+          "fields": [
+            "op.remaining_amount",
+            "op.remaining_no",
+            "op.remaining_no",
+            "op.remaining_notify"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.remaining_result"
+      }
+    }
+  ]
+}

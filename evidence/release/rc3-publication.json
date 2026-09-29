@@ -1,0 +1,56 @@
+{
+  "adapter_archives_source_and_identity_verified": true,
+  "assets": {
+    "SHA256SUMS.txt": {
+      "bytes": 398,
+      "sha256": "332031f7da879d0a5f28b03a9b61cb2084e546ef5d803448faa497f404ae10cb"
+    },
+    "sley-lang-tools-0.0.1.tgz": {
+      "bytes": 16190,
+      "sha256": "9c266cc877cf5c6e7659219239f6d2eeec601524999e7148b81a2b9d4c4587be"
+    },
+    "sley-lang-tools-mcp-0.0.1.tgz": {
+      "bytes": 2838118,
+      "sha256": "ecbc72e792eb2f92195b28e9d076c7c6bec8ba356e30d83bfe6c43f1c97f8283"
+    },
+    "sley-tools-release-candidate-eca4888.tar.gz": {
+      "bytes": 7696050,
+      "sha256": "cda308c6f9e4df9a9c1c3aed697265f78ece40533a97eae79f8c6b715674d4bc"
+    },
+    "sley_tools-0.0.1-py3-none-any.whl": {
+      "bytes": 39555,
+      "sha256": "35d48fcbdd5a5aa9613af5e91952c31fa0541017d57617af8c9c907925524b80"
+    }
+  },
+  "contract": "sley-tools.github-prerelease-publication.v2",
+  "exact_asset_isolated_install": "PASS",
+  "exact_asset_isolated_install_evidence": "evidence/fresh-install/rc3-exact-assets-v1.json",
+  "exact_asset_isolation": "bubblewrap checkout-masked, private tmpfs, network namespace disabled, new workspace and caches",
+  "f0_acceptance": "OPEN_RELEASED_COMPATIBLE_CORE_AND_CLEAN_NATIVE_ADMISSION",
+  "installed_scoped_rpc_probe": "PASS",
+  "installed_scoped_rpc_probe_evidence": "evidence/bridge/rpc-portable-rc3-installed.json",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "published_at_utc": "2026-09-28T23:59:14Z",
+  "release_archive_file_count": 1381,
+  "release_archive_manifest_verified": true,
+  "release_draft": false,
+  "release_native_first_run_smoke": {
+    "doctor": "PASS",
+    "external_assertions": "PASS",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+    "native_project_created": true,
+    "ready_decision": true
+  },
+  "release_prerelease": true,
+  "release_url": "https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.3",
+  "remote_asset_digests_and_fresh_downloads_match_tested_bytes": true,
+  "repository": "sley-lang/tools",
+  "repository_visibility": "private",
+  "result": "PUBLISHED_PRIVATE_PRERELEASE",
+  "secret_material_recorded": false,
+  "selected_core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+  "selected_core_release": "v2.0.1",
+  "stable_release": false,
+  "tag": "v0.0.1-rc.3",
+  "tag_source_commit": "eca4888288a27d9b1e8c6b9339cf5f799915a191"
+}

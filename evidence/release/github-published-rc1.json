@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.github-prerelease-publication.v1",
+  "repository": "sley-lang/tools",
+  "repository_visibility": "private",
+  "tag": "v0.0.1-rc.1",
+  "tag_peeled_source_commit": "0db18fdcfcfa6de1b8d65b9a2fce396d12fd43d6",
+  "release_url": "https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.1",
+  "published_at_utc": "2026-09-28T11:00:01Z",
+  "release_draft": false,
+  "release_prerelease": true,
+  "asset_count": 4,
+  "asset_sha256_matches_staged_and_tested_set": true,
+  "staged_asset_record": "evidence/release/github-draft-rc1.json",
+  "installed_exact_asset_evidence": "evidence/fresh-install/exact-draft-assets-v1.json",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "stable_release": false,
+  "result": "PUBLISHED_PRIVATE_PRERELEASE"
+}

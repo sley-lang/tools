@@ -1,0 +1,51 @@
+{
+  "builder_binary_sha256": "2f9e53e36f746c1bdc1d9ac5cad22f7ca7ddf40f5d17d2f76f6a7271a4bad719",
+  "contract": "sley-tools.graph-artifact-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "edited_selector": {
+    "accepted_candidate_id": "8f667b7214b34e8e8f94d923004a040f2d34d856cea72bd287ec3fd7a5d63525",
+    "artifact_sha256": "5011b34f809eea6451f07b853b3e10c6ae1f28bd8bbae639d5ebd9f659a44f60",
+    "corrupt_native_object_rejected": true,
+    "existing_artifact_refused": true,
+    "imported_graph_reedited_root": "d82deb858b7716c81ee87673a46860d51fa1909a0e944d98e9edf12969332ca7",
+    "mismatched_recipe_rejected": true,
+    "object_count": 33,
+    "reexported_artifact_sha256": "68f4c916708fe0ab6dadb0e432cbf6733cf7fc20d8395c166a79973d1427be2f",
+    "reexported_graph_replayed": true,
+    "replayed_assertions": 9,
+    "replayed_root": "9f998d8de17dd79828682b8bc88b5ec23acefe41b52f5db9ed1d9a95ce0ba829",
+    "source_root": "43a3b795a8f7c8974a6278ff25c412ba704851537a8f69e032f540e1de2777be",
+    "unchanged_host_wrapper_selected_rows": 4
+  },
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "profiles": [
+    {
+      "artifact_sha256": "03ce23eb366cb4b273fc25219e8a2d3e5e4cdad146f27d67780b08ed7d5d700b",
+      "object_count": 20,
+      "program_id": "range-predicate",
+      "replayed_assertions": 8,
+      "replayed_root": "5d46e939ab3611d7d634e0bf57b537b00fd1bdd4f340333b9684c5c471855cea",
+      "source_root": "a0bcf24703695ebec8864b3f44c24150f99ce09804112df17d02799b21d2cafd"
+    },
+    {
+      "artifact_sha256": "dd426e46e020289a17bb7ef62a6027d54792690da1afb2d3027d1e27cf537853",
+      "object_count": 6,
+      "program_id": "numeric-echo",
+      "replayed_assertions": 3,
+      "replayed_root": "055252e4567743333e515988db5ce269c9a058194e8bee006d0cabb13d6c7b23",
+      "source_root": "3e6f8c61e416fa71fd3d2e39e3b7eb0e6f9a550efa634ccb6ac38c79640aaf2a"
+    },
+    {
+      "artifact_sha256": "9331646a05c059a95966aba4ca6a2d5eb5f951dfd760c95d94bfc82a6e619511",
+      "object_count": 33,
+      "program_id": "benchmark-summary-reducer",
+      "replayed_assertions": 10,
+      "replayed_root": "d1ddc03f966ebb49daae4fbc9e41f574db08fca3e375aa6bff6490db5f75b64f",
+      "source_root": "ae1014bdc00b9455dc3dac848c4b553801370e4fe2cb8082b820326588c8f6cb"
+    }
+  ],
+  "result": "PASS",
+  "sample_sha256": "fea9b01a5d7929d793184044146a51a58c735c826fb071dc97cc7731459c7aba",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50"
+}

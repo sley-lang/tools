@@ -1,0 +1,33 @@
+{
+  "candidate_source_commit": "eca4888288a27d9b1e8c6b9339cf5f799915a191",
+  "contract": "sley-tools.release-scoped-rpc-gate.v1",
+  "exact_asset_sha256": {
+    "core_archive": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+    "mcp": "ecbc72e792eb2f92195b28e9d076c7c6bec8ba356e30d83bfe6c43f1c97f8283",
+    "release_archive": "cda308c6f9e4df9a9c1c3aed697265f78ece40533a97eae79f8c6b715674d4bc",
+    "typescript": "9c266cc877cf5c6e7659219239f6d2eeec601524999e7148b81a2b9d4c4587be",
+    "wheel": "35d48fcbdd5a5aa9613af5e91952c31fa0541017d57617af8c9c907925524b80"
+  },
+  "full_local_report_sha256": "ab1080cfbb8df948fe8bb001b08a214564d81858739ca98f3320f85f8897b90a",
+  "installed_core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "installed_tools_binary_sha256": "aa4fdcecf58fc63ebc8786c40be5aec0958f02a806a1d6751d7bed120537ca86",
+  "limitations": [
+    "Core-owned native TestCase admission remains unavailable in the released Sley 2.0.1 core."
+  ],
+  "network_namespace_disabled": true,
+  "observed_at_utc": "2026-09-29T00:08:17Z",
+  "release_tag": "v0.0.1-rc.3",
+  "result": "PASS",
+  "scoped_rpc": {
+    "graph_changed_cases": 1,
+    "graph_changed_native_objects": 1,
+    "lost_import_reply_and_completion_record_recovered": true,
+    "release_readiness_changed_cases": 12,
+    "replay_external_assertions": 4,
+    "result": "PASS",
+    "scope_and_tamper_refusals": true,
+    "unscoped_methods_unavailable": true
+  },
+  "source_checkout_hidden": true,
+  "verification_harness_commit": "01cb0544ccf3ab69a8864985816527ab274c81a8"
+}

@@ -1,0 +1,230 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "benchmark-summary-reducer",
+  "title": "Benchmark Summary Reducer",
+  "purpose": "Combine two bounded benchmark summaries with native checked counts and totals",
+  "parameters": [
+    {
+      "name": "left_count",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "right_count",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "left_wall_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "right_wall_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "left_cpu_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "right_cpu_us",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "left_archive_bytes",
+      "value_type": "SInt64"
+    },
+    {
+      "name": "right_archive_bytes",
+      "value_type": "SInt64"
+    }
+  ],
+  "constants": [
+    {
+      "name": "zero",
+      "value_type": "SInt64",
+      "value": "0"
+    },
+    {
+      "name": "reject_negative_totals",
+      "value_type": "Bool",
+      "value": true
+    }
+  ],
+  "result": {
+    "kind": "record",
+    "fields": [
+      {
+        "name": "count",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "wall_total_us",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "cpu_total_us",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "archive_total_bytes",
+        "value_type": "CheckedSInt64"
+      },
+      {
+        "name": "invalid_input",
+        "value_type": "Bool"
+      }
+    ]
+  },
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {
+          "op": "constant_ref",
+          "name": "zero",
+          "constant": "zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_left_count",
+          "left": "param.left_count",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_right_count",
+          "left": "param.right_count",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_left_wall_us",
+          "left": "param.left_wall_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_right_wall_us",
+          "left": "param.right_wall_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_left_cpu_us",
+          "left": "param.left_cpu_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_right_cpu_us",
+          "left": "param.right_cpu_us",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_left_archive_bytes",
+          "left": "param.left_archive_bytes",
+          "right": "op.zero"
+        },
+        {
+          "op": "less_than",
+          "name": "negative_right_archive_bytes",
+          "left": "param.right_archive_bytes",
+          "right": "op.zero"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_any_1",
+          "left": "op.negative_left_count",
+          "right": "op.negative_right_count"
+        },
+        {
+          "op": "int_add_checked",
+          "name": "count",
+          "left": "param.left_count",
+          "right": "param.right_count"
+        },
+        {
+          "op": "int_add_checked",
+          "name": "wall_total_us",
+          "left": "param.left_wall_us",
+          "right": "param.right_wall_us"
+        },
+        {
+          "op": "int_add_checked",
+          "name": "cpu_total_us",
+          "left": "param.left_cpu_us",
+          "right": "param.right_cpu_us"
+        },
+        {
+          "op": "int_add_checked",
+          "name": "archive_total_bytes",
+          "left": "param.left_archive_bytes",
+          "right": "param.right_archive_bytes"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_metrics_1",
+          "left": "op.negative_left_wall_us",
+          "right": "op.negative_right_wall_us"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_metrics_2",
+          "left": "op.negative_metrics_1",
+          "right": "op.negative_left_cpu_us"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_metrics_3",
+          "left": "op.negative_metrics_2",
+          "right": "op.negative_right_cpu_us"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_metrics_4",
+          "left": "op.negative_metrics_3",
+          "right": "op.negative_left_archive_bytes"
+        },
+        {
+          "op": "bool_or",
+          "name": "negative_metrics_5",
+          "left": "op.negative_metrics_4",
+          "right": "op.negative_right_archive_bytes"
+        },
+        {
+          "op": "constant_ref",
+          "name": "reject_negatives",
+          "constant": "reject_negative_totals"
+        },
+        {
+          "op": "bool_and",
+          "name": "invalid_negative_totals",
+          "left": "op.negative_metrics_5",
+          "right": "op.reject_negatives"
+        },
+        {
+          "op": "bool_or",
+          "name": "invalid_input",
+          "left": "op.negative_any_1",
+          "right": "op.invalid_negative_totals"
+        },
+        {
+          "op": "record_new",
+          "name": "result",
+          "fields": [
+            "op.count",
+            "op.wall_total_us",
+            "op.cpu_total_us",
+            "op.archive_total_bytes",
+            "op.invalid_input"
+          ]
+        }
+      ],
+      "terminator": {
+        "kind": "return",
+        "value": "op.result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {
+      "id": "all-zero",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "selected": false,
+        "candidate_wall_us": "0",
+        "candidate_cpu_us": "0",
+        "candidate_archive_bytes": "0",
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "mixed-cpu-regression",
+      "input": [
+        "100",
+        "90",
+        "200",
+        "220",
+        "1000",
+        "999"
+      ],
+      "expected": {
+        "selected": true,
+        "candidate_wall_us": "90",
+        "candidate_cpu_us": "220",
+        "candidate_archive_bytes": "999",
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "zero-baselines",
+      "input": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "expected": {
+        "selected": true,
+        "candidate_wall_us": "1",
+        "candidate_cpu_us": "1",
+        "candidate_archive_bytes": "1",
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "max-increase",
+      "input": [
+        "0",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "selected": true,
+        "candidate_wall_us": "9223372036854775807",
+        "candidate_cpu_us": "0",
+        "candidate_archive_bytes": "0",
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "max-decrease",
+      "input": [
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "selected": false,
+        "candidate_wall_us": "0",
+        "candidate_cpu_us": "0",
+        "candidate_archive_bytes": "0",
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "archive-only-regression",
+      "input": [
+        "100",
+        "90",
+        "200",
+        "190",
+        "1000",
+        "1001"
+      ],
+      "expected": {
+        "selected": true,
+        "candidate_wall_us": "90",
+        "candidate_cpu_us": "190",
+        "candidate_archive_bytes": "1001",
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-domain",
+      "input": [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "selected": false,
+        "candidate_wall_us": "0",
+        "candidate_cpu_us": "0",
+        "candidate_archive_bytes": "0",
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "overflow",
+      "input": [
+        "-1",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "selected": false,
+        "candidate_wall_us": "9223372036854775807",
+        "candidate_cpu_us": "0",
+        "candidate_archive_bytes": "0",
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "minimum-boundary-overflow",
+      "input": [
+        "-9223372036854775808",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "selected": false,
+        "candidate_wall_us": "9223372036854775807",
+        "candidate_cpu_us": "0",
+        "candidate_archive_bytes": "0",
+        "invalid_input": true
+      }
+    }
+  ]
+}

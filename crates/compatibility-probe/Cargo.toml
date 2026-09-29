@@ -1,0 +1,21 @@
+[package]
+name = "sley-tools-compatibility-probe"
+version = "0.0.1"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+serde_json = "=1.0.145"
+sley-id = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-mutate = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-policy = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-scb1 = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-ssmc = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-state-root = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-vm = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+
+[[bin]]
+name = "f0-genesis-request"
+path = "src/main.rs"

@@ -1,0 +1,26 @@
+{
+  "adapter_sha256": "5b472eee4e1fc3021e642550fb92ee19b6d5dfabcb65d0cffbff693c21e84e8c",
+  "cases_sha256": "40a198e8ef6f7231ceced71be658bd0aa23a9399497c8d400e94be01fa3ac7ad",
+  "contract": "sley-tools.repair-lab-launcher-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "graph_sha256": "e32fd0c3cda3cca26b92b4c104d1aaa959ccc8a01204a1ebd99d7a66b0fc00cc",
+  "listed_exercises": [
+    "rl01",
+    "rl02",
+    "rl03",
+    "rl04",
+    "rl05",
+    "rl06",
+    "rl07",
+    "rl08"
+  ],
+  "missing_adapter_diagnostic": "ST_FEATURE_UNSUPPORTED",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "probe_sha256": "3f03e82e5d2ab5ab963eaf705f93555a83f0bf62116242e5231238e9d1d3184a",
+  "replayed_native_cases": 16,
+  "reset_preserved_notes": true,
+  "result": "PASS",
+  "solved_native_cases": 16,
+  "tools_binary_sha256": "3e1544905dc58ca96e1244c1417ca2701daa2a02f909dc0958a55e06baa3a01d",
+  "unfinished_check_exit": 1
+}

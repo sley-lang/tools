@@ -1,0 +1,51 @@
+{
+  "accepted_root_unchanged": true,
+  "builder_binary_sha256": "a8b6d67598dc21d1f14f6991574437e0eeeaf5f657d5b00e987033fbaf31e821",
+  "candidate_id": "6fc43f1af19e5f5e77c240e7a3ec000ec13a0466b084c975e89d9756704d73dd",
+  "candidate_validation_decision": 1,
+  "case_id": "zero",
+  "cli_candidate_id": "91983d53e65100ab9616b39dbfc75d9004549307789c513c9b44f2f7ebb2b35c",
+  "cli_static_candidate_validation": true,
+  "compatibility_status": "requires_core_change",
+  "contract": "sley-tools.f0-native-test-route-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "declared_limits": {
+    "call_depth": 8,
+    "effect_count": 0,
+    "fuel": 10000,
+    "memory_bytes": 16777216,
+    "output_bytes": 1024,
+    "wall_timeout_millis": 1000
+  },
+  "grant_ceilings": {
+    "max_effect_count": 0,
+    "max_fuel": 1000000,
+    "max_memory_bytes": 16777216,
+    "max_output_bytes": 1048576
+  },
+  "native_execution_profile_id": "392927d6c948b9a03a27b87f26ebfe08c65ddf4e831a18e1d82f02dc4abb0bf4",
+  "native_plan_id": "17bbea2c9f494b9d7ea14def65f7d04e870433e698ee5c1a6c7a5aee4057c9c4",
+  "native_plan_preflight": "CORE_LIBRARY_ONLY_NO_EXECUTION",
+  "native_plan_selected_test_count": 1,
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_test_route": "v3 tests.affected",
+  "native_test_route_failure": "NATIVE_EXECUTOR_UNAVAILABLE",
+  "negative_builder_checks": [
+    "expected type",
+    "input arity",
+    "stale base root"
+  ],
+  "negative_public_checks": [
+    "absent case",
+    "non-graph project"
+  ],
+  "passed_scope": "TestCase construction, core static validation, and honest native-route failure",
+  "result": "PASS",
+  "source_sha256": {
+    "examples/graph/fixed-limit-cases.json": "f1d096e39ccd0be0426a4ca4932363495539e01c6c6f0846f99ac6828c325f33",
+    "examples/graph/fixed-limit.json": "4c0a9332d78943d3023b6344e4e700604efac87b8079165a88ab92fa2c6c4ad7",
+    "scripts/probe_native_test_route.py": "42723dd8226c58d56da06fda49100d059c487d164c07ae0f5058e879d6b56bfd"
+  },
+  "test_entity_id": "b632c4b8e9bc4550bd716a3406fb5ece4d7171b0dba00c0129489d701aafef08",
+  "tools_binary_sha256": "dfb5562e7e93ba4f3db16d381e95c8526f6338058fd549ee7b1f412637692bbf"
+}

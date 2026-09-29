@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Device reading",
+  "type": "object",
+  "properties": {
+    "active": {"type": "boolean"},
+    "count": {"type": "integer", "minimum": 0, "maximum": 10}
+  },
+  "required": ["active", "count"],
+  "additionalProperties": false
+}

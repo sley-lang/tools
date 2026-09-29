@@ -1,0 +1,24 @@
+{
+  "archive_bytes": 7644773,
+  "archive_manifest_verified": true,
+  "archive_name": "sley-tools-release-candidate-0db18fd.tar.gz",
+  "archive_sha256": "9ff3fc6a24b6018299a12bab484e123b22250a0b2f046130f75e8d647338fa9f",
+  "builder_binary_sha256": "60310b6c2cc67d6c8fbfe3f47640ff738c2259ba2395e255344df589fac1e2e2",
+  "contract": "sley-tools.release-candidate-probe.v1",
+  "core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+  "manifest_sha256": "8e47e82d04cc813b6a7a860e6f048b32da4e1828d5826e81301c17ba9ce9f68b",
+  "package_file_count": 1376,
+  "private_path_and_secret_marker_scan": "PASS",
+  "public_release_status": "NOT_PUBLISHED",
+  "result": "PASS",
+  "smoke": {
+    "doctor": "PASS",
+    "external_assertions": "PASS",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+    "native_project_created": true,
+    "ready_decision": true
+  },
+  "source_commit": "0db18fdcfcfa6de1b8d65b9a2fce396d12fd43d6",
+  "source_dirty": false,
+  "tools_binary_sha256": "1741ca80c5fb0c0562ed8a55655c44d15cfa0805ad54f7860ccc9dced34ce906"
+}

@@ -1,0 +1,71 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "1a835e5e6883daad85bea7bce502f140630a0cd0dcd4e6b9ea5d10470186ea7e"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "8e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c046",
+    "name": "evaluate",
+    "state_root": "7b60817c967feb9dfe3c372a98573d614216dc351464f6c22141ec79f83131a0"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "a1e3589a7c737413cc9a25c9e2a138c4ad70b4e82d4b7572439df50e720a4031"
+  },
+  "host_responsibility": "decode one signed input, manage the local workspace, and compare public expected results",
+  "inputs": {
+    "value": "SInt64"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "native threshold-order check and bronze/silver/gold branch decisions with an editable middle-tier gate",
+  "output": {
+    "fields": {
+      "invalid_configuration": "Bool",
+      "tier": "SInt64"
+    },
+    "type": "Record"
+  },
+  "program_id": "tier-classifier",
+  "program_version": "0.1.0-local",
+  "purpose": "Classify any signed value into bronze, silver, or gold with ordered editable thresholds and an explicit invalid-configuration result",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "tier",
+      "type": "SInt64"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "invalid_configuration",
+      "type": "Bool"
+    }
+  ],
+  "result_type_id": "98d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "scripts/probe_tier_catalog.py::tier_oracle",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Tier Classifier",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "constant": "bronze_max",
+    "evidence": "evidence/catalog/tier-classifier-v1.json",
+    "example_value": "12",
+    "initial_value": "10",
+    "operation": "replace_named_constant"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "affected_report": {
+    "match_count": 1,
+    "mismatch_count": 0,
+    "plan_id": "7f0f60f53e580826d25afd141bc8df375200bd7b87fbeddf48ad2b4025c1d1f0",
+    "proposed_root": "92a4fcbbf48e923727708c4038b2d111b68b051780730edf3a50cb84faa3a44b",
+    "rejected_count": 0,
+    "report_id": "1b13561c309f005599662ccfcd70888ff9248a62942cc03f2ebdf6fb23623ca4",
+    "stored_sha256": "40a23666ec7e98de5494b994cade00ebeea5684954916d6adb41c1005ed6c1a3",
+    "test_entity_id": "9609927199737a176935a239df08646781d1d2105170cedd3f9996edde702a4d"
+  },
+  "authority_plan_sha256": "bcce662dc78d127a4c7fd526f8676e8bb94239ce162b3fc66829d4264efc8bda",
+  "candidate_id": "548dc285d2e08c45eb1a13c7589e113cdd3cf8b2b9d192a5fd6a0f476785e196",
+  "candidate_sha256": "dbb827db3188fd76b5931ace7765ffd08a5f8849d2ba2f889d5f134f76bfad6b",
+  "commit_receipt_id": "1951a654628f7aae00289ba1e7337273158abcf34cc511235d9019467fcd3a90",
+  "committed_root": "92a4fcbbf48e923727708c4038b2d111b68b051780730edf3a50cb84faa3a44b",
+  "contract": "sley-tools.f0-authorized-native-test-probe.v0",
+  "core_sha256": "c7fb7e30aa21e2cf0b79fc8565f853bb41565a98dad13534613d25bfea6e74cb",
+  "host_enforcement_qualification": "NOT_RUN_BY_THIS_PROBE",
+  "invalid_selection_symbol": "NATIVE_TEST_SELECTION_INVALID",
+  "native_test_admission": "PASS_CONFIGURED_ROUTE_PENDING_HOST_QUALIFICATION",
+  "original_root": "c2e6542abcc07e4a3d70019d1329855cd480e3227acb6b7d36f1a6d33cb54a68",
+  "receiver_config_sha256": "0de151ea3e23840c682af0ad05b289cf21cc6b160afff64d6166e2eaceeccefc",
+  "result": "PASS",
+  "selected_report": {
+    "match_count": 1,
+    "mismatch_count": 0,
+    "plan_id": "c81d80f56db0ff9e16e074fcb89e8df3d201f32ca6c12cb0007697d1f387ba56",
+    "proposed_root": "92a4fcbbf48e923727708c4038b2d111b68b051780730edf3a50cb84faa3a44b",
+    "rejected_count": 0,
+    "report_id": "af41a1fa77a12878af27301cd79138688e28c1102a149175cc106fd864e6075c",
+    "stored_sha256": "391722dbb51d7f82ae7290e7b8aadb22afa9ea45d36aaa3f093fe3ba548f4348",
+    "test_entity_id": "9609927199737a176935a239df08646781d1d2105170cedd3f9996edde702a4d"
+  },
+  "source_fixture_unchanged": true,
+  "stage_manifest_sha256": "e78252006ae2ebd6da174bfb4569a6a095b5b29f0cf0cf953c54dae5d7bd3564",
+  "test_entity_id": "9609927199737a176935a239df08646781d1d2105170cedd3f9996edde702a4d",
+  "workspace_id": "76060002a7296fb17b90fc1bb076888999f5d232c45cb290a9d33a781e52152c"
+}

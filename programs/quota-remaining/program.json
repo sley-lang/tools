@@ -1,0 +1,84 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "986db6f6d4f412dfcc2287d934a21390954bbd00381dc177c5efc6e2a7214bf2"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "29b5c1c047aef1c2be1c4eebfd8cb4a31193ae29f050c1b79789649951de1c20",
+    "name": "evaluate",
+    "state_root": "e99c2abf2dc6592c8b59dff0fda571c2f9261b7fdc709a969ecbfcc4db676137"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "6652ee903ca10b01edc0a713c82a5658ab06bcb6226feebc9a90efbf57b580d3"
+  },
+  "host_responsibility": "decode typed signed inputs, manage the local workspace, and compare public expected results",
+  "inputs": {
+    "limit": "SInt64",
+    "used": "SInt64"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "reject negative inputs, branch on exhaustion before safe checked subtraction, and report an editable usage notification threshold",
+  "output": {
+    "fields": {
+      "at_notification_level": "Bool",
+      "exhausted": "Bool",
+      "invalid_input": "Bool",
+      "remaining": "CheckedSInt64"
+    },
+    "type": "Record"
+  },
+  "program_id": "quota-remaining",
+  "program_version": "0.1.0-local",
+  "purpose": "Compute nonnegative remaining quota, report exhaustion, and expose an editable usage notification threshold",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "remaining",
+      "type": "CheckedSInt64"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "exhausted",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "invalid_input",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "at_notification_level",
+      "type": "Bool"
+    }
+  ],
+  "result_type_id": "6ceddf2eaa92c0f5749fd270a3a4c0bab2ade700918dd64bd3f1644b01f06c79",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "scripts/probe_quota_catalog.py::quota_oracle",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Quota Remaining",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "constant": "notify_at_used",
+    "evidence": "evidence/catalog/quota-remaining-v1.json",
+    "example_value": "6",
+    "initial_value": "8",
+    "operation": "replace_named_constant"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "contract": "sley-tools.playground-commit-recovery-probe.v1",
+  "result": "PASS",
+  "tools_source_commit": "f377e4233b79528692da215f4c2421a46a317e60",
+  "tools_source_dirty": false,
+  "tools_binary_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "server_sha256": "9c906476ab30bf6b81960f6acf445cf9b92af159ea45f2ef6097f88a95442c0a",
+  "client_sha256": "bdf091364d8d15ae1128daf605c22d83c83af5ae0afae1d7c12b3655a32a3500",
+  "probe_sha256": "b33811ff841c0598171a1231d15c035f254a549faaed2415cac63d4aaf7cc72c",
+  "completed": {
+    "timeout_after_actual_native_commit": true,
+    "candidate_id": "6dc527f073e782d93df908ab623c1a92a8db43e26c8ca62d1cc3c31f4dfd952c",
+    "receipt_id": "97115e830b68f8445b83f5f63eda6916f0bc00bec5c01bac5bdd3779c5876204",
+    "initial_root": "a99e3c1c27f8998cdb10f5d0f6261366c36c048c2c412881a28f155b7223cc1c",
+    "committed_root": "3b524feb69222db9b810831273b16aaec8c3aca4c16311abd4ba27d90792732e",
+    "commit_elapsed_ms": 30387
+  },
+  "unknown": {
+    "unobserved_commit_remains_unknown": true,
+    "candidate_id": "525acc7af81247d031279ef7077590119df4f1be5e87c664a0c7e8e5e02af467",
+    "observed_root": "37c2d24d931d0fcbb673d5a9d4e8cd78d4f1e2d242512b947b4d9e9c119cd603",
+    "retry_rejected": true
+  },
+  "hosted_ready": false
+}

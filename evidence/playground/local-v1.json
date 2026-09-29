@@ -1,0 +1,51 @@
+{
+  "contract": "sley-tools.playground-local-probe.v1",
+  "result": "PASS",
+  "tools_source_commit": "e493b773edeedf2573803ede048794e5c3cd5a86",
+  "tools_source_dirty": false,
+  "tools_binary_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "server_sha256": "7eefe51c5d9dcd4f8ab4dca7f09926ce7eeaf6dc6872475724a279225fa75147",
+  "html_sha256": "a84a8e4438c55a31531b03c696eee0775632263c07fb18c9976d594bd74e79f1",
+  "client_sha256": "bdf091364d8d15ae1128daf605c22d83c83af5ae0afae1d7c12b3655a32a3500",
+  "style_sha256": "0bc78310493a447b536ed79578dc52e9f44934d186b9226e7c4dd1bc7605da76",
+  "probe_script_sha256": "fde3d05ea444aed783786e76f755132b91b7d89485999afbe65b84440b346770",
+  "examples": [
+    "release-readiness",
+    "benchmark-comparator",
+    "range-predicate"
+  ],
+  "release": {
+    "before_root": "956af79c64b648ecee93b9fc87cba3a669b39ba33695e65f9853f712a9f30c08",
+    "after_root": "cf219f3c4ea5a6d5df752325d32f87fd2f5dc62160582e8bae1bf81786240dc9",
+    "candidate_id": "3fe5ed456b01af890dc87be1149eb56054b0eff5b96a20c0e2dd94f70947f00a",
+    "receipt_id": "39acd3a0c69ee64e7d7932d9c9cfe40ab79f8a45e511c8386a6a70ebc5539ed9",
+    "export": {
+      "sha256": "2f0f046976bc6d1d5837d0d2a58282dc338f5123d091ebee03d33cef5bf141b2",
+      "imported_root": "79da2bbff99386d7c2039b340eacc2bf698858fd08e4a193af26d3c43ee53e03"
+    }
+  },
+  "comparator": {
+    "before_root": "f25db1eda2b7dadf80f2a12d8cfbaf534ba8596b744b0a8e3ce9e4e313590a2c",
+    "after_root": "990c4073a4d18b81deff784c3dca5fdb65e0d03faf278553cf9505b9c018d87d",
+    "candidate_id": "a66d5f7ac14c117f2472dd6357270b90ca2a6e7731fd7fa5fafb91419f3e3e67",
+    "receipt_id": "e7ca97a7d068cb9c507e3d32af46f9b73c182a81833df9748783eef3526d6ea5",
+    "export": {
+      "sha256": "cf8eebb755c1ff910e63eca3edfec7b85d0fe0a188a0f77f2ab5882d41fd6dce",
+      "imported_root": "f1eb11becfb2acdee06d84849a1913e60e971a67678dc24f67e2291b8a45f29f"
+    }
+  },
+  "range_root": "ba47247f5de99d5687e56f9f3dd7be4f87dbe57b0b6e6a37b7b025b6d0d39b9c",
+  "ui_served": true,
+  "portable_export_replayed": true,
+  "unified_cli_launcher_verified": true,
+  "missing_adapter_rejected": true,
+  "duplicate_port_rejected": true,
+  "origin_and_host_rejection": true,
+  "bounded_request_rejection": true,
+  "input_and_change_errors_distinguished": true,
+  "separate_session_cookies": true,
+  "concurrent_session_limit_enforced": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "hosted_ready": false
+}

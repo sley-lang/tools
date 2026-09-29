@@ -1,0 +1,47 @@
+{
+  "builder_binary_sha256": "d029f52341ce58e98aa2a01ff123b00a0dd796f89b3e153bf7fedef78f53716a",
+  "cases_sha256": {
+    "fixed": "f1d096e39ccd0be0426a4ca4932363495539e01c6c6f0846f99ac6828c325f33",
+    "numeric": "d41e36db6264119238a822c9dff45983cabd44a9d4ab42e02ea9bd82b6928a31",
+    "range": "40a198e8ef6f7231ceced71be658bd0aa23a9399497c8d400e94be01fa3ac7ad"
+  },
+  "contract": "sley-tools.graph-sdk-creation-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "python": {
+    "accepted_root": "d88ec08df1b0af56d58d07f11311cae24ad4ea8f370bd08f8943aa10d7864373",
+    "existing_project_rejected": true,
+    "fluent_recipe_matched": true,
+    "fluent_rejections": 3,
+    "invalid_input_rejected": true,
+    "native_cases": 8,
+    "program": "range-predicate"
+  },
+  "recipes_sha256": {
+    "fixed": "4c0a9332d78943d3023b6344e4e700604efac87b8079165a88ab92fa2c6c4ad7",
+    "numeric": "4a8585c93d9e219acfc124d602f4d3ebde03bc9d6fdb62718ebf9ecf5e98abd1",
+    "range": "e32fd0c3cda3cca26b92b4c104d1aaa959ccc8a01204a1ebd99d7a66b0fc00cc"
+  },
+  "result": "PASS",
+  "sdk_sources_sha256": {
+    "python_builder": "b78cdf9e35247e5cd31493e58797c80b19e4fd6b0082505960c571b4eb793757",
+    "python_probe": "4bcf3a08403d22214f7451c480916c1211a32a9b7fdf176a7ddbd98e0758ab1a",
+    "python_runtime": "ffffedacaab8001898e35e56169e09886055a4cecae0bdce941f3befaecfa7f4",
+    "typescript_probe": "c1c8d53ce5d751e6bd9bf4c29453eba02966d728ea61d528ce8f5aa893e97729",
+    "typescript_sdk": "47d47705ddead4695daf1120276ba747f70e92d5f07f31214c572b42838f795d",
+    "typescript_types": "e3dd6aa38e2be57303bf13cce4f49b63da74bb05609cbaab140ad9cd7830fc78"
+  },
+  "tools_binary_sha256": "c2468f14f323631ecc45b693b9df7920aa8ec4ea4fb96dcd7353d4e3c3f4fdea",
+  "typescript": {
+    "contract": "sley-tools.graph-typescript-creation-probe.v1",
+    "existing_project_rejected": true,
+    "fixed_native_cases": 4,
+    "fixed_root": "84aadb13e9d680a4de945071123deb1c4f6e06a4abf668fd71c9e25e6000e19c",
+    "fluent_recipe_matched": true,
+    "fluent_rejections": 3,
+    "invalid_input_rejected": true,
+    "numeric_native_cases": 3,
+    "numeric_root": "0d7eb7b7c44309832edf2bfac52c44519cd163ec9e2c05cfbcd46636297d93ad",
+    "result": "PASS"
+  }
+}

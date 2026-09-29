@@ -1,0 +1,606 @@
+{
+  "artifact_replay_passed": true,
+  "builder_binary_sha256": "2f9e53e36f746c1bdc1d9ac5cad22f7ca7ddf40f5d17d2f76f6a7271a4bad719",
+  "contract": "sley-tools.fresh-install-probe.v3",
+  "core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+  "data_pipe_expected_output_sha256": "f2cdffcd3f824c83007d5bab035143360376d662ea6358da0f5d9f6943c96af4",
+  "data_pipe_unified_cli_launcher": true,
+  "flagship_edited_root": "7367c3be0f3a467001980c41370a4604526493623c3afe3fae5228889988c3d7",
+  "flagship_new_program_root": "d5b3e0645273f2fd0ef01b47c0d0c17c67a4c30f9fc2c45393b10cfd10de6a6c",
+  "installed_core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "installed_mcp_launcher": {
+    "adapter_sha256": "5c251a613aeee758e826653671bca640613a6fe3fb2aa340521fa8233ede8d18",
+    "contract": "sley-tools.mcp-launcher-probe.v1",
+    "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "incomplete_review_rejected": true,
+    "missing_adapter_file_rejected": true,
+    "missing_adapter_rejected": true,
+    "native_boundary_changed": true,
+    "new_root": "7b66c7d2b27f30fb424386f2f40d08c93cc129528a89f92d06eb4390202a701b",
+    "old_root": "33de1814ca8cd6ab5d9d1512ff7590063e64a8f4de50ab1d94fc7663f806a12b",
+    "probe_entry_sha256": "772044313caea1245dfcdd5ec9b19d3f684f2136f6988a8c5c00d5d1a4474ffa",
+    "protocol_client_connected": true,
+    "result": "PASS",
+    "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+    "tools_override_rejected": true
+  },
+  "installed_mcp_reference": {
+    "after_root": "4c554646303ee4f329bf88866866c0257893244d1faf5902210999aae4efc7c2",
+    "before_root": "82a18c9c0856531ec915e1724431c25f8c80407356f15c063805525a6d8852d2",
+    "checked_arithmetic_result": true,
+    "comparator_cases_sha256": "b0510ece3a89fc49c2af98bb680eafa40ceb511f9b0b9763f9c2c43ee59f6661",
+    "comparator_spec_sha256": "76375524ab6ce0c8f9c9d3820d0be0ca913d42148b1dd996211ccf7e8e63bcc5",
+    "configured_native_review_verified": true,
+    "configured_workspace_scope": true,
+    "conflicting_change_rejected": true,
+    "contract": "sley-tools.mcp-reference-probe.v1",
+    "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "created_native_graph_project": true,
+    "created_native_template_project": true,
+    "execution_may_persist_reports": true,
+    "external_assertions": 106,
+    "graph_branch_edit": true,
+    "graph_constant_edit": true,
+    "graph_numeric_exact": true,
+    "graph_opcode_edit": true,
+    "graph_operand_edit": true,
+    "native_boundary_changed": true,
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+    "negotiated_protocol_eras": [
+      "legacy",
+      "modern"
+    ],
+    "opcode_cases_sha256": "6b66ccf4d66afa4fd7420803e8f2fc29ca09b41bdcbd001118a551d583beefe8",
+    "original_candidate_committed_after_rejection": true,
+    "out_of_scope_startup_rejected": true,
+    "package_lock_sha256": "ef3360b015dfa93080cc55ea9ac9d42564a79fb416575592862e2f45760da340",
+    "probe_entry_sha256": "c047f3db132e9ad790470e3e643f7dbbfb2c0056bac1f3a9976055f3a3aa0e0c",
+    "program_edits_opt_in": true,
+    "raw_stdio_messages": 3,
+    "rejected_change_root_unchanged": true,
+    "resource_i64_exact": true,
+    "resources_discovered": 5,
+    "result": "PASS",
+    "review_after_manifest_sha256": "aceac1ae8950e3fc5166ad47782a78e9582a732e25519a96625e0267d84f1561",
+    "review_before_manifest_sha256": "963a20995d5ef5faa3db3ae9da56b1f0cb886d39642253c94b634d957ce1e636",
+    "review_cases_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+    "runner_runtime": "node v26.8.1",
+    "sdk_client_version": "2.1.0",
+    "sdk_server_version": "2.1.0",
+    "server_entry_sha256": "5c251a613aeee758e826653671bca640613a6fe3fb2aa340521fa8233ede8d18",
+    "server_launch_prefix": [],
+    "stdout_protocol_only": true,
+    "tool_error_code_preserved": true,
+    "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+    "tools_discovered_full": 9,
+    "tools_sdk_entry_sha256": "8d47cac2c5005811dc1303b8dee4575d85980d20a38cad137c701081572ba390",
+    "unauthorized_write_rejected": true,
+    "workspace_creation_scoped": true
+  },
+  "installed_native_test_candidate": {
+    "accepted_root_unchanged": true,
+    "base_root": "8101245330d4f1552ca9f33dca431e67f9fa60f7b28e7c52a7f8e74030dfa069",
+    "candidate_id": "1e47dd5bb6e05c38bb4a800ab265cbc21033c3ec2ca295986a207a5df3f39bc9",
+    "case_id": "zero",
+    "contract": "sley-tools.native-test-candidate.v0",
+    "declared_limits": {
+      "call_depth": 8,
+      "effect_count": 0,
+      "fuel": 10000,
+      "memory_bytes": 16777216,
+      "output_bytes": 1024,
+      "wall_timeout_millis": 1000
+    },
+    "grant_ceilings": {
+      "max_effect_count": 0,
+      "max_fuel": 1000000,
+      "max_memory_bytes": 16777216,
+      "max_output_bytes": 1048576
+    },
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+    "native_plan_id": "e8f82ed26c58af0549a1a0f4f591111d2e1c156fb1ab226ab68fe68e0d1759c1",
+    "native_plan_preflight": "CORE_LIBRARY_ONLY_NO_EXECUTION",
+    "native_plan_selected_test_count": 1,
+    "native_test_execution": "NOT_RUN",
+    "phase": "STATICALLY_VALID",
+    "program_id": "fixed-limit",
+    "target_function_id": "d78bbaae32589286778cbb77992bc8d5ae6ab54213cd849d3a427c284a89ccff",
+    "test_entity_id": "44e5f34834cd80b1ff5f3b69a9113f6426b0cf67f07ab091c0ced05b02cd556f"
+  },
+  "installed_playground": {
+    "bounded_request_rejection": true,
+    "client_sha256": "bdf091364d8d15ae1128daf605c22d83c83af5ae0afae1d7c12b3655a32a3500",
+    "comparator": {
+      "after_root": "17dbc11bace99a446a60a4cf1a0c09ac718a82fd3f2411716b8bc231fd29101f",
+      "before_root": "ec52fbc5ffca25087064fb8f0f1cfdbfa3f0834afc3eaf6e577e63c8757a6510",
+      "candidate_id": "3c9558919a52014c07218ad5010e02bfec209d95569f9bf94e2cf37a0884cf70",
+      "export": {
+        "imported_root": "4103e26454ead32cb39f670e3c8b67ce391566280188ecd8c6bc1dc1b646ea51",
+        "sha256": "6bbee12f00ee023872c3a18427d3ce31895bbcf37bb25b53638a87088dac834d"
+      },
+      "receipt_id": "aeac87b0c0c1668c8ab78d4314cd043b54a22123d62c47b84a827caa65fa89d8"
+    },
+    "concurrent_session_limit_enforced": true,
+    "contract": "sley-tools.playground-local-probe.v1",
+    "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "duplicate_port_rejected": true,
+    "examples": [
+      "release-readiness",
+      "benchmark-comparator",
+      "range-predicate"
+    ],
+    "hosted_ready": false,
+    "html_sha256": "a84a8e4438c55a31531b03c696eee0775632263c07fb18c9976d594bd74e79f1",
+    "input_and_change_errors_distinguished": true,
+    "missing_adapter_rejected": true,
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+    "origin_and_host_rejection": true,
+    "portable_export_replayed": true,
+    "probe_script_sha256": "fde3d05ea444aed783786e76f755132b91b7d89485999afbe65b84440b346770",
+    "range_root": "8da4d2969fe5d370ca917284a7f5b85530454261485dbce3cd0c4347a08b202f",
+    "release": {
+      "after_root": "61749739d4ed6e9228f9ba01083002d16536bf5b8df186d7e956c4459a79c3b3",
+      "before_root": "8b787b154d9a9448c2e1e47f0f1d0021d0de710fd40b692d064ec02d319861ad",
+      "candidate_id": "b109ac87b031180b919fe424a72edd5a671035e45934ee83d1fc8a215b562552",
+      "export": {
+        "imported_root": "f285e036c62e3d152266a1720c423573ac429f64bf5b3ff48e84b7002a9e3927",
+        "sha256": "6a13c3468ec7b5306aed8b644c7033c82a8542ef2554cd1013265d18b1622ff6"
+      },
+      "receipt_id": "8ebd806b6d13afc48dc67794d87d7d667a5436fdafa4ef22463afa23f650195b"
+    },
+    "result": "PASS",
+    "separate_session_cookies": true,
+    "server_sha256": "7eefe51c5d9dcd4f8ab4dca7f09926ce7eeaf6dc6872475724a279225fa75147",
+    "style_sha256": "0bc78310493a447b536ed79578dc52e9f44934d186b9226e7c4dd1bc7605da76",
+    "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+    "tools_source_commit": null,
+    "tools_source_dirty": null,
+    "ui_served": true,
+    "unified_cli_launcher_verified": true
+  },
+  "installed_python_graph_opcode": {
+    "accepted_root": "5437dc9ee8eab9a9539791390825d4996629ed0a48531acb906de8fd547da640",
+    "changed_case_count": 1
+  },
+  "installed_python_package": "sley_tools-0.0.1 wheel",
+  "installed_repair_lab": {
+    "contract": "sley-tools.repair-lab-probe.v6",
+    "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "lab_sha256": "5b472eee4e1fc3021e642550fb92ee19b6d5dfabcb65d0cffbff693c21e84e8c",
+    "materials_sha256": {
+      "rl01/HINTS.md": "e08a3a64b1dd6747bbe9921636220e4029ddbeacb06f5c1340d5ce4719d30780",
+      "rl01/SOLUTION.md": "d5a55d697abb618e9d5dc2e525b703eb6c86d8c347554225636ff25e80bb545c",
+      "rl01/TASK.md": "eb3e64fa77783e6a5913416d5d1f6759ccafb69f9676287f8fc38a199eea1473",
+      "rl01/starter-recipe.json": "534143d4a8929e45134403b26b79ed18c36138a22f852de3656b8b7cba167716",
+      "rl02/HINTS.md": "6b356f841421eaf8a009cc8a9e0189407ff39d6607bec68e418cd5114f19b3cd",
+      "rl02/SOLUTION.md": "eceb0de21a4f4c11c34fc8f6033ac3b01600c496950e2343b527d53b241b7368",
+      "rl02/TASK.md": "428b66179679f7e2d1c83883577d4233198c9b3f53214fa715d162d558dbe6c3",
+      "rl03/HINTS.md": "40818b0f2fe108f620c7c40584096b4816e86be6d0b3eba1f1a429a3e1a58379",
+      "rl03/SOLUTION.md": "1d7808c9797c1dd0a24aec9e8499c91de40784a8e108b7d4baa936731f2a6f99",
+      "rl03/TASK.md": "533ff25ed838d7388f28b1b3350003f89a412e68258cc7947e33d0209ba933ea",
+      "rl04/HINTS.md": "91098326d2892854c84caf6fa5b6dbe7c1122070eedab6c55eb0403e6cab3cd3",
+      "rl04/SOLUTION.md": "5b5670b70fe321c325f8acc648cbc6ea4081e335e0d464aa2d4316059c438fe9",
+      "rl04/TASK.md": "e4e6a7af6cad392fe75c4f27598ab99ed9f7624a1c4dda45fe6b998bf6df3fb6",
+      "rl04/missing-upper-cases.json": "60a38579cb650ceb05ee007a1723096ecab5e408914df8bed23d6c4d56e1b194",
+      "rl04/solution-cases.json": "0a066515e7f961a1178d04213874f310a6a1597668b1f9153f98441b86e5bf2f",
+      "rl05/HINTS.md": "f40fb717d18adc92d33d77b8437703c895928f241b113eb34205b33ee518f651",
+      "rl05/SOLUTION.md": "ff04192adef52ee113df7aea852ec4aeff693181c3675803495e47366e7aa070",
+      "rl05/TASK.md": "40fab6d95cb49962fa5522038b2b3519f665f668ab0d1542d89f297710ee79f2",
+      "rl05/wrong-value.json": "a1fb50e6c86fae1679ef3351296fd6713411a08cf8dd1790a4fd05fae8688164",
+      "rl06/HINTS.md": "fe94467444accdeb29f82d551f49b3e7ef60d1c3a43ee6ae895b42cc9ea6766f",
+      "rl06/SOLUTION.md": "7655be3f89b457c4b6a6e7da8ca895b6811cbc60b55ef7eea8992e4dcf59ef86",
+      "rl06/TASK.md": "78a8a333c98c4953094abc58397d56980b7b741370d0219ea75e41b4a7e6c04e",
+      "rl07/HINTS.md": "da429389a7672bbd1c1b84cfd1c2e79c991a9da18b097c8b99fa671e473c81ae",
+      "rl07/SOLUTION.md": "82a8538b813fbe282fda32ca5680a8d4dbed7f5fc09e013092e9c62b25477275",
+      "rl07/TASK.md": "3aaf07642d8960b31b0a730bcc0bd56fa6be9a565f1b37feefc04903b3ef573e",
+      "rl08/HINTS.md": "a150fd4a04b8aae0d5e01f1f3c4b546d4c774191a400a537c414c99dfc75e52f",
+      "rl08/SOLUTION.md": "34e82d9b8a6637487a00eb2711e3abafa3ee7a66366ecf99d4d971e99666781a",
+      "rl08/TASK.md": "c12b5f9e7c12003be542dd62a7ca707771992d3174b513c2117b9ced531d734e",
+      "rl08/input-12.json": "f6c65c5119fb4d72cd0da0a5101d710915ea8b0d30603695d29abb96f4a25df3"
+    },
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+    "probe_sha256": "aadb8b91bec6ed72ef3af1621aab495c0eb2e928fd37c15e89eb63bf1c6806a1",
+    "public_exercises_available": [
+      "rl01",
+      "rl02",
+      "rl03",
+      "rl04",
+      "rl05",
+      "rl06",
+      "rl07",
+      "rl08"
+    ],
+    "range_artifact_sha256": "1a4610d7f749e5efeb013fa5e49d5c14bcf6eecc257dd9176ec9ce3c94f764cd",
+    "remaining_exercises_pending": [],
+    "reset_confined_to_marked_projects": true,
+    "result": "PASS",
+    "rl01": {
+      "accepted_root": "0bee0c3c39874137d4d8ee1f1b25cae70f917b3a42b9491d5ea4bfc0334e0192",
+      "artifact_sha256": "c1170b9b8a655420d5283f15e871c84fabdd28808a6b97ee44a380e73345dda1",
+      "independent_native_cases": 16,
+      "published_cases": 8,
+      "replay_root": "293baee75e62998ef1f46ab8e954cc0687bffc3888e0f7b12dafbbb5d6b5c6a1",
+      "replayed_native_cases": 16,
+      "sample": {
+        "input": [
+          "5",
+          "-5",
+          "5"
+        ],
+        "result": {
+          "above_upper": false,
+          "below_lower": false,
+          "invalid_bounds": false,
+          "within_range": true
+        },
+        "state_root": "0bee0c3c39874137d4d8ee1f1b25cae70f917b3a42b9491d5ea4bfc0334e0192"
+      }
+    },
+    "rl01_imported_wrong_solution_rejected": true,
+    "rl02": {
+      "accepted_root": "2da642c2d1bc43b08282361e86f7a6ce42bbc76d6b0a054e880e58deba2a10d7",
+      "correction_candidate_id": "9d8e45d894cd770650de07d37d0c7e290d683a429e36007a98acd393a35ca5e6",
+      "correction_receipt_id": "04dc4ce0b95eac7829ae92841d476a2c760eeb9be7d6389ff5918af678c70e6e",
+      "flaw_root": "b14471844afedbf845dc969f00c8f89bda49da1db110dabd139ed5eebfc8cb9a",
+      "independent_native_cases": 16,
+      "published_cases": 11,
+      "sample": {
+        "input": [
+          "5",
+          "-5",
+          "5"
+        ],
+        "result": {
+          "above_upper": false,
+          "below_lower": false,
+          "excluded_upper": false,
+          "invalid_bounds": false,
+          "within_range": true
+        },
+        "state_root": "2da642c2d1bc43b08282361e86f7a6ce42bbc76d6b0a054e880e58deba2a10d7"
+      },
+      "seed_root": "2da642c2d1bc43b08282361e86f7a6ce42bbc76d6b0a054e880e58deba2a10d7"
+    },
+    "rl02_exclusive_seed_rejected": true,
+    "rl03": {
+      "accepted_root": "bdf204841b5199e45973ddd7ba9a6367065deeb6766d7c80af43e26b2841bb9b",
+      "bronze_sample": {
+        "input": [
+          "10"
+        ],
+        "result": {
+          "invalid_configuration": false,
+          "tier": "0"
+        },
+        "state_root": "bdf204841b5199e45973ddd7ba9a6367065deeb6766d7c80af43e26b2841bb9b"
+      },
+      "correction_candidate_id": "5417f127aa683b2429a7143eeccc4cf5f4402d4ef9cae04c4df71d4d9b0d881a",
+      "correction_receipt_id": "d2f5754b9cfdc275dc1bbee36b02ccd61768d278d878beed669419280a068e13",
+      "flaw_root": "fa301c180201e1d2a0e0a88f74d050ad8f4769fff52087f02a090a6bcdcfe2cc",
+      "gold_sample": {
+        "input": [
+          "21"
+        ],
+        "result": {
+          "invalid_configuration": false,
+          "tier": "2"
+        },
+        "state_root": "bdf204841b5199e45973ddd7ba9a6367065deeb6766d7c80af43e26b2841bb9b"
+      },
+      "independent_native_cases": 14,
+      "middle_sample": {
+        "input": [
+          "11"
+        ],
+        "result": {
+          "invalid_configuration": false,
+          "tier": "1"
+        },
+        "state_root": "bdf204841b5199e45973ddd7ba9a6367065deeb6766d7c80af43e26b2841bb9b"
+      },
+      "published_cases": 11,
+      "seed_root": "bdf204841b5199e45973ddd7ba9a6367065deeb6766d7c80af43e26b2841bb9b"
+    },
+    "rl03_disabled_seed_rejected": true,
+    "rl04": {
+      "accepted_root": "fec61e59995e526f7c44734d8f7ea637d0396baad2fef997cdaae563c6f696c2",
+      "bound_suite_cases": 7,
+      "case_file_sha256": "0a066515e7f961a1178d04213874f310a6a1597668b1f9153f98441b86e5bf2f",
+      "diagnostic_sha256": "c41c44f21488c23dfbaf0a2afc954d3e1b4d7794fed1a4e278f65f0ec5c48886",
+      "expected": {
+        "above_upper": false,
+        "below_lower": false,
+        "excluded_upper": false,
+        "invalid_bounds": false,
+        "within_range": true
+      },
+      "failed_case_id": "upper-at",
+      "matched_neighbors": 2,
+      "new_cases": 3,
+      "observed": {
+        "above_upper": false,
+        "below_lower": false,
+        "excluded_upper": true,
+        "invalid_bounds": false,
+        "within_range": false
+      }
+    },
+    "rl04_missing_boundary_rejected": true,
+    "rl04_missing_new_case_rejected": true,
+    "rl04_reset_reexposed_failure": true,
+    "rl04_wrong_expectation_rejected": true,
+    "rl05": {
+      "accepted_root": "0a9f4eda90463b08c4b4c315c4c9b563d2978ff73273dbd6ec7fcfa3fefc86db",
+      "bronze_sample": {
+        "input": [
+          "12"
+        ],
+        "result": {
+          "invalid_configuration": false,
+          "tier": "0"
+        },
+        "state_root": "0a9f4eda90463b08c4b4c315c4c9b563d2978ff73273dbd6ec7fcfa3fefc86db"
+      },
+      "correction_candidate_id": "f553eea4d9d7bbce6376d3ec7c2cd2e91813131e37c19f6214f05573ff2d017c",
+      "correction_receipt_id": "7ae4bf137ad6d2a4e1c7ae57e599bf1b9f6f6868878ab82e1f29c6d57b19f877",
+      "diagnostic_category": "input_shape",
+      "diagnostic_code": "ST_INPUT_INVALID",
+      "diagnostic_sha256": "b6c1e9d674bfc008a6b72ddded7807ebe591d235c00028ba4c54157f63b4eee2",
+      "gold_sample": {
+        "input": [
+          "21"
+        ],
+        "result": {
+          "invalid_configuration": false,
+          "tier": "2"
+        },
+        "state_root": "0a9f4eda90463b08c4b4c315c4c9b563d2978ff73273dbd6ec7fcfa3fefc86db"
+      },
+      "independent_native_cases": 14,
+      "published_cases": 11,
+      "seed_root": "357fd43f62fcdc19ee5488cd04466678ed6bfad1658ed167eed7518f0e05bb28",
+      "silver_sample": {
+        "input": [
+          "13"
+        ],
+        "result": {
+          "invalid_configuration": false,
+          "tier": "1"
+        },
+        "state_root": "0a9f4eda90463b08c4b4c315c4c9b563d2978ff73273dbd6ec7fcfa3fefc86db"
+      }
+    },
+    "rl05_forged_diagnostic_rejected": true,
+    "rl05_reset_confined": true,
+    "rl05_unchanged_seed_rejected": true,
+    "rl05_wrong_type_rejected_without_candidate": true,
+    "rl06": {
+      "above_sample": {
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 4,
+          "test_run_completed": true,
+          "tests_failed": 0
+        },
+        "result": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "state_root": "880837f6fb1c518247b392a6d2773af8fc13a6216fccad7a4d10795fb4acf88e"
+      },
+      "accepted_root": "880837f6fb1c518247b392a6d2773af8fc13a6216fccad7a4d10795fb4acf88e",
+      "advanced_root": "69396dfbd0e27cb94b8c0383c61750d440f09791071387ae8b5be90926f9e6b6",
+      "at_sample": {
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 3,
+          "test_run_completed": true,
+          "tests_failed": 0
+        },
+        "result": {
+          "allow": true,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "state_root": "880837f6fb1c518247b392a6d2773af8fc13a6216fccad7a4d10795fb4acf88e"
+      },
+      "below_sample": {
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 0
+        },
+        "result": {
+          "allow": true,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "state_root": "880837f6fb1c518247b392a6d2773af8fc13a6216fccad7a4d10795fb4acf88e"
+      },
+      "fresh_candidate_id": "e3aeedcb86fa4c57cafc6102cbfaa0a17906160b7cf9d5fc0bc456ecb1408745",
+      "fresh_proposal_sha256": "f490abc2ebc768e8c83e491db46299cc19270b51a0dbe0e2035ae044a10ae335",
+      "fresh_receipt_id": "7f36388beacb11f8c23270469d0e33926a394c673ef451003a3e50571fc7714e",
+      "independent_native_cases": 12,
+      "published_cases": 60,
+      "reinspection_sha256": "9833f03638533593dcd64591ce2c7591766f8482982d0a31f6c3248e97fd82b6",
+      "seed_root": "c02a400ae47876545e1b4eeb4b104df332962b2a528de567b086e6aca15eba6f",
+      "stale_candidate_id": "8e1464fdd4985da778787f1142b37ab3d3e24c04f7d56b87cbe93f9ce56f5bf8",
+      "stale_diagnostic_sha256": "8179700a096146ee2f04d5bcbfcc4d116a06c7815c1f8de40db624d9af248f8d"
+    },
+    "rl06_advanced_seed_rejected": true,
+    "rl06_forged_reinspection_rejected": true,
+    "rl06_reset_confined": true,
+    "rl06_silent_overwrite_rejected": true,
+    "rl06_stale_validation_rejected": true,
+    "rl07": {
+      "accepted_root": "e38c1bded1e56da96ee7df4dfec63058127f044e30bdf8a9a0ade6ff68728358",
+      "artifact_sha256": "743ac966b6aea2e6af2b349be80d81ea3e3a6caffa293ca91e0149587aff5958",
+      "correction_candidate_id": "73764875a5ed511712fda1f492e6bf96485511b47fd6cc41273902e2e8ebd8ab",
+      "correction_receipt_id": "9f3ab793f4a5e47579c24a41d15f022338ef30dac22f43eeb290959744f3ab18",
+      "destination_policy_root": "20ae802d373c2a929f4b2c882edbec142f361cd9c1cb6b38395675a82d8d1dcf",
+      "imported_root": "f561e1e84f282c9a539a80acfc0a194c6f1f441844c1c2c02120646e49a7c0dd",
+      "permission_diagnostic_sha256": "ab1dec6c3c812d5636e4a410dbc110099ddeabb1107ebafc137635b0481ee94c",
+      "recovered_at_two": {
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 0
+        },
+        "result": {
+          "allow": true,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": false,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "state_root": "e38c1bded1e56da96ee7df4dfec63058127f044e30bdf8a9a0ade6ff68728358"
+      },
+      "recovered_native_cases": 12,
+      "source_at_two": {
+        "input": {
+          "artifact_verified": true,
+          "blocking_findings": 2,
+          "test_run_completed": true,
+          "tests_failed": 0
+        },
+        "result": {
+          "allow": false,
+          "artifact_unverified": false,
+          "blocking_findings_exceeded": true,
+          "test_run_incomplete": false,
+          "tests_failed": false
+        },
+        "state_root": "d839dfdd4ff700a71e26973e4bb3d0233e209155140cc6e963b0f5643d8187ab"
+      },
+      "source_native_cases": 12,
+      "source_policy_root": "cd708ff958d77d3974e1005327749c79fac7e5ce18096212d7b748c55d9f4142",
+      "source_root": "d839dfdd4ff700a71e26973e4bb3d0233e209155140cc6e963b0f5643d8187ab"
+    },
+    "rl07_artifact_excluded_authority": true,
+    "rl07_commit_without_validation_rejected": true,
+    "rl07_limited_seed_rejected": true,
+    "rl07_native_permission_denied": true,
+    "rl07_policy_reuse_explanation_rejected": true,
+    "rl07_reset_confined": true,
+    "rl07_symlinked_recovered_reset_rejected": true,
+    "rl08": {
+      "artifact_sha256": "d62d8e8d1719d193aca11b661d22181f93befd2376274cbe6e179857e4856411",
+      "destination_at_twelve": {
+        "invalid_configuration": false,
+        "tier": "0"
+      },
+      "destination_manifest_sha256": "cc35d675dd983d09f51046c443be9c0e733061348b8638e934f081fc5de8edd0",
+      "destination_native_cases": 14,
+      "destination_policy_root": "dd2bb85d281f43b4ef7a31304b86d01bd814b520e2bce9f8d9af0d318606fc68",
+      "destination_root": "391d91b88bf344e6f969332abb3c73d206f73ddec83b5780fcb0521c6b61ff12",
+      "destination_run_sha256": "bfa3dd8e5f566f7db4588d19128e884f85617fed009c9c285a6cccf94a3428cd",
+      "seed_root": "19aed708e09e4c5f9343682a43de6cdf4c6b423bd7d4f931f1c80a7b76073977",
+      "source_at_twelve": {
+        "invalid_configuration": false,
+        "tier": "0"
+      },
+      "source_manifest_sha256": "67be0626fcf1f3271df236a3330e0de8262a46953288c180093f7cce168d9f93",
+      "source_native_cases": 14,
+      "source_policy_root": "7e20f7fa2ad1281f78c9767da78636ff1cd9dd998d1cc9571561e21b92e07664",
+      "source_root": "b016168d9a6f3c8e77ad0f01394df824c6a286721a518de2cc334e906506791f",
+      "source_run_sha256": "4d7aa75521060c7b979446bf2f81743291e5a376b97c2bd637dbcf986503e6f4"
+    },
+    "rl08_forged_destination_run_rejected": true,
+    "rl08_reset_confined": true,
+    "rl08_symlinked_copied_reset_rejected": true,
+    "rl08_unbound_source_rejected": true,
+    "rl08_unchanged_source_rejected": true,
+    "symlinked_project_reset_rejected": true,
+    "tier_artifact_sha256": "1a835e5e6883daad85bea7bce502f140630a0cd0dcd4e6b9ea5d10470186ea7e",
+    "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+    "unmarked_reset_rejected": true
+  },
+  "installed_tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+  "installed_typescript_graph_opcode": {
+    "accepted_root": "df168acb93ff777398d03b9d9ea2e069fa5f267ed3cbe1e2a7daf33afdf56d9e",
+    "changed_case_count": 1
+  },
+  "installed_typescript_package": "@sley-lang/tools@0.0.1 tarball",
+  "isolation": "bubblewrap checkout-masked, private tmpfs, network namespace disabled, new workspace and caches",
+  "live_agent_task": "NOT_RUN: no agent launched by fresh-install probe",
+  "local_tools_package_sha256": "77e8b0df3f729a2c80e1fefb08c1a7a7d1507876ed6ec62ec86c8da997d847c7",
+  "mcp_packager_sha256": "baf93233d0e72d73028bcb7ffe092069e0b842310ba0437e686ecaf954975518",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "probe_sha256": "2fac95755422bb755294f74463d2ad6e75a6fd7f420f599b8c75613968fd19bf",
+  "profile": "local-linux-x86_64-sley-2.0.1",
+  "python_import_value": "63",
+  "python_native_edit": {
+    "after_root": "2c583a1b7e7d594655d482cb84bb729e578dd1f4fc41335ec87dc7a35b643b96",
+    "after_score_25": "0",
+    "after_score_26": "1",
+    "before_root": "276d6d0e74823cc005e3f931bd9ff0ec150510e611cb7472f50d602977da9183",
+    "before_score_25": "1",
+    "changed_case_count": 1,
+    "external_assertions": 8,
+    "source_alignment": "native_edited",
+    "unsupported_code": "ST_IMPORT_UNSUPPORTED"
+  },
+  "python_sdk": {
+    "release_allow": true,
+    "wide_memory": 9007199254740993
+  },
+  "python_wheel_sha256": "846e85611ab7eae43e2b1569a1d8cfee08f419e1780b541fec0526113a31ef86",
+  "repair_lab_independent_native_cases": 16,
+  "result": "PASS",
+  "review_changed_cases": 24,
+  "review_verified": true,
+  "sandbox_stdout": "fresh-install local package scenario passed",
+  "schema_import_valid": true,
+  "schema_native_edit": {
+    "after_count_12_valid": true,
+    "after_count_13_valid": false,
+    "after_root": "c8647f1c6fc70c1b2ec40b79ad86100d6d4f4c689e21d86aa4eafc0b411c5f59",
+    "before_count_12_valid": false,
+    "before_root": "066114e126dee9dff90681bb3eab2997282e1d050a6bd65cc2a0b7a8dd85cfca",
+    "changed_case_count": 1,
+    "external_assertions": 2,
+    "source_alignment": "native_edited",
+    "unsupported_code": "ST_SCHEMA_UNSUPPORTED",
+    "unsupported_pointer": "/pattern"
+  },
+  "source_checkout_hidden": true,
+  "standalone_mcp_package": {
+    "archive_bytes": 2838118,
+    "archive_sha256": "ecbc72e792eb2f92195b28e9d076c7c6bec8ba356e30d83bfe6c43f1c97f8283",
+    "bundled_dependencies": [
+      "@modelcontextprotocol/core",
+      "@modelcontextprotocol/server",
+      "zod"
+    ],
+    "contract": "sley-tools.mcp-standalone-package.v1",
+    "filename": "sley-lang-tools-mcp-0.0.1.tgz",
+    "member_count": 951,
+    "npm_lifecycle_scripts_disabled": true,
+    "package_lock_sha256": "ef3360b015dfa93080cc55ea9ac9d42564a79fb416575592862e2f45760da340",
+    "package_name": "@sley-lang/tools-mcp",
+    "package_version": "0.0.1",
+    "result": "PASS",
+    "sdk_source_sha256": "8d47cac2c5005811dc1303b8dee4575d85980d20a38cad137c701081572ba390",
+    "source_manifest_sha256": "c1a1fed9a1fa06a144557d16c534b650480631b609c39dbc6647abd19314bd3f",
+    "source_server_sha256": "4ce699051f54f66c9ba6bed72b02d29532f762373e6d634bc94291dbad6661a5",
+    "standalone_server_sha256": "5c251a613aeee758e826653671bca640613a6fe3fb2aa340521fa8233ede8d18"
+  },
+  "standalone_mcp_package_sha256": "ecbc72e792eb2f92195b28e9d076c7c6bec8ba356e30d83bfe6c43f1c97f8283",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50",
+  "tools_source_commit": "0e06da05009811f85d1565fe5ff7fb71d6b69ef5",
+  "tools_source_dirty": true,
+  "typescript_package_sha256": "81185bcbd6c113fc1cfd1cfe096fe8ad090a1836a0d146d0b04d94525115ff8f",
+  "typescript_sdk": {
+    "release_allow": true,
+    "wide_memory": "9007199254740993"
+  }
+}

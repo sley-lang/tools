@@ -1,0 +1,60 @@
+name: Tools build and native smoke
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tools:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CARGO_TERM_COLOR: always
+      CARGO_INCREMENTAL: "0"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.93.0 --profile minimal --component rustfmt
+      - name: Check Rust formatting
+        run: cargo +1.93.0 fmt --all -- --check
+      - name: Build Tools binaries
+        run: cargo +1.93.0 build --locked -p sley-tools-backend --bins
+      - name: Check Python and JavaScript syntax
+        run: |
+          python3 -m compileall -q scripts packages/python/sley_tools tests
+          for file in scripts/*.mjs packages/typescript/src/*.js packages/mcp/src/*.mjs; do
+            node --check "$file"
+          done
+      - name: Verify native report parser
+        run: python3 tests/test_native_report_inspector.py target/debug/sley-tools-native-builder
+      - name: Download pinned public Sley core
+        run: |
+          curl --fail --location --silent --show-error --retry 3 \
+            --output "$RUNNER_TEMP/sley-core.tar.gz" \
+            https://github.com/sley-lang/sley/releases/download/v2.0.1/sley-2.0.1-linux-x86_64.tar.gz
+          printf '%s  %s\n' \
+            34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44 \
+            "$RUNNER_TEMP/sley-core.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/sley-core"
+          tar -xzf "$RUNNER_TEMP/sley-core.tar.gz" -C "$RUNNER_TEMP/sley-core"
+          test -x "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley"
+      - name: Import and test the native program catalog
+        run: |
+          python3 scripts/probe_native_catalog_smoke.py \
+            --tools target/debug/sley-tools \
+            --core "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley" \
+            --output "$RUNNER_TEMP/native-catalog-smoke.json"
+      - name: Run scoped native RPC package probe
+        run: |
+          python3 scripts/probe_rpc_portable.py \
+            --tools target/debug/sley-tools \
+            --core "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley" \
+            --examples examples/graph \
+            --output "$RUNNER_TEMP/rpc-portable.json"

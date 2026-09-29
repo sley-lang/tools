@@ -1,0 +1,887 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-01",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "0",
+        "requested_memory_mib": "0",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-02",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "0",
+        "requested_memory_mib": "1",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-03",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "0",
+        "requested_memory_mib": "1",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-04",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "0",
+        "requested_memory_mib": "2",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-05",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "0",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-06",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "0",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-07",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "0",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "0"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-08",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "1",
+        "requested_memory_mib": "0",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-09",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "1",
+        "requested_memory_mib": "1",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-10",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "1",
+        "requested_memory_mib": "1",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-11",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "1",
+        "requested_memory_mib": "2",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-12",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "1",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-13",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "1",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-14",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "1",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-15",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "2",
+        "requested_memory_mib": "0",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-16",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "2",
+        "requested_memory_mib": "1",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-17",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "2",
+        "requested_memory_mib": "1",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-18",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "2",
+        "requested_memory_mib": "2",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-19",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "2",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-20",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "2",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-21",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "2",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "1"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-22",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "1",
+        "requested_memory_mib": "0",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-23",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "1",
+        "requested_memory_mib": "1",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-24",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "1",
+        "requested_memory_mib": "1",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-25",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "1",
+        "requested_memory_mib": "2",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-26",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "1",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-27",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "1",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-28",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "1",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "2"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-29",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "0",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-30",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "1",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-31",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "1",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-32",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "2",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-33",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-34",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-35",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "9007199254740992",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "9007199254740993"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-36",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "0",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-37",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "1",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-38",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "1",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-39",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "2",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-40",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": true,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-41",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": false,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-42",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "9223372036854775807",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "0",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "0"
+      },
+      "id": "case-43",
+      "input": {
+        "available_memory_mib": "0",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "0",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-44",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "1",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "2",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "1"
+      },
+      "id": "case-45",
+      "input": {
+        "available_memory_mib": "2",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "1",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "1",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "2"
+      },
+      "id": "case-46",
+      "input": {
+        "available_memory_mib": "1",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "2",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9007199254740992",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9007199254740993"
+      },
+      "id": "case-47",
+      "input": {
+        "available_memory_mib": "9007199254740992",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "9007199254740993",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775807",
+        "insufficient_memory": false,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-48",
+      "input": {
+        "available_memory_mib": "9223372036854775807",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "9223372036854775807"
+      }
+    },
+    {
+      "expected": {
+        "allow": false,
+        "available_memory_mib": "9223372036854775806",
+        "insufficient_memory": true,
+        "insufficient_workers": true,
+        "invalid_capacity": false,
+        "invalid_request": false,
+        "requested_memory_mib": "9223372036854775807"
+      },
+      "id": "case-49",
+      "input": {
+        "available_memory_mib": "9223372036854775806",
+        "available_workers": "9223372036854775806",
+        "requested_memory_mib": "9223372036854775807",
+        "requested_workers": "9223372036854775807"
+      }
+    }
+  ],
+  "contract": "sley-tools.resource-admission-fixtures.v1"
+}

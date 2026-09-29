@@ -1,0 +1,21 @@
+{
+  "contract": "sley-tools.raw-schema-cases.v1",
+  "cases": [
+    {"id": "minimum", "raw": "{\"active\":true,\"count\":0}", "valid": true},
+    {"id": "maximum", "raw": "{\"active\":false,\"count\":10}", "valid": true},
+    {"id": "decimal-integer", "raw": "{\"active\":true,\"count\":1.0}", "valid": true},
+    {"id": "exponent-integer", "raw": "{\"active\":true,\"count\":1e0}", "valid": true},
+    {"id": "zero-large-exponent", "raw": "{\"active\":true,\"count\":0e1000000}", "valid": true},
+    {"id": "missing-active", "raw": "{\"count\":1}", "valid": false},
+    {"id": "missing-count", "raw": "{\"active\":true}", "valid": false},
+    {"id": "extra-field", "raw": "{\"active\":true,\"count\":1,\"other\":0}", "valid": false},
+    {"id": "wrong-root", "raw": "[]", "valid": false},
+    {"id": "boolean-as-integer", "raw": "{\"active\":true,\"count\":true}", "valid": false},
+    {"id": "fractional", "raw": "{\"active\":true,\"count\":1.5}", "valid": false},
+    {"id": "string-as-integer", "raw": "{\"active\":true,\"count\":\"1\"}", "valid": false},
+    {"id": "wrong-boolean", "raw": "{\"active\":1,\"count\":1}", "valid": false},
+    {"id": "below-minimum", "raw": "{\"active\":true,\"count\":-1}", "valid": false},
+    {"id": "above-maximum", "raw": "{\"active\":true,\"count\":11}", "valid": false},
+    {"id": "outside-signed-range", "raw": "{\"active\":true,\"count\":9223372036854775808}", "valid": false}
+  ]
+}

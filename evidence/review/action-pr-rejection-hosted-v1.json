@@ -1,0 +1,32 @@
+{
+  "contract": "sley-tools.review-action-pr-rejection-hosted.v1",
+  "result": "EXPECTED_INTEGRITY_REFUSAL",
+  "repository": "sley-lang/tools",
+  "pull_request": 2,
+  "pull_request_head_sha": "13d6553a6ac5c902ec5d57620d289dba781954be",
+  "pull_request_base_sha": "3db5307f7b28b6ec861e2fb2ded4f5e1dc406b98",
+  "workflow_event": "pull_request",
+  "workflow_run_id": 36412313281,
+  "workflow_run_url": "https://github.com/sley-lang/tools/actions/runs/36412313281",
+  "workflow_conclusion": "failure",
+  "workflow_permissions": {
+    "contents": "read"
+  },
+  "review_action_commit": "5c60a1499343f648918715026b3fb349810582af",
+  "submitted_artifact_sha256": "080c3362c0890b34777855484e5b5054fccdd96e5d147745fe0ef6b29f194a97",
+  "stale_manifest_artifact_sha256": "60d8a033dbfbcb9036733682971eee18266fbcea9512bdf3d5845f7280177cb4",
+  "uploaded_artifact_name": "sley-native-review-pr",
+  "uploaded_artifact_downloaded": true,
+  "uploaded_exit_code": 1,
+  "uploaded_files_sha256": {
+    "status.json": "6634364b5f67a4d62412b12f3b6b015245d0d6070cef87864b482fe67dbe2de8",
+    "runner.log": "0f7b2a1694ede17c394fde7c5b36804671279add4d8f2e65ae46c0f76af8674a",
+    "summary.md": "213938db91a919108cb0e9089048f26ffc1774e5ce5d0eba074263e385ed3ea1"
+  },
+  "diagnostic_result": "FAIL",
+  "diagnostic_reason": "manifest validation failed: artifact size or SHA-256 differs from manifest",
+  "report_generated": false,
+  "refusal_phase": "manifest validation before native execution",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "scope": "private-repository read-only pull_request rejects a parseable artifact with a stale manifest SHA-256, marks CI failure, and uploads status, log, and summary; no report existed before validation"
+}

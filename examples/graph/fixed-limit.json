@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "fixed-limit",
+  "title": "Fixed Limit",
+  "purpose": "Decide whether a nonnegative count is within a locally configured limit",
+  "parameters": [{"name": "count", "value_type": "UInt32"}],
+  "constants": [{"name": "limit", "value_type": "UInt32", "value": "10"}],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "constant_ref", "name": "accepted_limit", "constant": "limit"},
+      {"op": "less_equal", "name": "within", "left": "param.count", "right": "op.accepted_limit"}
+    ],
+    "terminator": {"kind": "return", "value": "op.within"}
+  }]
+}

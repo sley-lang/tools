@@ -1,0 +1,45 @@
+{
+  "contract": "sley-tools.rpc-authoring-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "programs": [
+    {
+      "after_allow": true,
+      "before_allow": false,
+      "candidate_id": "308a9466f288e3de73e0d5ba995cbab95b64d9396741006a187a1c498261f811",
+      "commit_before_validation_rejected": true,
+      "committed_root": "c7f70069b3c67fe7b51fab28f42808b659a62aa818eae4810090ea05940b6ddd",
+      "discard_preserved_root": true,
+      "external_assertions": 60,
+      "initial_root": "5c9fc87e7bd55fe5ceae24572c3dc33a9f920ca40f32d69bbcc045e307a03b44",
+      "new_handle_reopened": true,
+      "old_handle_rejected": true,
+      "program_id": "release-readiness",
+      "typed_rejection": true,
+      "wrong_candidate_rejected": true
+    },
+    {
+      "after_allow": false,
+      "before_allow": true,
+      "candidate_id": "224360323af0de346ea49610b75bbcf4115ec625bd5c61184bb2fc8c1b597939",
+      "commit_before_validation_rejected": true,
+      "committed_root": "4c5a1a55cd8ca6f1a8096778bf541f996688128fcbdb2f1ceec780a425cd4b80",
+      "discard_preserved_root": true,
+      "external_assertions": 12,
+      "initial_root": "17c68565d527ae82b3455109473c12c6f1dedcb89d7bd39d839af53a2e2d30ac",
+      "new_handle_reopened": true,
+      "old_handle_rejected": true,
+      "program_id": "resource-admission",
+      "typed_rejection": true,
+      "wrong_candidate_rejected": true
+    }
+  ],
+  "result": "PASS",
+  "stale": {
+    "accepted_root_preserved": true,
+    "candidate_id": "a9648e272303cd3655791a735d333d3871902f730f96817a9b771fa2e644e37c",
+    "old_rpc_session_rejected": true,
+    "stale_validation_rejected": true
+  },
+  "tools_binary_sha256": "8c7c7e140468695d51989ae4b38ede8ff81623f8c5a910f62ef266ae5fcf0b48"
+}

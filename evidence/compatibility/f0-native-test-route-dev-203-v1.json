@@ -1,0 +1,53 @@
+{
+  "accepted_root_unchanged": true,
+  "builder_binary_sha256": "2f9e53e36f746c1bdc1d9ac5cad22f7ca7ddf40f5d17d2f76f6a7271a4bad719",
+  "candidate_id": "e666ed8bf726f7f21a76c6c4e82d60c836c33a0dd1607b22b22b2e4dd2baeb8c",
+  "candidate_validation_decision": 1,
+  "case_id": "zero",
+  "cli_candidate_id": "f0246f697d1cfef3a75dcc7ff922607c55cc92e7f9a0b922cfc82080f530f3a8",
+  "cli_static_candidate_validation": true,
+  "compatibility_status": "requires_core_change",
+  "contract": "sley-tools.f0-native-test-route-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "declared_limits": {
+    "call_depth": 8,
+    "effect_count": 0,
+    "fuel": 10000,
+    "memory_bytes": 16777216,
+    "output_bytes": 1024,
+    "wall_timeout_millis": 1000
+  },
+  "grant_ceilings": {
+    "max_effect_count": 0,
+    "max_fuel": 1000000,
+    "max_memory_bytes": 16777216,
+    "max_output_bytes": 1048576
+  },
+  "native_execution_profile_id": "392927d6c948b9a03a27b87f26ebfe08c65ddf4e831a18e1d82f02dc4abb0bf4",
+  "native_plan_id": "906e118be8452e89b1db2a403bf052da9e9a741c2d8473cf207b8fb9ce506bf6",
+  "native_plan_preflight": "CORE_LIBRARY_ONLY_NO_EXECUTION",
+  "native_plan_selected_test_count": 1,
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_test_route": "v3 tests.affected",
+  "native_test_route_failure": "NATIVE_EXECUTOR_UNAVAILABLE",
+  "negative_builder_checks": [
+    "expected type",
+    "input arity",
+    "stale base root"
+  ],
+  "negative_public_checks": [
+    "absent case",
+    "non-graph project"
+  ],
+  "passed_scope": "TestCase construction, core static validation, and honest native-route failure",
+  "result": "PASS",
+  "route_core_binary_sha256": "a671f63ab9524f1e06de121beb3d4a414e7a0317f55ec8469b0779d79938e976",
+  "route_core_matches_project_core": false,
+  "source_sha256": {
+    "examples/graph/fixed-limit-cases.json": "f1d096e39ccd0be0426a4ca4932363495539e01c6c6f0846f99ac6828c325f33",
+    "examples/graph/fixed-limit.json": "4c0a9332d78943d3023b6344e4e700604efac87b8079165a88ab92fa2c6c4ad7",
+    "scripts/probe_native_test_route.py": "d3173afb11b21a16b6c0359efb490402c08dcfbb9835f09c8809091f164ba2ab"
+  },
+  "test_entity_id": "d511bc4175554071f934716feaaa96ba45fbefad44b4eacc58f8acbf4467548d",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50"
+}

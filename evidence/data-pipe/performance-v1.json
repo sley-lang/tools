@@ -1,0 +1,52 @@
+{
+  "builder_binary_sha256": "1f8a05da3218599f307052f6a1a9b603a26dbb57d87c2a23dfeef3037851ae83",
+  "comparator_cases_sha256": "b0510ece3a89fc49c2af98bb680eafa40ceb511f9b0b9763f9c2c43ee59f6661",
+  "comparator_spec_sha256": "76375524ab6ce0c8f9c9d3820d0be0ca913d42148b1dd996211ccf7e8e63bcc5",
+  "contract": "sley-tools.data-pipe-performance-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "inputs": [
+    {
+      "bytes": 12672,
+      "records": 64,
+      "sha256": "545b1f075692b1dedfc46188cd323aaf35f0d42446680d80d5822f62d762dd4c"
+    },
+    {
+      "bytes": 811008,
+      "records": 4096,
+      "sha256": "ddc632cbeaa06245337e7a6a24f0719ce20557cd836fa18c6ae3f74ebecbd8fc"
+    }
+  ],
+  "memory_growth_bound_verified": true,
+  "module_sha256": "53284e39835accf463b4815a12e171515860eafd4972dc35d5e782b97d03eb35",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_roots": {
+    "comparator": "7196e73d8a9a463f75d5402a04e1bd4a6689910a2f025b13b07a34415a043c63",
+    "reducer": "71d4bc3f48705b27d1f86d503c3afaebb2590807486cb80c9907f39c288ac656",
+    "selector": "a6922983429050c55dd42a3a7ab38eb1bf7e0f1a832ca33e87296d28c1f7f135"
+  },
+  "observations": [
+    {
+      "elapsed_seconds": 2.678,
+      "memory_samples": 53,
+      "records": 64,
+      "rows_per_second": 23.894,
+      "sampled_peak_process_tree_kib": 75168
+    },
+    {
+      "elapsed_seconds": 61.003,
+      "memory_samples": 1206,
+      "records": 4096,
+      "rows_per_second": 67.144,
+      "sampled_peak_process_tree_kib": 74324
+    }
+  ],
+  "peak_scope": "sampled RSS sum of pipeline process and live descendants on Linux /proc",
+  "probe_entry_sha256": "19fe525d5ea5ba730087554e1e830c9b39040efdda649be28d9dd09339da9f6a",
+  "python_sdk_sha256": "17cc5b34db6185cf270a662bdc378459de4221808b757d36a4479879f70728e5",
+  "reducer_cases_sha256": "111344b437f00374897e9f9a35017026b4e7c2404c886bf078a47dae8579f343",
+  "reducer_spec_sha256": "4928fe361dd6f1bf6a08305df868d31f5754f9b1ba47f9b66b5e20bd03d8915e",
+  "result": "PASS",
+  "selector_cases_sha256": "271d79e2142fa91b74ed8671d75b365a8d29e3b739517f69079ccc6aa868331e",
+  "selector_spec_sha256": "d41d58454281a041bf0a026278c425e98fe10bc8df9575751e8645c3d70df61a",
+  "tools_binary_sha256": "8c7c7e140468695d51989ae4b38ede8ff81623f8c5a910f62ef266ae5fcf0b48"
+}

@@ -1,0 +1,275 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {
+      "id": "quota-00",
+      "input": [
+        "0",
+        "0"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": true,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-01",
+      "input": [
+        "1",
+        "0"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "1"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-02",
+      "input": [
+        "1",
+        "1"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": true,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-03",
+      "input": [
+        "7",
+        "6"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "1"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-04",
+      "input": [
+        "8",
+        "7"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "1"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-05",
+      "input": [
+        "9",
+        "8"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "1"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": true
+      }
+    },
+    {
+      "id": "quota-06",
+      "input": [
+        "8",
+        "8"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": true,
+        "invalid_input": false,
+        "at_notification_level": true
+      }
+    },
+    {
+      "id": "quota-07",
+      "input": [
+        "5",
+        "8"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": true,
+        "invalid_input": false,
+        "at_notification_level": true
+      }
+    },
+    {
+      "id": "quota-08",
+      "input": [
+        "20",
+        "6"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "14"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-09",
+      "input": [
+        "20",
+        "7"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "13"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-10",
+      "input": [
+        "20",
+        "8"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "12"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": true
+      }
+    },
+    {
+      "id": "quota-11",
+      "input": [
+        "9223372036854775807",
+        "0"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "9223372036854775807"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-12",
+      "input": [
+        "9223372036854775807",
+        "9223372036854775806"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "1"
+        },
+        "exhausted": false,
+        "invalid_input": false,
+        "at_notification_level": true
+      }
+    },
+    {
+      "id": "quota-13",
+      "input": [
+        "9223372036854775807",
+        "9223372036854775807"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": true,
+        "invalid_input": false,
+        "at_notification_level": true
+      }
+    },
+    {
+      "id": "quota-14",
+      "input": [
+        "-1",
+        "0"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": false,
+        "invalid_input": true,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-15",
+      "input": [
+        "0",
+        "-1"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": false,
+        "invalid_input": true,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-16",
+      "input": [
+        "-9223372036854775808",
+        "9223372036854775807"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": false,
+        "invalid_input": true,
+        "at_notification_level": false
+      }
+    },
+    {
+      "id": "quota-17",
+      "input": [
+        "9223372036854775807",
+        "-1"
+      ],
+      "expected": {
+        "remaining": {
+          "ok": "0"
+        },
+        "exhausted": false,
+        "invalid_input": true,
+        "at_notification_level": false
+      }
+    }
+  ]
+}

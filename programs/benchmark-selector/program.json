@@ -1,0 +1,94 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "fbabc53ea1593769a01c6c4437fb89488f7b1b9310e4e13fa3cfbe163f5d1d59"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "fb05759cb910870303cc33cc937eb21ff89f75ed8fee934153addd8f8430916d",
+    "name": "evaluate",
+    "state_root": "796330435094ec19e370ce654e57a349e901d7d39345d751848b1442ce570076"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "d41d58454281a041bf0a026278c425e98fe10bc8df9575751e8645c3d70df61a"
+  },
+  "host_responsibility": "decode bounded JSON Lines, preserve case IDs and order, invoke accepted native programs, and serialize results",
+  "inputs": {
+    "baseline_archive_bytes": "SInt64",
+    "baseline_cpu_us": "SInt64",
+    "baseline_wall_us": "SInt64",
+    "candidate_archive_bytes": "SInt64",
+    "candidate_cpu_us": "SInt64",
+    "candidate_wall_us": "SInt64"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "native regression predicate, valid-input flag, and candidate measurement projection",
+  "output": {
+    "fields": {
+      "candidate_archive_bytes": "SInt64",
+      "candidate_cpu_us": "SInt64",
+      "candidate_wall_us": "SInt64",
+      "invalid_input": "Bool",
+      "selected": "Bool"
+    },
+    "type": "Record"
+  },
+  "program_id": "benchmark-selector",
+  "program_version": "0.1.0-local",
+  "purpose": "Select matched rows with any regression and project candidate measurements using native logic",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "selected",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "candidate_wall_us",
+      "type": "SInt64"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "candidate_cpu_us",
+      "type": "SInt64"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "candidate_archive_bytes",
+      "type": "SInt64"
+    },
+    {
+      "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+      "name": "invalid_input",
+      "type": "Bool"
+    }
+  ],
+  "result_type_id": "be473adf20018161817be93d08e27ec855c8cdd42ab087b24bbf00e4f6047fc6",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "scripts/probe_data_pipe_native.py::selector_oracle",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Benchmark Selector and Projector",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "constant": "include_nonregressions",
+    "evidence": "evidence/catalog/benchmark-selector-v1.json",
+    "example_value": true,
+    "initial_value": false,
+    "operation": "replace_named_constant"
+  }
+}

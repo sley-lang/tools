@@ -1,0 +1,150 @@
+{
+  "contract": "sley-tools.program-catalog.v0",
+  "programs": [
+    {
+      "id": "N01",
+      "program_id": "release-readiness",
+      "responsibility": "Decide release permission from supplied test, artifact, and blocking-finding facts",
+      "package": "programs/release-readiness",
+      "artifact": "programs/release-readiness/artifact/native-program.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/examples/release_readiness.py",
+        "packages/typescript/examples/release-readiness.mjs"
+      ],
+      "verified_behavior": "evidence/bridge/python-v1.json",
+      "worked_modification": "evidence/starter/edit-v1.json",
+      "status": "verified_local_artifact"
+    },
+    {
+      "id": "N02",
+      "program_id": "resource-admission",
+      "responsibility": "Decide whether supplied worker and memory requests fit supplied capacity",
+      "package": "programs/resource-admission",
+      "artifact": "programs/resource-admission/artifact/native-program.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/examples/resource_admission.py",
+        "packages/typescript/examples/resource-admission.mjs"
+      ],
+      "verified_behavior": "evidence/resource-admission/artifact-v1.json",
+      "worked_modification": "evidence/resource-admission/edit-v1.json",
+      "status": "verified_local_artifact_and_edit"
+    },
+    {
+      "id": "N03",
+      "program_id": "benchmark-comparator",
+      "responsibility": "Compare one matched benchmark row with exact checked deltas and independent regression flags",
+      "package": "programs/benchmark-comparator",
+      "artifact": "programs/benchmark-comparator/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/sley_tools/data_pipe.py",
+        "examples/data-pipe/benchmark-v0.input.jsonl"
+      ],
+      "verified_behavior": "evidence/catalog/benchmark-comparator-v1.json",
+      "worked_modification": "evidence/catalog/benchmark-comparator-v1.json",
+      "status": "verified_local_artifact_and_edit"
+    },
+    {
+      "id": "N04",
+      "program_id": "benchmark-selector",
+      "responsibility": "Select matched benchmark rows by a native regression predicate and project candidate measurements",
+      "package": "programs/benchmark-selector",
+      "artifact": "programs/benchmark-selector/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/sley_tools/data_pipe.py",
+        "examples/data-pipe/benchmark-v0.input.jsonl"
+      ],
+      "verified_behavior": "evidence/catalog/benchmark-selector-v1.json",
+      "worked_modification": "evidence/catalog/benchmark-selector-v1.json",
+      "status": "verified_local_artifact_and_edit"
+    },
+    {
+      "id": "N05",
+      "program_id": "benchmark-summary-reducer",
+      "responsibility": "Combine typed partial benchmark summaries with checked count and totals",
+      "package": "programs/benchmark-summary-reducer",
+      "artifact": "programs/benchmark-summary-reducer/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/sley_tools/data_pipe.py",
+        "examples/data-pipe/benchmark-v0.input.jsonl"
+      ],
+      "verified_behavior": "evidence/catalog/benchmark-summary-reducer-v1.json",
+      "worked_modification": "evidence/catalog/benchmark-summary-reducer-v1.json",
+      "status": "verified_local_artifact_and_edit"
+    },
+    {
+      "id": "N06",
+      "program_id": "tier-classifier",
+      "responsibility": "Classify signed values into three ordered tiers and reject invalid threshold configuration",
+      "package": "programs/tier-classifier",
+      "artifact": "programs/tier-classifier/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "apps/repair-lab/lab.py"
+      ],
+      "verified_behavior": "evidence/catalog/tier-classifier-v1.json",
+      "worked_modification": "evidence/catalog/tier-classifier-v1.json",
+      "status": "verified_local_artifact_and_threshold_edit"
+    },
+    {
+      "id": "N07",
+      "program_id": "range-predicate",
+      "responsibility": "Decide signed interval membership with explicit reversed bounds and upper endpoint policy",
+      "package": "programs/range-predicate",
+      "artifact": "programs/range-predicate/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "programs/range-predicate/examples/python.py"
+      ],
+      "verified_behavior": "evidence/catalog/range-predicate-v1.json",
+      "worked_modification": "evidence/catalog/range-predicate-v1.json",
+      "status": "verified_local_artifact_and_boundary_correction"
+    },
+    {
+      "id": "N08",
+      "program_id": "bounded-clamp",
+      "responsibility": "Clamp a signed value to configured inclusive bounds and report invalid configuration",
+      "package": "programs/bounded-clamp",
+      "artifact": "programs/bounded-clamp/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/examples/bounded_clamp.py"
+      ],
+      "verified_behavior": "evidence/catalog/bounded-clamp-v1.json",
+      "worked_modification": "evidence/catalog/bounded-clamp-v1.json",
+      "status": "verified_local_artifact_and_bound_edit"
+    },
+    {
+      "id": "N09",
+      "program_id": "quota-remaining",
+      "responsibility": "Compute nonnegative remaining quota and exhaustion before performing checked subtraction",
+      "package": "programs/quota-remaining",
+      "artifact": "programs/quota-remaining/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/examples/quota_remaining.py"
+      ],
+      "verified_behavior": "evidence/catalog/quota-remaining-v1.json",
+      "worked_modification": "evidence/catalog/quota-remaining-v1.json",
+      "status": "verified_local_artifact_and_notification_edit"
+    },
+    {
+      "id": "N10",
+      "program_id": "generated-payload-validator",
+      "responsibility": "Validate a closed device-reading record against required Boolean and bounded integer fields",
+      "package": "programs/generated-payload-validator",
+      "artifact": "programs/generated-payload-validator/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "integration_examples": [
+        "packages/python/examples/generated_payload_validator.py"
+      ],
+      "verified_behavior": "evidence/catalog/generated-payload-validator-v1.json",
+      "worked_modification": "evidence/catalog/generated-payload-validator-v1.json",
+      "status": "verified_local_artifact_and_bound_edit"
+    }
+  ]
+}

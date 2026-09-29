@@ -1,0 +1,19 @@
+{
+  "cancelled_before_commit_blocked_rpc_and_cli": true,
+  "candidate_id": "37ac8a286c6baf585e24588aa703a233711c616a2da9e7d450856821f01e5cb1",
+  "commit_bound_to_operation": true,
+  "completed_cancel_did_not_claim_rollback": true,
+  "completed_verified_by_core": true,
+  "contract": "sley-tools.operation-status-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "operation_id": "9e0d072fbe364b08eb3cde88137d5ba9a980d1298707b05cce3eedefeb31b022",
+  "partial_project_file_rpc_recovered": true,
+  "precommit_validated": true,
+  "probe_sha256": "b55be499c93503db5a4c97de2612984d3cf976eca42e05b2f122356d11b3fe43",
+  "result": "PASS",
+  "scope": "ordinary Release Readiness commit with durable status, core receipt recovery, and safe precommit cancellation; concurrent in-flight cancellation remains unverified",
+  "stale_project_cli_recovered": true,
+  "stale_project_rpc_recovered": true,
+  "tools_binary_sha256": "28b8b66ba8177b0d6836024bd6bbc9c6df6403ed29363bca9cac9897d94139e2",
+  "verified_receipt_id": "176559825d80bdd4b2a57971358aa5ea8c8ffa81f6874ba29d1d38f186d9909f"
+}

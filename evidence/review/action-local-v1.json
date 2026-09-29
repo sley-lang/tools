@@ -1,0 +1,30 @@
+{
+  "action_metadata_sha256": "6e014a13d32358e35daf31901307d1ca46f8f9e770a54ccb6eb2004edd9fd7a3",
+  "action_runner_sha256": "915dada63423f41a3ad4913bc4319f82634eab31cd18f9ba50df8d6ccc6f01b4",
+  "contract": "sley-tools.review-action-local-probe.v1",
+  "core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "github_hosted_action_run": "NOT_RUN",
+  "graph_review": {
+    "case_count": 11,
+    "changed_case_count": 0,
+    "report_recomputed": true,
+    "report_sha256": "1d8203c3cad33f4cfa5a52b3039a2291fff5c1cce8e8fa67b8a56c2c0a2e0431"
+  },
+  "job_summary_written": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "probe_sha256": "8f446714e637edb23156558d0715e7fb7d86dd1664c947e6a0981a5c65ee9923",
+  "release_review": {
+    "case_count": 48,
+    "changed_case_count": 24,
+    "exact_changed_entities": 1,
+    "manifest_schema_checks": 2,
+    "report_recomputed": true,
+    "report_sha256": "ce0885682cb198f544faef36dc936a4e41d81bbc2a55272ec9e6bcef4ef935be"
+  },
+  "result": "PASS",
+  "scope": "external caller workspace; local Action runner, not a GitHub-hosted job",
+  "stale_manifest_rejected_without_report": true,
+  "symlinked_input_rejected": true,
+  "tools_binary_sha256": "2a21d6c988e62279e6fbebcdf342bc036cd0ab49ea2d279b1902d4b51384b69b"
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_sha256": "41c4dc13e23e6320d444ee71ae73cec88dd36b86e9d617198c0c0059d5278e2c",
+  "both_sdks_loaded_native_artifact": true,
+  "contract": "sley-tools.resource-artifact-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "fixtures_sha256": "0fcdf3a84006ca881229c9b835facba65ed66837fd4e0e962c3f21955570ae6c",
+  "fresh_workspace_and_principal": true,
+  "imported_python_cases_per_workspace": 49,
+  "imported_typescript_cases": 49,
+  "native_object_count": 22,
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "result": "PASS",
+  "second_generation_import_passed": true,
+  "source_authority_excluded": true,
+  "tampered_object_and_false_type_rejected": true,
+  "typed_source_import_equivalent": true
+}

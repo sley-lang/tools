@@ -1,0 +1,20 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "unsigned-limit",
+  "title": "Unsigned Limit",
+  "purpose": "Decide whether a nonnegative count stays within a supplied limit",
+  "parameters": [
+    {"name": "count", "value_type": "UInt32"},
+    {"name": "limit", "value_type": "UInt32"}
+  ],
+  "constants": [],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "less_equal", "name": "within", "left": "param.count", "right": "param.limit"}
+    ],
+    "terminator": {"kind": "return", "value": "op.within"}
+  }]
+}

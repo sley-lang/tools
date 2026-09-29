@@ -1,0 +1,33 @@
+{
+  "artifact_sha256": "1a4610d7f749e5efeb013fa5e49d5c14bcf6eecc257dd9176ec9ce3c94f764cd",
+  "bundled_cli_example_cases": 2,
+  "cases_sha256": "702d817e097df7ad4c6e283517f1ca3ae7788cbaa2e4c0517bba2db9cce42378",
+  "catalog_sha256": "14164169aee05a0ace80b56c6d4b841359766eb7e78d90348dde408fc35a1e13",
+  "cli_examples_sha256": {
+    "reversed_bounds": "8abad8d6a015459191b9b9dea3315673e8e2a2aa13545e316a14279646ef2830",
+    "upper_endpoint": "8849f6faf3d9d870c9bc9e22cc33f72dabc6d864a3fb60c0cc63339afadde507"
+  },
+  "contract": "sley-tools.range-catalog-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "corrected_root": "c880ed42e7e919d71e051a6a61ce3b2f0a5b875b38c586e403db2c564bcb40ff",
+  "correction_candidate_id": "52c682688bf083373aa26103d60b33edf2f315b22bb61a69c7f4118e4d8d9f2c",
+  "correction_receipt_id": "4f00ce6cbf2cf0134cc274c31e24e4e788ed76729ff3ffb358a3a5d11110e0d9",
+  "edited_artifact_replayed": true,
+  "excluded_cases_sha256": "0ea1a116887b43371689384ea1538848d04a1f23c3e5c458e01626f74c21aff8",
+  "excluded_root": "d0dff0823a258c91127ad7f73edef7fb9d5279a3a8b29d70290fcf09b8b4d9c1",
+  "exclusion_candidate_id": "2fd29e0e4804db16ccfda78dd77ef512d58f904caa8eb6281aa28f0cd1aef926",
+  "exclusion_receipt_id": "ecac4c4bbcecf93ab9d3fa87bb6c431f270a81523e84a38ac5056ddaf68678d4",
+  "imported_root": "c880ed42e7e919d71e051a6a61ce3b2f0a5b875b38c586e403db2c564bcb40ff",
+  "independently_checked_cases_each_phase": 35,
+  "manifest_sha256": "24a6b42ce9062eda5a589d1d449467a86677124c79ed73965cfd4e5eefce0aef",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_object_count": 28,
+  "python_example_sha256": "15836bc57407280e38828e4cd14298e0398306c41e0b05834c0f8a6b20015cff",
+  "python_native_example_cases": 3,
+  "recipe_sha256": "d0a75c5217ec91e4b81fc8fd0a7b372709846ee405b7c9d1b35859f64f6a5327",
+  "replay_root": "02418039887b02cd1cae4475edc0f7c543ea7f3073e9857eeca31bc82279235d",
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "source_root": "93513defcb360b7fc5491cef9803b43145bcfba2995af6dfac239481b08b455a",
+  "tools_binary_sha256": "08c874f4a264dd59c6374a4d5d53a1e0b474341c78c9143daf82c7f30f871c50"
+}

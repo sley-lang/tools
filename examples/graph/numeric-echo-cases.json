@@ -1,0 +1,8 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "zero", "input": ["0", "0"], "expected": {"signed": "0", "unsigned": "0"}},
+    {"id": "min-signed-max-unsigned", "input": ["-9223372036854775808", "4294967295"], "expected": {"signed": "-9223372036854775808", "unsigned": "4294967295"}},
+    {"id": "max-signed", "input": ["9223372036854775807", "1"], "expected": {"signed": "9223372036854775807", "unsigned": "1"}}
+  ]
+}

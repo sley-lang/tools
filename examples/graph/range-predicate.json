@@ -1,0 +1,52 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "range-predicate",
+  "title": "Range Predicate",
+  "purpose": "Decide whether a signed value is within inclusive bounds and explain invalid bounds",
+  "parameters": [
+    {"name": "value", "value_type": "SInt64"},
+    {"name": "lower", "value_type": "SInt64"},
+    {"name": "upper", "value_type": "SInt64"}
+  ],
+  "constants": [
+    {"name": "yes", "value_type": "Bool", "value": true},
+    {"name": "no", "value_type": "Bool", "value": false}
+  ],
+  "result": {"kind": "record", "fields": [
+    {"name": "within_range", "value_type": "Bool"},
+    {"name": "invalid_bounds", "value_type": "Bool"},
+    {"name": "below_lower", "value_type": "Bool"},
+    {"name": "above_upper", "value_type": "Bool"}
+  ]},
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {"op": "greater_than", "name": "invalid", "left": "param.lower", "right": "param.upper"}
+      ],
+      "terminator": {"kind": "cond_branch", "condition": "op.invalid", "if_true": "invalid_bounds", "if_false": "valid_bounds"}
+    },
+    {
+      "name": "invalid_bounds",
+      "operations": [
+        {"op": "constant_ref", "name": "invalid_yes", "constant": "yes"},
+        {"op": "constant_ref", "name": "invalid_no", "constant": "no"},
+        {"op": "record_new", "name": "invalid_result", "fields": ["op.invalid_no", "op.invalid_yes", "op.invalid_no", "op.invalid_no"]}
+      ],
+      "terminator": {"kind": "return", "value": "op.invalid_result"}
+    },
+    {
+      "name": "valid_bounds",
+      "operations": [
+        {"op": "less_than", "name": "below", "left": "param.value", "right": "param.lower"},
+        {"op": "greater_than", "name": "above", "left": "param.value", "right": "param.upper"},
+        {"op": "bool_or", "name": "outside", "left": "op.below", "right": "op.above"},
+        {"op": "bool_not", "name": "inside", "operand": "op.outside"},
+        {"op": "constant_ref", "name": "valid_no", "constant": "no"},
+        {"op": "record_new", "name": "valid_result", "fields": ["op.inside", "op.valid_no", "op.below", "op.above"]}
+      ],
+      "terminator": {"kind": "return", "value": "op.valid_result"}
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "builder_binary_sha256": "d029f52341ce58e98aa2a01ff123b00a0dd796f89b3e153bf7fedef78f53716a",
+  "cli": {
+    "candidate_id": "330f08ba292222502d4b90e9980b08d54ee8f214c86321d9123223d65bd286bf",
+    "changed_case_count": 8,
+    "invalid_edits_rejected": 3,
+    "native_cases": 8,
+    "new_root": "dcb51b3b8bc8707e5a0efbfe4030b8447f0e02391d17f876cea02b3a6f6f9aec",
+    "old_root": "050558523ef1838f1c649e8d7e7ff3383bc95abcf743cf7ef67e469a7b0432cd",
+    "tampered_proposals_rejected": 3
+  },
+  "contract": "sley-tools.graph-branch-edit-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "initial_cases_sha256": "40a198e8ef6f7231ceced71be658bd0aa23a9399497c8d400e94be01fa3ac7ad",
+  "mcp_server_sha256": "5b81f7298ec67effcda06473c4a03020fb370be9842ca28cf7a9ff66c737bb43",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "python": {
+    "native_cases": 8,
+    "new_root": "79a609d8d6f5f45c584cc61130aa2b16f5724d3c7dfa96d087a4e337ff37f079"
+  },
+  "python_probe_sha256": "62ada7b3cf98d9805c995f21825ce37ff878b2ed69547b44cf10e7be56999a67",
+  "python_sdk_sha256": "ffffedacaab8001898e35e56169e09886055a4cecae0bdce941f3befaecfa7f4",
+  "result": "PASS",
+  "spec_sha256": "e32fd0c3cda3cca26b92b4c104d1aaa959ccc8a01204a1ebd99d7a66b0fc00cc",
+  "tools_binary_sha256": "c2468f14f323631ecc45b693b9df7920aa8ec4ea4fb96dcd7353d4e3c3f4fdea",
+  "typescript": {
+    "candidate_id": "422518e7210cd0760d95b69d04903dab483a4f16bf6ae3baa807cdfcbc863be5",
+    "contract": "sley-tools.graph-typescript-branch-probe.v1",
+    "native_cases": 8,
+    "new_root": "8310bffbc6a1e67ecaf3547d241eeb921f201cd03c63016fce6c9ecb70736dd9",
+    "old_root": "4df6595360b76d646dcca288955ab43e63b73d38237795a5b44ba133562dfca1",
+    "result": "PASS",
+    "wrong_shape_rejected": true
+  },
+  "typescript_probe_sha256": "4c0bcd88429a960ac53f1462d15642f9b9449a337266adea5fcbb19bd6c64627",
+  "typescript_sdk_sha256": "47d47705ddead4695daf1120276ba747f70e92d5f07f31214c572b42838f795d",
+  "unconditional": {
+    "candidate_id": "f2feec41c660d563c149c739fce6a106a5bdd36a6a905ffbc3d853b074afda41",
+    "changed_case_count": 2,
+    "native_cases": 4,
+    "new_root": "54d8a460fc1b690554d6b0b57bd564a59dbdc0bda1c2714902b4efd6d1e68ad4",
+    "old_root": "c594019f0f7fc1ea9afcaf93cd5dff696d2557f8ae83657a79d944e367738cf0"
+  },
+  "updated_cases_sha256": "8c77a236a5925279dd81b2a8a1802732ecb38fc73a48501a887f4a068ec9f176"
+}

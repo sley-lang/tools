@@ -1,0 +1,1 @@
+{"contract":"sley-tools.python-domain.v1","profile":"python-pure-i64-v1","parameters":[{"name":"capacity","type":"int","minimum":"0","maximum":"9223372036854775807"},{"name":"used","type":"int","minimum":"-9223372036854775808","maximum":"0"}],"cases":[{"id":"simple","inputs":{"capacity":"1","used":"0"},"expected":"1"}]}

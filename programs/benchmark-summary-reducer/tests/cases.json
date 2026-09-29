@@ -1,0 +1,491 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {
+      "id": "empty-identity",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "left-identity",
+      "input": [
+        "0",
+        "2",
+        "0",
+        "100",
+        "0",
+        "200",
+        "0",
+        "300"
+      ],
+      "expected": {
+        "count": {
+          "ok": "2"
+        },
+        "wall_total_us": {
+          "ok": "100"
+        },
+        "cpu_total_us": {
+          "ok": "200"
+        },
+        "archive_total_bytes": {
+          "ok": "300"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "right-identity",
+      "input": [
+        "3",
+        "0",
+        "150",
+        "0",
+        "250",
+        "0",
+        "350",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "3"
+        },
+        "wall_total_us": {
+          "ok": "150"
+        },
+        "cpu_total_us": {
+          "ok": "250"
+        },
+        "archive_total_bytes": {
+          "ok": "350"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "ordinary",
+      "input": [
+        "2",
+        "3",
+        "100",
+        "120",
+        "200",
+        "220",
+        "300",
+        "320"
+      ],
+      "expected": {
+        "count": {
+          "ok": "5"
+        },
+        "wall_total_us": {
+          "ok": "220"
+        },
+        "cpu_total_us": {
+          "ok": "420"
+        },
+        "archive_total_bytes": {
+          "ok": "620"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "max-success",
+      "input": [
+        "0",
+        "2",
+        "0",
+        "9223372036854775807",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "2"
+        },
+        "wall_total_us": {
+          "ok": "9223372036854775807"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "count-overflow",
+      "input": [
+        "9223372036854775807",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "error": {
+            "code": 1
+          }
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "wall-overflow",
+      "input": [
+        "0",
+        "0",
+        "9223372036854775807",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "error": {
+            "code": 1
+          }
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "cpu-overflow",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "9223372036854775807",
+        "1",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "error": {
+            "code": 1
+          }
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "archive-overflow",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "9223372036854775807",
+        "1"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "error": {
+            "code": 1
+          }
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-domain",
+      "input": [
+        "-1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "zero-valued-record",
+      "input": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "1"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": false
+      }
+    },
+    {
+      "id": "negative-right-count",
+      "input": [
+        "1",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "negative-left-wall",
+      "input": [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "-1"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "negative-right-wall",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "-1"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "negative-cpu",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "-1"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "negative-archive",
+      "input": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "ok": "0"
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "-1"
+        },
+        "invalid_input": true
+      }
+    },
+    {
+      "id": "negative-total-overflow",
+      "input": [
+        "0",
+        "0",
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected": {
+        "count": {
+          "ok": "0"
+        },
+        "wall_total_us": {
+          "error": {
+            "code": 1
+          }
+        },
+        "cpu_total_us": {
+          "ok": "0"
+        },
+        "archive_total_bytes": {
+          "ok": "0"
+        },
+        "invalid_input": true
+      }
+    }
+  ]
+}

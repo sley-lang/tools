@@ -1,0 +1,81 @@
+{
+  "additional_families": {
+    "boolean": {
+      "changed_case_count": 2,
+      "native_cases": 4,
+      "new_root": "a6e8a577dae37deadc852ed02b5cb5bb079745c2a68d15a417ee1b7f7a27030a",
+      "old_root": "8c4cca5814df35ccbfd54405a0236eaaeb55ac15401b9c8d89dba2480306f712",
+      "operation_id": "202a46b47355d51047811a4a34babb3c43f937229504b85a9648221ddde4d8c1"
+    },
+    "checked_binary": {
+      "changed_case_count": 4,
+      "native_cases": 4,
+      "new_root": "ba97b4b5b87c0d3c0a9ec0cdfb4778301584eaf139fac9a38cf8f66438be5841",
+      "old_root": "a06c8249d2fcd625bc06e5ef081bb99a53b7d6588c49b85ffaf4408891f33d53",
+      "operation_id": "2ac7c4510de774310276da9643d002db3d4da7b817d1d2bdaae5191522afff94"
+    },
+    "checked_unary": {
+      "changed_case_count": 3,
+      "native_cases": 4,
+      "new_root": "b4495631ce27d2fd531b5a51b5d55b5437f7b591bca570f8f7a08c672f9e839c",
+      "old_root": "e909b312cc4256cad90bca71b371d7ff72dc4c7ae1fe8f46919859cbe7e63a1f",
+      "operation_id": "bc62a835dcda9399f2f7df7cc03b0e8835e5456759868df5c179c6dfca5bd531"
+    },
+    "equality": {
+      "changed_case_count": 3,
+      "native_cases": 3,
+      "new_root": "f744a52339dc75926f2d7a6275c5c1403d16be59a96420573329b473cd3fbb3d",
+      "old_root": "506f34a7e10c480b9881c9694bc3177d1e2ca56841352c468a6ebeb4f82823a3",
+      "operation_id": "2cd2b20854b6b10111345af9dcc537402e0dc7d0e711df0f45b0011964052089"
+    }
+  },
+  "builder_binary_sha256": "d029f52341ce58e98aa2a01ff123b00a0dd796f89b3e153bf7fedef78f53716a",
+  "cli": {
+    "candidate_id": "8cacae4ec2e6d3a3c340d01156a27129d8010c56cb4dda5ed3bccb50df0c392c",
+    "changed_case_count": 1,
+    "cross_profile_rejected": true,
+    "native_cases": 5,
+    "new_object_id": "6962fa8e69484336d486e6f9c2aef8cb4bf5482739a7fbf85179d1d14a6836d8",
+    "new_root": "339d473314b5593be7df278429d376f6b6c9daaaa77e1e1eb4ccfd971155fd15",
+    "old_object_id": "57f7dc6f8361e30876760793e47ebdcaaa2e1afe84279badcaffd98340a228c0",
+    "old_root": "9d9ad24f6aad2d2f20221f3d3634a4fed41717895d269c7a179ae7936a90ace8",
+    "operation_id": "a944748531911b9f5ada588b16260b25241dc921a4f3757edc9f441eba7d3dbf",
+    "stale_base_rejected": true,
+    "tampered_object_rejected": true,
+    "tampered_value_rejected": true
+  },
+  "contract": "sley-tools.graph-opcode-edit-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "initial_cases_sha256": "f1d096e39ccd0be0426a4ca4932363495539e01c6c6f0846f99ac6828c325f33",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "python": {
+    "candidate_id": "5a08411e02573211422b86a7d8ccdb101ff95f1d82c5dd2ce5256afea4059142",
+    "changed_case_count": 1,
+    "handle_rotated": true,
+    "native_cases": 5,
+    "new_root": "3b56ca5fef07b22a07c4f576fcd34583ccb1adcf81e7238f40db3c7f071b0fb7",
+    "old_root": "dff4dcfcd53d4992c5123690a924d30b355dcf5b01f61fd04e3ef4b5254f670d"
+  },
+  "python_builder_sha256": "b78cdf9e35247e5cd31493e58797c80b19e4fd6b0082505960c571b4eb793757",
+  "python_probe_sha256": "3f4fe481f3a9d3cd4aeb90589625fc9a05708f54da82c4158335001b569c2a18",
+  "python_sdk_sha256": "ffffedacaab8001898e35e56169e09886055a4cecae0bdce941f3befaecfa7f4",
+  "result": "PASS",
+  "spec_sha256": "4c0a9332d78943d3023b6344e4e700604efac87b8079165a88ab92fa2c6c4ad7",
+  "tools_binary_sha256": "c2468f14f323631ecc45b693b9df7920aa8ec4ea4fb96dcd7353d4e3c3f4fdea",
+  "typescript": {
+    "candidate_id": "d0cef01f4f4224a527e69023f0d19456ff7d52d691ea6a483754c0c40fbef4c2",
+    "changed_case_count": 1,
+    "contract": "sley-tools.graph-typescript-opcode-probe.v1",
+    "handle_rotated": true,
+    "native_cases": 5,
+    "new_root": "448ba32d5fba98369e70af257bc5583d1f0a46f067fa2f3985163751c4432c08",
+    "old_root": "7f9ce9f7cd85c93a3e5cca3dc325ceeb297e110f3ce6ab50cfe49c8c9fc6b546",
+    "result": "PASS",
+    "unsupported_opcode_rejected": true
+  },
+  "typescript_probe_sha256": "7390f71dabc020c15f566a39ff4a789f7317030f247d87c962b99c063af52ba0",
+  "typescript_sdk_sha256": "47d47705ddead4695daf1120276ba747f70e92d5f07f31214c572b42838f795d",
+  "typescript_type_test_sha256": "f9e90554971ce908bb383647f7b9bcbc2cd209fb1481913a26f884aa3d366c07",
+  "typescript_types_sha256": "e3dd6aa38e2be57303bf13cce4f49b63da74bb05609cbaab140ad9cd7830fc78",
+  "updated_cases_sha256": "6b66ccf4d66afa4fd7420803e8f2fc29ca09b41bdcbd001118a551d583beefe8"
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:sley-tools:program:v0",
+  "title": "Sley tools program manifest v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract", "program_id", "title", "purpose", "program_version", "status",
+    "tools_contract", "core", "entrypoint", "result_type_id", "result_fields",
+    "inputs", "output", "artifact", "native_logic", "host_responsibility",
+    "test_cases", "worked_change", "source_provenance", "license_status"
+  ],
+  "properties": {
+    "contract": {"const": "sley-tools.program.v0"},
+    "authoring_profile": {"const": "graph_v0"},
+    "program_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "program_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"},
+    "status": {"enum": ["local_workspace_only", "portable_native_artifact"]},
+    "tools_contract": {"const": "sley-tools.cli.v0"},
+    "core": {
+      "type": "object", "additionalProperties": false,
+      "required": ["commit", "profile", "binary_sha256"],
+      "properties": {
+        "commit": {"$ref": "#/$defs/hex40"},
+        "profile": {"const": "extended_v1"},
+        "binary_sha256": {"$ref": "#/$defs/hex64"}
+      }
+    },
+    "entrypoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "function_id", "state_root"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "function_id": {"$ref": "#/$defs/hex64"},
+        "state_root": {"$ref": "#/$defs/hex64"}
+      }
+    },
+    "result_type_id": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/hex64"}]},
+    "result_fields": {
+      "type": "array", "maxItems": 32,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "member_id"],
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "member_id": {"$ref": "#/$defs/hex64"},
+          "type": {"enum": ["Bool", "UInt32", "SInt64", "CheckedSInt64"]}
+        }
+      }
+    },
+    "inputs": {"$ref": "#/$defs/inputFields"},
+    "output": {"oneOf": [{
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "fields"],
+      "properties": {
+        "type": {"const": "Record"},
+        "fields": {"$ref": "#/$defs/fields"}
+      }
+    }, {"type": "object", "additionalProperties": false,
+      "required": ["type"], "properties": {"type": {"enum": ["Bool", "UInt32", "SInt64", "CheckedSInt64"]}}
+    }]},
+    "artifact": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/artifact"}]},
+    "graph_recipe": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"const": "build/graph.json"}, "sha256": {"$ref": "#/$defs/hex64"}}
+    },
+    "imported_source_artifact": {"$ref": "#/$defs/artifact"},
+    "native_logic": {"type": "string", "minLength": 1},
+    "host_responsibility": {"type": "string", "minLength": 1},
+    "test_cases": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_assertions", "independent_oracle", "native_core_test_admission"],
+      "properties": {
+        "external_assertions": {"type": "string", "minLength": 1},
+        "independent_oracle": {"type": "string", "minLength": 1},
+        "native_core_test_admission": {"type": "string", "minLength": 1}
+      }
+    },
+    "worked_change": {"anyOf": [
+      {"type": "object", "additionalProperties": false,
+       "required": ["operation", "initial_threshold", "example_threshold"],
+       "properties": {
+         "operation": {"type": "string", "minLength": 1},
+         "initial_threshold": {"type": "integer", "minimum": 0, "maximum": 4294967295},
+         "example_threshold": {"type": "integer", "minimum": 0, "maximum": 4294967295}
+       }},
+      {"type": "object", "additionalProperties": false, "required": ["status"],
+       "properties": {"status": {"const": "pending"}}},
+      {"type": "object", "additionalProperties": false,
+       "required": ["operation", "initial_require_memory_spare", "example_require_memory_spare"],
+       "properties": {
+         "operation": {"type": "string", "minLength": 1},
+         "initial_require_memory_spare": {"const": false},
+         "example_require_memory_spare": {"const": true}
+       }},
+      {"type": "object", "additionalProperties": false,
+       "required": ["operation", "constant", "initial_value", "example_value", "evidence"],
+       "properties": {
+         "operation": {"const": "replace_named_constant"},
+         "constant": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+         "initial_value": {"anyOf": [{"type": "boolean"}, {"type": "string", "pattern": "^(0|-?[1-9][0-9]*)$"}]},
+         "example_value": {"anyOf": [{"type": "boolean"}, {"type": "string", "pattern": "^(0|-?[1-9][0-9]*)$"}]},
+         "evidence": {"$ref": "#/$defs/relativePath"}
+       }}
+    ]},
+    "source_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["builder", "core_commit"],
+      "properties": {
+        "builder": {"$ref": "#/$defs/relativePath"},
+        "core_commit": {"$ref": "#/$defs/hex40"}
+      }
+    },
+    "license_status": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "portable_native_artifact"}}},
+     "then": {"properties": {"artifact": {"$ref": "#/$defs/artifact"}}}},
+    {"if": {"required": ["authoring_profile"],
+      "properties": {"authoring_profile": {"const": "graph_v0"}}},
+     "then": {"required": ["graph_recipe"],
+       "properties": {
+         "artifact": {"anyOf": [{"type": "null"}, {"properties": {"contract": {"const": "sley-tools.native-graph-artifact.v1"}}}]},
+         "imported_source_artifact": {"properties": {"contract": {"const": "sley-tools.native-graph-artifact.v1"}}}
+       }},
+     "else": {"properties": {
+       "artifact": {"anyOf": [{"type": "null"}, {"properties": {"contract": {"const": "sley-tools.native-program-artifact.v0"}}}]},
+       "imported_source_artifact": {"properties": {"contract": {"const": "sley-tools.native-program-artifact.v0"}}}
+     }}},
+    {"if": {"properties": {"output": {"properties": {"type": {"enum": ["Bool", "UInt32", "SInt64", "CheckedSInt64"]}}}}},
+     "then": {"properties": {"result_type_id": {"type": "null"}, "result_fields": {"maxItems": 0}}}}
+  ],
+  "$defs": {
+    "hex40": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "hex64": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "relativePath": {
+      "type": "string", "pattern": "^[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$",
+      "not": {"pattern": "(^|/)\\.\\.?(/|$)"}
+    },
+    "fields": {
+      "type": "object", "minProperties": 1,
+      "propertyNames": {"pattern": "^[a-z][a-z0-9_]*$"},
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "inputFields": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[a-z][a-z0-9_]*$"},
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "contract"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/hex64"},
+        "contract": {"enum": ["sley-tools.native-program-artifact.v0", "sley-tools.native-graph-artifact.v1"]}
+      }
+    }
+  }
+}

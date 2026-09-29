@@ -1,0 +1,10 @@
+{
+  "contract": "sley-tools.ci-review-check.v1",
+  "core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "report_sha256": "2f5da790a74438a398d2dd0bcda6348bf5814cc794c36e5fbdd2e86f1d359192",
+  "result": "PASS_BOUNDED_REVIEW",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "tools_binary_sha256": "9f7dea861612c864d5774e15bad29f5d37f102da2065988112faeecb294dfe94"
+}

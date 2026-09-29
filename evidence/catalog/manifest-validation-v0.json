@@ -1,0 +1,16 @@
+{
+  "artifacts": {
+    "artifact": {
+      "bytes": 15942,
+      "path": "artifact/native-program.json",
+      "sha256": "19e829206cb66469d103982490ffec339f466408e02da6dc7f7ecd1981dcbecb"
+    }
+  },
+  "contract": "sley-tools.program-manifest-validation.v1",
+  "manifest_sha256": "ebce3cad7e5228a1d4738128b93f273408e710d5ead8855615c5c458d5d0fbf7",
+  "program_id": "release-readiness",
+  "program_version": "0.1.0",
+  "result": "PASS",
+  "schema": "program-v0.schema.json",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370"
+}

@@ -1,0 +1,40 @@
+{
+  "contract": "sley-tools.github-draft-assets.v1",
+  "repository": "sley-lang/tools",
+  "repository_visibility": "private",
+  "tag": "v0.0.1-rc.1",
+  "tag_object_sha": "4331924135adf35674d23682d549b99b3c9d41dc",
+  "tag_peeled_source_commit": "0db18fdcfcfa6de1b8d65b9a2fce396d12fd43d6",
+  "release_draft": true,
+  "release_prerelease": true,
+  "assets": [
+    {
+      "name": "sley-tools-release-candidate-0db18fd.tar.gz",
+      "bytes": 7644773,
+      "sha256": "9ff3fc6a24b6018299a12bab484e123b22250a0b2f046130f75e8d647338fa9f",
+      "fresh_github_download_sha256_match": true
+    },
+    {
+      "name": "sley_tools-0.0.1-py3-none-any.whl",
+      "bytes": 39555,
+      "sha256": "574cc05811053e513e71266b7debd8ad2edf6c6d2a002191a5d487d7e968c7c6",
+      "fresh_github_download_sha256_match": true
+    },
+    {
+      "name": "sley-lang-tools-0.0.1.tgz",
+      "bytes": 16194,
+      "sha256": "81185bcbd6c113fc1cfd1cfe096fe8ad090a1836a0d146d0b04d94525115ff8f",
+      "fresh_github_download_sha256_match": true
+    },
+    {
+      "name": "sley-lang-tools-mcp-0.0.1.tgz",
+      "bytes": 2838118,
+      "sha256": "ecbc72e792eb2f92195b28e9d076c7c6bec8ba356e30d83bfe6c43f1c97f8283",
+      "fresh_github_download_sha256_match": true
+    }
+  ],
+  "exact_asset_install": "PASS: evidence/fresh-install/exact-draft-assets-v1.json",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "public_release": false,
+  "result": "PASS_DRAFT_ASSETS"
+}

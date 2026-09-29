@@ -1,0 +1,32 @@
+{
+  "contract": "sley-tools.adapter-archive-probe.v1",
+  "packages": {
+    "mcp": {
+      "archive_bytes": 2838118,
+      "archive_name": "sley-lang-tools-mcp-0.0.1.tgz",
+      "archive_sha256": "ecbc72e792eb2f92195b28e9d076c7c6bec8ba356e30d83bfe6c43f1c97f8283",
+      "file_count": 951,
+      "path_and_secret_scan": "PASS",
+      "source_and_identity_verified": true
+    },
+    "python": {
+      "archive_bytes": 39555,
+      "archive_name": "sley_tools-0.0.1-py3-none-any.whl",
+      "archive_sha256": "574cc05811053e513e71266b7debd8ad2edf6c6d2a002191a5d487d7e968c7c6",
+      "file_count": 13,
+      "path_and_secret_scan": "PASS",
+      "source_and_identity_verified": true
+    },
+    "typescript": {
+      "archive_bytes": 16194,
+      "archive_name": "sley-lang-tools-0.0.1.tgz",
+      "archive_sha256": "81185bcbd6c113fc1cfd1cfe096fe8ad090a1836a0d146d0b04d94525115ff8f",
+      "file_count": 7,
+      "path_and_secret_scan": "PASS",
+      "source_and_identity_verified": true
+    }
+  },
+  "result": "PASS",
+  "source_commit": "0db18fdcfcfa6de1b8d65b9a2fce396d12fd43d6",
+  "source_dirty": false
+}

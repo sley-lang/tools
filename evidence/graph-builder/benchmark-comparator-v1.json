@@ -1,0 +1,34 @@
+{
+  "builder_binary_sha256": "1f8a05da3218599f307052f6a1a9b603a26dbb57d87c2a23dfeef3037851ae83",
+  "cases_sha256": "b0510ece3a89fc49c2af98bb680eafa40ceb511f9b0b9763f9c2c43ee59f6661",
+  "checked_add_native_cases": 3,
+  "checked_add_root": "440e79fe1785b242c2d4ab6e4c6991000d78105a8f119de54e41ef2aa9c6a9f4",
+  "checked_mul_neg_result_native_cases": 4,
+  "checked_mul_neg_result_root": "66b4abaf3ccc513fc99f866286b0bf877012f6f61997c246a50cfaf6bdd520a2",
+  "checked_operation_entities_verified": true,
+  "checked_overflow_observed": true,
+  "contract": "sley-tools.checked-graph-probe.v1",
+  "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+  "invalid_negative_flag_observed": true,
+  "missing_measurement_rejected": true,
+  "native_cases_by_adapter": {
+    "cli": 9,
+    "python": 9,
+    "typescript": 9
+  },
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_roots": {
+    "cli": "b4c536d35db19435b743b6f5d2d6110957b7be8a3303ec92e78199900a2df61c",
+    "python": "2bde9fd1c945a7845e8a7535e33d2923b52250f9d2e1c5100db084d255cfba73",
+    "typescript": "41a6bb853fc7e53a0addb8cca36dc0f75f0a5b83166e9efc3fac308aab4eadc2"
+  },
+  "oracle_verified_cases": 9,
+  "probe_entry_sha256": "b13a4fbf22787f1ce5f64aec0e5df7e3bac2857fc3140809a52b62b1ee21b41e",
+  "python_sdk_sha256": "17cc5b34db6185cf270a662bdc378459de4221808b757d36a4479879f70728e5",
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "spec_sha256": "76375524ab6ce0c8f9c9d3820d0be0ca913d42148b1dd996211ccf7e8e63bcc5",
+  "tools_binary_sha256": "8c7c7e140468695d51989ae4b38ede8ff81623f8c5a910f62ef266ae5fcf0b48",
+  "typescript_probe_sha256": "6b7654b009ed4639d06472036fdd8f3de94f2882de54700fd19ec4bf582f7110",
+  "typescript_sdk_sha256": "c2bc60b0f11c0891e90ffc089864c058daf9e37c08ccb19b47dca76e341c7c16"
+}

@@ -1,0 +1,283 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\n      \"id\": \"value-minus-9223372036854775808\",\n      \"input\": [\n        \"-9223372036854775808\"\n      ],\n      \"expected\": {\n        \"tier\": \"0\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-minus-1\",\n      \"input\": [\n        \"-1\"\n      ],\n      \"expected\": {\n        \"tier\": \"0\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-0\",\n      \"input\": [\n        \"0\"\n      ],\n      \"expected\": {\n        \"tier\": \"0\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-9\",\n      \"input\": [\n        \"9\"\n      ],\n      \"expected\": {\n        \"tier\": \"0\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-10\",\n      \"input\": [\n        \"10\"\n      ],\n      \"expected\": {\n        \"tier\": \"0\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-11\",\n      \"input\": [\n        \"11\"\n      ],\n      \"expected\": {\n        \"tier\": \"1\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-12\",\n      \"input\": [\n        \"12\"\n      ],\n      \"expected\": {\n        \"tier\": \"1\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-19\",\n      \"input\": [\n        \"19\"\n      ],\n      \"expected\": {\n        \"tier\": \"1\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-20\",\n      \"input\": [\n        \"20\"\n      ],\n      \"expected\": {\n        \"tier\": \"1\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-21\",\n      \"input\": [\n        \"21\"\n      ],\n      \"expected\": {\n        \"tier\": \"2\",\n        \"invalid_configuration\": false\n      }\n    },\n    {\n      \"id\": \"value-9223372036854775807\",\n      \"input\": [\n        \"9223372036854775807\"\n      ],\n      \"expected\": {\n        \"tier\": \"2\",\n        \"invalid_configuration\": false\n      }\n    }\n  ]\n}\n",
+  "cases_sha256": "714a88b942cb43c957fbf82506e3e85516a61de4f3672f2644207e3ca22eba60",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "0933f7bf6641259bd2782e97225a25658feefbc6d8780c50962b86e7b0f3733c",
+      "kind": 8,
+      "object_id": "8bc6a020ca0d7afc23b4501d2c28113b0f2680c7b03383fbfc2d85c55a373a76",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ef7010201200933f7bf6641259bd2782e97225a25658feefbc6d8780c50962b86e7b0f3733c02d10108ce01060120b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc53020102030112045302280226020120484be008ff955b637a440b0acffa7d1077118a3c794ac1c302258c0ccfe4634102010028022602012056c62a7e2d885cb2d13020cbb85e6ea028244ff85a2002d84091b437e423e3fe020100052a01280a2602012098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab0201000622022098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab8bc6a020ca0d7afc23b4501d2c28113b0f2680c7b03383fbfc2d85c55a373a76"
+    },
+    {
+      "entity_id": "096e9d5bdafb941929c8ac439891da89d3901058c82a4a4fb11de3431bfa4270",
+      "kind": 7,
+      "object_id": "402969d1f5aca3fc04c7e789ab862ea8aef2c187656f7e43170eee4685d5e670",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e9602020120096e9d5bdafb941929c8ac439891da89d3901058c82a4a4fb11de3431bfa427002f00107ed010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c0460201000343022022b2b06941164ae6da3da95e80648a8630b6ca539c5030206e07c0d1b27408792060bdae059481fdc4bf575efd640e3de08a502c162e636b05f1ad839f606c564b047d037b030128022602012060bdae059481fdc4bf575efd640e3de08a502c162e636b05f1ad839f606c564b0201000226020120762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d270201000326020120d1aee049a146c66a275ae7289c5a52405427e789de676de2f61c9b7f02e9f9fa020100050101402969d1f5aca3fc04c7e789ab862ea8aef2c187656f7e43170eee4685d5e670"
+    },
+    {
+      "entity_id": "09faa1579fcb154edba0eed692e49b843e2bd04668caa56fa56e031b97285d61",
+      "kind": 8,
+      "object_id": "c2cdb29cb7d2a1c53bb2d6ee7e37614b0542880bb8d6c5c16a54caf4689b339d",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e02012009faa1579fcb154edba0eed692e49b843e2bd04668caa56fa56e031b97285d61025908570601209b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a732870201010301010401000505010303014006220220ab7823de140c412787b9c1737bbfd683d4fb8e6144617d544c3afc79b7accd04c2cdb29cb7d2a1c53bb2d6ee7e37614b0542880bb8d6c5c16a54caf4689b339d"
+    },
+    {
+      "entity_id": "118a9832dc42608340c02c39e4e5fc0b1a381655d3f133aee2ea32881e1f07a7",
+      "kind": 8,
+      "object_id": "781d1daed1c24aca7d5d849d98f02b075769b0f767d7ee36958476941f248da5",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7d020120118a9832dc42608340c02c39e4e5fc0b1a381655d3f133aee2ea32881e1f07a70258085606012042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e55270201010301010401000504010202000622022044c7f4088e6e2e80c9955044336601b54fb64d1fc100a9af187cf508c0f12fef781d1daed1c24aca7d5d849d98f02b075769b0f767d7ee36958476941f248da5"
+    },
+    {
+      "entity_id": "197c2f56bfd74680b78868e5c315ae1f9a961bf1d4c13fdb98c4e7caf86bb135",
+      "kind": 8,
+      "object_id": "9d802a9710d0ba9b168a217ae95c261b016b1f16a80810a6201fd4c052e9434a",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ef701020120197c2f56bfd74680b78868e5c315ae1f9a961bf1d4c13fdb98c4e7caf86bb13502d10108ce01060120762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d2702010203011204530228022602012074a1735b1bc439d060090fbbfe63e8e2d4767136cf67d29b944f366181c0fcb1020100280226020120e4220d87e1844ae78a2d73dc845374b1408d0e9bb732c661475cd109d281f4a9020100052a01280a2602012098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab0201000622022098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab9d802a9710d0ba9b168a217ae95c261b016b1f16a80810a6201fd4c052e9434a"
+    },
+    {
+      "entity_id": "22b2b06941164ae6da3da95e80648a8630b6ca539c5030206e07c0d1b2740879",
+      "kind": 8,
+      "object_id": "0378682f9f434738d91fa8be0720b2efcad708b9b716314384ed6fb88dfae4ad",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e02012022b2b06941164ae6da3da95e80648a8630b6ca539c5030206e07c0d1b274087902590857060120096e9d5bdafb941929c8ac439891da89d3901058c82a4a4fb11de3431bfa4270020100030101040100050501030301400622022031e13592a22254851b271c1d769ac9a6128dbffe808887dc7caddb1374ba7a7f0378682f9f434738d91fa8be0720b2efcad708b9b716314384ed6fb88dfae4ad"
+    },
+    {
+      "entity_id": "2a34477f49363d3165aeee0101d4e3ede8ce85eb8f6ab415bac3e107a0350ad6",
+      "kind": 9,
+      "object_id": "430fb90fbbe5da3a5ab04960cee290693b22c64d8f0b8234a79784e3aedd59ee",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e350201202a34477f49363d3165aeee0101d4e3ede8ce85eb8f6ab415bac3e107a0350ad60210090e01010b0201030301400203030101430fb90fbbe5da3a5ab04960cee290693b22c64d8f0b8234a79784e3aedd59ee"
+    },
+    {
+      "entity_id": "2ba6d234fdd4d9c2e27a70e824715d97153e6939606bd361fc96df981980764c",
+      "kind": 8,
+      "object_id": "9a339f641ac40ccf653f25f4b78dd78f8b144cb8c1a4d357e2ac0f3dcda1194f",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab010201202ba6d234fdd4d9c2e27a70e824715d97153e6939606bd361fc96df981980764c028501088201060120d1aee049a146c66a275ae7289c5a52405427e789de676de2f61c9b7f02e9f9fa020101030163044d0222012076ed63842ecbbf01ba51f99e51870d6b65d6fddb67500cc524ad47fd1c18950b280226020120371c4e16a199553dd750e5fec495f92ef1a53ba20d459838516ba8d5b25d81a0020100050401020200060201009a339f641ac40ccf653f25f4b78dd78f8b144cb8c1a4d357e2ac0f3dcda1194f"
+    },
+    {
+      "entity_id": "2ebeb7fb540c96bc1b8f9c32e6d4b70457a8ca081bb80b1cb20478f18097cdd1",
+      "kind": 8,
+      "object_id": "4b6d44da9be2f1e8a1f6bb8cedd7b18ff6844bafd1a72473455be4eeef94c155",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7d0201202ebeb7fb540c96bc1b8f9c32e6d4b70457a8ca081bb80b1cb20478f18097cdd1025808560601203796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d70201010301010401000504010202000622022044c7f4088e6e2e80c9955044336601b54fb64d1fc100a9af187cf508c0f12fef4b6d44da9be2f1e8a1f6bb8cedd7b18ff6844bafd1a72473455be4eeef94c155"
+    },
+    {
+      "entity_id": "31e13592a22254851b271c1d769ac9a6128dbffe808887dc7caddb1374ba7a7f",
+      "kind": 9,
+      "object_id": "8b7d00e80991e99003dd7a4756807959f179d35e230d755240ab53f70458540d",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e3502012031e13592a22254851b271c1d769ac9a6128dbffe808887dc7caddb1374ba7a7f0210090e01010b02010303014002030301148b7d00e80991e99003dd7a4756807959f179d35e230d755240ab53f70458540d"
+    },
+    {
+      "entity_id": "371c4e16a199553dd750e5fec495f92ef1a53ba20d459838516ba8d5b25d81a0",
+      "kind": 8,
+      "object_id": "a622805b03435641f6ae07773e15b4229d5b65f513724739d911ce869f6bbed4",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e020120371c4e16a199553dd750e5fec495f92ef1a53ba20d459838516ba8d5b25d81a002590857060120d1aee049a146c66a275ae7289c5a52405427e789de676de2f61c9b7f02e9f9fa0201000301010401000505010303014006220220ab7823de140c412787b9c1737bbfd683d4fb8e6144617d544c3afc79b7accd04a622805b03435641f6ae07773e15b4229d5b65f513724739d911ce869f6bbed4"
+    },
+    {
+      "entity_id": "3796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d7",
+      "kind": 7,
+      "object_id": "3e4c22d5dfcd914d60eed6f4af08cb994466275f38ab5915f987375da0441ae0",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ee7010201203796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d702c10107be010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c04602010003640320403f883c3192a23dc48ea79e9b308ca32065b796d620fe475c2949634cb14dbe202ebeb7fb540c96bc1b8f9c32e6d4b70457a8ca081bb80b1cb20478f18097cdd120bae631f43906f3ca538299d6c7d1cba5f07e4ef20d1af845f9294df95d1bc3b8042d012b0101280226020120bae631f43906f3ca538299d6c7d1cba5f07e4ef20d1af845f9294df95d1bc3b80201000501013e4c22d5dfcd914d60eed6f4af08cb994466275f38ab5915f987375da0441ae0"
+    },
+    {
+      "entity_id": "403f883c3192a23dc48ea79e9b308ca32065b796d620fe475c2949634cb14dbe",
+      "kind": 8,
+      "object_id": "1fb146987052a945997252b0cd47534784524649e1c50cf87ffeaf01ff1606a7",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e020120403f883c3192a23dc48ea79e9b308ca32065b796d620fe475c2949634cb14dbe025908570601203796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d70201000301010401000505010303014006220220bcf0884115fa98246525391cae4aacff6dc4401ad9b952c8c3ba520418fdf9ad1fb146987052a945997252b0cd47534784524649e1c50cf87ffeaf01ff1606a7"
+    },
+    {
+      "entity_id": "42ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e5527",
+      "kind": 7,
+      "object_id": "c1b32475b774f256ac6c5954a987ccc0a18841478a0f38a30aa8a59dbedd2f20",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ee70102012042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e552702c10107be010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c04602010003640320e87a26bc8f68f4b8a18e8d4e2e0472daa5af7a588d9c751ca9d24f778ae1d2aa20118a9832dc42608340c02c39e4e5fc0b1a381655d3f133aee2ea32881e1f07a720e40a82662653794c04cca4b4535b6e37b495b7610f1bcf525265d4a3a236581b042d012b0101280226020120e40a82662653794c04cca4b4535b6e37b495b7610f1bcf525265d4a3a236581b020100050101c1b32475b774f256ac6c5954a987ccc0a18841478a0f38a30aa8a59dbedd2f20"
+    },
+    {
+      "entity_id": "44c7f4088e6e2e80c9955044336601b54fb64d1fc100a9af187cf508c0f12fef",
+      "kind": 9,
+      "object_id": "92d257f42d77406cfaa5d0dd0d71b453dd7f86ed6d91a52edc0bb55dfc4723a1",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e3402012044c7f4088e6e2e80c9955044336601b54fb64d1fc100a9af187cf508c0f12fef020f090d01010a0201020200020302010092d257f42d77406cfaa5d0dd0d71b453dd7f86ed6d91a52edc0bb55dfc4723a1"
+    },
+    {
+      "entity_id": "4770d6154b311c0a0167d58f2c8246fbc8181843572698504440cc7e8a0a9bea",
+      "kind": 8,
+      "object_id": "a5760b561e7a0a5db3f9285d672ed297a9337a1fd8cd6149512d5d1000c24200",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7d0201204770d6154b311c0a0167d58f2c8246fbc8181843572698504440cc7e8a0a9bea02580856060120c601b40b802d3616f27c1e53c9d356689f58dd97151c65a5070c030b62c4c30302010003010104010005040102020006220220fa242fe725d2c528e76632da67e5cd3a4e32981029a835c63c25b7ed4f3a395fa5760b561e7a0a5db3f9285d672ed297a9337a1fd8cd6149512d5d1000c24200"
+    },
+    {
+      "entity_id": "484be008ff955b637a440b0acffa7d1077118a3c794ac1c302258c0ccfe46341",
+      "kind": 8,
+      "object_id": "e13846fac382c92cd3f25eea193e5cad5a9716a559116eea1999e54375d6cf85",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e020120484be008ff955b637a440b0acffa7d1077118a3c794ac1c302258c0ccfe4634102590857060120b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc5302010003010104010005050103030140062202202a34477f49363d3165aeee0101d4e3ede8ce85eb8f6ab415bac3e107a0350ad6e13846fac382c92cd3f25eea193e5cad5a9716a559116eea1999e54375d6cf85"
+    },
+    {
+      "entity_id": "4c0ee6ac1ec2b2e90db5625a969521721746c97a0c5d46b8cf89b76fb50947a0",
+      "kind": 9,
+      "object_id": "47e425e4fd924abdaf068f7097728506fa2c7e52b3be1691df26f0036198b66c",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e340201204c0ee6ac1ec2b2e90db5625a969521721746c97a0c5d46b8cf89b76fb50947a0020f090d01010a0201020200020302010147e425e4fd924abdaf068f7097728506fa2c7e52b3be1691df26f0036198b66c"
+    },
+    {
+      "entity_id": "56c62a7e2d885cb2d13020cbb85e6ea028244ff85a2002d84091b437e423e3fe",
+      "kind": 8,
+      "object_id": "42b714feacf74d530fb1ac97182db5f54eff93f589cca5f210f501c8d29061a3",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7d02012056c62a7e2d885cb2d13020cbb85e6ea028244ff85a2002d84091b437e423e3fe02580856060120b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc53020101030101040100050401020200062202204c0ee6ac1ec2b2e90db5625a969521721746c97a0c5d46b8cf89b76fb50947a042b714feacf74d530fb1ac97182db5f54eff93f589cca5f210f501c8d29061a3"
+    },
+    {
+      "entity_id": "60bdae059481fdc4bf575efd640e3de08a502c162e636b05f1ad839f606c564b",
+      "kind": 8,
+      "object_id": "bb7e214f6e064c7f63f8cae7fd2d7881c0cf27a8cdb4ba34d71325fb92fd09c5",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab0102012060bdae059481fdc4bf575efd640e3de08a502c162e636b05f1ad839f606c564b028501088201060120096e9d5bdafb941929c8ac439891da89d3901058c82a4a4fb11de3431bfa4270020101030163044d0222012076ed63842ecbbf01ba51f99e51870d6b65d6fddb67500cc524ad47fd1c18950b28022602012022b2b06941164ae6da3da95e80648a8630b6ca539c5030206e07c0d1b274087902010005040102020006020100bb7e214f6e064c7f63f8cae7fd2d7881c0cf27a8cdb4ba34d71325fb92fd09c5"
+    },
+    {
+      "entity_id": "65407609d2ec2386d30ee64a1074600ab274f8dd81b0a6b023d676b2d3091893",
+      "kind": 8,
+      "object_id": "c314262f038fed86b987f5cb0eb064aa72d4c3f7c445dabe6a496d07d3a1ecef",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e02012065407609d2ec2386d30ee64a1074600ab274f8dd81b0a6b023d676b2d3091893025908570601209b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a73287020100030101040100050501030301400622022031e13592a22254851b271c1d769ac9a6128dbffe808887dc7caddb1374ba7a7fc314262f038fed86b987f5cb0eb064aa72d4c3f7c445dabe6a496d07d3a1ecef"
+    },
+    {
+      "entity_id": "74a1735b1bc439d060090fbbfe63e8e2d4767136cf67d29b944f366181c0fcb1",
+      "kind": 8,
+      "object_id": "6399e9607a6bdc63bcf5898759a401fc1b81df1746bc34bec67abd683a180bf6",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e02012074a1735b1bc439d060090fbbfe63e8e2d4767136cf67d29b944f366181c0fcb102590857060120762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d270201000301010401000505010303014006220220af518ee48262498f07e3467973a973ed9462872415b0162331333339d1084b7c6399e9607a6bdc63bcf5898759a401fc1b81df1746bc34bec67abd683a180bf6"
+    },
+    {
+      "entity_id": "762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d27",
+      "kind": 7,
+      "object_id": "a65f20784d325a05ce40273d16e3024c1a6b3029e55ed153d72556a9793dd31f",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ee701020120762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d2702c10107be010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c0460201000364032074a1735b1bc439d060090fbbfe63e8e2d4767136cf67d29b944f366181c0fcb120e4220d87e1844ae78a2d73dc845374b1408d0e9bb732c661475cd109d281f4a920197c2f56bfd74680b78868e5c315ae1f9a961bf1d4c13fdb98c4e7caf86bb135042d012b0101280226020120197c2f56bfd74680b78868e5c315ae1f9a961bf1d4c13fdb98c4e7caf86bb135020100050101a65f20784d325a05ce40273d16e3024c1a6b3029e55ed153d72556a9793dd31f"
+    },
+    {
+      "entity_id": "76ed63842ecbbf01ba51f99e51870d6b65d6fddb67500cc524ad47fd1c18950b",
+      "kind": 6,
+      "object_id": "42828b395c9abeb0aa80abf8bdf7aa538be4f5ccc2c23d3c2c213dd4e6f87a42",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e5502012076ed63842ecbbf01ba51f99e51870d6b65d6fddb67500cc524ad47fd1c18950b0230062e0401208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c046020101030100040303014042828b395c9abeb0aa80abf8bdf7aa538be4f5ccc2c23d3c2c213dd4e6f87a42"
+    },
+    {
+      "entity_id": "8e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c046",
+      "kind": 5,
+      "object_id": "5d5784f57eb85f68b10e284e468fac1bd4d8408cde4b7314b9e85abb90e3ab44",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eb2030201208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c046028c03058903080101000222012076ed63842ecbbf01ba51f99e51870d6b65d6fddb67500cc524ad47fd1c18950b03280a2602012098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab02010004010005209b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a7328706890208209b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a7328720b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc5320096e9d5bdafb941929c8ac439891da89d3901058c82a4a4fb11de3431bfa427020762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d2720d1aee049a146c66a275ae7289c5a52405427e789de676de2f61c9b7f02e9f9fa20c601b40b802d3616f27c1e53c9d356689f58dd97151c65a5070c030b62c4c303203796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d72042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e55270701000801015d5784f57eb85f68b10e284e468fac1bd4d8408cde4b7314b9e85abb90e3ab44"
+    },
+    {
+      "entity_id": "98d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab",
+      "kind": 4,
+      "object_id": "8688d6a9799775451023e1b245b46260c779cbb9e61ba08a6706051428b0ebf4",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e8d0102012098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab0268046604010100025a0158022b030120010101010101010101010101010101010101010101010101010101010101010102030301400301012a0301200202020202020202020202020202020202020202020202020202020202020202020202000301010301000401018688d6a9799775451023e1b245b46260c779cbb9e61ba08a6706051428b0ebf4"
+    },
+    {
+      "entity_id": "99a047840d91c8a4f8c44a9781fb07be3a85f5e2c972836684a87f11976b37d9",
+      "kind": 9,
+      "object_id": "0c9836b4fd7bff8ccfdec35784be52f8288b3062080ae2180630f82e6a840fef",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e3502012099a047840d91c8a4f8c44a9781fb07be3a85f5e2c972836684a87f11976b37d90210090e01010b02010303014002030301040c9836b4fd7bff8ccfdec35784be52f8288b3062080ae2180630f82e6a840fef"
+    },
+    {
+      "entity_id": "9b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a73287",
+      "kind": 7,
+      "object_id": "89e9917ab450fbd2f4597391b3d6d773608b59da2dc7353a241ed4c7267acce3",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eb7020201209b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a73287029102078e020501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c0460201000364032065407609d2ec2386d30ee64a1074600ab274f8dd81b0a6b023d676b2d30918932009faa1579fcb154edba0eed692e49b843e2bd04668caa56fa56e031b97285d6120cc3d6138cea224facafece4c257caec0c34dfafb1b6c8b1e43da5c3951bcd5d2047d037b0301280226020120cc3d6138cea224facafece4c257caec0c34dfafb1b6c8b1e43da5c3951bcd5d20201000226020120096e9d5bdafb941929c8ac439891da89d3901058c82a4a4fb11de3431bfa42700201000326020120b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc5302010005010189e9917ab450fbd2f4597391b3d6d773608b59da2dc7353a241ed4c7267acce3"
+    },
+    {
+      "entity_id": "ab7823de140c412787b9c1737bbfd683d4fb8e6144617d544c3afc79b7accd04",
+      "kind": 9,
+      "object_id": "2f49e788cf22a359eee24a7cc198c67c3dad00179dd1142fc04ed5f6e5a3130c",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120ab7823de140c412787b9c1737bbfd683d4fb8e6144617d544c3afc79b7accd040210090e01010b02010303014002030301282f49e788cf22a359eee24a7cc198c67c3dad00179dd1142fc04ed5f6e5a3130c"
+    },
+    {
+      "entity_id": "af518ee48262498f07e3467973a973ed9462872415b0162331333339d1084b7c",
+      "kind": 9,
+      "object_id": "1694f97bb05e62e0b8a4f152e33a06d0b77d9def78caae08138a66911413e92c",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120af518ee48262498f07e3467973a973ed9462872415b0162331333339d1084b7c0210090e01010b02010303014002030301001694f97bb05e62e0b8a4f152e33a06d0b77d9def78caae08138a66911413e92c"
+    },
+    {
+      "entity_id": "b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc53",
+      "kind": 7,
+      "object_id": "fb2c2c77248c35359632095e042745e0ec74ba232da962a508f3eed1cd89fbdc",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ee701020120b34f6045ecc674c49950e1909d82b8cf82fa808453096839133801600c05cc5302c10107be010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c04602010003640320484be008ff955b637a440b0acffa7d1077118a3c794ac1c302258c0ccfe463412056c62a7e2d885cb2d13020cbb85e6ea028244ff85a2002d84091b437e423e3fe200933f7bf6641259bd2782e97225a25658feefbc6d8780c50962b86e7b0f3733c042d012b01012802260201200933f7bf6641259bd2782e97225a25658feefbc6d8780c50962b86e7b0f3733c020100050101fb2c2c77248c35359632095e042745e0ec74ba232da962a508f3eed1cd89fbdc"
+    },
+    {
+      "entity_id": "bae631f43906f3ca538299d6c7d1cba5f07e4ef20d1af845f9294df95d1bc3b8",
+      "kind": 8,
+      "object_id": "9b8ce0c1bc3637b43589bcbb4e6f56d8576d7c32ef967876ab77d67c2fedad30",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ef701020120bae631f43906f3ca538299d6c7d1cba5f07e4ef20d1af845f9294df95d1bc3b802d10108ce010601203796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d7020102030112045302280226020120403f883c3192a23dc48ea79e9b308ca32065b796d620fe475c2949634cb14dbe0201002802260201202ebeb7fb540c96bc1b8f9c32e6d4b70457a8ca081bb80b1cb20478f18097cdd1020100052a01280a2602012098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab0201000622022098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab9b8ce0c1bc3637b43589bcbb4e6f56d8576d7c32ef967876ab77d67c2fedad30"
+    },
+    {
+      "entity_id": "bcf0884115fa98246525391cae4aacff6dc4401ad9b952c8c3ba520418fdf9ad",
+      "kind": 9,
+      "object_id": "a1063e66186ca803f527f7c9883e5f7c96bc01caf8862de8efa254571870ff73",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120bcf0884115fa98246525391cae4aacff6dc4401ad9b952c8c3ba520418fdf9ad0210090e01010b0201030301400203030102a1063e66186ca803f527f7c9883e5f7c96bc01caf8862de8efa254571870ff73"
+    },
+    {
+      "entity_id": "c601b40b802d3616f27c1e53c9d356689f58dd97151c65a5070c030b62c4c303",
+      "kind": 7,
+      "object_id": "fb504b2636128287dea75913f71bb4085a1557e34095823c2d72aad20ba30a92",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ef501020120c601b40b802d3616f27c1e53c9d356689f58dd97151c65a5070c030b62c4c30302cf0107cc010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c046020100032201204770d6154b311c0a0167d58f2c8246fbc8181843572698504440cc7e8a0a9bea047d037b03012802260201204770d6154b311c0a0167d58f2c8246fbc8181843572698504440cc7e8a0a9bea02010002260201203796497f895dfd15b184c4698f602d74bccdc74ab9608e74b3952ec628bd95d7020100032602012042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e5527020100050101fb504b2636128287dea75913f71bb4085a1557e34095823c2d72aad20ba30a92"
+    },
+    {
+      "entity_id": "cc3d6138cea224facafece4c257caec0c34dfafb1b6c8b1e43da5c3951bcd5d2",
+      "kind": 8,
+      "object_id": "90658c0b938ce4db591f29d0fcc5f9512fc6e8b4cddcdea6517fbe8bcbd38b85",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eb101020120cc3d6138cea224facafece4c257caec0c34dfafb1b6c8b1e43da5c3951bcd5d2028b010888010601209b08fe0db96930022bccea53813d34a754d5d40e5665858a52825a0566a7328702010203016204530228022602012065407609d2ec2386d30ee64a1074600ab274f8dd81b0a6b023d676b2d309189302010028022602012009faa1579fcb154edba0eed692e49b843e2bd04668caa56fa56e031b97285d610201000504010202000602010090658c0b938ce4db591f29d0fcc5f9512fc6e8b4cddcdea6517fbe8bcbd38b85"
+    },
+    {
+      "entity_id": "d1aee049a146c66a275ae7289c5a52405427e789de676de2f61c9b7f02e9f9fa",
+      "kind": 7,
+      "object_id": "3443d71903dec020dee5e780c61fc50ff090a3fbd65a40489d5907b4e71385e9",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e9602020120d1aee049a146c66a275ae7289c5a52405427e789de676de2f61c9b7f02e9f9fa02f00107ed010501208e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c04602010003430220371c4e16a199553dd750e5fec495f92ef1a53ba20d459838516ba8d5b25d81a0202ba6d234fdd4d9c2e27a70e824715d97153e6939606bd361fc96df981980764c047d037b03012802260201202ba6d234fdd4d9c2e27a70e824715d97153e6939606bd361fc96df981980764c0201000226020120c601b40b802d3616f27c1e53c9d356689f58dd97151c65a5070c030b62c4c303020100032602012042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e55270201000501013443d71903dec020dee5e780c61fc50ff090a3fbd65a40489d5907b4e71385e9"
+    },
+    {
+      "entity_id": "e40a82662653794c04cca4b4535b6e37b495b7610f1bcf525265d4a3a236581b",
+      "kind": 8,
+      "object_id": "af9acc5337d24a1bf7b45634474180e9cb83cc27e60a74460d6b7624ad28905f",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ef701020120e40a82662653794c04cca4b4535b6e37b495b7610f1bcf525265d4a3a236581b02d10108ce0106012042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e5527020102030112045302280226020120e87a26bc8f68f4b8a18e8d4e2e0472daa5af7a588d9c751ca9d24f778ae1d2aa020100280226020120118a9832dc42608340c02c39e4e5fc0b1a381655d3f133aee2ea32881e1f07a7020100052a01280a2602012098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab0201000622022098d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aabaf9acc5337d24a1bf7b45634474180e9cb83cc27e60a74460d6b7624ad28905f"
+    },
+    {
+      "entity_id": "e4220d87e1844ae78a2d73dc845374b1408d0e9bb732c661475cd109d281f4a9",
+      "kind": 8,
+      "object_id": "f3d09566835953ce9d61aeb46278568dd77069b8a213d2ac3161262f1ad9d655",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7d020120e4220d87e1844ae78a2d73dc845374b1408d0e9bb732c661475cd109d281f4a902580856060120762c83fad0b0eea07d73140f52dd61d5a3d4599d9a65f80b6293451f807f2d270201010301010401000504010202000622022044c7f4088e6e2e80c9955044336601b54fb64d1fc100a9af187cf508c0f12feff3d09566835953ce9d61aeb46278568dd77069b8a213d2ac3161262f1ad9d655"
+    },
+    {
+      "entity_id": "e87a26bc8f68f4b8a18e8d4e2e0472daa5af7a588d9c751ca9d24f778ae1d2aa",
+      "kind": 8,
+      "object_id": "2bdc8d8c8ce7ae52a8aafa2251abbd0a2518805fed5f72acec8b205b04a01ec8",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e020120e87a26bc8f68f4b8a18e8d4e2e0472daa5af7a588d9c751ca9d24f778ae1d2aa0259085706012042ab837093cdd192782a1ddface2050b552c0aa102a2f1195d766dcb605e5527020100030101040100050501030301400622022099a047840d91c8a4f8c44a9781fb07be3a85f5e2c972836684a87f11976b37d92bdc8d8c8ce7ae52a8aafa2251abbd0a2518805fed5f72acec8b205b04a01ec8"
+    },
+    {
+      "entity_id": "fa242fe725d2c528e76632da67e5cd3a4e32981029a835c63c25b7ed4f3a395f",
+      "kind": 9,
+      "object_id": "de6bccc40333cf53f069e9a6c2ca0ad585ea4eedffe1c80a8772a562192f5ad6",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e34020120fa242fe725d2c528e76632da67e5cd3a4e32981029a835c63c25b7ed4f3a395f020f090d01010a02010202000203020101de6bccc40333cf53f069e9a6c2ca0ad585ea4eedffe1c80a8772a562192f5ad6"
+    }
+  ],
+  "program_id": "tier-classifier",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"tier-classifier\",\n  \"title\": \"Tier Classifier\",\n  \"purpose\": \"Classify any signed value into bronze, silver, or gold with ordered editable thresholds and an explicit invalid-configuration result\",\n  \"parameters\": [\n    {\n      \"name\": \"value\",\n      \"value_type\": \"SInt64\"\n    }\n  ],\n  \"constants\": [\n    {\n      \"name\": \"bronze_max\",\n      \"value_type\": \"SInt64\",\n      \"value\": \"10\"\n    },\n    {\n      \"name\": \"silver_max\",\n      \"value_type\": \"SInt64\",\n      \"value\": \"20\"\n    },\n    {\n      \"name\": \"middle_tier_enabled\",\n      \"value_type\": \"Bool\",\n      \"value\": true\n    },\n    {\n      \"name\": \"invalid_tier\",\n      \"value_type\": \"SInt64\",\n      \"value\": \"-1\"\n    },\n    {\n      \"name\": \"bronze_tier\",\n      \"value_type\": \"SInt64\",\n      \"value\": \"0\"\n    },\n    {\n      \"name\": \"silver_tier\",\n      \"value_type\": \"SInt64\",\n      \"value\": \"1\"\n    },\n    {\n      \"name\": \"gold_tier\",\n      \"value_type\": \"SInt64\",\n      \"value\": \"2\"\n    },\n    {\n      \"name\": \"yes\",\n      \"value_type\": \"Bool\",\n      \"value\": true\n    },\n    {\n      \"name\": \"no\",\n      \"value_type\": \"Bool\",\n      \"value\": false\n    }\n  ],\n  \"result\": {\n    \"kind\": \"record\",\n    \"fields\": [\n      {\n        \"name\": \"tier\",\n        \"value_type\": \"SInt64\"\n      },\n      {\n        \"name\": \"invalid_configuration\",\n        \"value_type\": \"Bool\"\n      }\n    ]\n  },\n  \"entry_block\": \"entry\",\n  \"blocks\": [\n    {\n      \"name\": \"entry\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"entry_bronze_limit\",\n          \"constant\": \"bronze_max\"\n        },\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"entry_silver_limit\",\n          \"constant\": \"silver_max\"\n        },\n        {\n          \"op\": \"less_than\",\n          \"name\": \"ordered\",\n          \"left\": \"op.entry_bronze_limit\",\n          \"right\": \"op.entry_silver_limit\"\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"cond_branch\",\n        \"condition\": \"op.ordered\",\n        \"if_true\": \"bronze_check\",\n        \"if_false\": \"invalid_config\"\n      }\n    },\n    {\n      \"name\": \"invalid_config\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"invalid_value\",\n          \"constant\": \"invalid_tier\"\n        },\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"invalid_yes\",\n          \"constant\": \"yes\"\n        },\n        {\n          \"op\": \"record_new\",\n          \"name\": \"invalid_result\",\n          \"fields\": [\n            \"op.invalid_value\",\n            \"op.invalid_yes\"\n          ]\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"return\",\n        \"value\": \"op.invalid_result\"\n      }\n    },\n    {\n      \"name\": \"bronze_check\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"check_bronze_limit\",\n          \"constant\": \"bronze_max\"\n        },\n        {\n          \"op\": \"less_equal\",\n          \"name\": \"in_bronze\",\n          \"left\": \"param.value\",\n          \"right\": \"op.check_bronze_limit\"\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"cond_branch\",\n        \"condition\": \"op.in_bronze\",\n        \"if_true\": \"bronze_return\",\n        \"if_false\": \"silver_check\"\n      }\n    },\n    {\n      \"name\": \"bronze_return\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"bronze_value\",\n          \"constant\": \"bronze_tier\"\n        },\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"bronze_no\",\n          \"constant\": \"no\"\n        },\n        {\n          \"op\": \"record_new\",\n          \"name\": \"bronze_result\",\n          \"fields\": [\n            \"op.bronze_value\",\n            \"op.bronze_no\"\n          ]\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"return\",\n        \"value\": \"op.bronze_result\"\n      }\n    },\n    {\n      \"name\": \"silver_check\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"check_silver_limit\",\n          \"constant\": \"silver_max\"\n        },\n        {\n          \"op\": \"less_equal\",\n          \"name\": \"in_silver\",\n          \"left\": \"param.value\",\n          \"right\": \"op.check_silver_limit\"\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"cond_branch\",\n        \"condition\": \"op.in_silver\",\n        \"if_true\": \"middle_policy\",\n        \"if_false\": \"gold_return\"\n      }\n    },\n    {\n      \"name\": \"middle_policy\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"middle_enabled\",\n          \"constant\": \"middle_tier_enabled\"\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"cond_branch\",\n        \"condition\": \"op.middle_enabled\",\n        \"if_true\": \"silver_return\",\n        \"if_false\": \"gold_return\"\n      }\n    },\n    {\n      \"name\": \"silver_return\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"silver_value\",\n          \"constant\": \"silver_tier\"\n        },\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"silver_no\",\n          \"constant\": \"no\"\n        },\n        {\n          \"op\": \"record_new\",\n          \"name\": \"silver_result\",\n          \"fields\": [\n            \"op.silver_value\",\n            \"op.silver_no\"\n          ]\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"return\",\n        \"value\": \"op.silver_result\"\n      }\n    },\n    {\n      \"name\": \"gold_return\",\n      \"operations\": [\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"gold_value\",\n          \"constant\": \"gold_tier\"\n        },\n        {\n          \"op\": \"constant_ref\",\n          \"name\": \"gold_no\",\n          \"constant\": \"no\"\n        },\n        {\n          \"op\": \"record_new\",\n          \"name\": \"gold_result\",\n          \"fields\": [\n            \"op.gold_value\",\n            \"op.gold_no\"\n          ]\n        }\n      ],\n      \"terminator\": {\n        \"kind\": \"return\",\n        \"value\": \"op.gold_result\"\n      }\n    }\n  ]\n}\n",
+  "recipe_sha256": "a1e3589a7c737413cc9a25c9e2a138c4ad70b4e82d4b7572439df50e720a4031",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "tier",
+      "type": "SInt64"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "invalid_configuration",
+      "type": "Bool"
+    }
+  ],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {
+    "bronze_max": "31e13592a22254851b271c1d769ac9a6128dbffe808887dc7caddb1374ba7a7f",
+    "bronze_tier": "af518ee48262498f07e3467973a973ed9462872415b0162331333339d1084b7c",
+    "gold_tier": "99a047840d91c8a4f8c44a9781fb07be3a85f5e2c972836684a87f11976b37d9",
+    "invalid_tier": "2a34477f49363d3165aeee0101d4e3ede8ce85eb8f6ab415bac3e107a0350ad6",
+    "middle_tier_enabled": "fa242fe725d2c528e76632da67e5cd3a4e32981029a835c63c25b7ed4f3a395f",
+    "no": "44c7f4088e6e2e80c9955044336601b54fb64d1fc100a9af187cf508c0f12fef",
+    "silver_max": "ab7823de140c412787b9c1737bbfd683d4fb8e6144617d544c3afc79b7accd04",
+    "silver_tier": "bcf0884115fa98246525391cae4aacff6dc4401ad9b952c8c3ba520418fdf9ad",
+    "yes": "4c0ee6ac1ec2b2e90db5625a969521721746c97a0c5d46b8cf89b76fb50947a0"
+  },
+  "source_function_id": "8e77d5686dd84bf95fcfde0633ca38bf62e4a7aee97ece3dea44ba445652c046",
+  "source_result_type_id": "98d7ac1c323572f6de210871d2a8ea18d6a01ed653ea006fb24a8c149e2b0aab",
+  "source_state_root": "7b60817c967feb9dfe3c372a98573d614216dc351464f6c22141ec79f83131a0",
+  "test_evidence": {
+    "count": 11,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}
