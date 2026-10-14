@@ -60,6 +60,11 @@ class CallResult:
     def __hash__(self) -> int:
         return hash((self.value, self.metadata))
 
+    def __reduce__(self) -> tuple[type[CallResult], tuple[object, object]]:
+        # copy, deepcopy, and pickle rebuild through __init__, since
+        # __setattr__ refuses the default slot-state restore.
+        return (CallResult, (self.value, self.metadata))
+
 
 def _input_error(message: str) -> SleyToolsError:
     return SleyToolsError("ST_INPUT_INVALID", "input_shape", message)

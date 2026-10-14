@@ -27,6 +27,6 @@ Faster everyday commands, leaner binaries, and sturdier SDK process handling. Ta
 
 ### Notes
 
-- `CallResult` in the Python SDK is now a small immutable class instead of a dataclass. Fields, equality, `repr`, and pattern matching are unchanged.
+- `CallResult` in the Python SDK is now a small immutable class instead of a dataclass. Fields, equality, `repr`, pattern matching, copying, and pickling are unchanged; `dataclasses` helpers such as `dataclasses.replace` no longer apply to it.
 - A native failure inside `test` now reports `ST_EXECUTION_FAILED` (or `ST_STALE_BASE` when the accepted root moved), matching the RPC execution path, and each case has a 60-second bound.
 - New checks: `tests/test_cli_core_checks.py`, `tests/test_python_sdk_lifecycle.py`, `packages/typescript/tests/close_probe.mjs`, and Rust unit tests for RPC response framing. CI runs all of them.

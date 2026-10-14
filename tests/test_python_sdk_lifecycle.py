@@ -3,7 +3,9 @@
 
 from __future__ import annotations
 
+import copy
 import os
+import pickle
 import subprocess
 import sys
 import tempfile
@@ -75,6 +77,9 @@ def call_result_is_immutable_value() -> None:
     match result:
         case CallResult(value, metadata):
             assert value is True and metadata["state_root"] == "0" * 64
+    for clone in (copy.copy(result), copy.deepcopy(result), pickle.loads(pickle.dumps(result))):
+        assert clone == result and clone.__class__ is CallResult
+    assert copy.deepcopy(result).metadata is not result.metadata
 
 
 def import_stays_light() -> None:
