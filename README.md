@@ -6,7 +6,7 @@ Build, run, change, and share small programs that execute in [Sley](https://gith
 
 ## Try a native program
 
-The current release candidate is for Linux x86_64 and uses the separately installed Sley 2.0.1 core. [Download and verify the RC4 packages](docs/INSTALL_RC4.md), then run:
+The current release candidate is for Linux x86_64 and uses the separately installed Sley 2.0.1 core. [Download and verify the RC5 packages](docs/INSTALL_RC5.md), then run:
 
 ```sh
 CORE="$PWD/sley-2.0.1-linux-x86_64/bin/sley"
