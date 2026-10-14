@@ -44,27 +44,27 @@ jobs:
         run: |
           curl --fail --location --silent --show-error --retry 3 \
             --output "$RUNNER_TEMP/sley-core.tar.gz" \
-            https://github.com/sley-lang/sley/releases/download/v2.0.1/sley-2.0.1-linux-x86_64.tar.gz
+            https://github.com/sley-lang/sley/releases/download/v2.1.1/sley-2.1.1-linux-x86_64.tar.gz
           printf '%s  %s\n' \
-            34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44 \
+            b0898ba7404a1656db2f83f448ea96d2c1175346f35e50b135bedc96e3810bfd \
             "$RUNNER_TEMP/sley-core.tar.gz" | sha256sum -c -
           mkdir -p "$RUNNER_TEMP/sley-core"
           tar -xzf "$RUNNER_TEMP/sley-core.tar.gz" -C "$RUNNER_TEMP/sley-core"
-          test -x "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley"
+          test -x "$RUNNER_TEMP/sley-core/sley-2.1.1-linux-x86_64/bin/sley"
       - name: Check CLI flags and core identity checks
         run: |
           python3 tests/test_cli_core_checks.py target/debug/sley-tools \
-            "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley"
+            "$RUNNER_TEMP/sley-core/sley-2.1.1-linux-x86_64/bin/sley"
       - name: Import and test the native program catalog
         run: |
           python3 scripts/probe_native_catalog_smoke.py \
             --tools target/debug/sley-tools \
-            --core "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley" \
+            --core "$RUNNER_TEMP/sley-core/sley-2.1.1-linux-x86_64/bin/sley" \
             --output "$RUNNER_TEMP/native-catalog-smoke.json"
       - name: Run scoped native RPC package probe
         run: |
           python3 scripts/probe_rpc_portable.py \
             --tools target/debug/sley-tools \
-            --core "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley" \
+            --core "$RUNNER_TEMP/sley-core/sley-2.1.1-linux-x86_64/bin/sley" \
             --examples examples/graph \
             --output "$RUNNER_TEMP/rpc-portable.json"

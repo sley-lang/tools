@@ -77,7 +77,7 @@ def main() -> None:
         rpc_command = sandbox_base + [
             sys.executable, str(stage / "probe_rpc_portable.py"),
             "--tools", str(installed / "sley-tools-local/bin/sley-tools"),
-            "--core", str(installed / "sley-2.0.1-linux-x86_64/bin/sley"),
+            "--core", str(installed / "sley-2.1.1-linux-x86_64/bin/sley"),
             "--examples", str(installed / "sley-tools-local/examples/graph"),
             "--output", str(rpc_output),
         ]

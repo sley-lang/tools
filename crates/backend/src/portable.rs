@@ -104,7 +104,7 @@ fn load(path: &Path) -> Result<Artifact, DynError> {
     let artifact: Artifact = serde_json::from_slice(&bytes)?;
     let profile = Profile::parse(&artifact.program_id)?;
     if artifact.contract != "sley-tools.native-program-artifact.v0"
-        || artifact.core_commit != "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+        || artifact.core_commit != crate::core_pin::TESTED_CORE_COMMIT
         || artifact.objects.len() != profile.counts().iter().sum::<usize>()
     {
         return Err("unsupported native artifact contract or object count".into());

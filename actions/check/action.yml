@@ -11,7 +11,7 @@ inputs:
     description: Workspace-relative path to the declared baseline case file
     required: true
   core-archive:
-    description: Optional workspace-relative path to the pinned Sley 2.0.1 archive
+    description: Optional workspace-relative path to the pinned Sley 2.1.1 archive
     required: false
     default: ''
   artifact-name:

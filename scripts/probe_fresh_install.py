@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 SOURCE = Path(__file__).resolve().parents[1]
-CORE_ARCHIVE_SHA256 = "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44"
+CORE_ARCHIVE_SHA256 = "b0898ba7404a1656db2f83f448ea96d2c1175346f35e50b135bedc96e3810bfd"
 
 
 def digest(path: Path) -> str:
@@ -195,7 +195,7 @@ def exercise(stage: Path, source_checkout: Path) -> dict:
     installed = stage / "install/sley-tools-local"
     with tarfile.open(stage / "dist/sley-core.tar.gz", "r:gz") as archive:
         archive.extractall(stage / "install", filter="data")
-    core_root = stage / "install/sley-2.0.1-linux-x86_64"
+    core_root = stage / "install/sley-2.1.1-linux-x86_64"
     core = core_root / "bin/sley"
     tools = installed / "bin/sley-tools"
     manifest = json.loads((core_root / "MANIFEST.json").read_text())
@@ -580,7 +580,7 @@ try {
 
     result = {
         "contract": "sley-tools.fresh-install-probe.v3", "result": "PASS",
-        "profile": "local-linux-x86_64-sley-2.0.1",
+        "profile": "local-linux-x86_64-sley-2.1.1",
         "isolation": "bubblewrap checkout-masked, private tmpfs, network namespace disabled, new workspace and caches",
         "source_checkout_hidden": True,
         "installed_core_binary_sha256": digest(core),

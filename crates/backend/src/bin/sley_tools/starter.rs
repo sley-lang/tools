@@ -941,9 +941,10 @@ fn create_project(
     }
     let core_report = live_core_check(core.to_path_buf())?;
     if core_report["status"] != "compatible" {
-        return Err(CliFailure::incompatible(
-            "init requires the pinned Sley 2.0.1 core",
-        ));
+        return Err(CliFailure::incompatible(format!(
+            "init requires the pinned Sley {} core",
+            crate::TESTED_CORE_RELEASE
+        )));
     }
     let core = PathBuf::from(
         core_report["core"]["path"]

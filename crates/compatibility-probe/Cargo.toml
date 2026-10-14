@@ -8,13 +8,13 @@ publish = false
 
 [dependencies]
 serde_json = "=1.0.145"
-sley-id = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
-sley-mutate = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
-sley-policy = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
-sley-scb1 = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
-sley-ssmc = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
-sley-state-root = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
-sley-vm = { git = "https://github.com/sley-lang/sley", rev = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24" }
+sley-id = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
+sley-mutate = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
+sley-policy = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
+sley-scb1 = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
+sley-ssmc = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
+sley-state-root = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
+sley-vm = { git = "https://github.com/sley-lang/sley", rev = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee" }
 
 [[bin]]
 name = "f0-genesis-request"

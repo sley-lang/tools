@@ -439,9 +439,10 @@ pub(super) fn compute(
 ) -> Result<Value, CliFailure> {
     let core_report = core_check(core.to_path_buf())?;
     if core_report["status"] != "compatible" {
-        return Err(CliFailure::incompatible(
-            "review requires the pinned Sley 2.0.1 core",
-        ));
+        return Err(CliFailure::incompatible(format!(
+            "review requires the pinned Sley {} core",
+            crate::TESTED_CORE_RELEASE
+        )));
     }
     let core_sha256 = field(&core_report["core"], "binary_sha256")?;
     let before = load_package(before_manifest, core_sha256)?;

@@ -22,9 +22,9 @@ mod rpc_transfer;
 #[path = "sley_tools/starter.rs"]
 mod starter;
 
-const TESTED_CORE_COMMIT: &str = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24";
-const TESTED_CORE_BINARY_SHA256: &str =
-    "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e";
+#[path = "../core_pin.rs"]
+mod core_pin;
+use core_pin::{TESTED_CORE_BINARY_SHA256, TESTED_CORE_COMMIT, TESTED_CORE_RELEASE};
 
 const USAGE: &str = "usage: sley-tools rpc --project PATH [--workspace PATH] | operation status|cancel --project PATH --id HEX | reconcile --project PATH --candidate-id HEX --expected-parent HEX | mcp --project PATH --core PATH --adapter PATH [--allow-write] [--workspace PATH] [--review-before PATH --review-after PATH --review-cases PATH] | pipe --adapter PATH --core CORE --comparator-project PATH --selector-project PATH --reducer-project PATH --input FILE|- [--output FILE] [--batch-size N] | playground --adapter PATH --core CORE [--port N] | lab list --adapter PATH | lab start EXERCISE|check|reset --adapter PATH --workspace PATH --core PATH | doctor --core PATH | init PROJECT_DIR --template release-readiness|resource-admission --core PATH [--grant-profile create-only] | init PROJECT_DIR --graph SPEC --tests CASES --core PATH | import schema SCHEMA PROJECT_DIR --core PATH | import python SOURCE DOMAIN PROJECT_DIR --core PATH | run --project PATH --input FILE [--check] | test --project PATH | inspect --project PATH | edit|propose --project PATH --max-blocking-findings N|--require-memory-spare true|false | propose --project PATH --constant NAME --value-file FILE --tests CASES | propose --project PATH --operation BLOCK.NAME --opcode OPCODE --tests CASES | propose --project PATH --operation BLOCK.NAME --operand left|right|operand --reference param.NAME|op.NAME --tests CASES | propose --project PATH --branch BLOCK --targets-file FILE --tests CASES | validate|commit --project PATH | propose discard --project PATH | artifact export --project PATH --output FILE [--bind-manifest] | artifact import ARTIFACT PROJECT_DIR --core PATH | review [verify REPORT] --before MANIFEST --after MANIFEST --core CORE --cases FILE [--output FILE]";
 
@@ -795,7 +795,7 @@ fn core_check(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
             &binary,
             &digest,
             manifest.as_ref(),
-            "selected core binary is not the pinned 2.0.1 artifact",
+            &format!("selected core binary is not the pinned {TESTED_CORE_RELEASE} artifact"),
         ));
     }
     let manifest = manifest_identity(&binary, &digest)?;

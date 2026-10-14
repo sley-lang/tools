@@ -16,11 +16,11 @@ from pathlib import Path
 
 
 CORE_ARCHIVE_URL = (
-    "https://github.com/sley-lang/sley/releases/download/v2.0.1/"
-    "sley-2.0.1-linux-x86_64.tar.gz"
+    "https://github.com/sley-lang/sley/releases/download/v2.1.1/"
+    "sley-2.1.1-linux-x86_64.tar.gz"
 )
-CORE_ARCHIVE_SHA256 = "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44"
-CORE_BINARY_SHA256 = "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e"
+CORE_ARCHIVE_SHA256 = "b0898ba7404a1656db2f83f448ea96d2c1175346f35e50b135bedc96e3810bfd"
+CORE_BINARY_SHA256 = "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52"
 
 
 class CheckFailure(Exception):
@@ -127,11 +127,11 @@ def acquire_core(workspace: Path, raw: str, stage: Path) -> Path:
                 "--max-filesize", "16777216", "--output", str(archive), CORE_ARCHIVE_URL],
                timeout=150)
     if digest(archive) != CORE_ARCHIVE_SHA256:
-        raise CheckFailure("Sley core archive differs from the pinned 2.0.1 release")
+        raise CheckFailure("Sley core archive differs from the pinned 2.1.1 release")
     extracted = stage / "core"
     extracted.mkdir()
     invoke(["tar", "-xzf", str(archive), "-C", str(extracted)], timeout=30)
-    core = extracted / "sley-2.0.1-linux-x86_64/bin/sley"
+    core = extracted / "sley-2.1.1-linux-x86_64/bin/sley"
     if not core.is_file() or digest(core) != CORE_BINARY_SHA256:
         raise CheckFailure("unpacked Sley core binary failed the pinned digest")
     return core
@@ -167,7 +167,7 @@ def render_summary(status: dict, report: dict | None) -> str:
 
 def check(action_root: Path, report_dir: Path) -> dict:
     if sys.platform != "linux" or platform.machine() != "x86_64":
-        raise CheckFailure("the selected Sley 2.0.1 Action profile requires Linux x86_64")
+        raise CheckFailure("the selected Sley 2.1.1 Action profile requires Linux x86_64")
     workspace = Path(os.environ["GITHUB_WORKSPACE"]).resolve(strict=True)
     before = workspace_file(workspace, os.environ.get("SLEY_BEFORE", ""))
     after = workspace_file(workspace, os.environ.get("SLEY_AFTER", ""))

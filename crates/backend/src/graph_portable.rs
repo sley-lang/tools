@@ -84,7 +84,7 @@ fn load(path: &Path) -> Result<GraphArtifact, DynError> {
     }
     let artifact: GraphArtifact = serde_json::from_slice(&bytes)?;
     if artifact.contract != CONTRACT
-        || artifact.core_commit != "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+        || artifact.core_commit != crate::core_pin::TESTED_CORE_COMMIT
         || artifact.recipe_json.len() > 65_536
         || artifact.cases_json.len() > 1_048_576
         || artifact.objects.is_empty()

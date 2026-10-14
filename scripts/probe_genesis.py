@@ -364,7 +364,7 @@ def probe(binary: Path, builder: Path) -> dict:
         "contract": "sley-tools.f0-genesis-probe.v1",
         "result": "PASS",
         "binary_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(),
-        "route": "public codecs at c748dda -> release binary SMP1 workspace.create, candidate.create, candidate.validate, commit, execute, exchange.export/import",
+        "route": "public codecs at af34be3 -> release binary SMP1 workspace.create, candidate.create, candidate.validate, commit, execute, exchange.export/import",
         "workspace_id": generated["workspace_id"],
         "principal_id": generated["principal_id"],
         "state_root": generated["state_root"],

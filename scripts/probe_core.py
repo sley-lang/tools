@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROFILES = ("legacy", "v2-capable", "v3-capable")
-EXPECTED_ARCHIVE_SHA256 = "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44"
+EXPECTED_ARCHIVE_SHA256 = "b0898ba7404a1656db2f83f448ea96d2c1175346f35e50b135bedc96e3810bfd"
 
 
 def sha256(path: Path) -> str:
@@ -88,7 +88,7 @@ def add_native_test_route_evidence(report: dict, path: Path, tools: Path, builde
     report["gaps"]["native_test_admission"] = {
         "status": "requires_core_change",
         "observed": "candidate.validate accepts a new TestCase; v3 tests.affected returns NATIVE_EXECUTOR_UNAVAILABLE",
-        "source": f"selected Sley 2.0.1 standalone CLI, {path.as_posix()}",
+        "source": f"selected Sley 2.1.1 standalone CLI, {path.as_posix()}",
         "bounded_next_step": "wire and verify the core-owned production executor/supervisor, then rerun F0 native test admission and commit from a fresh workspace",
     }
 
@@ -108,9 +108,9 @@ def probe(artifact_root: Path, archive: Path | None, genesis_evidence: Path | No
     if actual_binary_hash != expected_binary["sha256"]:
         raise RuntimeError("release binary does not match MANIFEST.json")
     if archive is not None and sha256(archive) != EXPECTED_ARCHIVE_SHA256:
-        raise RuntimeError("archive SHA-256 differs from the selected public 2.0.1 release")
-    if manifest["commit"] != "c748dda18c1276687cc3b0d1ef9b7f257eb09b24":
-        raise RuntimeError("artifact commit differs from selected public 2.0.1 release")
+        raise RuntimeError("archive SHA-256 differs from the selected public 2.1.1 release")
+    if manifest["commit"] != "af34be33eb1ae913dddd92aa7f4f275aac0e45ee":
+        raise RuntimeError("artifact commit differs from selected public 2.1.1 release")
 
     profiles = {}
     for profile in PROFILES:
@@ -138,7 +138,7 @@ def probe(artifact_root: Path, archive: Path | None, genesis_evidence: Path | No
     report = {
         "contract": "sley-tools.compatibility.v1",
         "selected_core": {
-            "release": "v2.0.1",
+            "release": "v2.1.1",
             "commit": manifest["commit"],
             "artifact": manifest["artifact"],
             "archive_sha256": EXPECTED_ARCHIVE_SHA256 if archive is not None else None,
@@ -204,12 +204,12 @@ def probe(artifact_root: Path, archive: Path | None, genesis_evidence: Path | No
             report["capabilities"]["native_tests_via_unconfigured_release_cli"] = {
                 "status": "unsupported",
                 "evidence": genesis_evidence.as_posix(),
-                "scope": "v3 tests.selected with a valid body on standalone 2.0.1 CLI; a provisioned public-library executor remains to be probed",
+                "scope": "v3 tests.selected with a valid body on standalone 2.1.1 CLI; a provisioned public-library executor remains to be probed",
             }
             report["gaps"]["native_test_admission"] = {
                 "status": "requires_core_change",
                 "observed": "NATIVE_EXECUTOR_UNAVAILABLE from v3 tests.selected on the selected release binary",
-                "source": "sley-lang/sley at c748dda, packaging/sley-test-supervisor/README.md: root supervisor event loop and execution dispatch pending",
+                "source": "sley-lang/sley at af34be3, packaging/sley-test-supervisor/README.md: root supervisor event loop and execution dispatch pending",
                 "bounded_next_step": "Complete and verify the core-owned production executor/supervisor path, then rerun F0 native test admission from a fresh workspace; keep any local tools-side tests labeled external assertions",
             }
         report["capabilities"]["typed_output_via_release_smp1_execute"] = {
@@ -2810,7 +2810,7 @@ def add_fresh_install_evidence(report: dict, path: Path, probe: Path, tools: Pat
         "contract": ("sley-tools.fresh-install-probe.v3" if browser_profile else
                      "sley-tools.fresh-install-probe.v2" if launcher_profile else
                      "sley-tools.fresh-install-probe.v1"), "result": "PASS",
-        "profile": "local-linux-x86_64-sley-2.0.1",
+        "profile": "local-linux-x86_64-sley-2.1.1",
         "installed_core_binary_sha256": report["selected_core"]["binary_sha256"],
         "installed_tools_binary_sha256": sha256(tools),
         "tools_binary_sha256": sha256(tools),
@@ -3010,18 +3010,18 @@ def add_fresh_install_evidence(report: dict, path: Path, probe: Path, tools: Pat
             or any(not isinstance(launcher.get(name), str) or len(launcher[name]) != 64
                    for name in ("old_root", "new_root"))):
         raise RuntimeError("fresh-install MCP launcher did not carry an installed native edit")
-    scope = ("local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.0.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and rejected-change recovery, plus the CLI MCP launcher against installed standalone server, Data Pipe sample through sley-tools pipe, local Playground run/edit/export through sley-tools playground, all eight Repair Lab exercises, and both native importer edits passed; hosted worker isolation, live agent, native core tests, and public release remain open"
+    scope = ("local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.1.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and rejected-change recovery, plus the CLI MCP launcher against installed standalone server, Data Pipe sample through sley-tools pipe, local Playground run/edit/export through sley-tools playground, all eight Repair Lab exercises, and both native importer edits passed; hosted worker isolation, live agent, native core tests, and public release remain open"
              if browser_profile else
-             "local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.0.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and the CLI MCP launcher against installed standalone server, Data Pipe sample through sley-tools pipe, all eight Repair Lab exercises, and both native importer edits passed; live agent, native core tests, and public release remain open"
+             "local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.1.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and the CLI MCP launcher against installed standalone server, Data Pipe sample through sley-tools pipe, all eight Repair Lab exercises, and both native importer edits passed; live agent, native core tests, and public release remain open"
              if launcher_profile else
-             "local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.0.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and the CLI MCP launcher against installed standalone server, Data Pipe sample, all eight Repair Lab exercises, and both native importer edits passed; live agent, native core tests, and public release remain open")
+             "local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.1.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and the CLI MCP launcher against installed standalone server, Data Pipe sample, all eight Repair Lab exercises, and both native importer edits passed; live agent, native core tests, and public release remain open")
     report["capabilities"]["fresh_install_local_package_scenario_v1"] = {
         "status": "supported", "evidence": path.as_posix(),
         "scope": scope,
     }
     report["capabilities"]["standalone_local_mcp_package_v1"] = {
         "status": "supported", "evidence": path.as_posix(),
-        "scope": "locally produced @sley-lang/tools-mcp@0.0.1 tarball bundles pinned MCP runtime dependencies and the Sley TypeScript SDK; installed outside the checkout with network disabled and passed the 106-assertion official MCP reference-client probe and CLI launcher native edit against the selected Sley 2.0.1 core; npm publication and live agent task remain open",
+        "scope": "locally produced @sley-lang/tools-mcp@0.0.1 tarball bundles pinned MCP runtime dependencies and the Sley TypeScript SDK; installed outside the checkout with network disabled and passed the 106-assertion official MCP reference-client probe and CLI launcher native edit against the selected Sley 2.1.1 core; npm publication and live agent task remain open",
     }
 
 

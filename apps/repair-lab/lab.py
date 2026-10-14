@@ -231,7 +231,7 @@ def start(exercise: str, workspace: Path, tools: Path, core: Path) -> dict:
     workspace.mkdir(mode=0o700)
     marker = {"contract": CONTRACT, "workspace": str(workspace), "exercise": exercise,
               "tools_sha256": digest(tools), "core_sha256": digest(core),
-              "core_profile": "sley-2.0.1-extended-v1"}
+              "core_profile": "sley-2.1.1-extended-v1"}
     try:
         write_json(workspace / ".sley-repair-lab.json", marker)
         materials = REPO / "apps/repair-lab/exercises" / exercise

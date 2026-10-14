@@ -686,9 +686,10 @@ fn initialize(
     let example_input = rows[0]["input"].clone();
     let core_report = live_core_check(core.to_path_buf())?;
     if core_report["status"] != "compatible" {
-        return Err(CliFailure::incompatible(
-            "graph init requires the pinned Sley 2.0.1 core",
-        ));
+        return Err(CliFailure::incompatible(format!(
+            "graph init requires the pinned Sley {} core",
+            crate::TESTED_CORE_RELEASE
+        )));
     }
     let core = PathBuf::from(
         core_report["core"]["path"]

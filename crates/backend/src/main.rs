@@ -36,6 +36,8 @@ use sley_vm::{
     execute_function,
 };
 
+#[path = "core_pin.rs"]
+mod core_pin;
 mod graph;
 mod graph_portable;
 mod portable;

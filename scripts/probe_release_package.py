@@ -16,7 +16,7 @@ from probe_fresh_install import CORE_ARCHIVE_SHA256, copy_bundle, deterministic_
 
 
 SOURCE = Path(__file__).resolve().parents[1]
-CORE_BINARY_SHA256 = "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e"
+CORE_BINARY_SHA256 = "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52"
 
 
 def call(*command: object, cwd: Path | None = None, timeout: int = 180) -> str:
@@ -39,11 +39,11 @@ def public_docs(payload: Path) -> None:
     public_status.unlink()
     (payload / "README.md").write_text(
         "# Sley Tools 0.0.1 release candidate\n\n"
-        "Linux x86_64 package for local use with the separately verified Sley 2.0.1 core. "
+        "Linux x86_64 package for local use with the separately verified Sley 2.1.1 core. "
         "This is a release candidate; native core test admission remains unavailable.\n\n"
-        "Run `bin/sley-tools doctor --core /path/to/sley-2.0.1-linux-x86_64/bin/sley`, "
+        "Run `bin/sley-tools doctor --core /path/to/sley-2.1.1-linux-x86_64/bin/sley`, "
         "then `bin/sley-tools init my-program --template release-readiness --core "
-        "/path/to/sley-2.0.1-linux-x86_64/bin/sley`. "
+        "/path/to/sley-2.1.1-linux-x86_64/bin/sley`. "
         "Use `bin/sley-tools test --project my-program` for external assertions against native execution.\n\n"
         "The `programs/` directory contains the native examples; `docs/` describes supported "
         "authoring and adapter profiles. `MANIFEST.json` binds the included files. "
@@ -117,7 +117,7 @@ def write_manifest(payload: Path, commit: str, tools: Path, builder: Path) -> No
         "version": "0.0.1", "status": "candidate", "platform": "linux-x86_64",
         "source_commit": commit, "tools_binary_sha256": digest(tools),
         "builder_binary_sha256": digest(builder),
-        "compatible_core_release": "v2.0.1",
+        "compatible_core_release": "v2.1.1",
         "compatible_core_archive_sha256": CORE_ARCHIVE_SHA256,
         "compatible_core_binary_sha256": CORE_BINARY_SHA256,
         "native_core_test_admission": "NOT_RUN: production native executor unavailable",
@@ -131,7 +131,7 @@ def smoke(payload: Path, core_archive: Path, stage: Path) -> dict:
     (stage / "core").mkdir()
     with tarfile.open(core_archive, "r:gz") as archive:
         archive.extractall(stage / "core", filter="data")
-    core = stage / "core/sley-2.0.1-linux-x86_64/bin/sley"
+    core = stage / "core/sley-2.1.1-linux-x86_64/bin/sley"
     if digest(core) != CORE_BINARY_SHA256:
         raise RuntimeError("release candidate selected a different core binary")
     tools = payload / "bin/sley-tools"

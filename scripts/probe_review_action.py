@@ -31,7 +31,7 @@ def invoke(caller: Path, report_dir: Path, before: str, after: str, cases: str) 
         "SLEY_BEFORE": before,
         "SLEY_AFTER": after,
         "SLEY_CASES": cases,
-        "SLEY_CORE_ARCHIVE": "sley-2.0.1-linux-x86_64.tar.gz",
+        "SLEY_CORE_ARCHIVE": "sley-2.1.1-linux-x86_64.tar.gz",
         "GITHUB_STEP_SUMMARY": str(report_dir / "job-summary.md"),
     })
     result = subprocess.run([sys.executable, str(SOURCE / "actions/check/check.py")],
@@ -56,7 +56,7 @@ def main() -> None:
         root = Path(temporary)
         caller = root / "caller"
         caller.mkdir()
-        shutil.copy2(args.core_archive, caller / "sley-2.0.1-linux-x86_64.tar.gz")
+        shutil.copy2(args.core_archive, caller / "sley-2.1.1-linux-x86_64.tar.gz")
         shutil.copytree(SOURCE / "evidence/review/fixtures/release-readiness/before",
                         caller / "release/before")
         shutil.copytree(SOURCE / "evidence/review/fixtures/release-readiness/after",
