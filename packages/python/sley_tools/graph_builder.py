@@ -5,7 +5,9 @@ from __future__ import annotations
 import copy
 import re
 from collections.abc import Mapping
-from typing import Any
+TYPE_CHECKING = False
+if TYPE_CHECKING:
+    from typing import Any
 
 from .runtime import _graph_raw, _input_error
 

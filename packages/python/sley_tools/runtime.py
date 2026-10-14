@@ -3,20 +3,22 @@
 from __future__ import annotations
 
 import json
-import hashlib
 import os
 import re
 import select
-import shutil
 import signal
 import subprocess
-import tempfile
 import threading
 import time
-from dataclasses import dataclass
 from pathlib import Path
 from collections.abc import Mapping
-from typing import Any
+
+# hashlib, shutil, and tempfile are imported where used, and typing only for
+# checkers: together with dataclasses they were about half of the SDK's
+# import time, and most programs only call an already-loaded program.
+TYPE_CHECKING = False
+if TYPE_CHECKING:
+    from typing import Any
 
 
 class SleyToolsError(Exception):
@@ -28,10 +30,35 @@ class SleyToolsError(Exception):
         self.core_numeric = core_numeric
 
 
-@dataclass(frozen=True)
 class CallResult:
+    """Immutable decoded value and execution metadata of one native call."""
+
+    __slots__ = ("value", "metadata")
+    __match_args__ = ("value", "metadata")
+
     value: bool | int | dict[str, Any]
     metadata: dict[str, Any]
+
+    def __init__(self, value: bool | int | dict[str, Any], metadata: dict[str, Any]) -> None:
+        object.__setattr__(self, "value", value)
+        object.__setattr__(self, "metadata", metadata)
+
+    def __setattr__(self, name: str, value: object) -> None:
+        raise AttributeError(f"cannot assign to field {name!r}")
+
+    def __delattr__(self, name: str) -> None:
+        raise AttributeError(f"cannot delete field {name!r}")
+
+    def __repr__(self) -> str:
+        return f"CallResult(value={self.value!r}, metadata={self.metadata!r})"
+
+    def __eq__(self, other: object) -> bool:
+        if other.__class__ is not CallResult:
+            return NotImplemented
+        return (self.value, self.metadata) == (other.value, other.metadata)
+
+    def __hash__(self) -> int:
+        return hash((self.value, self.metadata))
 
 
 def _input_error(message: str) -> SleyToolsError:
@@ -223,7 +250,9 @@ class Runtime:
         try:
             payload = json.loads(result.stderr)
         except json.JSONDecodeError:
-            raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", result.stderr[:300] or "sley-tools command failed") from None
+            payload = None
+        if not isinstance(payload, dict):
+            raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", result.stderr[:300] or "sley-tools command failed")
         raise SleyToolsError(
             payload.get("code", "ST_TRANSPORT_FAILED"),
             payload.get("category", "transport"),
@@ -235,6 +264,8 @@ class Runtime:
     def load(self, *, artifact: str | Path) -> Program:
         if self._process is not None:
             raise _input_error("runtime already has a loaded program")
+        import tempfile
+
         self._temporary = Path(tempfile.mkdtemp(prefix="sley-python-sdk-"))
         project = self._temporary / "project"
         try:
@@ -280,6 +311,8 @@ class Runtime:
         if len(spec_bytes) > 65_536 or len(cases_bytes) > 1_048_576:
             raise SleyToolsError("ST_RESOURCE_LIMIT", "resource_limit", "graph recipe or cases exceed the profile limit")
         destination = Path(project).resolve()
+        import tempfile
+
         with tempfile.TemporaryDirectory(prefix="sley-python-graph-") as temporary:
             spec_path, cases_path = Path(temporary) / "graph.json", Path(temporary) / "cases.json"
             spec_path.write_bytes(spec_bytes)
@@ -301,11 +334,15 @@ class Runtime:
         if self._process is not None:
             raise _input_error("runtime already has a loaded program")
         self._project_path = Path(project).resolve()
-        self._process = subprocess.Popen(
-            [str(self.tools), "rpc", "--project", str(self._project_path)],
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-            text=True, bufsize=1, start_new_session=True,
-        )
+        try:
+            self._process = subprocess.Popen(
+                [str(self.tools), "rpc", "--project", str(self._project_path)],
+                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                text=True, bufsize=1, start_new_session=True,
+            )
+        except OSError as error:
+            self.close()
+            raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", f"cannot start RPC process: {error}") from error
         assert self._process.stderr is not None
         self._stderr_thread = threading.Thread(target=self._drain_stderr, args=(self._process.stderr,), daemon=True)
         self._stderr_thread.start()
@@ -313,6 +350,8 @@ class Runtime:
             self.hello = self._request("sleytools.hello", {}, timeout=5)
             if self.hello.get("contract") != "sley-tools.rpc.v0":
                 raise SleyToolsError("ST_CORE_INCOMPATIBLE", "compatibility", "RPC contract differs from Python SDK")
+            import hashlib
+
             digest = hashlib.sha256()
             with self.core.open("rb") as binary:
                 for chunk in iter(lambda: binary.read(64 * 1024), b""):
@@ -407,12 +446,12 @@ class Runtime:
             except json.JSONDecodeError as error:
                 self._stop_process_group(process)
                 raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", f"RPC response is invalid JSON: {error}") from error
-            if response.get("jsonrpc") != "2.0" or response.get("id") != request_id:
+            if not isinstance(response, dict) or response.get("jsonrpc") != "2.0" or response.get("id") != request_id:
                 self._stop_process_group(process)
                 raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", "RPC response ID or version differs from request")
             if "error" in response:
-                rpc_error = response["error"]
-                data = rpc_error.get("data", {})
+                rpc_error = response["error"] if isinstance(response["error"], dict) else {}
+                data = rpc_error.get("data") if isinstance(rpc_error.get("data"), dict) else {}
                 raise SleyToolsError(
                     data.get("tools_code", "ST_TRANSPORT_FAILED"),
                     data.get("category", "transport"),
@@ -443,6 +482,8 @@ class Runtime:
             self._stderr_thread = None
         if self._temporary is not None:
             if not self._preserve_temporary:
+                import shutil
+
                 shutil.rmtree(self._temporary)
             self._temporary = None
 

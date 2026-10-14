@@ -585,8 +585,7 @@ export class Runtime {
     }
   }
 
-  #stopProcessGroup() {
-    const child = this.process;
+  #stopProcessGroup(child = this.process) {
     if (child && !this.exited && child.pid) {
       try { process.kill(-child.pid, 'SIGKILL'); }
       catch (error) { if (error.code !== 'ESRCH') child.kill('SIGKILL'); }
@@ -671,7 +670,8 @@ export class Runtime {
     if (child && child.exitCode === null && child.signalCode === null) {
       const closed = new Promise((resolveClosed) => child.once('exit', resolveClosed));
       if (child.stdin.writable) child.stdin.end();
-      const timer = setTimeout(() => this.#stopProcessGroup(), 5000);
+      // close() has already detached this.process, so name the child explicitly.
+      const timer = setTimeout(() => this.#stopProcessGroup(child), 5000);
       await closed;
       clearTimeout(timer);
     }
