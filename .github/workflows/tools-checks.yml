@@ -26,14 +26,20 @@ jobs:
         run: cargo +1.93.0 fmt --all -- --check
       - name: Build Tools binaries
         run: cargo +1.93.0 build --locked -p sley-tools-backend --bins
+      - name: Run Rust unit tests
+        run: cargo +1.93.0 test --locked -p sley-tools-backend
       - name: Check Python and JavaScript syntax
         run: |
           python3 -m compileall -q scripts packages/python/sley_tools tests
-          for file in scripts/*.mjs packages/typescript/src/*.js packages/mcp/src/*.mjs; do
+          for file in scripts/*.mjs packages/typescript/src/*.js packages/typescript/tests/*.mjs packages/mcp/src/*.mjs; do
             node --check "$file"
           done
       - name: Verify native report parser
         run: python3 tests/test_native_report_inspector.py target/debug/sley-tools-native-builder
+      - name: Check SDK process lifecycle
+        run: |
+          python3 tests/test_python_sdk_lifecycle.py
+          node packages/typescript/tests/close_probe.mjs
       - name: Download pinned public Sley core
         run: |
           curl --fail --location --silent --show-error --retry 3 \
@@ -45,6 +51,10 @@ jobs:
           mkdir -p "$RUNNER_TEMP/sley-core"
           tar -xzf "$RUNNER_TEMP/sley-core.tar.gz" -C "$RUNNER_TEMP/sley-core"
           test -x "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley"
+      - name: Check CLI flags and core identity checks
+        run: |
+          python3 tests/test_cli_core_checks.py target/debug/sley-tools \
+            "$RUNNER_TEMP/sley-core/sley-2.0.1-linux-x86_64/bin/sley"
       - name: Import and test the native program catalog
         run: |
           python3 scripts/probe_native_catalog_smoke.py \
