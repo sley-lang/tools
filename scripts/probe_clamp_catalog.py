@@ -129,13 +129,13 @@ def main() -> None:
             or manifest["worked_change"] != {
                 "operation": "replace_named_constant", "constant": "upper_bound",
                 "initial_value": "5", "example_value": "6",
-                "evidence": "evidence/catalog/bounded-clamp-v1.json"}
+                "evidence": "evidence/catalog/bounded-clamp-v2.json"}
             or entry is None or entry["program_id"] != "bounded-clamp"
             or entry["package"] != relative
             or entry["artifact"] != f"{relative}/artifact/native-graph.json"
             or entry["integration_examples"] != ["packages/python/examples/bounded_clamp.py"]
-            or entry["verified_behavior"] != "evidence/catalog/bounded-clamp-v1.json"
-            or entry["worked_modification"] != "evidence/catalog/bounded-clamp-v1.json"):
+            or entry["verified_behavior"] != "evidence/catalog/bounded-clamp-v2.json"
+            or entry["worked_modification"] != "evidence/catalog/bounded-clamp-v2.json"):
         raise RuntimeError("N08 package metadata or native binding differs")
     fixture(initial_cases, -5, 5)
     fixture(upper_cases, -5, 6)

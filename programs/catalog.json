@@ -12,8 +12,8 @@
         "packages/python/examples/release_readiness.py",
         "packages/typescript/examples/release-readiness.mjs"
       ],
-      "verified_behavior": "evidence/bridge/python-v1.json",
-      "worked_modification": "evidence/starter/edit-v1.json",
+      "verified_behavior": "evidence/bridge/python-v2.json",
+      "worked_modification": "evidence/starter/edit-v2.json",
       "status": "verified_local_artifact"
     },
     {
@@ -27,8 +27,8 @@
         "packages/python/examples/resource_admission.py",
         "packages/typescript/examples/resource-admission.mjs"
       ],
-      "verified_behavior": "evidence/resource-admission/artifact-v1.json",
-      "worked_modification": "evidence/resource-admission/edit-v1.json",
+      "verified_behavior": "evidence/resource-admission/artifact-v2.json",
+      "worked_modification": "evidence/resource-admission/edit-v2.json",
       "status": "verified_local_artifact_and_edit"
     },
     {
@@ -42,8 +42,8 @@
         "packages/python/sley_tools/data_pipe.py",
         "examples/data-pipe/benchmark-v0.input.jsonl"
       ],
-      "verified_behavior": "evidence/catalog/benchmark-comparator-v1.json",
-      "worked_modification": "evidence/catalog/benchmark-comparator-v1.json",
+      "verified_behavior": "evidence/catalog/benchmark-comparator-v2.json",
+      "worked_modification": "evidence/catalog/benchmark-comparator-v2.json",
       "status": "verified_local_artifact_and_edit"
     },
     {
@@ -57,8 +57,8 @@
         "packages/python/sley_tools/data_pipe.py",
         "examples/data-pipe/benchmark-v0.input.jsonl"
       ],
-      "verified_behavior": "evidence/catalog/benchmark-selector-v1.json",
-      "worked_modification": "evidence/catalog/benchmark-selector-v1.json",
+      "verified_behavior": "evidence/catalog/benchmark-selector-v2.json",
+      "worked_modification": "evidence/catalog/benchmark-selector-v2.json",
       "status": "verified_local_artifact_and_edit"
     },
     {
@@ -72,8 +72,8 @@
         "packages/python/sley_tools/data_pipe.py",
         "examples/data-pipe/benchmark-v0.input.jsonl"
       ],
-      "verified_behavior": "evidence/catalog/benchmark-summary-reducer-v1.json",
-      "worked_modification": "evidence/catalog/benchmark-summary-reducer-v1.json",
+      "verified_behavior": "evidence/catalog/benchmark-summary-reducer-v2.json",
+      "worked_modification": "evidence/catalog/benchmark-summary-reducer-v2.json",
       "status": "verified_local_artifact_and_edit"
     },
     {
@@ -86,8 +86,8 @@
       "integration_examples": [
         "apps/repair-lab/lab.py"
       ],
-      "verified_behavior": "evidence/catalog/tier-classifier-v1.json",
-      "worked_modification": "evidence/catalog/tier-classifier-v1.json",
+      "verified_behavior": "evidence/catalog/tier-classifier-v2.json",
+      "worked_modification": "evidence/catalog/tier-classifier-v2.json",
       "status": "verified_local_artifact_and_threshold_edit"
     },
     {
@@ -100,8 +100,8 @@
       "integration_examples": [
         "programs/range-predicate/examples/python.py"
       ],
-      "verified_behavior": "evidence/catalog/range-predicate-v1.json",
-      "worked_modification": "evidence/catalog/range-predicate-v1.json",
+      "verified_behavior": "evidence/catalog/range-predicate-v2.json",
+      "worked_modification": "evidence/catalog/range-predicate-v2.json",
       "status": "verified_local_artifact_and_boundary_correction"
     },
     {
@@ -114,8 +114,8 @@
       "integration_examples": [
         "packages/python/examples/bounded_clamp.py"
       ],
-      "verified_behavior": "evidence/catalog/bounded-clamp-v1.json",
-      "worked_modification": "evidence/catalog/bounded-clamp-v1.json",
+      "verified_behavior": "evidence/catalog/bounded-clamp-v2.json",
+      "worked_modification": "evidence/catalog/bounded-clamp-v2.json",
       "status": "verified_local_artifact_and_bound_edit"
     },
     {
@@ -128,8 +128,8 @@
       "integration_examples": [
         "packages/python/examples/quota_remaining.py"
       ],
-      "verified_behavior": "evidence/catalog/quota-remaining-v1.json",
-      "worked_modification": "evidence/catalog/quota-remaining-v1.json",
+      "verified_behavior": "evidence/catalog/quota-remaining-v2.json",
+      "worked_modification": "evidence/catalog/quota-remaining-v2.json",
       "status": "verified_local_artifact_and_notification_edit"
     },
     {
@@ -142,8 +142,8 @@
       "integration_examples": [
         "packages/python/examples/generated_payload_validator.py"
       ],
-      "verified_behavior": "evidence/catalog/generated-payload-validator-v1.json",
-      "worked_modification": "evidence/catalog/generated-payload-validator-v1.json",
+      "verified_behavior": "evidence/catalog/generated-payload-validator-v2.json",
+      "worked_modification": "evidence/catalog/generated-payload-validator-v2.json",
       "status": "verified_local_artifact_and_bound_edit"
     }
   ]

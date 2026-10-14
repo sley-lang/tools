@@ -2,18 +2,18 @@
   "artifact": {
     "contract": "sley-tools.native-program-artifact.v0",
     "path": "artifact/native-program.json",
-    "sha256": "41c4dc13e23e6320d444ee71ae73cec88dd36b86e9d617198c0c0059d5278e2c"
+    "sha256": "41507712d5a61a75241733371bb16d46e680b2a074df2a4fc3cd5234a999e516"
   },
   "contract": "sley-tools.program.v0",
   "core": {
-    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
-    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+    "commit": "af34be33eb1ae913dddd92aa7f4f275aac0e45ee",
     "profile": "extended_v1"
   },
   "entrypoint": {
-    "function_id": "a2d9835bb2f90b382e6e248355d661b735171bea7f03bb617a59f6b549639380",
+    "function_id": "79bcf6c3e721b8f16f8d6fce52437372b09c1df208549d90d1d9ef75681f6c1f",
     "name": "evaluate",
-    "state_root": "434810c63d7682c8b04389b1d41122e56c10cda88a24984d46db27e5d97eff40"
+    "state_root": "f9d87569b0f7b9afa375c1d2b2318b4b97aa1752fa5eedac25921f48e824045a"
   },
   "host_responsibility": "typed input validation, local workspace lifecycle, and presentation",
   "inputs": {
@@ -76,10 +76,10 @@
       "type": "SInt64"
     }
   ],
-  "result_type_id": "a7961f286664819916287c8a68b14ead692075699637aa2f70e0a3088f32fa96",
+  "result_type_id": "da9d2a513084a59eb72976ac3dd52c64faa2f1fa6a676507f7c14fa1b66dc7e2",
   "source_provenance": {
     "builder": "crates/backend/src/resource.rs",
-    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+    "core_commit": "af34be33eb1ae913dddd92aa7f4f275aac0e45ee"
   },
   "status": "portable_native_artifact",
   "test_cases": {

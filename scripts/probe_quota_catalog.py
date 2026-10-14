@@ -133,13 +133,13 @@ def main() -> None:
             or manifest["worked_change"] != {
                 "operation": "replace_named_constant", "constant": "notify_at_used",
                 "initial_value": "8", "example_value": "6",
-                "evidence": "evidence/catalog/quota-remaining-v1.json"}
+                "evidence": "evidence/catalog/quota-remaining-v2.json"}
             or entry is None or entry["program_id"] != "quota-remaining"
             or entry["package"] != relative
             or entry["artifact"] != f"{relative}/artifact/native-graph.json"
             or entry["integration_examples"] != ["packages/python/examples/quota_remaining.py"]
-            or entry["verified_behavior"] != "evidence/catalog/quota-remaining-v1.json"
-            or entry["worked_modification"] != "evidence/catalog/quota-remaining-v1.json"):
+            or entry["verified_behavior"] != "evidence/catalog/quota-remaining-v2.json"
+            or entry["worked_modification"] != "evidence/catalog/quota-remaining-v2.json"):
         raise RuntimeError("N09 package metadata or native binding differs")
     fixture(initial_cases, 8)
     fixture(notify_cases, 6)

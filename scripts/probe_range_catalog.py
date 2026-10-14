@@ -130,13 +130,13 @@ def main() -> None:
         or manifest["worked_change"] != {
             "operation": "replace_named_constant", "constant": "exclude_upper_endpoint",
             "initial_value": False, "example_value": True,
-            "evidence": "evidence/catalog/range-predicate-v1.json"}
+            "evidence": "evidence/catalog/range-predicate-v2.json"}
         or entry is None or entry["program_id"] != "range-predicate"
         or entry["package"] != expected_package
         or entry["artifact"] != f"{expected_package}/artifact/native-graph.json"
         or entry["integration_examples"] != ["programs/range-predicate/examples/python.py"]
-        or entry["verified_behavior"] != "evidence/catalog/range-predicate-v1.json"
-        or entry["worked_modification"] != "evidence/catalog/range-predicate-v1.json"):
+        or entry["verified_behavior"] != "evidence/catalog/range-predicate-v2.json"
+        or entry["worked_modification"] != "evidence/catalog/range-predicate-v2.json"):
         raise RuntimeError("N07 catalog package metadata or native binding differs")
     initial_rows = fixture(cases_path, False)
     excluded_rows = fixture(changed_cases_path, True)

@@ -84,12 +84,12 @@ def main() -> None:
         or manifest["worked_change"] != {
             "operation": "replace_named_constant", "constant": "include_nonregressions",
             "initial_value": False, "example_value": True,
-            "evidence": "evidence/catalog/benchmark-selector-v1.json"}
+            "evidence": "evidence/catalog/benchmark-selector-v2.json"}
         or entry is None or entry["program_id"] != "benchmark-selector"
         or entry["package"] != expected_package
         or entry["artifact"] != f"{expected_package}/artifact/native-graph.json"
-        or entry["verified_behavior"] != "evidence/catalog/benchmark-selector-v1.json"
-        or entry["worked_modification"] != "evidence/catalog/benchmark-selector-v1.json"):
+        or entry["verified_behavior"] != "evidence/catalog/benchmark-selector-v2.json"
+        or entry["worked_modification"] != "evidence/catalog/benchmark-selector-v2.json"):
         raise RuntimeError("N04 catalog package metadata or native binding differs")
     initial_rows = check_fixture(cases_path, False)
     changed_rows = check_fixture(changed_cases_path, True)

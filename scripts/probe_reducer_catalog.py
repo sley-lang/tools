@@ -96,12 +96,12 @@ def main() -> None:
         or manifest["worked_change"] != {
             "operation": "replace_named_constant", "constant": "reject_negative_totals",
             "initial_value": True, "example_value": False,
-            "evidence": "evidence/catalog/benchmark-summary-reducer-v1.json"}
+            "evidence": "evidence/catalog/benchmark-summary-reducer-v2.json"}
         or entry is None or entry["program_id"] != "benchmark-summary-reducer"
         or entry["package"] != expected_package
         or entry["artifact"] != f"{expected_package}/artifact/native-graph.json"
-        or entry["verified_behavior"] != "evidence/catalog/benchmark-summary-reducer-v1.json"
-        or entry["worked_modification"] != "evidence/catalog/benchmark-summary-reducer-v1.json"):
+        or entry["verified_behavior"] != "evidence/catalog/benchmark-summary-reducer-v2.json"
+        or entry["worked_modification"] != "evidence/catalog/benchmark-summary-reducer-v2.json"):
         raise RuntimeError("N05 catalog package metadata or native binding differs")
     initial_rows = check_fixture(cases_path, reject_negative_totals=True)
     changed_rows = check_fixture(changed_cases_path, reject_negative_totals=False)

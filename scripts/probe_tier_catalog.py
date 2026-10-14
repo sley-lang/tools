@@ -130,12 +130,12 @@ def main() -> None:
         or manifest["worked_change"] != {
             "operation": "replace_named_constant", "constant": "bronze_max",
             "initial_value": "10", "example_value": "12",
-            "evidence": "evidence/catalog/tier-classifier-v1.json"}
+            "evidence": "evidence/catalog/tier-classifier-v2.json"}
         or entry is None or entry["program_id"] != "tier-classifier"
         or entry["package"] != expected_package
         or entry["artifact"] != f"{expected_package}/artifact/native-graph.json"
-        or entry["verified_behavior"] != "evidence/catalog/tier-classifier-v1.json"
-        or entry["worked_modification"] != "evidence/catalog/tier-classifier-v1.json"):
+        or entry["verified_behavior"] != "evidence/catalog/tier-classifier-v2.json"
+        or entry["worked_modification"] != "evidence/catalog/tier-classifier-v2.json"):
         raise RuntimeError("N06 catalog metadata or native binding differs")
     fixture(cases["cases"], 10, 20, True)
     fixture(cases["bronze-12-cases"], 12, 20, True)

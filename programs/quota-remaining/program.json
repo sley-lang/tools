@@ -2,19 +2,19 @@
   "artifact": {
     "contract": "sley-tools.native-graph-artifact.v1",
     "path": "artifact/native-graph.json",
-    "sha256": "986db6f6d4f412dfcc2287d934a21390954bbd00381dc177c5efc6e2a7214bf2"
+    "sha256": "aaec8ce8f4e69067df78733c16796082b30a7248a9228447dc3dcb1441abf808"
   },
   "authoring_profile": "graph_v0",
   "contract": "sley-tools.program.v0",
   "core": {
-    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
-    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+    "commit": "af34be33eb1ae913dddd92aa7f4f275aac0e45ee",
     "profile": "extended_v1"
   },
   "entrypoint": {
-    "function_id": "29b5c1c047aef1c2be1c4eebfd8cb4a31193ae29f050c1b79789649951de1c20",
+    "function_id": "b278e27c78ae4389705ae2a476392af0817d596e6f911ec74649b8242db5d094",
     "name": "evaluate",
-    "state_root": "e99c2abf2dc6592c8b59dff0fda571c2f9261b7fdc709a969ecbfcc4db676137"
+    "state_root": "cc581982efec1718ffe744ccedea68f15c18465a08c8e83cc3b20861d3560d67"
   },
   "graph_recipe": {
     "path": "build/graph.json",
@@ -61,10 +61,10 @@
       "type": "Bool"
     }
   ],
-  "result_type_id": "6ceddf2eaa92c0f5749fd270a3a4c0bab2ade700918dd64bd3f1644b01f06c79",
+  "result_type_id": "9fb4561e16dec183b11e9f38b2c10663c2b4406b4ae622eb60a818c07a09681b",
   "source_provenance": {
     "builder": "crates/backend/src/graph.rs",
-    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+    "core_commit": "af34be33eb1ae913dddd92aa7f4f275aac0e45ee"
   },
   "status": "portable_native_artifact",
   "test_cases": {
@@ -76,7 +76,7 @@
   "tools_contract": "sley-tools.cli.v0",
   "worked_change": {
     "constant": "notify_at_used",
-    "evidence": "evidence/catalog/quota-remaining-v1.json",
+    "evidence": "evidence/catalog/quota-remaining-v2.json",
     "example_value": "6",
     "initial_value": "8",
     "operation": "replace_named_constant"
