@@ -8,7 +8,7 @@ use std::path::{Path, PathBuf};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
-use super::{CliFailure, TESTED_CORE_COMMIT, doctor, rpc, starter};
+use super::{CliFailure, TESTED_CORE_COMMIT, core_check, rpc, starter};
 
 const MAX_INPUT_BYTES: u64 = 1_048_576;
 const MAX_GRAPH_ARTIFACT_BYTES: u64 = 8_388_608;
@@ -437,7 +437,7 @@ pub(super) fn compute(
     core: &Path,
     cases_path: &Path,
 ) -> Result<Value, CliFailure> {
-    let core_report = doctor(core.to_path_buf())?;
+    let core_report = core_check(core.to_path_buf())?;
     if core_report["status"] != "compatible" {
         return Err(CliFailure::incompatible(
             "review requires the pinned Sley 2.0.1 core",

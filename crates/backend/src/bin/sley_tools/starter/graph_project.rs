@@ -279,6 +279,43 @@ fn native_run(project: &Project, input: &Value) -> Result<Value, CliFailure> {
             &encoded,
         ],
     )?;
+    checked_graph_result(project, result)
+}
+
+/// Graph cases evaluated in order by one native worker.
+struct GraphRunner {
+    spec: Value,
+    worker: NativeWorker,
+}
+
+impl GraphRunner {
+    fn start(project: &Project) -> Result<Self, CliFailure> {
+        Ok(Self {
+            spec: read_json(&project.root.join("build/graph.json"))?,
+            worker: case_worker(project)?,
+        })
+    }
+
+    fn run(&mut self, project: &Project, input: &Value) -> Result<Value, CliFailure> {
+        input_types(&self.spec, input)?;
+        let values = input
+            .as_array()
+            .ok_or_else(|| CliFailure::invalid("graph case input is not an array"))?;
+        let result = self
+            .worker
+            .call(NativeInput::Graph(values.clone()), CASE_DEADLINE)?;
+        checked_graph_result(project, result)
+    }
+}
+
+fn native_run_rows(project: &Project, rows: &[Value]) -> Result<Vec<Value>, CliFailure> {
+    let mut runner = GraphRunner::start(project)?;
+    rows.iter()
+        .map(|row| runner.run(project, &row["input"]))
+        .collect()
+}
+
+fn checked_graph_result(project: &Project, result: Value) -> Result<Value, CliFailure> {
     if result["contract"] != "sley-tools.run-graph.v0"
         || result["root"] != project.state["state_root"]
         || result["function_id"] != project.state["function_id"]
@@ -567,8 +604,9 @@ pub(super) fn test(project: &Project) -> Result<Value, CliFailure> {
     let cases: Value = serde_json::from_slice(&bytes)
         .map_err(|error| CliFailure::invalid(format!("invalid graph test JSON: {error}")))?;
     let rows = validate_cases(&cases)?;
+    let mut runner = GraphRunner::start(project)?;
     for row in rows {
-        let observed = native_run(project, &row["input"])?;
+        let observed = runner.run(project, &row["input"])?;
         if observed["result"] != row["expected"] {
             return Err(CliFailure::execution(format!(
                 "native graph differs from expected case {}",
@@ -646,7 +684,7 @@ fn initialize(
     validate_case_values(&spec_document, &cases_document)?;
     let rows = validate_cases(&cases_document)?;
     let example_input = rows[0]["input"].clone();
-    let core_report = doctor(core.to_path_buf())?;
+    let core_report = live_core_check(core.to_path_buf())?;
     if core_report["status"] != "compatible" {
         return Err(CliFailure::incompatible(
             "graph init requires the pinned Sley 2.0.1 core",
@@ -1020,10 +1058,10 @@ fn commit_edit(
     let old_root = state_text(&project.state, "state_root")?.to_owned();
     let old_transaction = state_text(&project.state, "transaction_id")?.to_owned();
     let rows = validate_cases(cases)?;
-    let mut before = Vec::with_capacity(rows.len());
-    for row in rows {
-        before.push(native_run(&project, &row["input"])?["result"].clone());
-    }
+    let before: Vec<Value> = native_run_rows(&project, rows)?
+        .into_iter()
+        .map(|observed| observed["result"].clone())
+        .collect();
     let status_path = project.root.join(".sley-tools/status.json");
     let previous_status = project.status.clone();
     project.status["state"] = json!("EDIT_IN_PROGRESS");
@@ -1149,12 +1187,11 @@ fn commit_edit(
         project.status["last_external_assertions"] = json!("PENDING");
         write_json(&status_path, &project.status)?;
         let reopened = load_project(&project.root)?;
-        let mut changed = 0;
-        for (index, row) in rows.iter().enumerate() {
-            if native_run(&reopened, &row["input"])?["result"] != before[index] {
-                changed += 1;
-            }
-        }
+        let changed = native_run_rows(&reopened, rows)?
+            .iter()
+            .zip(&before)
+            .filter(|(observed, previous)| observed["result"] != **previous)
+            .count();
         let verified = test(&reopened);
         project.status["last_external_assertions"] =
             json!(if verified.is_ok() { "PASS" } else { "FAIL" });

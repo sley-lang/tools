@@ -411,7 +411,7 @@ fn tagged_graph_output(observed: &Value, inspection: &Value) -> Result<Value, Cl
     )
 }
 
-enum NativeInput {
+pub(super) enum NativeInput {
     Release((bool, u32, bool, u32)),
     Resource([i64; 4]),
     Graph(Vec<Value>),
@@ -482,7 +482,7 @@ fn spawn_stderr_reader(stderr: std::process::ChildStderr) -> (Arc<Mutex<Vec<u8>>
     (captured, handle)
 }
 
-struct NativeWorker {
+pub(super) struct NativeWorker {
     child: Child,
     stdin: ChildStdin,
     receiver: mpsc::Receiver<Result<Value, String>>,
@@ -494,7 +494,7 @@ struct NativeWorker {
 }
 
 impl NativeWorker {
-    fn start(
+    pub(super) fn start(
         project: &Path,
         root: &str,
         function: &str,
@@ -576,7 +576,11 @@ impl NativeWorker {
             .unwrap_or_default()
     }
 
-    fn call(&mut self, input: NativeInput, deadline: Duration) -> Result<Value, CliFailure> {
+    pub(super) fn call(
+        &mut self,
+        input: NativeInput,
+        deadline: Duration,
+    ) -> Result<Value, CliFailure> {
         if !self.usable {
             return Err(CliFailure::failed(
                 "native worker is unavailable; reopen the runtime",
@@ -1328,6 +1332,22 @@ fn request(state: &mut RpcState, line: &[u8]) -> Option<Value> {
     })
 }
 
+/// Encode one response frame. An oversized result is replaced by a bounded
+/// error that keeps the request ID, so clients can match it to their call.
+fn encode_response(response: &Value) -> Result<Vec<u8>, CliFailure> {
+    let encoded = serde_json::to_vec(response)
+        .map_err(|error| CliFailure::failed(format!("cannot encode RPC response: {error}")))?;
+    if encoded.len() <= MAX_RESPONSE_BYTES {
+        return Ok(encoded);
+    }
+    serde_json::to_vec(&rpc_error(
+        response["id"].clone(),
+        -32000,
+        &CliFailure::resource("RPC response exceeds 256 KiB"),
+    ))
+    .map_err(|error| CliFailure::failed(format!("cannot encode RPC limit: {error}")))
+}
+
 pub(super) fn serve(project: &Path, workspace: Option<&Path>) -> Result<(), CliFailure> {
     let mut state = RpcState::new(project, workspace)?;
     let input = std::io::stdin();
@@ -1363,20 +1383,38 @@ pub(super) fn serve(project: &Path, workspace: Option<&Path>) -> Result<(), CliF
         let Some(response) = request(&mut state, &line) else {
             continue;
         };
-        let mut encoded = serde_json::to_vec(&response)
-            .map_err(|error| CliFailure::failed(format!("cannot encode RPC response: {error}")))?;
-        if encoded.len() > MAX_RESPONSE_BYTES {
-            encoded = serde_json::to_vec(&rpc_error(
-                Value::Null,
-                -32000,
-                &CliFailure::resource("RPC response exceeds 256 KiB"),
-            ))
-            .map_err(|error| CliFailure::failed(format!("cannot encode RPC limit: {error}")))?;
-        }
+        let encoded = encode_response(&response)?;
         writer
             .write_all(&encoded)
             .and_then(|()| writer.write_all(b"\n"))
             .and_then(|()| writer.flush())
             .map_err(|error| CliFailure::failed(format!("cannot write RPC response: {error}")))?;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn oversized_response_keeps_request_id() {
+        let large = "x".repeat(MAX_RESPONSE_BYTES);
+        let response = json!({"jsonrpc": "2.0", "id": 7, "result": {"blob": large}});
+        let Ok(encoded) = encode_response(&response) else {
+            panic!("bounded failure frame");
+        };
+        assert!(encoded.len() < 1_024);
+        let frame: Value = serde_json::from_slice(&encoded).expect("valid JSON");
+        assert_eq!(frame["id"], 7);
+        assert_eq!(frame["error"]["data"]["tools_code"], "ST_RESOURCE_LIMIT");
+    }
+
+    #[test]
+    fn bounded_response_is_unchanged() {
+        let response = json!({"jsonrpc": "2.0", "id": "a", "result": {"ok": true}});
+        let Ok(encoded) = encode_response(&response) else {
+            panic!("encoded");
+        };
+        assert_eq!(encoded, serde_json::to_vec(&response).expect("reference"));
     }
 }

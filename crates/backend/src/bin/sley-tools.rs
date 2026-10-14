@@ -26,6 +26,8 @@ const TESTED_CORE_COMMIT: &str = "c748dda18c1276687cc3b0d1ef9b7f257eb09b24";
 const TESTED_CORE_BINARY_SHA256: &str =
     "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e";
 
+const USAGE: &str = "usage: sley-tools rpc --project PATH [--workspace PATH] | operation status|cancel --project PATH --id HEX | reconcile --project PATH --candidate-id HEX --expected-parent HEX | mcp --project PATH --core PATH --adapter PATH [--allow-write] [--workspace PATH] [--review-before PATH --review-after PATH --review-cases PATH] | pipe --adapter PATH --core CORE --comparator-project PATH --selector-project PATH --reducer-project PATH --input FILE|- [--output FILE] [--batch-size N] | playground --adapter PATH --core CORE [--port N] | lab list --adapter PATH | lab start EXERCISE|check|reset --adapter PATH --workspace PATH --core PATH | doctor --core PATH | init PROJECT_DIR --template release-readiness|resource-admission --core PATH [--grant-profile create-only] | init PROJECT_DIR --graph SPEC --tests CASES --core PATH | import schema SCHEMA PROJECT_DIR --core PATH | import python SOURCE DOMAIN PROJECT_DIR --core PATH | run --project PATH --input FILE [--check] | test --project PATH | inspect --project PATH | edit|propose --project PATH --max-blocking-findings N|--require-memory-spare true|false | propose --project PATH --constant NAME --value-file FILE --tests CASES | propose --project PATH --operation BLOCK.NAME --opcode OPCODE --tests CASES | propose --project PATH --operation BLOCK.NAME --operand left|right|operand --reference param.NAME|op.NAME --tests CASES | propose --project PATH --branch BLOCK --targets-file FILE --tests CASES | validate|commit --project PATH | propose discard --project PATH | artifact export --project PATH --output FILE [--bind-manifest] | artifact import ARTIFACT PROJECT_DIR --core PATH | review [verify REPORT] --before MANIFEST --after MANIFEST --core CORE --cases FILE [--output FILE]";
+
 struct CliFailure {
     code: &'static str,
     message: String,
@@ -682,10 +684,7 @@ fn invoke_json(
     })
 }
 
-fn manifest_identity(
-    binary: &Path,
-    binary_sha256: &str,
-) -> Result<Option<serde_json::Value>, CliFailure> {
+fn read_adjacent_manifest(binary: &Path) -> Result<Option<serde_json::Value>, CliFailure> {
     let Some(root) = binary.parent().and_then(Path::parent) else {
         return Ok(None);
     };
@@ -706,13 +705,26 @@ fn manifest_identity(
     let bytes = std::fs::read(&manifest_path).map_err(|error| {
         CliFailure::failed(format!("cannot read adjacent core manifest: {error}"))
     })?;
-    let manifest: serde_json::Value = serde_json::from_slice(&bytes).map_err(|error| {
+    serde_json::from_slice(&bytes).map(Some).map_err(|error| {
         CliFailure::incompatible(format!("adjacent core manifest is invalid: {error}"))
-    })?;
-    let expected = manifest["files"]
+    })
+}
+
+fn manifest_binary_sha256(manifest: &serde_json::Value) -> Option<&str> {
+    manifest["files"]
         .as_array()
         .and_then(|files| files.iter().find(|file| file["path"] == "bin/sley"))
         .and_then(|file| file["sha256"].as_str())
+}
+
+fn manifest_identity(
+    binary: &Path,
+    binary_sha256: &str,
+) -> Result<Option<serde_json::Value>, CliFailure> {
+    let Some(manifest) = read_adjacent_manifest(binary)? else {
+        return Ok(None);
+    };
+    let expected = manifest_binary_sha256(&manifest)
         .ok_or_else(|| CliFailure::incompatible("adjacent core manifest omits bin/sley"))?;
     if expected != binary_sha256 {
         return Err(CliFailure::incompatible(
@@ -735,6 +747,20 @@ fn optional_runtime(binary: &str) -> Option<String> {
     Some(String::from_utf8_lossy(text).trim().to_owned())
 }
 
+fn core_summary(
+    binary: &Path,
+    digest: &str,
+    manifest: Option<&serde_json::Value>,
+) -> serde_json::Value {
+    serde_json::json!({
+        "path": binary,
+        "binary_sha256": digest,
+        "manifest_binary_matches": manifest.is_some_and(|value| manifest_binary_sha256(value) == Some(digest)),
+        "manifest_commit": manifest.and_then(|value| value["commit"].as_str()),
+        "tested_commit": TESTED_CORE_COMMIT,
+    })
+}
+
 fn incompatible_report(
     binary: &Path,
     digest: &str,
@@ -745,19 +771,16 @@ fn incompatible_report(
         "contract": "sley-tools.doctor.v1",
         "status": "incompatible",
         "code": "ST_CORE_INCOMPATIBLE",
-        "core": {
-            "path": binary,
-            "binary_sha256": digest,
-            "manifest_binary_matches": manifest.is_some(),
-            "manifest_commit": manifest.and_then(|value| value["commit"].as_str()),
-            "tested_commit": TESTED_CORE_COMMIT,
-        },
+        "core": core_summary(binary, digest, manifest),
         "profiles": serde_json::Value::Null,
         "reason": reason,
     })
 }
 
-fn doctor(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
+/// Identity-only core check: canonical path, pinned SHA-256, and adjacent
+/// manifest binding. It never starts a process, so every project command and
+/// RPC request can afford it. `doctor` adds the live protocol profiles.
+fn core_check(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
     let binary = binary
         .canonicalize()
         .map_err(|error| CliFailure::invalid(format!("core path is unavailable: {error}")))?;
@@ -765,20 +788,21 @@ fn doctor(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
         return Err(CliFailure::invalid("core path is not a file"));
     }
     let digest = sha256(&binary)?;
-    let exact_binary = digest == TESTED_CORE_BINARY_SHA256;
-    if !exact_binary {
+    if digest != TESTED_CORE_BINARY_SHA256 {
+        // Best effort only: name the release that was selected instead.
+        let manifest = read_adjacent_manifest(&binary).ok().flatten();
         return Ok(incompatible_report(
             &binary,
             &digest,
-            None,
+            manifest.as_ref(),
             "selected core binary is not the pinned 2.0.1 artifact",
         ));
     }
     let manifest = manifest_identity(&binary, &digest)?;
-    let exact_manifest = manifest
+    if manifest
         .as_ref()
-        .is_none_or(|value| value["commit"] == TESTED_CORE_COMMIT);
-    if !exact_manifest {
+        .is_some_and(|value| value["commit"] != TESTED_CORE_COMMIT)
+    {
         return Ok(incompatible_report(
             &binary,
             &digest,
@@ -786,6 +810,25 @@ fn doctor(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
             "adjacent manifest commit differs from the pinned release",
         ));
     }
+    Ok(serde_json::json!({
+        "contract": "sley-tools.doctor.v1",
+        "status": "compatible",
+        "core": core_summary(&binary, &digest, manifest.as_ref()),
+    }))
+}
+
+/// Identity check plus the live protocol profiles of each selector. Used before
+/// a new project is created so an unrunnable core fails before any files exist.
+fn live_core_check(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
+    let mut result = core_check(binary)?;
+    if result["status"] != "compatible" {
+        return Ok(result);
+    }
+    let binary = PathBuf::from(
+        result["core"]["path"]
+            .as_str()
+            .ok_or_else(|| CliFailure::failed("core check omitted path"))?,
+    );
     let mut profiles = serde_json::Map::new();
     for (name, selector) in [
         ("legacy", None),
@@ -804,28 +847,24 @@ fn doctor(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
             "native_test_methods_offered": hello["methods"].as_array().is_some_and(|methods| methods.iter().any(|method| method == "tests.selected")),
         }));
     }
-    let result = serde_json::json!({
-        "contract": "sley-tools.doctor.v1",
-        "status": "compatible",
-        "core": {
-            "path": binary,
-            "binary_sha256": digest,
-            "manifest_binary_matches": manifest.is_some(),
-            "manifest_commit": manifest.as_ref().and_then(|value| value["commit"].as_str()),
-            "tested_commit": TESTED_CORE_COMMIT,
-        },
-        "profiles": profiles,
-        "optional_runtimes": {
+    result["profiles"] = serde_json::Value::Object(profiles);
+    result["tested_release_observations"] = serde_json::json!({
+        "evidence_scope": "prior F0 probe against the identical binary; method names alone do not prove execution",
+        "smp1_extended_execute": "not offered by released CLI",
+        "native_test_execution": "unconfigured CLI returned NATIVE_EXECUTOR_UNAVAILABLE in F0 probe",
+        "typed_output_via_smp1_execute": "execution report carries output hash; toolkit uses pinned public VM library for typed output",
+    });
+    Ok(result)
+}
+
+fn doctor(binary: PathBuf) -> Result<serde_json::Value, CliFailure> {
+    let mut result = live_core_check(binary)?;
+    if result["status"] == "compatible" {
+        result["optional_runtimes"] = serde_json::json!({
             "python3": optional_runtime("python3"),
             "node": optional_runtime("node"),
-        },
-        "tested_release_observations": {
-            "evidence_scope": "prior F0 probe against the identical binary; method names alone do not prove execution",
-            "smp1_extended_execute": "not offered by released CLI",
-            "native_test_execution": "unconfigured CLI returned NATIVE_EXECUTOR_UNAVAILABLE in F0 probe",
-            "typed_output_via_smp1_execute": "execution report carries output hash; toolkit uses pinned public VM library for typed output",
-        },
-    });
+        });
+    }
     Ok(result)
 }
 
@@ -1723,9 +1762,7 @@ fn parse() -> Result<CliCommand, CliFailure> {
                 })
             }
         }
-        _ => Err(CliFailure::invalid(
-            "usage: sley-tools rpc --project PATH [--workspace PATH] | operation status|cancel --project PATH --id HEX | reconcile --project PATH --candidate-id HEX --expected-parent HEX | mcp --project PATH --core PATH --adapter PATH [--allow-write] [--workspace PATH] [--review-before PATH --review-after PATH --review-cases PATH] | pipe --adapter PATH --core CORE --comparator-project PATH --selector-project PATH --reducer-project PATH --input FILE|- [--output FILE] [--batch-size N] | playground --adapter PATH --core CORE [--port N] | lab list --adapter PATH | lab start EXERCISE|check|reset --adapter PATH --workspace PATH --core PATH | doctor --core PATH | init PROJECT_DIR --template release-readiness|resource-admission --core PATH [--grant-profile create-only] | init PROJECT_DIR --graph SPEC --tests CASES --core PATH | import schema SCHEMA PROJECT_DIR --core PATH | import python SOURCE DOMAIN PROJECT_DIR --core PATH | run --project PATH --input FILE [--check] | test --project PATH | inspect --project PATH | edit|propose --project PATH --max-blocking-findings N|--require-memory-spare true|false | propose --project PATH --constant NAME --value-file FILE --tests CASES | propose --project PATH --operation BLOCK.NAME --opcode OPCODE --tests CASES | propose --project PATH --operation BLOCK.NAME --operand left|right|operand --reference param.NAME|op.NAME --tests CASES | propose --project PATH --branch BLOCK --targets-file FILE --tests CASES | validate|commit --project PATH | propose discard --project PATH | artifact export --project PATH --output FILE [--bind-manifest] | artifact import ARTIFACT PROJECT_DIR --core PATH | review [verify REPORT] --before MANIFEST --after MANIFEST --core CORE --cases FILE [--output FILE]",
-        )),
+        _ => Err(CliFailure::invalid(USAGE)),
     }
 }
 
@@ -1761,7 +1798,39 @@ where
     action()
 }
 
+/// `--version` and `--help` print plain text to stdout and exit 0; every other
+/// command keeps the JSON report/failure contract.
+fn informational_flag() -> Option<String> {
+    let mut args = std::env::args().skip(1);
+    let flag = args.next()?;
+    if args.next().is_some() {
+        return None;
+    }
+    match flag.as_str() {
+        "--version" | "-V" => Some(format!(
+            "sley-tools {} (tested core commit {TESTED_CORE_COMMIT})",
+            env!("CARGO_PKG_VERSION")
+        )),
+        "--help" | "-h" | "help" => Some(USAGE.trim_start_matches("usage: ").split(" | ").fold(
+            String::from("usage:"),
+            |mut text, form| {
+                text.push_str("\n  ");
+                text.push_str(form);
+                if !form.starts_with("sley-tools ") {
+                    text.insert_str(text.len() - form.len(), "sley-tools ");
+                }
+                text
+            },
+        )),
+        _ => None,
+    }
+}
+
 fn main() {
+    if let Some(text) = informational_flag() {
+        println!("{text}");
+        return;
+    }
     let result = parse().and_then(|command| match command {
         CliCommand::Rpc { project, workspace } => {
             rpc::serve(&project, workspace.as_deref()).map(|()| (serde_json::Value::Null, 0, false))

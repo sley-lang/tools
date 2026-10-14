@@ -4,7 +4,7 @@ use std::fs::{self, File, OpenOptions};
 use std::io::{BufRead, BufReader, Read, Write};
 use std::path::{Path, PathBuf};
 use std::process::{Child, ChildStdin, ChildStdout, Command, Stdio};
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
@@ -26,7 +26,8 @@ use sley_ssmc::{
 use sley_state_root::{StateRootBuilder, conformance_epoch_id, conformance_registry};
 use sley_txn::TransactionRepository;
 
-use super::{CliFailure, doctor};
+use super::rpc::{NativeInput, NativeWorker};
+use super::{CliFailure, core_check, live_core_check};
 
 #[path = "starter/graph_project.rs"]
 mod graph_project;
@@ -938,7 +939,7 @@ fn create_project(
             "unsupported template or artifact import profile",
         ));
     }
-    let core_report = doctor(core.to_path_buf())?;
+    let core_report = live_core_check(core.to_path_buf())?;
     if core_report["status"] != "compatible" {
         return Err(CliFailure::incompatible(
             "init requires the pinned Sley 2.0.1 core",
@@ -1112,7 +1113,7 @@ fn load_project(path: &Path) -> Result<Project, CliFailure> {
     let core = configuration["core"]
         .as_str()
         .ok_or_else(|| CliFailure::invalid("trusted local configuration has no core path"))?;
-    let core_report = doctor(PathBuf::from(core))?;
+    let core_report = core_check(PathBuf::from(core))?;
     if core_report["status"] != "compatible"
         || core_report["core"]["binary_sha256"] != configuration["core_binary_sha256"]
     {
@@ -1213,7 +1214,32 @@ fn execute_case(project: &Project, facts: (bool, u32, bool, u32)) -> Result<Valu
             &blocking,
         ],
     )?;
-    if output["root"] != state_root || output["function_id"] != function {
+    checked_release(project, output)
+}
+
+/// Bounded wall time for one case inside a batch worker.
+const CASE_DEADLINE: Duration = Duration::from_secs(60);
+
+/// One long-lived native worker for a batch of cases. Each request is
+/// evaluated exactly like the one-shot `run` modes, without a new builder
+/// process (and repository open) per case.
+fn case_worker(project: &Project) -> Result<NativeWorker, CliFailure> {
+    NativeWorker::start(
+        &project.root,
+        state_text(&project.state, "state_root")?,
+        state_text(&project.state, "function_id")?,
+        project.manifest["program_id"].as_str().unwrap_or(""),
+        project.manifest["authoring_profile"].as_str().unwrap_or(""),
+        project.manifest["graph_recipe"]["sha256"]
+            .as_str()
+            .unwrap_or(""),
+    )
+}
+
+fn checked_release(project: &Project, output: Value) -> Result<Value, CliFailure> {
+    if output["root"] != project.state["state_root"]
+        || output["function_id"] != project.state["function_id"]
+    {
         return Err(CliFailure::execution(
             "native result is not bound to requested root and function",
         ));
@@ -1300,7 +1326,13 @@ fn execute_resource(project: &Project, facts: (i64, i64, i64, i64)) -> Result<Va
             &values[3],
         ],
     )?;
-    if output["root"] != root || output["function_id"] != function {
+    checked_resource(project, output)
+}
+
+fn checked_resource(project: &Project, output: Value) -> Result<Value, CliFailure> {
+    if output["root"] != project.state["state_root"]
+        || output["function_id"] != project.state["function_id"]
+    {
         return Err(CliFailure::execution(
             "Resource Admission native result lost root or function binding",
         ));
@@ -1406,8 +1438,15 @@ fn test_resource(project: &Project) -> Result<Value, CliFailure> {
         (0, -1, 0, 0),
         (0, 0, -1, -2),
     ];
+    let mut worker = case_worker(project)?;
     for facts in cases {
-        let observed = execute_resource(project, facts)?;
+        let observed = checked_resource(
+            project,
+            worker.call(
+                NativeInput::Resource([facts.0, facts.1, facts.2, facts.3]),
+                CASE_DEADLINE,
+            )?,
+        )?;
         let invalid_request = facts.0 < 0 || facts.2 < 0;
         let invalid_capacity = facts.1 < 0 || facts.3 < 0;
         let insufficient_workers = facts.0 > facts.1;
@@ -1450,13 +1489,17 @@ pub(super) fn test(path: &Path) -> Result<Value, CliFailure> {
     blocking_values.sort_unstable();
     blocking_values.dedup();
     let mut count = 0_u32;
+    let mut worker = case_worker(&project)?;
     for completed in [false, true] {
         for failed in [0, 1, u32::MAX] {
             for verified in [false, true] {
                 let mut prior_allow = true;
                 for blocking in &blocking_values {
                     let facts = (completed, failed, verified, *blocking);
-                    let native = execute_case(&project, facts)?;
+                    let native = checked_release(
+                        &project,
+                        worker.call(NativeInput::Release(facts), CASE_DEADLINE)?,
+                    )?;
                     let expected = expected_flags(facts, threshold);
                     let observed: Vec<_> = native["flags"]
                         .as_array()
