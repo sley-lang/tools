@@ -11,3 +11,12 @@ pub const TESTED_CORE_COMMIT: &str = "af34be33eb1ae913dddd92aa7f4f275aac0e45ee";
 #[allow(dead_code)]
 pub const TESTED_CORE_BINARY_SHA256: &str =
     "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52";
+/// Core commits whose exported native artifacts `artifact import` accepts.
+/// Sley 2.0.1 artifacts carry the same schema epoch and object encodings, and
+/// import re-runs every declared case on the selected core before accepting.
+#[allow(dead_code)]
+pub const IMPORTABLE_ARTIFACT_CORE_COMMITS: [&str; 2] = [
+    TESTED_CORE_COMMIT,
+    // Sley 2.0.1
+    "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+];
