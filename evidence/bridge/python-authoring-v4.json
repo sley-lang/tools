@@ -1,0 +1,37 @@
+{
+  "contract": "sley-tools.python-authoring-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "programs": [
+    {
+      "after_allow": true,
+      "before_allow": false,
+      "candidate_id": "68be0b501c9eafe7a2131324d68045f8be14534be3de147b997adafc84807de6",
+      "commit_before_validation_rejected": true,
+      "committed_root": "d03dcfec6be2dfdb9c7789ff37106ec316830e0d660ebc4881df5bb49b2d609f",
+      "discard_preserved_root": true,
+      "external_assertions": 60,
+      "handle_rotated": true,
+      "initial_root": "6c72baaa7be86c0e76ac6d443cd3ea4e79e09e9f026a27796d6cbddac18bec5a",
+      "program_id": "release-readiness",
+      "typed_rejection": true,
+      "wrong_candidate_rejected": true
+    },
+    {
+      "after_allow": false,
+      "before_allow": true,
+      "candidate_id": "2da9a8c6fcae3de1d829ca56fb718f17ac74f11cd87dc3fb9831815609a86bd4",
+      "commit_before_validation_rejected": true,
+      "committed_root": "d50635ea16ce1c2a4bdcd7a7fff0569604b14f0195ec88452f30bbe18f825234",
+      "discard_preserved_root": true,
+      "external_assertions": 12,
+      "handle_rotated": true,
+      "initial_root": "8a0428dd808e094ef034714f80fce1cc930049eb77954c2bb2affd53f79da400",
+      "program_id": "resource-admission",
+      "typed_rejection": true,
+      "wrong_candidate_rejected": true
+    }
+  ],
+  "result": "PASS",
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e"
+}

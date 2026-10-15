@@ -1,0 +1,51 @@
+{
+  "contract": "sley-tools.playground-local-probe.v1",
+  "result": "PASS",
+  "tools_source_commit": "99b999389d8987bb185520f7cdc1286bdfbe6194",
+  "tools_source_dirty": false,
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "server_sha256": "7eefe51c5d9dcd4f8ab4dca7f09926ce7eeaf6dc6872475724a279225fa75147",
+  "html_sha256": "a84a8e4438c55a31531b03c696eee0775632263c07fb18c9976d594bd74e79f1",
+  "client_sha256": "bdf091364d8d15ae1128daf605c22d83c83af5ae0afae1d7c12b3655a32a3500",
+  "style_sha256": "0bc78310493a447b536ed79578dc52e9f44934d186b9226e7c4dd1bc7605da76",
+  "probe_script_sha256": "fde3d05ea444aed783786e76f755132b91b7d89485999afbe65b84440b346770",
+  "examples": [
+    "release-readiness",
+    "benchmark-comparator",
+    "range-predicate"
+  ],
+  "release": {
+    "before_root": "eb726cc032d15e939b7dbc60e1455314276e053b9f209ed1804bee29d2854117",
+    "after_root": "dec7fd1b72805ebb3400087add8f8a1757df0b8328fcf122c921099ad8f8c3ea",
+    "candidate_id": "60c80902c5f77d365aca8599903b5e7c091c66a3f0849451792187ca803dcabe",
+    "receipt_id": "b3abd0ac5f033330b12f500c6924f1f8aa82250cd64ce7bb37d6e01361afe661",
+    "export": {
+      "sha256": "51e0b250728dfe89f231288d5144b3bbbe547128990ec2338dac91c33a6e9757",
+      "imported_root": "cb6c8d66eda2084ad94827adf0c3f3dabbf1eaeaac99cdec8eba46b2a5c9916d"
+    }
+  },
+  "comparator": {
+    "before_root": "ce8227a901807eeab3a1b5bf89f20c4572ff4ee44b9925a376728bdd2a20cb60",
+    "after_root": "241c7273d5d1c5efac64a1593e9c38f6d68fa4a7b0fb2b8737526ef9c0c9640a",
+    "candidate_id": "dd6040d77f2e813d5f1015e73af6facab0de9a64d5b754d7529778789302b07b",
+    "receipt_id": "55bba80fc8f7e4509b92677d8277917ec6989071e595ca993e228eef99e3192f",
+    "export": {
+      "sha256": "076a289302e9dd0cd9dd29a8c3e019152b57048ed34bba6139db85f4060093b5",
+      "imported_root": "7946623eadf2283116b7213e5a64fc13c27628211bc7860e6399856e2de894c5"
+    }
+  },
+  "range_root": "80689d04a387e7314f717b3dffe49b1452c365e711a51e6d8344163d1e4578e1",
+  "ui_served": true,
+  "portable_export_replayed": true,
+  "unified_cli_launcher_verified": true,
+  "missing_adapter_rejected": true,
+  "duplicate_port_rejected": true,
+  "origin_and_host_rejection": true,
+  "bounded_request_rejection": true,
+  "input_and_change_errors_distinguished": true,
+  "separate_session_cookies": true,
+  "concurrent_session_limit_enforced": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "hosted_ready": false
+}

@@ -1,0 +1,21 @@
+{
+  "candidate_id": "fd9534faeee3b365ea88e7de40898c10d3a2de53202130368a92d1de7db76f80",
+  "check_rejection_exit": 1,
+  "commit_receipt_id": "b34eab5f90cd4cc0ee0e6d7c3899569a190860d56b6a0458237f72d8f931baa9",
+  "committed_state_root": "67142a14bd541d146ab4f1d39b5f41602350f80b152a5e8bf1115ab2300e76c0",
+  "computed_rejection_exit": 0,
+  "contract": "sley-tools.starter-init-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "duplicate_init_exit": 2,
+  "external_assertions_against_native_execution": 36,
+  "function_id": "c6d39a4530acbd4a52df5fca54e5c46d4aeb0d1509e89c1fe77a5e610115154b",
+  "incompatible_core_exit": 3,
+  "invalid_count_exit": 2,
+  "multi_reason_observation_id": "95400e4aa7d3231c134071f20fcb741dea6efdc7ba0ec02c845d0cef3ad379d1",
+  "native_commit_count": 1,
+  "native_test_admission": "PENDING_CORE_EXECUTOR",
+  "portable_artifact": "NOT_YET_CREATED",
+  "program_id": "release-readiness",
+  "ready_observation_id": "0c484dcefd774faf78434429de66c998585f527129ed9183ae1024c8703a0d95",
+  "result": "PASS"
+}

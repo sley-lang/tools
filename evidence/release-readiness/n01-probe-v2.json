@@ -1,0 +1,1035 @@
+{
+  "contract": "sley-tools.release-readiness-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "edit_candidate_id": "4b7f5dbb9c72b0d3600195bad253a1aed4ef5513076724babda300587e1cfa7c",
+  "edited_cases": [
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        0
+      ],
+      "observation_id": "3fb569bc672430b9e2f71b611f53c764b527f95972f734bba2bcc0eef96a552e",
+      "output_hash": "24caada8cba15a8574b7ca225a36bfae719a4940687188d0ee3de5d516930c07"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        1
+      ],
+      "observation_id": "d7b4b857bb8a7e476a573cb3890992ef6b6dcf1f2eb05fc98c54c271eb4ea550",
+      "output_hash": "24caada8cba15a8574b7ca225a36bfae719a4940687188d0ee3de5d516930c07"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        2
+      ],
+      "observation_id": "7ab221fe4a7d425930dbfda1dd27d457d685b5abfe8d5e8feaa360332851a444",
+      "output_hash": "24caada8cba15a8574b7ca225a36bfae719a4940687188d0ee3de5d516930c07"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        3
+      ],
+      "observation_id": "570fc6c53e71af5c57b359171f2fbd2cfb8f6b59a583262174c91fc771df6cef",
+      "output_hash": "42ee7091372e812aafe7cbdaca654c4fce633ba40056fe6efd7121df90c0fc4d"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        4294967295
+      ],
+      "observation_id": "47788df1002016dc0de86a8fa9e5b681de89572a4f4d339aa81174819e9f0ef4",
+      "output_hash": "42ee7091372e812aafe7cbdaca654c4fce633ba40056fe6efd7121df90c0fc4d"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        0
+      ],
+      "observation_id": "1bac3eec73ad6647c4941f68a32a3d0f986ce6c0f535dd370da7e80bff3fb241",
+      "output_hash": "95af8ac3de5aaad50f4e894aa7d9ec229454c7ac6872fae1b632b26967e55fd1"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        1
+      ],
+      "observation_id": "f79df08eada23409cb31ddf2e76b49e68f5cd5c03866783a14be358be18183ed",
+      "output_hash": "95af8ac3de5aaad50f4e894aa7d9ec229454c7ac6872fae1b632b26967e55fd1"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        2
+      ],
+      "observation_id": "e899885fcd276077d00d77f5502adb65530f9b27785f82edba091783c5739eee",
+      "output_hash": "95af8ac3de5aaad50f4e894aa7d9ec229454c7ac6872fae1b632b26967e55fd1"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        3
+      ],
+      "observation_id": "4cf55e23b370c3f8152527e1bb31ce10a4e8448eda622b141d32c3ca3dabfd6f",
+      "output_hash": "f5b4e539335a17cfd66e5ca8ce134d12f5adf842b6bf262488a3db6d6c55ee38"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        4294967295
+      ],
+      "observation_id": "6c21e10de0c0760c5adf360e34e4b183642fc601727259bb3937fdf85eb54b03",
+      "output_hash": "f5b4e539335a17cfd66e5ca8ce134d12f5adf842b6bf262488a3db6d6c55ee38"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        0
+      ],
+      "observation_id": "8ebba51ffc3563995c3b8175fcbee6d1ef72f23cb86423e0ba82f0fa6ca9d09b",
+      "output_hash": "222d3bc69b83d2fb05121183bdae12fede31804d9de03003c4943a3c42f2f955"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        1
+      ],
+      "observation_id": "9bfe269ad8c17783f60286036663a8ef2bca065b8d4c7b67267f12d32c0cb322",
+      "output_hash": "222d3bc69b83d2fb05121183bdae12fede31804d9de03003c4943a3c42f2f955"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        2
+      ],
+      "observation_id": "606f1e9e516a23ee69dfb3aa175455119a973d984404e5fbda768b4280a9bbdd",
+      "output_hash": "222d3bc69b83d2fb05121183bdae12fede31804d9de03003c4943a3c42f2f955"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        3
+      ],
+      "observation_id": "f0a4b878385a612355080f025da5098155cc59b1e02046fe68310e2bf68b67cd",
+      "output_hash": "6a6b036cea3000d8de70da7997ab632ac4476536ab800eb9b9e78d8c9d103be6"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        4294967295
+      ],
+      "observation_id": "80ffe99321153201791c62c7a67f4e79f810649f4f21d9bf3e73740937c95ef8",
+      "output_hash": "6a6b036cea3000d8de70da7997ab632ac4476536ab800eb9b9e78d8c9d103be6"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        0
+      ],
+      "observation_id": "dd1ccedc4c849419a6b39d6fe1c0c1e2729b92352709ed6e641c5574de3655ae",
+      "output_hash": "ea9d1aab779e8fb6e2d306b00882acbffa409228b9a7c809c4fe4c9c7dd26a44"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        1
+      ],
+      "observation_id": "fe3a56094440fee3445661cfc5f082aee3384bb95751d0bf05dd45e2efda6d97",
+      "output_hash": "ea9d1aab779e8fb6e2d306b00882acbffa409228b9a7c809c4fe4c9c7dd26a44"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        2
+      ],
+      "observation_id": "24422d663e557f01768f330434a15fdda9f4c22af0496f9ceae4f0debd87e84f",
+      "output_hash": "ea9d1aab779e8fb6e2d306b00882acbffa409228b9a7c809c4fe4c9c7dd26a44"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        3
+      ],
+      "observation_id": "457629839b117f4f9fb59f86d204ef62efe4887c58584485cdffacb3d9759950",
+      "output_hash": "90b507ee4e823e107b5c7aed74b113a96f237260feec73a8b0b0458de4a71f5c"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        4294967295
+      ],
+      "observation_id": "4ebd8a95d9f9957690446f2a488a722647a32ea36aa778228d0c1c0c599d99b0",
+      "output_hash": "90b507ee4e823e107b5c7aed74b113a96f237260feec73a8b0b0458de4a71f5c"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        0
+      ],
+      "observation_id": "94aef2a0a35a977c533371e5dae49c703189945714aaa787a63adad3d39fafad",
+      "output_hash": "f63d0ede7a4f7dc533c7d6aafd5667c30cf8243981fa4f52d7fc835fdd39a53f"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        1
+      ],
+      "observation_id": "74a22844b9286e9566a97f4e2dc703eb32ef75dd09f315c1227d92ea9506bf49",
+      "output_hash": "f63d0ede7a4f7dc533c7d6aafd5667c30cf8243981fa4f52d7fc835fdd39a53f"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        2
+      ],
+      "observation_id": "9cfb5fe9d9c417e2e3435d589c290c6e33721ce3857024598e99f1699fe30686",
+      "output_hash": "f63d0ede7a4f7dc533c7d6aafd5667c30cf8243981fa4f52d7fc835fdd39a53f"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        3
+      ],
+      "observation_id": "34d75e08824f3e39d6c5297bea2d1d19139944d1629a581133c8e72b4b11f42a",
+      "output_hash": "d0da95142928ef2e488b39c9f51fda98f82fba25c9891905e9abc303becb97de"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        4294967295
+      ],
+      "observation_id": "263453fa3e8aa542419e8003b97c4ca61934b9ecf754c84f220c4b0b9c2d5473",
+      "output_hash": "d0da95142928ef2e488b39c9f51fda98f82fba25c9891905e9abc303becb97de"
+    },
+    {
+      "expected": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        0
+      ],
+      "observation_id": "fed7eddfc665d21ba4afd907cf3f120889b64b300c5274a5697c349f42d9fd95",
+      "output_hash": "6c0fe079915791db30bc112a305b092d447ecde83ad5ea623db5e78aff8ecd00"
+    },
+    {
+      "expected": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        1
+      ],
+      "observation_id": "d6b45a5dfa181e4571bb634bab5a17fcad146f8389e01d13c696bff70e5a18b3",
+      "output_hash": "6c0fe079915791db30bc112a305b092d447ecde83ad5ea623db5e78aff8ecd00"
+    },
+    {
+      "expected": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        2
+      ],
+      "observation_id": "5aedef9ea0fabef310f91228831f85828b7204bb26fe54ff057c5894057bede3",
+      "output_hash": "6c0fe079915791db30bc112a305b092d447ecde83ad5ea623db5e78aff8ecd00"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        3
+      ],
+      "observation_id": "6e9571f836ff3ac3a61ebc35b983ec0e03e3bf9811f649d91e7725292d5fec1d",
+      "output_hash": "b88500b7d022a2625f6283f7f169bad274268398a4f6be78aa9b5a497c61a2ae"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        4294967295
+      ],
+      "observation_id": "a4cb6778d519220dbcdc5a3792ee99fa912e5b543c47f003d4ceb5f72c0053ed",
+      "output_hash": "b88500b7d022a2625f6283f7f169bad274268398a4f6be78aa9b5a497c61a2ae"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        0
+      ],
+      "observation_id": "6ff4d623227b99b9378e1ff63db296e723e3d18271157c5b28d2dacfcbf9a7e4",
+      "output_hash": "1cb7d9fdd869ea64699d0099b080e34b2a8f86b0fb012e62e48fe1458f7b6686"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        1
+      ],
+      "observation_id": "b263c0de7684e091a738567529571d7ed1b1a3c7b47c801f1337f890e953e6c5",
+      "output_hash": "1cb7d9fdd869ea64699d0099b080e34b2a8f86b0fb012e62e48fe1458f7b6686"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        2
+      ],
+      "observation_id": "730db49faf37e7d77d976fc0a683bc836f5865966c5019c7d84c89d88f549916",
+      "output_hash": "1cb7d9fdd869ea64699d0099b080e34b2a8f86b0fb012e62e48fe1458f7b6686"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        3
+      ],
+      "observation_id": "326e8da15b6ff7f778876cb5fd151ae12f1582143875c61c68d3746d1f749112",
+      "output_hash": "87dd311c09636b40b2626ca71947e987934cdfe05b8236fc16afbc6d4a6557a8"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        4294967295
+      ],
+      "observation_id": "4996a0b4d6734655bbe39fb6fec070b6c82266a888b172b1f2f877b22ec18403",
+      "output_hash": "87dd311c09636b40b2626ca71947e987934cdfe05b8236fc16afbc6d4a6557a8"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        0
+      ],
+      "observation_id": "64087f9374a7869552efbb522bbecf18c6e2b1f299f3b486af140469997cb44a",
+      "output_hash": "4ce0608658e5d3366f2301c5b0c06dda15aba9f5a5f920774811141bd51ca868"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        1
+      ],
+      "observation_id": "ed5888c47a6130fc8e51cf51fe014e3dbfaa5c64b514cbd1b59952dda484a6fb",
+      "output_hash": "4ce0608658e5d3366f2301c5b0c06dda15aba9f5a5f920774811141bd51ca868"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        2
+      ],
+      "observation_id": "3db365bc9fd2f9429f3ba1a0019d3f6db5156f506071d8671f6c8b997a4f7da3",
+      "output_hash": "4ce0608658e5d3366f2301c5b0c06dda15aba9f5a5f920774811141bd51ca868"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        3
+      ],
+      "observation_id": "f519e50a377989f87715cc7a1f9c964f6f0b5c793f289465583be8f15af91fb0",
+      "output_hash": "0a7fe956b247b122c869abdc35b094831027e1dfc2b7299251b114e53028fffa"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        4294967295
+      ],
+      "observation_id": "909b8f56c118cd7418aa21e5a86d9a163d6bd412834d4a4e7b77350a3bfc0457",
+      "output_hash": "0a7fe956b247b122c869abdc35b094831027e1dfc2b7299251b114e53028fffa"
+    }
+  ],
+  "edited_root": "e750d8b64170c73c5308db9686ca338b625fb1b3763ded6e4d6c9e413dbc37ad",
+  "execution": "Public Sley VM library pinned to release commit, loading accepted repository head with extended_v1; typed flags compared with independent Python oracle",
+  "first_candidate_id": "d26e4f5abab2ce115a547fd3560c0697570a123a6232340f3f1629f6a084c8cf",
+  "first_root": "e8c39a9e169fe3868c190788c9ab05368ecd8e9913574b978a7a90c99f9d1276",
+  "function_id": "35797787d27bd6175ef5ed16eec3275b895808a7ac9181da0ec9efaf59c07e74",
+  "initial_cases": [
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        0
+      ],
+      "observation_id": "3edb8198815cb1ccc0072af0087b63e42872bd10a1fd4473e3999c4346f14ea6",
+      "output_hash": "24caada8cba15a8574b7ca225a36bfae719a4940687188d0ee3de5d516930c07"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "input": [
+        false,
+        0,
+        false,
+        1
+      ],
+      "observation_id": "5bd14dba0fe3d49681f4e5ea168e73686ff2e41405cb3632e4710d0dea364a56",
+      "output_hash": "42ee7091372e812aafe7cbdaca654c4fce633ba40056fe6efd7121df90c0fc4d"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        0
+      ],
+      "observation_id": "f1ec96c460266957e2f597302a54a1e84ff5e7072737305967dd2a5234f2f546",
+      "output_hash": "95af8ac3de5aaad50f4e894aa7d9ec229454c7ac6872fae1b632b26967e55fd1"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        false,
+        0,
+        true,
+        1
+      ],
+      "observation_id": "8ca24a659a78161f33e971bbbd6271684b68403344c82b6ebabe8f85b1049d37",
+      "output_hash": "f5b4e539335a17cfd66e5ca8ce134d12f5adf842b6bf262488a3db6d6c55ee38"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        0
+      ],
+      "observation_id": "f475f6aca5f79bc22c45d93399d7d9af02b6c02010b1d1dcd22a54a910ce681e",
+      "output_hash": "222d3bc69b83d2fb05121183bdae12fede31804d9de03003c4943a3c42f2f955"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "input": [
+        false,
+        1,
+        false,
+        1
+      ],
+      "observation_id": "f8a21eff84c765e0b89b4cf529c32ba671c85a5c1bacc60bdbd56b21a8513691",
+      "output_hash": "6a6b036cea3000d8de70da7997ab632ac4476536ab800eb9b9e78d8c9d103be6"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        0
+      ],
+      "observation_id": "a8aeeef61df4bd7c7d5c9621a3f83c62fc49bc96b3536be3bf1b48a5dcdafdc8",
+      "output_hash": "ea9d1aab779e8fb6e2d306b00882acbffa409228b9a7c809c4fe4c9c7dd26a44"
+    },
+    {
+      "expected": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "input": [
+        false,
+        1,
+        true,
+        1
+      ],
+      "observation_id": "0024b08ebda894e6b5205e38e952e0521b65f2bd977111463666c75130ca747d",
+      "output_hash": "90b507ee4e823e107b5c7aed74b113a96f237260feec73a8b0b0458de4a71f5c"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        0
+      ],
+      "observation_id": "cbd5369961dc156b6210b20cae011061fcbe3898acf8d36b77c281ba518b0043",
+      "output_hash": "f63d0ede7a4f7dc533c7d6aafd5667c30cf8243981fa4f52d7fc835fdd39a53f"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        false,
+        1
+      ],
+      "observation_id": "a068c2251aa3c0e16401642450ba55e73f38e2f9e3bb4be375064b1721788637",
+      "output_hash": "d0da95142928ef2e488b39c9f51fda98f82fba25c9891905e9abc303becb97de"
+    },
+    {
+      "expected": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        0
+      ],
+      "observation_id": "bdf5d4e6a868eb0e310834493fdbeffa41b1ef2b815b53b5713093e097be5b20",
+      "output_hash": "6c0fe079915791db30bc112a305b092d447ecde83ad5ea623db5e78aff8ecd00"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        1
+      ],
+      "observation_id": "0fdfa7e13382ca542fcca51be2379302df5a7855ab8ef160337e90e9c34ec041",
+      "output_hash": "b88500b7d022a2625f6283f7f169bad274268398a4f6be78aa9b5a497c61a2ae"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        0
+      ],
+      "observation_id": "6b27a688e4f4f605a8bf1a647f49e7107a39f81264fb996898fbbc962434a88c",
+      "output_hash": "1cb7d9fdd869ea64699d0099b080e34b2a8f86b0fb012e62e48fe1458f7b6686"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "input": [
+        true,
+        1,
+        false,
+        1
+      ],
+      "observation_id": "2eeeba6a7aa520efb3d0e92e38d1da5c9349d991dde2fa76a65048a1f1779784",
+      "output_hash": "87dd311c09636b40b2626ca71947e987934cdfe05b8236fc16afbc6d4a6557a8"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        0
+      ],
+      "observation_id": "e4a64d515705c361b1f4b79cbd713a1ed03fc0e59fd3f849b511a04f34b368cf",
+      "output_hash": "4ce0608658e5d3366f2301c5b0c06dda15aba9f5a5f920774811141bd51ca868"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        1,
+        true,
+        1
+      ],
+      "observation_id": "3b4ade63eff3ed61e2c40f2c60f6a1b4b0a3d05a31552beada2c7129833bf13b",
+      "output_hash": "0a7fe956b247b122c869abdc35b094831027e1dfc2b7299251b114e53028fffa"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "input": [
+        true,
+        4294967295,
+        true,
+        0
+      ],
+      "observation_id": "392d47d50b703fcea087aeef7bd0ae41be023e72710e4fd48fcce73d95c69781",
+      "output_hash": "4ce0608658e5d3366f2301c5b0c06dda15aba9f5a5f920774811141bd51ca868"
+    },
+    {
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "input": [
+        true,
+        0,
+        true,
+        4294967295
+      ],
+      "observation_id": "2c92d5f0c7f9f58f853ee0fd303cf4263b6fc038f41178929dbd1bd743ee073d",
+      "output_hash": "b88500b7d022a2625f6283f7f169bad274268398a4f6be78aa9b5a497c61a2ae"
+    }
+  ],
+  "invalid_count_inputs_rejected_at_tools_boundary": [
+    "-1",
+    "4294967296"
+  ],
+  "native_test_admission": "NOT_RUN: F0 native executor unavailable",
+  "program": "release-readiness",
+  "representation": "native SSMC1 graph accepted by public Sley core",
+  "result": "PASS",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "allow"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "test_run_incomplete"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "tests_failed"
+    },
+    {
+      "member_id": "0404040404040404040404040404040404040404040404040404040404040404",
+      "name": "artifact_unverified"
+    },
+    {
+      "member_id": "0505050505050505050505050505050505050505050505050505050505050505",
+      "name": "blocking_findings_exceeded"
+    }
+  ],
+  "result_type_id": "8e7b6cd578f206226f38814d93ddafeb48bffeb93f40bd8b54033e36bbc8567f",
+  "threshold_edited": 2,
+  "threshold_entity_id": "bec61dc708fb990a2bb3754af406e40ac35e2da9d24e77c2a94b5cb2ca7bcb09",
+  "threshold_initial": 0,
+  "workspace_id": "e569c494628d2b85b5fb800220751f75e1c0f4ccf1aa8c272c902ba63a7a8d85"
+}

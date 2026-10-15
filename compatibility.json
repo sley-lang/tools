@@ -1,212 +1,207 @@
 {
   "capabilities": {
     "bounded_explicit_native_edit_lifecycle": {
-      "evidence": "evidence/starter/authoring-lifecycle-v2.json",
+      "evidence": "evidence/starter/authoring-lifecycle-v4.json",
       "scope": "CLI Release Readiness and Resource Admission typed one-object proposals: separate core validation, exact candidate revalidation and commit, one changed entity version each, changed native boundaries, 60/12 external assertions, busy-write/tamper/stale/duplicate/commit-before-validation rejection; general graph builders and native core tests pending",
       "status": "supported"
     },
     "bounded_local_native_artifact_review": {
-      "evidence": "evidence/review/local-v2.json",
+      "evidence": "evidence/review/local-v4.json",
       "scope": "local review of both worked native edits: exact one-object changes, 48/49 before-and-after cases, fresh core-validated imports, reproducible reports, and manifest/artifact/report tamper rejection; GitHub-hosted Action run pending",
       "status": "supported"
     },
     "bounded_native_graph_artifact_review": {
-      "evidence": "evidence/review/graph-v2.json",
+      "evidence": "evidence/review/graph-v4.json",
       "scope": "graph_v0 Review of schema-generated and Python-imported native edits with exact one-object changes, 7/8 baseline cases and 2/1 changed cases, report recomputation, changed recipe and artifact rejection, replay, and primitive Boolean no-change review; finite cases and local profile only, GitHub-hosted Action run and native core tests pending",
       "status": "supported"
     },
     "bounded_rpc_sdk_native_edit_lifecycle": {
       "evidence": [
-        "evidence/bridge/rpc-authoring-v2.json",
-        "evidence/bridge/python-authoring-v2.json",
-        "evidence/bridge/typescript-authoring-v2.json"
+        "evidence/bridge/rpc-authoring-v4.json",
+        "evidence/bridge/python-authoring-v4.json",
+        "evidence/bridge/typescript-authoring-v4.json"
       ],
       "scope": "two typed native one-object edits over local RPC, Python SDK, and TypeScript SDK; separate validation, exact candidate commit, changed native boundaries, 60/12 external assertions, handle rotation, discard and stale-session rejection; general graph builders and native core tests pending",
       "status": "supported"
     },
     "bridge_durable_write_operation_status": {
       "evidence": [
-        "evidence/bridge/operation-status-v1.json",
-        "evidence/bridge/sdk-commit-recovery-v1.json"
+        "evidence/bridge/operation-status-v3.json",
+        "evidence/bridge/sdk-commit-recovery-v3.json"
       ],
       "scope": "durable operation ID before ordinary commit; core-verified status survives stale or partial local metadata; both SDKs preserve workspace on lost replies and reconcile completed versus unknown; cancellation before commit blocks RPC and CLI writes, while in-flight cancellation cannot preempt a locked commit",
       "status": "supported"
     },
     "bridge_local_cold_and_warm_timing": {
-      "evidence": "evidence/bridge/timing-v1.json",
-      "scope": "local Python and TypeScript Release Readiness artifact load and 48 correctness-checked warm calls each; client wall and coarse RPC durations, median and p95; encoding, core VM execution, and decoding subdivisions unavailable; one cold-load sample per SDK",
+      "evidence": "evidence/bridge/timing-v4.json",
+      "scope": "local Python and TypeScript Release Readiness artifact load and 48 correctness-checked post-open calls each; client wall and coarse RPC durations, median and p95; encoding, core VM execution, and decoding subdivisions unavailable; five fresh cold loads and five sampled process RSS observations per SDK",
       "status": "supported"
     },
     "bridge_read_only_call_cancellation": {
-      "evidence": "evidence/bridge/read-cancellation-v1.json",
+      "evidence": "evidence/bridge/read-cancellation-v3.json",
       "scope": "Python threading.Event and TypeScript AbortSignal cancel read-only native calls; a pre-dispatch cancel preserves the session, while an in-flight cancel stops the local RPC process and native worker; write cancellation uses the separate operation lifecycle and does not accept SDK read signals",
       "status": "supported"
     },
     "bridge_rpc_and_python_typescript_release_readiness": {
       "evidence": [
-        "evidence/bridge/rpc-v1.json",
-        "evidence/bridge/python-v1.json",
-        "evidence/bridge/typescript-v1.json",
-        "evidence/bridge/soak-v1.json"
+        "evidence/bridge/rpc-v2.json",
+        "evidence/bridge/python-v2.json",
+        "evidence/bridge/typescript-v2.json",
+        "evidence/bridge/soak-v2.json"
       ],
       "scope": "process-scoped RPC; both SDKs call the checked-in Release Readiness artifact across 48 shared cases and 256-call bounded soaks; typed negatives, worker and descriptor stability/cleanup, deadline and stale-root paths",
       "status": "supported"
     },
     "catalog_benchmark_comparator_native_artifact": {
-      "evidence": "evidence/catalog/benchmark-comparator-v1.json",
+      "evidence": "evidence/catalog/benchmark-comparator-v2.json",
       "scope": "checked-in N03 manifest and 34-object native artifact; fresh authority-rebased import, twelve independently checked cases before and after a validated negative-input policy edit, six changed negative cases, missing-input rejection, unchanged Data Pipe output for valid rows, and edited artifact replay; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_benchmark_selector_native_artifact": {
-      "evidence": "evidence/catalog/benchmark-selector-v1.json",
+      "evidence": "evidence/catalog/benchmark-selector-v2.json",
       "scope": "checked-in N04 manifest and 33-object native artifact; fresh authority-rebased import, nine independently checked cases before and after a validated native predicate edit, unchanged Data Pipe host command selecting four rows, and edited artifact replay; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_benchmark_summary_reducer_native_artifact": {
-      "evidence": "evidence/catalog/benchmark-summary-reducer-v1.json",
+      "evidence": "evidence/catalog/benchmark-summary-reducer-v2.json",
       "scope": "checked-in N05 manifest and 36-object native artifact; fresh authority-rebased import, seventeen independently checked cases before and after a validated negative-total policy edit, five changed negative-total cases, empty identity and overflow, Data Pipe partition agreement at batch sizes 1/2/4, and edited artifact replay; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_bounded_clamp_native_artifact": {
-      "evidence": "evidence/catalog/bounded-clamp-v1.json",
+      "evidence": "evidence/catalog/bounded-clamp-v2.json",
       "scope": "checked-in N08 manifest and 36-object native clamp artifact; fresh import, 38 independently checked signed values per phase, normal upper-bound and invalid-configuration edits, corrected export replay, and a Python SDK example; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_generated_payload_validator_native_artifact": {
-      "evidence": "evidence/catalog/generated-payload-validator-v1.json",
+      "evidence": "evidence/catalog/generated-payload-validator-v2.json",
       "scope": "checked-in N10 schema, source-to-entity mapping, and 51-object native validator artifact; fresh authoring and authority-rebased import, 16 exact-number JSON Schema reference cases, malformed-input rejection, normal native upper-bound edit with 18 reference cases, raw Python adapter, and edited artifact replay; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_native_artifact_and_manifest_schema": {
       "evidence": [
-        "evidence/catalog/release-readiness-v0.json",
-        "evidence/catalog/schema-v0.json"
+        "evidence/catalog/release-readiness-v1.json",
+        "evidence/catalog/schema-v2.json"
       ],
       "scope": "checked-in Release Readiness native object artifact and schema-validated manifest; 36 fresh-import assertions; malformed manifest and checksum rejection",
       "status": "supported"
     },
     "catalog_quota_remaining_native_artifact": {
-      "evidence": "evidence/catalog/quota-remaining-v1.json",
+      "evidence": "evidence/catalog/quota-remaining-v2.json",
       "scope": "checked-in N09 manifest and 35-object native quota artifact; fresh authoring and import, 81 independently checked signed pairs per phase, negative-input guard before checked subtraction, normal notification edit preserving quota semantics, and corrected replay; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_range_predicate_native_artifact": {
-      "evidence": "evidence/catalog/range-predicate-v1.json",
-      "scope": "checked-in N07 manifest and 28-object branching native artifact; fresh authority-rebased import, 35 independently checked cases in each phase, separate validated exclusion and correction commits, restored content root, and corrected artifact replay; local package only, native core tests pending",
+      "evidence": "evidence/catalog/range-predicate-v2.json",
+      "scope": "checked-in N07 manifest and 28-object branching native artifact; fresh authority-rebased import, 35 independently checked cases in each phase, two bundled CLI inputs and three Python SDK calls including an exact large integer, separate validated exclusion and correction commits, restored content root, and corrected artifact replay; local package only, native core tests pending",
       "status": "supported"
     },
     "catalog_tier_classifier_native_artifact": {
-      "evidence": "evidence/catalog/tier-classifier-v1.json",
+      "evidence": "evidence/catalog/tier-classifier-v2.json",
       "scope": "checked-in N06 manifest and 40-object branching native artifact; fresh import, fourteen independently checked signed inputs in each policy, one-threshold edit preserving unrelated tiers, explicit invalid-order domain result, middle-branch repair, and corrected export replay; local package only, native core tests pending",
       "status": "supported"
     },
     "extended_execute_via_release_cli": {
-      "evidence": "evidence/release-readiness/n01-probe-v1.json",
+      "evidence": "evidence/release-readiness/n01-probe-v2.json",
       "scope": "released CLI omits extended_execute feature from all offered hellos; restricted profile reports VM_LOWER_OPCODE_UNSUPPORTED for this graph",
       "status": "unsupported"
     },
     "fresh_install_local_package_scenario_v1": {
-      "evidence": "evidence/fresh-install/local-v6.json",
-      "scope": "local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.0.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and rejected-change recovery, plus the CLI MCP launcher against installed standalone server, Data Pipe sample through sley-tools pipe, local Playground run/edit/export through sley-tools playground, all eight Repair Lab exercises, and both native importer edits passed; hosted worker isolation, live agent, native core tests, and public release remain open",
+      "evidence": "evidence/fresh-install/local-v10.json",
+      "scope": "local tools bundle plus produced Python wheel, TypeScript tarball, and standalone MCP npm tarball installed with verified Sley 2.1.1 archive, checkout hidden and network off; native Starter create/edit/test, static native TestCase candidate validation, Review and replay, exact 2^53+1 SDK calls, installed graph opcode and branch edits, 106-case official MCP reference client including operand edit and rejected-change recovery, plus the CLI MCP launcher against installed standalone server, Data Pipe sample through sley-tools pipe, local Playground run/edit/export through sley-tools playground, all eight Repair Lab exercises, and both native importer edits passed; hosted worker isolation, live agent, native core tests, and public release remain open",
       "status": "supported"
     },
     "fresh_scoped_workspace_genesis": {
-      "evidence": "evidence/compatibility/f0-genesis-v1.json",
+      "evidence": "evidence/compatibility/f0-genesis-v2.json",
       "scope": "new local workspace via public codecs and SMP1",
       "status": "supported"
     },
     "local_ci_action_native_review_runner": {
-      "evidence": "evidence/review/action-local-v1.json",
-      "scope": "reusable composite Action runner exercised from an external caller workspace: hash-locked Sley core, both manifest schema validations, 48-case native fixed-program edit review, 11-case native graph review, report recomputation, and stale-manifest/symlink rejection; GitHub-hosted execution and native core tests pending",
+      "evidence": "evidence/review/action-local-v5.json",
+      "scope": "reusable composite Action runner exercised from an external caller workspace: hash-locked Sley core, both manifest schema validations, 48-case native fixed-program edit review, 11-case native graph review, report recomputation, and stale-manifest/symlink rejection; hosted execution is separate evidence and native core tests remain pending",
       "status": "supported"
     },
     "local_data_pipe_bounded_memory_witness": {
-      "evidence": "evidence/data-pipe/performance-v2.json",
-      "scope": "same three native graphs streamed 64 and 4096 fixed-schema rows; each result verified as exact zero summary, throughput and 50 ms sampled process-tree RSS recorded, 64-fold input growth stayed within 32 MiB and 1.5x peak RSS bounds; workload is all-zero rows and under 1 MiB, wider workloads and native core tests pending",
+      "evidence": "evidence/data-pipe/performance-v5.json",
+      "scope": "same three native graphs streamed 64 and 8192 alternating regression/improvement rows; all selected output and exact native summary verified, throughput and 50 ms sampled process-tree RSS recorded, 128-fold input growth stayed within 32 MiB and 1.5x peak RSS bounds; one mixed fixed-schema workload, native core tests pending",
       "status": "supported"
     },
     "local_data_pipe_jsonl_stream": {
-      "evidence": "evidence/data-pipe/stream-v3.json",
+      "evidence": "evidence/data-pipe/stream-v5.json",
       "scope": "installed Python host command and sley-tools pipe launcher stream fixed-schema JSON Lines through three accepted native Sley graphs; independent four-row sample, three batch sizes, accepted selector predicate edit with unchanged host command, empty identity, exact signed boundary, overflow, duplicate/malformed/missing/unit/negative rejection, stdout partial count, atomic file output, and missing-adapter/duplicate-option refusal verified; broader workloads and native core tests pending",
       "status": "supported"
     },
     "local_mcp_adapter": {
-      "evidence": "evidence/mcp/reference-v5.json",
-      "scope": "official MCP SDK stdio reference client on eight fresh Sley projects; three raw stdout messages parsed as JSON-RPC, eight tools on the fully configured template project, graph opcode, operand, and branch edit tools on graph projects, five resources, two protocol eras, scoped creation/review, rejected conflicting edit with unchanged accepted root and successful recovery, exact i64 and checked arithmetic results, and 106 external assertions; live agent task and native core tests pending",
+      "evidence": "evidence/mcp/reference-v7.json",
+      "scope": "official MCP SDK stdio reference client on eight fresh Sley projects; three raw stdout messages parsed as JSON-RPC, nine tools on the fully configured template project, graph opcode, operand, and branch edit tools on graph projects, five resources, two protocol eras, scoped creation/review, rejected conflicting edit with unchanged accepted root and successful recovery, exact i64 and checked arithmetic results, and 106 external assertions; live agent task and native core tests pending",
       "status": "supported"
     },
     "local_mcp_cli_launcher": {
-      "evidence": "evidence/mcp/launcher-v2.json",
+      "evidence": "evidence/mcp/launcher-v4.json",
       "scope": "sley-tools mcp replaces its process with an explicitly selected installed Node adapter, keeps stdout protocol-only, connects an official MCP client, and carries one native Release Readiness proposal through validation, commit, and changed execution; missing adapter and malformed options refuse before launch",
       "status": "supported"
     },
     "manifest_bound_native_artifact_after_edit": {
-      "evidence": "evidence/catalog/bound-artifact-v1.json",
+      "evidence": "evidence/catalog/bound-artifact-v2.json",
       "scope": "edited Release Readiness and Resource Admission artifacts exported under project artifact directories, bound to validated manifests, refused unsafe/duplicate outputs, and reimported with changed native boundaries",
       "status": "supported"
     },
     "native_checked_benchmark_comparator_witness": {
-      "evidence": "evidence/graph-builder/benchmark-comparator-v2.json",
+      "evidence": "evidence/graph-builder/benchmark-comparator-v4.json",
       "scope": "fresh native Benchmark Comparator graph with exact checked signed deltas, independent regression/negative-input flags, explicit overflow result, and missing-measurement rejection; nine oracle-checked cases through CLI, Python, and TypeScript, plus three native checked-addition cases and four checked multiplication/negation/result-construction cases; catalog admission and native core tests pending",
       "status": "supported"
     },
     "native_data_pipe_selector_reducer_witnesses": {
-      "evidence": "evidence/graph-builder/data-pipe-native-v2.json",
+      "evidence": "evidence/graph-builder/data-pipe-native-v4.json",
       "scope": "two independently callable local Sley graphs: selector/projector and checked summary reducer; nine and ten native cases, exact one-constant predicate edit, empty identity, four overflow arms, and three batch partitions; catalog admission and native core tests pending",
       "status": "supported"
     },
     "native_release_readiness_via_public_vm_library": {
-      "evidence": "evidence/release-readiness/n01-probe-v1.json",
+      "evidence": "evidence/release-readiness/n01-probe-v2.json",
       "scope": "SMP1 constructs/commits; public core VM library loads accepted head and executes extended_v1; 58 typed outputs match independent oracle",
       "status": "supported"
     },
     "native_test_admission_selected_core": {
-      "evidence": "evidence/compatibility/f0-native-test-route-v2.json",
+      "evidence": "evidence/compatibility/f0-native-test-route-v4.json",
       "scope": "v3 tests.affected refuses the valid TestCase candidate with NATIVE_EXECUTOR_UNAVAILABLE; production executor/supervisor wiring is required",
       "status": "requires_core_change"
     },
     "native_test_case_candidate_static_validation": {
-      "evidence": "evidence/compatibility/f0-native-test-route-v2.json",
+      "evidence": "evidence/compatibility/f0-native-test-route-v4.json",
       "scope": "fresh Fixed Limit project; public CLI and direct core both validate real TestCase candidates, invalid case and builder inputs refused, accepted root unchanged; no native test executed",
       "status": "supported"
     },
     "native_test_plan_preflight_core_library": {
-      "evidence": "evidence/compatibility/f0-native-test-route-v2.json",
+      "evidence": "evidence/compatibility/f0-native-test-route-v4.json",
       "scope": "selected core library derives a one-TestCase N4 plan from fresh validator-owned output and the accepted grant; planning is read-only and no worker ran",
       "status": "supported"
     },
     "native_tests_via_unconfigured_release_cli": {
-      "evidence": "evidence/compatibility/f0-genesis-v1.json",
-      "scope": "v3 tests.selected with a valid body on standalone 2.0.1 CLI; a provisioned public-library executor remains to be probed",
+      "evidence": "evidence/compatibility/f0-genesis-v2.json",
+      "scope": "v3 tests.selected with a valid body on standalone 2.1.1 CLI; a provisioned public-library executor remains to be probed",
       "status": "unsupported"
     },
     "new_artifact_export_import": {
-      "evidence": "evidence/compatibility/f0-genesis-v1.json",
+      "evidence": "evidence/compatibility/f0-genesis-v2.json",
       "scope": "accepted edited function exported and reproduced in a fresh workspace",
       "status": "supported"
     },
     "new_function_commit_execute_edit_reject": {
-      "evidence": "evidence/compatibility/f0-genesis-v1.json",
+      "evidence": "evidence/compatibility/f0-genesis-v2.json",
       "scope": "Bool identity function and BoolNot edit; outputs proven by VM report hashes",
       "status": "supported"
     },
-    "playground_installed_browser_flow_v1": {
-      "evidence": "evidence/playground/browser-v6.json",
-      "scope": "real headless Chromium local browser flow launched from a produced tools bundle with checkout masked; native Release Readiness run, separate proposal/validation/commit, downloaded edited artifact imported and replayed by installed CLI in a checkout-masked network-disabled workspace with 48 external assertions; single browser and local mode only, hosted isolation and native core tests pending",
-      "status": "supported"
-    },
     "playground_local_native_browser_adapter": {
-      "evidence": "evidence/playground/local-v1.json",
+      "evidence": "evidence/playground/local-v2.json",
       "scope": "sley-tools playground launches the loopback-only local service with three bundled native programs; typed run, separate proposal/validation/commit, two before/after native edits, session-scoped workspaces with concurrent admission capped at sixteen, Host/Origin rejection, published cases, edited artifact exports imported into fresh workspaces, and missing/duplicate launcher option refusals; hosted worker isolation and native core tests pending",
       "status": "supported"
     },
     "portable_native_graph_artifact_rebase": {
-      "evidence": "evidence/graph-builder/portable-artifact-v2.json",
+      "evidence": "evidence/graph-builder/portable-artifact-v4.json",
       "scope": "exact SCB1 graph objects and bound recipe/cases transferred to fresh authority contexts for branching, primitive-result, and checked reducer programs; edited Data Pipe selector replayed through unchanged host command; source object and recipe mismatch rejection; second native edit and re-export verified; only bounded graph_v0 profile, native core tests pending",
       "status": "supported"
     },
     "public_native_graph_project_cli": {
-      "evidence": "evidence/graph-builder/public-project-v2.json",
+      "evidence": "evidence/graph-builder/public-project-v4.json",
       "scope": "two independent graph recipes initialized as accepted native projects; CLI run, inspect, and twelve external test assertions; recipe binding and bounded negative paths; native core tests and catalog admission pending",
       "status": "supported"
     },
@@ -216,121 +211,126 @@
       "status": "supported"
     },
     "repair_lab_rl01_rl08_native": {
-      "evidence": "evidence/repair-lab/rl01-rl08-v7.json",
+      "evidence": "evidence/repair-lab/rl01-rl08-v9.json",
       "scope": "eight public local Repair Lab lessons with native construction/edit/run judges, wrong-start rejection, independent native cases, boundary and type diagnostics, stale-state recovery, accepted-policy permission denial and fresh-workspace recovery, bound edited artifact transfer, and workspace-confined reset; independent owner evaluation and native core tests pending",
       "status": "supported"
     },
     "resource_admission_native_and_wide_sdk": {
       "evidence": [
-        "evidence/resource-admission/native-bridge-v1.json",
-        "evidence/resource-admission/artifact-v1.json",
-        "evidence/resource-admission/edit-v1.json",
-        "evidence/catalog/resource-admission-v0.json",
-        "evidence/catalog/schema-v0.json"
+        "evidence/resource-admission/native-bridge-v2.json",
+        "evidence/resource-admission/artifact-v2.json",
+        "evidence/resource-admission/edit-v2.json",
+        "evidence/catalog/resource-admission-v1.json",
+        "evidence/catalog/schema-v2.json"
       ],
       "scope": "fresh native Resource Admission graph and checked-in 22-object artifact; authority-rebased imports, 49 exact signed cases in each SDK, tamper rejection, second-generation replay, exact native memory-policy edit, core stale rejection, and edited-artifact replay",
       "status": "supported"
     },
     "restricted_python_function_importer_native_v1": {
-      "evidence": "evidence/python-importer/native-v2.json",
+      "evidence": "evidence/python-importer/native-v4.json",
       "scope": "restricted pure CPython 3.14 int/bool functions with explicit bounded domains; four native Sley graphs, 219 isolated differential cases, native domain guards, unsupported and unsafe arithmetic rejection, normal native constant edit and graph Review; general Python and native core test admission remain open",
       "status": "supported"
     },
     "rpc_python_typescript_native_graph_execution": {
-      "evidence": "evidence/bridge/graph-sdk-v2.json",
+      "evidence": "evidence/bridge/graph-sdk-v4.json",
       "scope": "three accepted graph projects opened through local RPC and both SDKs; fifteen native VM cases per SDK, signed boundaries, primitive and mixed numeric record results, typed input and changed project-binding rejection, and worker reuse; SDK artifact transfer and native core tests pending",
       "status": "supported"
     },
     "same_host_isolated_native_review_replay": {
       "evidence": [
-        "evidence/review/isolated-v2.json",
+        "evidence/review/isolated-v4.json",
         "evidence/review/fixtures/manifest.json"
       ],
       "scope": "same-host Bubblewrap mount/network isolation with copied tools/core and checked-in native packages; both 48/49-case reviews and report verification pass without source checkout mount; GitHub-hosted Action run pending",
       "status": "supported"
     },
     "schema_importer_local_native_records_v1": {
-      "evidence": "evidence/schema-importer/native-v2.json",
+      "evidence": "evidence/schema-importer/native-v5.json",
       "scope": "restricted local draft-2020-12 root Boolean/integer and closed flat records of up to three required Boolean/bounded-i64 properties; exact host JSON projection, native Sley validation/reasons, manifest-bound artifact transfer, normal native bound edit, and independent Decimal reference checks; fresh install and native core tests pending",
       "status": "supported"
     },
     "scoped_create_only_local_authority": {
-      "evidence": "evidence/repair-lab/rl01-rl08-v7.json",
+      "evidence": "evidence/repair-lab/rl01-rl08-v9.json",
       "scope": "Release Readiness template initialization with an accepted create-only grant; inspect reads the accepted principal grant, validation rejects an unauthorized replacement with a core-owned permission diagnostic, and portable import establishes independent normal development authority",
       "status": "supported"
     },
     "sdk_native_graph_project_creation": {
-      "evidence": "evidence/bridge/graph-sdk-creation-v2.json",
+      "evidence": "evidence/bridge/graph-sdk-creation-v4.json",
       "scope": "Python and TypeScript fluent builders produce checked-in branching and primitive recipes, initialize fresh native graph projects through the shared Rust builder, and run eight branching, four primitive, and three exact numeric native cases; six malformed builder uses, invalid inputs, and existing destinations rejected; SDK artifact transfer and native core tests pending",
       "status": "supported"
     },
     "standalone_local_mcp_package_v1": {
-      "evidence": "evidence/fresh-install/local-v6.json",
-      "scope": "locally produced @sley-lang/tools-mcp@0.0.1 tarball bundles pinned MCP runtime dependencies and the Sley TypeScript SDK; installed outside the checkout with network disabled and passed the 106-assertion official MCP reference-client probe and CLI launcher native edit against the selected Sley 2.0.1 core; npm publication and live agent task remain open",
+      "evidence": "evidence/fresh-install/local-v10.json",
+      "scope": "locally produced @sley-lang/tools-mcp@0.0.1 tarball bundles pinned MCP runtime dependencies and the Sley TypeScript SDK; installed outside the checkout with network disabled and passed the 106-assertion official MCP reference-client probe and CLI launcher native edit against the selected Sley 2.1.1 core; npm publication and live agent task remain open",
       "status": "supported"
     },
     "starter_local_init_run_test_inspect": {
-      "evidence": "evidence/starter/init-v1.json",
+      "evidence": "evidence/starter/init-v2.json",
       "scope": "fresh local project with one native commit; public init/run/test/inspect; external assertions only; this probe does not cover artifact transfer",
       "status": "supported"
     },
     "starter_local_worked_edit_and_stale_rejection": {
-      "evidence": "evidence/starter/edit-v1.json",
+      "evidence": "evidence/starter/edit-v2.json",
       "scope": "public threshold edit changed native behavior; 60 edited external assertions; stale exact-object proposal rejected without changing accepted root",
       "status": "supported"
     },
     "starter_native_object_artifact_rebase": {
-      "evidence": "evidence/starter/artifact-v1.json",
+      "evidence": "evidence/starter/artifact-v2.json",
       "scope": "20 accepted native object records exported without workspace grants; fresh workspace and principal rebase; 60 source/import semantic comparisons; tampered object rejection; edit/reexport/reimport",
       "status": "supported"
     },
     "targeted_native_graph_branch_edit": {
-      "evidence": "evidence/graph-builder/range-predicate-branch-v2.json",
+      "evidence": "evidence/graph-builder/range-predicate-branch-v4.json",
       "scope": "one accepted native Block terminator target replacement through CLI, RPC, Python, and TypeScript; conditional and unconditional edits, exact old-object precondition, separate validation and commit, eight postcommit native executions per adapter, malformed/unreachable/tampered/stale rejection; MCP exercised in its separate reference-client probe; block arguments and native core tests pending",
       "status": "supported"
     },
     "targeted_native_graph_constant_edit_cli": {
-      "evidence": "evidence/graph-builder/fixed-limit-edit-v4.json",
+      "evidence": "evidence/graph-builder/fixed-limit-edit-v6.json",
       "scope": "Fixed Limit named constant proposal, separate core validation, exact old-object native replacement, two changed boundary cases and six postcommit external assertions; false oracle reports accepted commit; native core tests pending",
       "status": "supported"
     },
     "targeted_native_graph_constant_edit_sdk": {
-      "evidence": "evidence/bridge/graph-sdk-authoring-v2.json",
+      "evidence": "evidence/bridge/graph-sdk-authoring-v4.json",
       "scope": "Fixed Limit named constant edit through RPC, Python, and TypeScript; separate native validation, accepted one-object commit, changed boundaries, SDK reopen, and six external assertions; false expectations report the new accepted root; generic graph operations and native core tests pending",
       "status": "supported"
     },
     "targeted_native_graph_opcode_edit": {
-      "evidence": "evidence/graph-builder/fixed-limit-opcode-v4.json",
+      "evidence": "evidence/graph-builder/fixed-limit-opcode-v6.json",
       "scope": "compatible graph opcode replacement by block/operation label through CLI, RPC, Python, and TypeScript; exact one-entity precondition, separate core validation and commit, five native boundary assertions per adapter plus Boolean, equality, checked binary, and checked unary matrices; stale/tamper/cross-profile rejection; native core tests pending",
       "status": "supported"
     },
     "targeted_native_graph_operand_edit": {
-      "evidence": "evidence/graph-builder/range-predicate-operand-v3.json",
+      "evidence": "evidence/graph-builder/range-predicate-operand-v5.json",
       "scope": "one accepted native operation operand reference replaced through CLI, RPC, Python, and TypeScript; seven independent Range Predicate assertions per adapter plus checked unary and earlier-operation matrices; exact one-object candidate, separate core validation and commit, type/forward-reference/tamper rejection; MCP covered in reference-client probe; native core tests pending",
       "status": "supported"
     },
     "tools_doctor_identity_and_negative_paths": {
-      "evidence": "evidence/starter/doctor-v1.json",
+      "evidence": "evidence/starter/doctor-v2.json",
       "scope": "local sley-tools doctor against exact release binary, incompatible file, and missing path; optional runtimes reported",
       "status": "supported"
     },
     "typed_graph_lowering_core_candidate_and_vm": {
-      "evidence": "evidence/graph-builder/range-predicate-v2.json",
+      "evidence": "evidence/graph-builder/range-predicate-v4.json",
       "scope": "backend graph-authoring v0 lowers named parameters, constants, Boolean/integer comparisons, records, and acyclic branches to real candidates; Range Predicate and unsigned primitive-result functions are core-validated, committed, and executed on twelve cases with five construction rejections; native core tests pending",
       "status": "supported"
     },
     "typed_output_via_release_smp1_execute": {
-      "evidence": "evidence/compatibility/f0-genesis-v1.json",
+      "evidence": "evidence/compatibility/f0-genesis-v2.json",
       "scope": "SMP1 execute returns a report with a value hash, not the typed value",
       "status": "unsupported"
     },
     "verified_ordinary_candidate_reconciliation": {
-      "evidence": "evidence/bridge/candidate-reconcile-v1.json",
+      "evidence": "evidence/bridge/candidate-reconcile-v3.json",
       "scope": "verified ordinary Sley receipt ancestry identifies one committed candidate after local project metadata becomes stale; unobserved candidates remain outcome_unknown, never retry-safe",
       "status": "supported"
     }
   },
   "contract": "sley-tools.compatibility.v1",
+  "evidence_selection": {
+    "playground_browser": null,
+    "playground_local": "evidence/playground/local-v2.json",
+    "repair_lab": "evidence/repair-lab/rl01-rl08-v9.json"
+  },
   "f0": {
     "remaining": [
       "native test admission and execution"
@@ -341,11 +341,11 @@
     "native_test_admission": {
       "bounded_next_step": "wire and verify the core-owned production executor/supervisor, then rerun F0 native test admission and commit from a fresh workspace",
       "observed": "candidate.validate accepts a new TestCase; v3 tests.affected returns NATIVE_EXECUTOR_UNAVAILABLE",
-      "source": "selected Sley 2.0.1 standalone CLI, evidence/compatibility/f0-native-test-route-v2.json",
+      "source": "selected Sley 2.1.1 standalone CLI, evidence/compatibility/f0-native-test-route-v4.json",
       "status": "requires_core_change"
     }
   },
-  "interpretation": "Method offers and the packaged fixture demo do not establish new-program authoring or native test admission. Capability entries are scoped to their linked evidence and do not constitute one latest-binary aggregate pass.",
+  "interpretation": "Method offers and the packaged fixture demo do not establish new-program authoring or native test admission. Each capability is limited to its validated linked evidence; evidence omitted from this invocation is not verified by this report.",
   "profiles": {
     "legacy": {
       "features": {
@@ -591,12 +591,12 @@
     }
   },
   "selected_core": {
-    "archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
-    "artifact": "sley-2.0.1-linux-x86_64.tar.gz",
-    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
-    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "archive_sha256": "b0898ba7404a1656db2f83f448ea96d2c1175346f35e50b135bedc96e3810bfd",
+    "artifact": "sley-2.1.1-linux-x86_64.tar.gz",
+    "binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+    "commit": "af34be33eb1ae913dddd92aa7f4f275aac0e45ee",
     "platform": "x86_64-linux",
-    "release": "v2.0.1",
+    "release": "v2.1.1",
     "target": "x86_64-unknown-linux-musl"
   }
 }

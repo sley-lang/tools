@@ -1,0 +1,20 @@
+{
+  "artifact_sha256": "d6bf775f669b0a088604a860738c5a9734517f1825fabd65883ae0e4d74c5fa1",
+  "contract": "sley-tools.sdk-commit-recovery-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "python_cancel_respected_commit_boundary": true,
+  "python_completed_commit_identified_and_preserved": true,
+  "python_predispatch_unknown_preserved": true,
+  "python_probe_sha256": "07ef52ebd26ebf2d300004c90adb8dc52d0bd5b0778479807473f5e02f468ae9",
+  "python_sdk_sha256": "d8d6746354508c587dd3d270921780e5b09d8c2bd572e2056bd742849a67d09c",
+  "result": "PASS",
+  "scope": "simulated SDK reply loss before dispatch and after actual native commit; operation status checks verified core history and SDK close preserves evidence",
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "typescript": {
+    "cancel_respected_commit_boundary": true,
+    "completed_commit_identified_and_preserved": true,
+    "predispatch_unknown_preserved": true
+  },
+  "typescript_probe_sha256": "b2b78091b5ce51ba071e075f482ae52ca9d7b4939b472bbb657c50c4ef8151fa",
+  "typescript_sdk_sha256": "80b81ebbcf0576b1ce5c21aa666a67dc9f22600209d9fe3ba47eb290d4207282"
+}

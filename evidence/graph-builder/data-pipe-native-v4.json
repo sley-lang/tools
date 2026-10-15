@@ -1,0 +1,60 @@
+{
+  "builder_binary_sha256": "a175e76c0aaa7dc00fea0e70bba25f63d0ff137fc079179e097c1ba25c86e38a",
+  "contract": "sley-tools.data-pipe-native-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "edited_selector_root": "ebe0a3ae7cfea13524645ebca7e20685bc9c6ae688e2c9964af5cb8db830f41a",
+  "empty_identity_verified": true,
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "native_roots": {
+    "reducer": "97bdef938eb950beb55ab34bde5856b8e2699ef0b273309a180b7f93b3c3a5de",
+    "selector": "e48542a7c75d73c7fc8e6c4da7a20375c1a07880a0f039ff587fed42330491d3"
+  },
+  "overflow_arms_verified": 4,
+  "partition_shapes": [
+    [
+      5
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1,
+      1,
+      3
+    ]
+  ],
+  "partition_summary": [
+    5,
+    155,
+    275,
+    397
+  ],
+  "probe_entry_sha256": "ddd6406d4012aecbb3c085e44c98137ecb41329a770db0fbc4792eb66d550aee",
+  "python_sdk_sha256": "d8d6746354508c587dd3d270921780e5b09d8c2bd572e2056bd742849a67d09c",
+  "reducer_cases_sha256": "111344b437f00374897e9f9a35017026b4e7c2404c886bf078a47dae8579f343",
+  "reducer_native_cases": 10,
+  "reducer_spec_sha256": "4928fe361dd6f1bf6a08305df868d31f5754f9b1ba47f9b66b5e20bd03d8915e",
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "selected_after": [
+    "all-zero",
+    "mixed-cpu-regression",
+    "zero-baselines",
+    "max-increase",
+    "max-decrease",
+    "archive-only-regression"
+  ],
+  "selected_before": [
+    "mixed-cpu-regression",
+    "zero-baselines",
+    "max-increase",
+    "archive-only-regression"
+  ],
+  "selector_after_cases_sha256": "3ba0a946305741331c36b0a0bc832d53da75dd610ea1acdff4cd45aa3293ae94",
+  "selector_cases_sha256": "271d79e2142fa91b74ed8671d75b365a8d29e3b739517f69079ccc6aa868331e",
+  "selector_changed_cases": 2,
+  "selector_native_cases": 9,
+  "selector_spec_sha256": "d41d58454281a041bf0a026278c425e98fe10bc8df9575751e8645c3d70df61a",
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e"
+}

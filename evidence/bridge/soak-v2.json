@@ -1,0 +1,85 @@
+{
+  "artifact_sha256": "d6bf775f669b0a088604a860738c5a9734517f1825fabd65883ae0e4d74c5fa1",
+  "contract": "sley-tools.bridge-soak-probe.v1",
+  "copied_binaries_without_source_checkout": true,
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "fixtures_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "python": {
+    "baseline_fds": {
+      "client": 7,
+      "rpc": 6,
+      "worker": 3
+    },
+    "calls": 256,
+    "fd_samples": [
+      {
+        "calls": 64,
+        "client": 7,
+        "rpc": 6,
+        "worker": 3
+      },
+      {
+        "calls": 128,
+        "client": 7,
+        "rpc": 6,
+        "worker": 3
+      },
+      {
+        "calls": 192,
+        "client": 7,
+        "rpc": 6,
+        "worker": 3
+      },
+      {
+        "calls": 256,
+        "client": 7,
+        "rpc": 6,
+        "worker": 3
+      }
+    ],
+    "max_allowed_fd_drift": 2,
+    "processes_exited": true,
+    "root_pinned": true,
+    "worker_reused": true
+  },
+  "result": "PASS",
+  "typescript": {
+    "baseline_fds": {
+      "client": 25,
+      "rpc": 6,
+      "worker": 3
+    },
+    "calls": 256,
+    "fd_samples": [
+      {
+        "calls": 64,
+        "client": 25,
+        "rpc": 6,
+        "worker": 3
+      },
+      {
+        "calls": 128,
+        "client": 25,
+        "rpc": 6,
+        "worker": 3
+      },
+      {
+        "calls": 192,
+        "client": 25,
+        "rpc": 6,
+        "worker": 3
+      },
+      {
+        "calls": 256,
+        "client": 25,
+        "rpc": 6,
+        "worker": 3
+      }
+    ],
+    "max_allowed_fd_drift": 2,
+    "processes_exited": true,
+    "root_pinned": true,
+    "worker_reused": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "builder_binary_sha256": "a175e76c0aaa7dc00fea0e70bba25f63d0ff137fc079179e097c1ba25c86e38a",
+  "contract": "sley-tools.graph-project-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "profiles": [
+    {
+      "artifact_object_count": 20,
+      "artifact_sha256": "cbdc02533c9966b29dabbfe367ffbd5e0cb80cf1ed400cfbafa288a8820f280d",
+      "candidate_id": "745044462ddf55e21ccf77f07671bb6989ed8826ad3b1554c3a946dad7045581",
+      "cases_sha256": "40a198e8ef6f7231ceced71be658bd0aa23a9399497c8d400e94be01fa3ac7ad",
+      "commit_receipt_id": "3eed92c6638e517fd2fcce045bcf6d7c33c4c7f7f2f30304369b229aec478d88",
+      "external_assertions": 8,
+      "function_id": "fa39a3c9934433089bbdff0096fde3ea6dcde851a4b044823e4ed32b96bed8e7",
+      "negative_paths": [
+        "existing_directory",
+        "unsupported_check",
+        "existing_artifact_refused",
+        "noncanonical_input",
+        "wrong_case_type_before_creation",
+        "false_expected_result",
+        "stale_recipe"
+      ],
+      "observations": [
+        {
+          "id": "lower-endpoint",
+          "value_hash": "09f30dc076b2f1c36c1910894cb05790df700696c59e20d7ec034203ba912e03"
+        },
+        {
+          "id": "interior",
+          "value_hash": "09f30dc076b2f1c36c1910894cb05790df700696c59e20d7ec034203ba912e03"
+        },
+        {
+          "id": "upper-endpoint",
+          "value_hash": "09f30dc076b2f1c36c1910894cb05790df700696c59e20d7ec034203ba912e03"
+        },
+        {
+          "id": "below",
+          "value_hash": "daf4210d6045eb52dff4db035013aa9d025f8bd7960d209471576eecfa3ccf69"
+        },
+        {
+          "id": "above",
+          "value_hash": "516e73f602f51dc3bff94a9fde4c95cde0023452707ec6501338c48f4cb8ce75"
+        },
+        {
+          "id": "reversed-bounds",
+          "value_hash": "4440d58dd17a6ee5eca82262c69af02040aa9a2701aa1d7ec99245f818685738"
+        },
+        {
+          "id": "minimum-signed",
+          "value_hash": "09f30dc076b2f1c36c1910894cb05790df700696c59e20d7ec034203ba912e03"
+        },
+        {
+          "id": "maximum-signed",
+          "value_hash": "09f30dc076b2f1c36c1910894cb05790df700696c59e20d7ec034203ba912e03"
+        }
+      ],
+      "program_id": "range-predicate",
+      "spec_sha256": "e32fd0c3cda3cca26b92b4c104d1aaa959ccc8a01204a1ebd99d7a66b0fc00cc",
+      "state_root": "c3a9e8959e42f536bbc2515f88627aa0cf9512cee84c82a91210ce2eb0a113c9"
+    },
+    {
+      "artifact_object_count": 5,
+      "artifact_sha256": "fde6efe4b1e1c3054a67d2581405f784553a0645697543b61e5346bfe18ad4c2",
+      "candidate_id": "5c94ddab087c0c544e61ba0b8253ca85ee57139819febacc7529b557799d1f26",
+      "cases_sha256": "25ef8c8f1e1e548280d5151244bdb347ba3ca9d551feb96bd9585e2a7b01b8b9",
+      "commit_receipt_id": "80b5d50606fc6b899c74587ddfce46666248979dde7f7bdcde82aa15b97ed647",
+      "external_assertions": 4,
+      "function_id": "baa6b722d33206c9ed4af11d47bb0af05949fbb00ef70165a33bb57d0d459326",
+      "negative_paths": [
+        "existing_directory",
+        "unsupported_check",
+        "existing_artifact_refused",
+        "noncanonical_input",
+        "wrong_case_type_before_creation",
+        "false_expected_result",
+        "stale_recipe"
+      ],
+      "observations": [
+        {
+          "id": "zero",
+          "value_hash": "bbd720c94ad40cea219d0b3dd88bf348fac6c3fb349be802aa436c22c32bc5cc"
+        },
+        {
+          "id": "within",
+          "value_hash": "bbd720c94ad40cea219d0b3dd88bf348fac6c3fb349be802aa436c22c32bc5cc"
+        },
+        {
+          "id": "above",
+          "value_hash": "bdd2e415ce6170bb04c753966f53c320bd0beffbf4be480454c0d39527b2509a"
+        },
+        {
+          "id": "maximum-unsigned",
+          "value_hash": "bbd720c94ad40cea219d0b3dd88bf348fac6c3fb349be802aa436c22c32bc5cc"
+        }
+      ],
+      "program_id": "unsigned-limit",
+      "spec_sha256": "708cf7163866c3ddd264808b9dd42f6dc969e161c74c67935e07ad36eca6f162",
+      "state_root": "a9422cf7f13caaaa43ac77df4dbdd4c21db3fcceaee4f153997c84b7875204a0"
+    }
+  ],
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e"
+}

@@ -1,0 +1,38 @@
+{
+  "builder_binary_sha256": "a175e76c0aaa7dc00fea0e70bba25f63d0ff137fc079179e097c1ba25c86e38a",
+  "contract": "sley-tools.graph-edit-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "edit": {
+    "accepted_root": "9f93c4d97430b80fb1d9d5603b5b69167c4103d9b6cece1511418e59b229785a",
+    "candidate_id": "55973177fdafdadb2f0d3713698bb79a8a107fdf0aef4320ead8ec0539f91bba",
+    "changed_case_count": 2,
+    "constant_id": "e84e0a728b7be8b61ba7c2f7ee6f10b2806864ae9a55492cde930826c69ade60",
+    "external_assertions": 6,
+    "initial_root": "2564b4173db1b1bb14fbca48d1aca0cd3f474a0f02cfa0e88908f06e3f06b36e",
+    "negative_paths": [
+      "invalid_typed_value",
+      "tampered_candidate_value",
+      "stale_proposal_root",
+      "duplicate_validation",
+      "tampered_validated_proposal",
+      "discard"
+    ],
+    "new_object_id": "75e10e8b67f9d0a0a6b47dffc76fb90a8795483dd258f30e296e2db63efdfe2c",
+    "old_object_id": "293510a77d2a830689959c3dfae72e8bbd5525bb61c154f648cb3ed12d7eb243",
+    "receipt_id": "7e66152858f088198a1e1d7ae26dd1482170d9d36341446fa60ac77c9f18aa1b"
+  },
+  "false_oracle": {
+    "accepted_root": "0b96140b931dc63ca24788e38523e3c38730b679abc019d4cb3ab6c892ac5435",
+    "external_assertions": "FAIL",
+    "old_root": "03d797dce7e91f93becb9e0070dce4f49b584ac3374badcdbf4b5d61d6b75de6",
+    "project_remains_runnable": true,
+    "reported_code": "ST_EXECUTION_FAILED"
+  },
+  "initial_cases_sha256": "f1d096e39ccd0be0426a4ca4932363495539e01c6c6f0846f99ac6828c325f33",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "spec_sha256": "4c0a9332d78943d3023b6344e4e700604efac87b8079165a88ab92fa2c6c4ad7",
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "updated_cases_sha256": "af785f8aa9a834dba9cce0409894bcb61d9c7efb818a2f70af22cffd5b3dcfab"
+}

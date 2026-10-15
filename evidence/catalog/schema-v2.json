@@ -1,0 +1,20 @@
+{
+  "catalog_artifact_sha256": "d6bf775f669b0a088604a860738c5a9734517f1825fabd65883ae0e4d74c5fa1",
+  "catalog_manifest_sha256": "7c298566d1c01f7a44f2f1fb254416e7bb74f1b873c47ef2ab4b7690243ac479",
+  "contract": "sley-tools.program-schema-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "edited_import_manifest_valid": true,
+  "imported_manifest_valid": true,
+  "local_manifest_valid": true,
+  "resource_catalog_artifact_sha256": "41507712d5a61a75241733371bb16d46e680b2a074df2a4fc3cd5234a999e516",
+  "resource_catalog_manifest_sha256": "ee6731a9d6297350e866b791fb14b5fa47e32ea6c03d9b84e446274f55a2c075",
+  "resource_edited_import_manifest_valid": true,
+  "resource_imported_manifest_valid": true,
+  "resource_local_manifest_valid": true,
+  "result": "PASS",
+  "schema_rejected_missing_fields_traversal_and_unbound_portable_artifact": true,
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "validator_rejected_duplicate_json_field": true,
+  "validator_rejected_false_artifact_checksum": true,
+  "validator_rejected_result_type_mismatch": true
+}

@@ -1,0 +1,180 @@
+{
+  "architecture": "x86_64",
+  "artifact_sha256": "d6bf775f669b0a088604a860738c5a9734517f1825fabd65883ae0e4d74c5fa1",
+  "batch_scope": "48 correctness-checked post-open SDK calls in file order, including five sampled RSS reads; throughput includes the sampling overhead",
+  "contract": "sley-tools.bridge-timing-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "fixtures_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+  "interpretation": "local observations only; five fresh process cold loads per SDK with uncontrolled OS page cache, 48 correctness-checked post-open calls each, and sampled Linux process RSS; no cross-language speed ranking or general performance claim",
+  "measurement_profile": "five_cold_and_sampled_rss_v1",
+  "memory_scope": "sampled Linux VmRSS sum of client, RPC process, and native worker after calls 1, 12, 24, 36, and 48; not a continuous peak",
+  "platform": "linux",
+  "probe_checkout_commit": "99b999389d8987bb185520f7cdc1286bdfbe6194",
+  "probe_checkout_dirty": false,
+  "python": {
+    "batch_calls_per_second": 804.5747584381621,
+    "batch_elapsed_seconds": 0.059658844,
+    "cold_load_ms": 366.907767,
+    "cold_load_samples_ms": [
+      366.907767,
+      353.982888,
+      579.964837,
+      547.255809,
+      833.972031
+    ],
+    "cold_load_scope": "open_runtime construction through artifact import and first opened RPC/native worker; excludes first call",
+    "cold_load_summary": {
+      "max_ms": 833.972031,
+      "median_ms": 547.255809,
+      "min_ms": 353.982888,
+      "p95_ms": 833.972031,
+      "samples": 5
+    },
+    "declared_rpc_limits": {
+      "max_deadline_ms": 60000,
+      "max_inflight": 1,
+      "max_request_bytes": 65536,
+      "max_response_bytes": 262144
+    },
+    "fixture_cases_checked": 48,
+    "rpc_dispatch_to_worker_result": {
+      "max_ms": 1,
+      "median_ms": 0.0,
+      "min_ms": 0,
+      "p95_ms": 1,
+      "samples": 48
+    },
+    "rpc_scope": "coarse integer milliseconds from RPC dispatch through native worker result; zero denotes less than one millisecond, not zero elapsed time",
+    "rss_samples": [
+      {
+        "after_calls": 1,
+        "client_kib": 23008,
+        "rpc_kib": 4672,
+        "worker_kib": 5192
+      },
+      {
+        "after_calls": 12,
+        "client_kib": 23008,
+        "rpc_kib": 4676,
+        "worker_kib": 5264
+      },
+      {
+        "after_calls": 24,
+        "client_kib": 23008,
+        "rpc_kib": 4680,
+        "worker_kib": 5288
+      },
+      {
+        "after_calls": 36,
+        "client_kib": 23008,
+        "rpc_kib": 4680,
+        "worker_kib": 5288
+      },
+      {
+        "after_calls": 48,
+        "client_kib": 23012,
+        "rpc_kib": 4684,
+        "worker_kib": 5288
+      }
+    ],
+    "sampled_peak_client_rpc_worker_rss_kib": 32984,
+    "warm_client_call": {
+      "max_ms": 2.738364,
+      "median_ms": 1.0899774999999998,
+      "min_ms": 0.840184,
+      "p95_ms": 1.902449,
+      "samples": 48
+    },
+    "worker_reused": true
+  },
+  "python_probe_sha256": "e9462de3e04e48afa839ccf3a2b1ede8535f153eec885d7cf6e48857dd61b3b8",
+  "python_sdk_sha256": "d8d6746354508c587dd3d270921780e5b09d8c2bd572e2056bd742849a67d09c",
+  "python_version": "3.14.7",
+  "result": "PASS",
+  "sample_order": "48 fixture cases in file order; no warmup discarded",
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "typescript": {
+    "batch_calls_per_second": 542.0152370420078,
+    "batch_elapsed_seconds": 0.088558396,
+    "cold_load_ms": 834.053276,
+    "cold_load_samples_ms": [
+      834.053276,
+      594.516001,
+      688.946056,
+      717.380767,
+      854.584424
+    ],
+    "cold_load_scope": "openRuntime construction through artifact import and first opened RPC/native worker; excludes first call",
+    "cold_load_summary": {
+      "max_ms": 854.584424,
+      "median_ms": 717.380767,
+      "min_ms": 594.516001,
+      "p95_ms": 854.584424,
+      "samples": 5
+    },
+    "declared_rpc_limits": {
+      "max_deadline_ms": 60000,
+      "max_inflight": 1,
+      "max_request_bytes": 65536,
+      "max_response_bytes": 262144
+    },
+    "fixture_cases_checked": 48,
+    "node_version": "v26.8.1",
+    "rpc_dispatch_to_worker_result": {
+      "max_ms": 3,
+      "median_ms": 1,
+      "min_ms": 0,
+      "p95_ms": 2,
+      "samples": 48
+    },
+    "rpc_scope": "coarse integer milliseconds from RPC dispatch through native worker result; zero denotes less than one millisecond, not zero elapsed time",
+    "rss_samples": [
+      {
+        "after_calls": 1,
+        "client_kib": 63400,
+        "rpc_kib": 4672,
+        "worker_kib": 5224
+      },
+      {
+        "after_calls": 12,
+        "client_kib": 63568,
+        "rpc_kib": 4676,
+        "worker_kib": 5304
+      },
+      {
+        "after_calls": 24,
+        "client_kib": 63580,
+        "rpc_kib": 4680,
+        "worker_kib": 5312
+      },
+      {
+        "after_calls": 36,
+        "client_kib": 63668,
+        "rpc_kib": 4680,
+        "worker_kib": 5312
+      },
+      {
+        "after_calls": 48,
+        "client_kib": 63684,
+        "rpc_kib": 4680,
+        "worker_kib": 5316
+      }
+    ],
+    "sampled_peak_client_rpc_worker_rss_kib": 73680,
+    "warm_client_call": {
+      "max_ms": 4.383435,
+      "median_ms": 1.4915495,
+      "min_ms": 0.852306,
+      "p95_ms": 2.826071,
+      "samples": 48
+    },
+    "worker_reused": true
+  },
+  "typescript_probe_sha256": "7462e3e2c679ad62f0a0f0c4f8726fa9bfcd90117a40829c63eb8f1bf0acf987",
+  "typescript_sdk_sha256": "80b81ebbcf0576b1ce5c21aa666a67dc9f22600209d9fe3ba47eb290d4207282",
+  "unavailable_subdivisions": {
+    "core_execution_ms": "native worker does not time execute_function separately from repository loading and result conversion",
+    "decoding_ms": "SDK decoding has no separate timer; included in client call",
+    "encoding_ms": "SDK encoding has no separate timer; included in client call"
+  }
+}

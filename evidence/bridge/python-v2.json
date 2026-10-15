@@ -1,0 +1,15 @@
+{
+  "artifact_sha256": "d6bf775f669b0a088604a860738c5a9734517f1825fabd65883ae0e4d74c5fa1",
+  "contract": "sley-tools.python-sdk-probe.v1",
+  "copied_binaries_without_source_checkout": true,
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "fixtures_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+  "i64_wire_limits_exact": true,
+  "native_cases": 48,
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "one_worker_for_matrix": true,
+  "result": "PASS",
+  "runtime_closed_process": true,
+  "typed_input_negative_cases": 8,
+  "worker_loss_reported": true
+}

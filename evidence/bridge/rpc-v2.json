@@ -1,0 +1,18 @@
+{
+  "computed_rejection_is_success": true,
+  "contract": "sley-tools.rpc-probe.v1",
+  "copied_binaries_without_source_checkout": true,
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "deadline_stopped_worker": true,
+  "duplicate_and_deep_requests_rejected": true,
+  "explicit_reopen_rotated_handle": true,
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "oversized_request_rejected": true,
+  "result": "PASS",
+  "single_worker_reused": true,
+  "stale_root_rejected": true,
+  "stdout_protocol_only": true,
+  "truth_table_cases": 48,
+  "typed_input_negatives": 5,
+  "worker_loss_reported": true
+}

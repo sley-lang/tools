@@ -1,0 +1,17 @@
+{
+  "contract": "sley-tools.starter-artifact-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "duplicate_and_unknown_fields_rejected": true,
+  "fresh_workspace_and_principal": true,
+  "imported_edit_reexport_reimport_passed": true,
+  "imported_root": "4b004d20bac9e9744492e76c7cd5a0a6063474c69d04c4413544b55c0e73983d",
+  "native_object_count": 20,
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "result": "PASS",
+  "second_artifact_sha256": "ae81ed831ca6cdc8a60311464249f604bc85373e300fa5755e21ed4bacd25d1c",
+  "source_artifact_sha256": "8aab04f7ea2b8609055da6d7f3d913197af31f43d85aec752bf5eb991083f615",
+  "source_authority_excluded": true,
+  "source_import_matrix_cases": 60,
+  "source_root": "d4a49f2d813ea8d0d9aab4c2c98263b6be4521df092a0b1515093dcfb745570c",
+  "tampered_object_rejected": true
+}

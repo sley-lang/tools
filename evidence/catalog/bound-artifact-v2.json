@@ -1,0 +1,36 @@
+{
+  "contract": "sley-tools.bound-artifact-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "programs": [
+    {
+      "authority_rebased_import_passed": true,
+      "bound_artifact_sha256": "c89fdf3f7ece0889f15b859742448ae2cb20c328827cf55f82be1992c876c1ab",
+      "bound_manifest_sha256": "59cf3ec030050f8884a085205a4775c979e0b1c6d9a3da883e0d383d1c8c1c94",
+      "boundary_allow_after_replay": true,
+      "edited_candidate_id": "bd8ff6b70d788ca90d0551448471bb2a3008041f22ff8ec44df63a8c84d1900a",
+      "edited_root": "e62ae6469609ba17aeca0bcee7d87a1306c2dece469897b2d778ad211325c0d7",
+      "existing_file_refused": true,
+      "manifest_schema_result": "PASS",
+      "out_of_project_binding_rejected": true,
+      "program_id": "release-readiness",
+      "source_artifact_sha256": "d6bf775f669b0a088604a860738c5a9734517f1825fabd65883ae0e4d74c5fa1"
+    },
+    {
+      "authority_rebased_import_passed": true,
+      "bound_artifact_sha256": "5c167b6dbca0f4d690f95c40c976f942f70c33c6a9fb53b3006a7237e21a3132",
+      "bound_manifest_sha256": "088d7925199ca48cf58cfd2fdc9e4581d6a6144b63ad5b82c558ee0f26146863",
+      "boundary_allow_after_replay": false,
+      "edited_candidate_id": "92a395b3fb6d1dbf7770dbf298c1dfae7d99c0669354693b915cc4cc37df58eb",
+      "edited_root": "d2cab579f6157cdce72af6910e61d4a3138c52edcb9f406c89e0c99687456ba4",
+      "existing_file_refused": true,
+      "manifest_schema_result": "PASS",
+      "out_of_project_binding_rejected": true,
+      "program_id": "resource-admission",
+      "source_artifact_sha256": "41507712d5a61a75241733371bb16d46e680b2a074df2a4fc3cd5234a999e516"
+    }
+  ],
+  "result": "PASS",
+  "schema_sha256": "22b31659cbded0e93342a3782a8fa042bb5ac03bc235b499be00d2944592c370",
+  "symlink_artifact_directory_rejected": true
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_copy_executable_after_rejection": true,
+  "after_allow_at_one": true,
+  "before_allow_at_one": false,
+  "contract": "sley-tools.starter-edit-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "edit_candidate_id": "a5b01524f2bf7494a93510df77d25f013cf303cf35f316433a5f9c92423afbc3",
+  "edit_receipt_id": "fbfdf0b0f9952ca7398924453a129e95ec71a6d119a5c7f367d9e7976f818fe3",
+  "edited_external_assertions": 60,
+  "edited_root": "6bc81cfd45b2668e1736f7582e962ee72acdef7e43a3a4ba6ac31881e3434210",
+  "initial_root": "58b8dd21921b0debfd1d85726b97e4d7da287f59bec747e48ce3c17039115d17",
+  "native_test_admission": "NOT_RUN: production native executor unavailable",
+  "result": "PASS",
+  "root_unchanged_after_stale_rejection": true,
+  "stale_candidate_id": "9d9438f010da5bc33c3fb6911b99dae30ba2748228384693efc1a1b766f68643",
+  "stale_rejection_symbol": "CANDIDATE_VALIDATION_STALE_ENTITY",
+  "threshold_after": 2,
+  "threshold_before": 0
+}

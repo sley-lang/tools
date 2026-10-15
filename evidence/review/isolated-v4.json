@@ -1,0 +1,38 @@
+{
+  "contract": "sley-tools.review-isolated-probe.v1",
+  "copied_builder_binary_sha256": "a175e76c0aaa7dc00fea0e70bba25f63d0ff137fc079179e097c1ba25c86e38a",
+  "copied_core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "copied_tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "environment": "bubblewrap new mount and network namespaces on the same Linux host",
+  "fixture_manifest_sha256": "083de72e2cd461365e9dd171696b8faa25f03e5f9364077f742cbbe1bed55147",
+  "native_core_test_admission": "NOT_RUN: production native executor unavailable",
+  "network_namespace_isolated": true,
+  "programs": [
+    {
+      "after_artifact_sha256": "4d9cea5eb0d82381a8ef9c8eaa4aaf8b55027cddff9c308e4af18879ebbbff84",
+      "before_artifact_sha256": "05c508e4c15bf228758120eb18a902c4213b134b8bfd7e141158a9236db7a9cd",
+      "case_count": 48,
+      "changed_case_count": 24,
+      "changed_entity_versions": 1,
+      "program_id": "release-readiness",
+      "report_sha256": "e18d771ee3c12182287bee49dda264ad54d89feef33328b73121342df22f0a68",
+      "shared_entity_ids": 20,
+      "verified_from_copied_inputs": true
+    },
+    {
+      "after_artifact_sha256": "7385e6096763831cc8d58a0d5358436097aade76b1e39df62774ccd97fe42193",
+      "before_artifact_sha256": "698d1c8089b010e70d127ce0d4a13b9f35df14c9f3dd273ee095d192df21e443",
+      "case_count": 49,
+      "changed_case_count": 21,
+      "changed_entity_versions": 1,
+      "program_id": "resource-admission",
+      "report_sha256": "98a420ff4330a6441072ba815c3ca200e9b491f428f7f1bf23a00729b03bdefe",
+      "shared_entity_ids": 22,
+      "verified_from_copied_inputs": true
+    }
+  ],
+  "release_cases_sha256": "d7dd409af7a38f4f482ae2299d62fbe36d975f6554a13da3fa36ea4bfb750f3d",
+  "resource_cases_sha256": "0fcdf3a84006ca881229c9b835facba65ed66837fd4e0e962c3f21955570ae6c",
+  "result": "PASS",
+  "source_checkout_mounted": false
+}

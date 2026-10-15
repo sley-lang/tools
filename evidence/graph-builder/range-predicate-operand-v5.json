@@ -1,0 +1,49 @@
+{
+  "additional_profiles": {
+    "checked_unary": {
+      "candidate_id": "0ceb241d94702cd5a5f975275495eea598228bda53c8230203853db4005e89bc",
+      "changed_case_count": 4,
+      "native_cases": 4
+    },
+    "earlier_operation": {
+      "candidate_id": "5f01ecc82b3934ab7f4e4a3a788877bda64169756195dc46f5c7dbccf815f9b6",
+      "changed_case_count": 1,
+      "native_cases": 4
+    }
+  },
+  "cli": {
+    "candidate_id": "8dcd025efd36d5e0ac2751ae9ac33d32d7e0be93591422d7afdf3843a47224c0",
+    "changed_case_count": 2,
+    "forward_reference_rejected": true,
+    "native_cases": 7,
+    "new_object_id": "1f40f6436e62694cd1c77483b29ea36714936ab4b1df074ec3599eaa5bd2069e",
+    "new_root": "c98da6d6ab74ff7af2a785d3a80d7602593147b11bfdb145307505e4ac576968",
+    "old_object_id": "24e8f48673ee9de4f2048b7278fc2432cd2ae31fe07504ea919852ff222bb5ba",
+    "old_root": "4a6ed1b4dd7a946d0c517c43fd8af1dd0a685d01d832b2243a63d55acd024c9d",
+    "operation_id": "7c2308948bc552fc418b21a59d21e9196ec999a4d52f93bb5de9974e0fbbcb2b",
+    "tampered_proposal_rejected": true,
+    "type_mismatch_candidate": "7267c697bfd2abdeaad84542b22bcae46994d98031c3b46bee93f19fa0f2b4a1",
+    "type_mismatch_rejected": true
+  },
+  "contract": "sley-tools.graph-operand-probe.v1",
+  "core_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "corrected_cases_sha256": "b79173dcd3be520a84ebd840efe25041a1b4048a0d7be23f7f118c28153d6210",
+  "initial_cases_sha256": "78041115398ccbd5039e47e8117bc555d4f8b6c89798e7b2f5de09380f246730",
+  "initial_spec_sha256": "0d8eb9e1e3fcb414c9450426df87476cc2711194e1b8e6fa57d0d75a1f66081a",
+  "python": {
+    "candidate_id": "48b5307c17988d8e0606a550b1a49673cceaf9ab502f99b8be12f9b74a72d292",
+    "invalid_reference_rejected": true,
+    "native_cases": 7,
+    "new_root": "b5bcb06dff9436b454b707afdc5191289695727e05832e1f899830a0e2ce505d",
+    "old_root": "5405dd86935adb4f4eba97f2d7f8ce63c8b3d042c044fcf5df6d8d1a00e17fdc"
+  },
+  "source_spec_sha256": "e32fd0c3cda3cca26b92b4c104d1aaa959ccc8a01204a1ebd99d7a66b0fc00cc",
+  "tools_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "typescript": {
+    "candidate_id": "56aec306769cf80585b036769c84351c3779c54439210411e3ebc452745c1055",
+    "invalid_reference_rejected": true,
+    "native_cases": 7,
+    "new_root": "937fb0308f198d66c69ceeda6e71e672754a6d472580b95fa48afffbc1f4bef4",
+    "old_root": "acb4a997e8777f02c5eec2b859489a53c6a4f46a46311eae1cc3eea8339dd5d1"
+  }
+}

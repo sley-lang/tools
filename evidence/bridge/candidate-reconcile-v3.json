@@ -1,0 +1,18 @@
+{
+  "candidate_id": "a166799512046058e953b6f3a6cb3411f623fc9950aa5ecfea5708ceb032ca1b",
+  "committed_root": "e17ea1e9994bd9c73e99f057fe37a6277ee6b93c8c013ba3611a57beac604547",
+  "contract": "sley-tools.candidate-reconcile-probe.v1",
+  "core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52",
+  "expected_parent": "ffc902b8c6c3703d7c8c4af71cb0572f605866389334bc7a4293c40ac2874546",
+  "malformed_id_rejected": true,
+  "probe_sha256": "21098471daca1464c59b0d34cf4455bbd13e83a483aa2118076aeaa25b9b9dcb",
+  "receipt_id": "e15a2a3123748c732a5805e723110264ff32ebad5175c2c4b072bb789a4b493b",
+  "result": "PASS",
+  "scope": "read-only receipt ancestry reconciliation for one ordinary candidate; no durable tools operation ID or cancellation yet",
+  "stale_local_state_recovered": true,
+  "tools_binary_sha256": "69bf2f62cf6a4f628dab143165131e8527bcd0618e6c2c35c47c71f3f1d35e5e",
+  "transaction_id": "edbee0083f8a13037274733bc007fe39bb14190f26b7f9ce593e4abec96f53a4",
+  "uncommitted_outcome_unknown": true,
+  "unknown_candidate_not_claimed_complete": true,
+  "verified_committed_receipt": true
+}

@@ -1,0 +1,15 @@
+{
+  "compatible_exit": 0,
+  "contract": "sley-tools.doctor-probe.v1",
+  "extended_execute_not_offered": true,
+  "incompatible_exit": 3,
+  "invalid_path_exit": 2,
+  "native_test_offer_distinguished_from_execution": true,
+  "profile_names": [
+    "legacy",
+    "v2-capable",
+    "v3-capable"
+  ],
+  "result": "PASS",
+  "tested_core_binary_sha256": "b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52"
+}
