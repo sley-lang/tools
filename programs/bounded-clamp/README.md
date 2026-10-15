@@ -38,6 +38,6 @@ target/debug/sley-tools commit --project my-clamp
 target/debug/sley-tools test --project my-clamp
 ```
 
-The [catalog probe](../../evidence/catalog/bounded-clamp-v1.json) verifies the edit, then changes `lower_bound` to `7` to exercise reversed bounds, restores the original configuration, exports it, and repeats the checks after importing into another workspace. It compares 38 independently selected values per phase, including signed extremes, and tests three wrong-typed inputs. The selected core's production native test admission remains unavailable, so these cases are external assertions against native execution.
+The [catalog probe](../../evidence/catalog/bounded-clamp-v2.json) verifies the edit, then changes `lower_bound` to `7` to exercise reversed bounds, restores the original configuration, exports it, and repeats the checks after importing into another workspace. It compares 38 independently selected values per phase, including signed extremes, and tests three wrong-typed inputs. The selected core's production native test admission remains unavailable, so these cases are external assertions against native execution.
 
-This package is included in the [RC4 prerelease](../../docs/INSTALL_RC4.md) under [Apache-2.0](../../LICENSE). The stable release gate remains open.
+This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE). The stable release gate remains open.

@@ -6,10 +6,10 @@ Build, run, change, and share small programs that execute in [Sley](https://gith
 
 ## Try a native program
 
-The current release candidate is for Linux x86_64 and uses the separately installed Sley 2.0.1 core. [Download and verify the RC5 packages](docs/INSTALL_RC5.md), then run:
+The current release candidate is for Linux x86_64 and uses the separately installed Sley 2.1.1 core. [Download and verify the RC6 packages](docs/INSTALL_RC6.md), then run:
 
 ```sh
-CORE="$PWD/sley-2.0.1-linux-x86_64/bin/sley"
+CORE="$PWD/sley-2.1.1-linux-x86_64/bin/sley"
 TOOLS="$PWD/sley-tools-local/bin/sley-tools"
 "$TOOLS" doctor --core "$CORE"
 "$TOOLS" init my-first-program --template release-readiness --core "$CORE"
@@ -44,7 +44,7 @@ You can inspect the [graph authoring contract](docs/GRAPH_AUTHORING_V0.md), [loc
 
 ## Current status
 
-The Linux x86_64 [RC4 prerelease](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.4) passed a fresh install and its documented native, SDK, MCP, pipeline, lab, and importer examples. It is **not a stable release**. On the selected public Sley 2.0.1 core, native `TestCase` candidates can be validated, but the core cannot yet admit or run them. `sley-tools test` runs external assertions against native program execution and reports that native core tests are pending. A compatible released core and a live coding-agent acceptance run are still needed for the full release gate. See [the precise native-test status](docs/F0_NATIVE_TEST_STATUS_PUBLIC.md).
+The Linux x86_64 [RC6 prerelease](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.6) targets the public Sley 2.1.1 core. Its release assets passed an offline fresh install and the documented native, SDK, MCP, pipeline, lab, and importer examples. It is **not a stable release**. On the selected public Sley 2.1.1 core, native `TestCase` candidates can be validated, but the core cannot yet admit or run them. `sley-tools test` runs external assertions against native program execution and reports that native core tests are pending. A compatible released core and a live coding-agent acceptance run are still needed for the full release gate. See [the precise native-test status](docs/F0_NATIVE_TEST_STATUS_PUBLIC.md).
 
 The Playground is a local optional interface; it is not required for CLI, SDK, or native program use. Hosted Playground qualification remains open.
 

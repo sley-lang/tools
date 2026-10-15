@@ -8,7 +8,7 @@ From this repository, with the selected core already unpacked:
 cargo build --locked -p sley-tools-backend --bin sley-tools
 PYTHONPATH=packages/python target/debug/sley-tools import schema \
   examples/schema/device-reading.schema.json /tmp/sley-device-reading \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley
 printf '{"active":true,"count":1.0}\n' > /tmp/sley-device-reading-input.json
 PYTHONPATH=packages/python python3 -m sley_tools.schema_importer validate \
   --project /tmp/sley-device-reading \
@@ -38,6 +38,6 @@ The host parser preserves each number token and computes only mechanical facts: 
 
 The project stores `schema/source.json` and `schema/mapping.json` beside its normal native graph recipe, cases, manifest, and artifact. The mapping identifies generated parameters, reason flags, and bound constants by schema path. The generated graph is an ordinary graph project: `inspect`, `test`, `propose --constant`, `validate`, `commit`, and `artifact export --bind-manifest` operate on it. After a native edit, raw-input validation reports `source_schema_alignment: "native_edited"`; the original schema is a provenance record, not an authority that silently overwrites the edit. The portable native artifact executes without the original schema or Python parser when supplied with its typed envelope.
 
-The [local probe](../evidence/schema-importer/native-v4.json) checks object, Boolean, integer, and empty-record schemas against `jsonschema` 4.25.1 with `Decimal` JSON decoding and an exact-integer type checker. It covers missing and extra fields, wrong kinds, bounds, decimal and exponent forms, wide values, unsupported keyword locations, parser limits, artifact reimport, and an accepted native bound edit. The [local package install probe](../evidence/fresh-install/local-v6.json) checks an imported validator, a native maximum-bound edit, changed raw-input behavior, and rejection of an unsupported keyword. Broader installed-profile coverage and native core test admission remain open.
+The [local probe](../evidence/schema-importer/native-v5.json) checks object, Boolean, integer, and empty-record schemas against `jsonschema` 4.25.1 with `Decimal` JSON decoding and an exact-integer type checker. It covers missing and extra fields, wrong kinds, bounds, decimal and exponent forms, wide values, unsupported keyword locations, parser limits, artifact reimport, and an accepted native bound edit. The [local package install probe](../evidence/fresh-install/local-v6.json) checks an imported validator, a native maximum-bound edit, changed raw-input behavior, and rejection of an unsupported keyword. Broader installed-profile coverage and native core test admission remain open.
 
 The [graph Review probe](../evidence/review/graph-v2.json) also packages the generated validator before and after a native bound edit, verifies the exact changed constant entity and observed case differences, rejects altered package inputs, and replays the edited artifact. The original schema remains source provenance after the edit.

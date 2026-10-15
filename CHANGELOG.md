@@ -2,7 +2,28 @@
 
 Sley Tools release candidates share the package version `0.0.1`; each candidate is identified by its `v0.0.1-rc.N` tag.
 
-## 0.0.1-rc.5 (proposed)
+## 0.0.1-rc.6 (proposed)
+
+Now targets Sley 2.1.1. Linux x86_64.
+
+### Changed
+
+- The pinned core is Sley 2.1.1: release commit `af34be33eb1ae913dddd92aa7f4f275aac0e45ee`, `bin/sley` SHA-256 `b2d8ce53051043cd86f0c071b16584053d9a08ec7af5d2d8a91fa3ab68a79e52`, archive `sley-2.1.1-linux-x86_64.tar.gz` SHA-256 `b0898ba7404a1656db2f83f448ea96d2c1175346f35e50b135bedc96e3810bfd`. `doctor`, `init`, every project and RPC command, exported artifacts, the Review Action, CI, and the release and install probes all check this release. The linked `sley-*` crates build from the same commit.
+- The pin lives in one Rust module, `crates/backend/src/core_pin.rs`, shared by `sley-tools` and `sley-tools-native-builder`.
+- All ten catalog programs were rebuilt from their checked-in sources on 2.1.1 and re-exported; the catalog smoke runs 143 external assertions against native execution. The Review before/after fixtures were regenerated from the new artifacts, and the repository's probes were rerun on 2.1.1 to record new evidence and `compatibility*.json`.
+
+### Added
+
+- `artifact import` accepts native artifacts exported for Sley 2.0.1 as well as 2.1.1. It rebases them into a fresh workspace and runs every declared case on the selected 2.1.1 core before accepting them, so programs from RC5 can be carried forward. Artifacts that name any other core commit are refused.
+- `scripts/rebind_catalog_core.py` rebuilds every catalog package on a selected core, keeps curated manifest fields, refuses a rebuild that changes a declared interface, and replays each new artifact.
+- `tests/test_legacy_artifact_import.py`, run in CI, imports two RC5 catalog artifacts on 2.1.1 and checks that other commits are refused.
+
+### Notes
+
+- Projects created with RC5 stay bound to the 2.0.1 core, and RC6 reports that core as incompatible. Export a program with RC5 and import the artifact with RC6 to move it; see `docs/INSTALL_RC6.md`.
+- The 2.1.1 core validates native `TestCase` candidates, and `v3 tests.affected` still returns `NATIVE_EXECUTOR_UNAVAILABLE`. `sley-tools test` keeps running external assertions against native execution and reports core-owned native tests as pending.
+
+## 0.0.1-rc.5
 
 Faster everyday commands, leaner binaries, and sturdier SDK process handling. Targets the same pinned Sley 2.0.1 core as RC4.
 

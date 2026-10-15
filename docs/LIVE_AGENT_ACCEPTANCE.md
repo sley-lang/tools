@@ -28,10 +28,10 @@ claude mcp get sley-acceptance
 
 The Codex entry is global; the Claude `local` entry is scoped to the current project. `codex mcp get` showed the saved configuration and `claude mcp get` reported a connected stdio server. These checks establish local configuration syntax and a Claude transport handshake, not a completed coding-agent task. Recheck client syntax on another installation. Start the agent session manually. A reference MCP client remains the vendor-independent protocol check.
 
-For the published RC4 package, first follow the [asset installation guide](INSTALL_RC4.md) in a fresh directory, including its checksum and offline MCP package checks. From that directory, prepare a fresh task workspace with the installed paths:
+For the published RC6 package, first follow the [asset installation guide](INSTALL_RC6.md) in a fresh directory, including its checksum and offline MCP package checks. From that directory, prepare a fresh task workspace with the installed paths:
 
 ```sh
-CORE="$PWD/sley-2.0.1-linux-x86_64/bin/sley"
+CORE="$PWD/sley-2.1.1-linux-x86_64/bin/sley"
 TOOLS="$PWD/sley-tools-local/bin/sley-tools"
 ADAPTER="$PWD/app-mcp/node_modules/@sley-lang/tools-mcp/src/server.mjs"
 WORKSPACE="$PWD/sley-agent-acceptance"
@@ -52,13 +52,13 @@ Register the installed adapter using the `codex mcp add` or `claude mcp add` for
 
 > Use the configured Sley MCP connection and the fresh Release Readiness project provided by the operator. Change its native rule so one blocking finding is allowed when the test run is complete, no tests failed, and the artifact is verified. Two blocking findings must still reject. Inspect the current program, make and validate a candidate, commit the accepted change, and verify the boundary and at least one independent rejection reason. Use the Sley tools rather than editing project internals. Report the tool calls, candidate identity, accepted roots, test outcome, and any limitation. If a proposed change is rejected, diagnose it and recover without a developer editing the project for you.
 
-The prompt gives the behavior and project, not a candidate or mutation recipe. The agent should discover the exposed tool schema and choose the native edit itself. The [reference MCP probe](../evidence/mcp/reference-v6.json) separately exercises rejected-change recovery: a conflicting proposal is refused, the accepted root stays fixed, and the original candidate is committed. A live agent must demonstrate its own recovery in the manual task; scripted recovery alone does not satisfy AG-06.
+The prompt gives the behavior and project, not a candidate or mutation recipe. The agent should discover the exposed tool schema and choose the native edit itself. The [reference MCP probe](../evidence/mcp/reference-v7.json) separately exercises rejected-change recovery: a conflicting proposal is refused, the accepted root stays fixed, and the original candidate is committed. A live agent must demonstrate its own recovery in the manual task; scripted recovery alone does not satisfy AG-06.
 
 ## Evidence and pass criteria
 
-Save the exact prompt and supplied context, client and model identity when available, ordered tool calls and responses, and the final report. Record any human intervention. A pass requires a fresh project, native inspection, proposal, validation, commit, and postcommit calls showing a changed accepted root and the requested behavior. Verify the resulting artifact with external assertions and an independent before/after Review over the declared Release Readiness cases. State native core test admission separately; the selected 2.0.1 core currently reports that production native test execution is unavailable.
+Save the exact prompt and supplied context, client and model identity when available, ordered tool calls and responses, and the final report. Record any human intervention. A pass requires a fresh project, native inspection, proposal, validation, commit, and postcommit calls showing a changed accepted root and the requested behavior. Verify the resulting artifact with external assertions and an independent before/after Review over the declared Release Readiness cases. State native core test admission separately; the selected 2.1.1 core currently reports that production native test execution is unavailable.
 
-After the manual agent session, preserve its transcript and run the independent package check from the same RC4 installation directory:
+After the manual agent session, preserve its transcript and run the independent package check from the same RC6 installation directory:
 
 ```sh
 "$TOOLS" test --project "$PROJECT"

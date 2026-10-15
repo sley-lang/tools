@@ -2,24 +2,24 @@
 
 The Playground is a browser interface to the existing `sley-tools` backend and selected Sley core. It creates a disposable local workspace for each browser session. Program decisions and calculations run in accepted Sley graphs through the real VM; Node serves the UI, validates transport inputs, and invokes the tools CLI. No model API key, account, compiler, telemetry, or external network service is needed to use the local mode.
 
-From the repository root, with a built or installed `sley-tools` binary and the selected Sley 2.0.1 binary:
+From the repository root, with a built or installed `sley-tools` binary and the selected Sley 2.1.1 binary:
 
 ```sh
 target/debug/sley-tools playground --adapter apps/playground/server.mjs \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley --port 4177
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley --port 4177
 ```
 
 Open `http://127.0.0.1:4177`. The server binds only to `127.0.0.1`, checks Host and Origin for browser requests, requires a custom header for mutations, and keeps each browser session in its own temporary workspace. It accepts only the three bundled examples and a fixed set of typed actions. Requests are limited to 16 KiB, CLI operations to 30 seconds, and the service to sixteen live sessions that expire after one hour. Stop the service to remove its temporary workspaces. The CLI binary is the command being run; the core and optional Node adapter paths come from the operator's command line, not from the browser. The adapter must be installed with its bundled `programs/` and `public/` assets.
 
 The initial examples are Release Readiness, the native Benchmark Comparator catalog program, and the [N07 Range Predicate catalog artifact](../../programs/range-predicate/README.md). Run typed inputs or published cases, inspect the accepted root and graph structure, and use the guided Release Readiness or Comparator edit. The UI keeps proposal, Sley validation, and commit separate; a successful commit shows the exact new root, candidate and receipt identities, and before/after output for the same input. After a lost commit reply, the server checks Sley's verified receipt ancestry. It reports a proven commit at its exact root or keeps the outcome uncertain; the **Check commit outcome** control allows another read-only check without retrying the write. The Range Predicate can be run and inspected; it does not yet offer a guided edit.
 
-**Export accepted program** downloads a `.tar.gz` containing the current native artifact, manifest, recipe where applicable, and public cases. It excludes workspace authority, local configuration, session cookies, and repository paths. After extracting it, run the import command in `IMPORT.txt` with a compatible core. The [local probe](../../evidence/playground/local-v1.json) does this with freshly edited Release Readiness and Comparator programs, imports each into a new workspace, verifies the result, and checks that simultaneous session requests cannot exceed the sixteen-session cap. Reproduce the probe with:
+**Export accepted program** downloads a `.tar.gz` containing the current native artifact, manifest, recipe where applicable, and public cases. It excludes workspace authority, local configuration, session cookies, and repository paths. After extracting it, run the import command in `IMPORT.txt` with a compatible core. The [local probe](../../evidence/playground/local-v2.json) does this with freshly edited Release Readiness and Comparator programs, imports each into a new workspace, verifies the result, and checks that simultaneous session requests cannot exceed the sixteen-session cap. Reproduce the probe with:
 
 ```sh
 node scripts/probe_playground_local.mjs \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --tools target/debug/sley-tools \
-  --output evidence/playground/local-v1.json
+  --output evidence/playground/local-v2.json
 ```
 
 The local profile uses the selected core's public VM library and external assertions. Native core test admission is still pending. The before/after display is a local behavior comparison, not the full `sley-tools review` report.
@@ -29,7 +29,7 @@ The [commit recovery probe](../../evidence/playground/commit-recovery-v1.json) p
 ```sh
 node scripts/probe_playground_commit_recovery.mjs \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --output evidence/playground/commit-recovery-v1.json
 ```
 
@@ -40,7 +40,7 @@ On Linux with unprivileged user/mount namespaces, Bubblewrap, `prlimit`, and a u
 ```sh
 node scripts/build_playground_isolated_bundle.mjs \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --output /path/to/new/playground-bundle
 unshare --user --map-root-user --mount --propagation private \
   node apps/playground/server.mjs \

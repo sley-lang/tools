@@ -2,11 +2,11 @@
 
 This native Sley utility compares one matched benchmark row. It returns exact checked signed deltas for wall time, CPU time, and archive size, three independent regression flags, an `any_regression` flag, and an invalid-input flag. The [Data Pipe](../../docs/DATA_PIPE_V0.md) calls it for each row while its Python host preserves case IDs, order, and JSON Lines input and output.
 
-The [manifest](program.json) binds the [accepted native graph artifact](artifact/native-graph.json), [authoring recipe](build/graph.json), selected Sley 2.0.1 core, and [twelve initial cases](tests/cases.json). The JSON recipe builds Sley objects; the accepted SSMC1 graph is the program. The [package probe](../../evidence/catalog/benchmark-comparator-v1.json) verifies the checked-in artifact after a fresh authority-rebased import, then checks the program and a native edit against an [independent integer oracle](../../scripts/probe_checked_graph.py). This package is included in the [RC4 prerelease](../../docs/INSTALL_RC4.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
+The [manifest](program.json) binds the [accepted native graph artifact](artifact/native-graph.json), [authoring recipe](build/graph.json), selected Sley 2.1.1 core, and [twelve initial cases](tests/cases.json). The JSON recipe builds Sley objects; the accepted SSMC1 graph is the program. The [package probe](../../evidence/catalog/benchmark-comparator-v2.json) verifies the checked-in artifact after a fresh authority-rebased import, then checks the program and a native edit against an [independent integer oracle](../../scripts/probe_checked_graph.py). This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
 
 ## Run it
 
-From the repository root, with `CORE` set to the selected Sley 2.0.1 binary:
+From the repository root, with `CORE` set to the selected Sley 2.1.1 binary:
 
 ```sh
 target/debug/sley-tools artifact import \
@@ -33,4 +33,4 @@ target/debug/sley-tools commit --project my-comparator
 target/debug/sley-tools test --project my-comparator
 ```
 
-The [package probe](../../evidence/catalog/benchmark-comparator-v1.json) records the native candidate and receipt, verifies all twelve cases before and after the change, exports and reimports the edited graph, and confirms that the unchanged Data Pipe host still produces the independently expected output for valid rows. Native core test admission remains pending on the selected release; these case results are external assertions against native execution.
+The [package probe](../../evidence/catalog/benchmark-comparator-v2.json) records the native candidate and receipt, verifies all twelve cases before and after the change, exports and reimports the edited graph, and confirms that the unchanged Data Pipe host still produces the independently expected output for valid rows. Native core test admission remains pending on the selected release; these case results are external assertions against native execution.

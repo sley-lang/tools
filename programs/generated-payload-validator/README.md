@@ -10,7 +10,7 @@ Run the complete raw-input example:
 printf '{"active":true,"count":10}\n' > /tmp/device-reading.json
 python3 packages/python/examples/generated_payload_validator.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --package programs/generated-payload-validator \
   --input /tmp/device-reading.json
 ```
@@ -24,7 +24,7 @@ Import the artifact, then change the native `count` maximum from 10 to 12 throug
 ```sh
 target/debug/sley-tools artifact import \
   programs/generated-payload-validator/artifact/native-graph.json my-validator \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley
 printf '"12"\n' > /tmp/count-maximum.json
 target/debug/sley-tools propose --project my-validator \
   --constant p1_maximum --value-file /tmp/count-maximum.json \
@@ -34,6 +34,6 @@ target/debug/sley-tools commit --project my-validator
 target/debug/sley-tools test --project my-validator
 ```
 
-The edited validator accepts 11 and 12, then rejects 13. Its original source schema remains provenance; raw validation reports `source_schema_alignment=native_edited`. The [catalog probe](../../evidence/catalog/generated-payload-validator-v1.json) compares initial native decisions with an independent exact-number JSON Schema reference, verifies the edit, and imports the edited artifact into another workspace.
+The edited validator accepts 11 and 12, then rejects 13. Its original source schema remains provenance; raw validation reports `source_schema_alignment=native_edited`. The [catalog probe](../../evidence/catalog/generated-payload-validator-v2.json) compares initial native decisions with an independent exact-number JSON Schema reference, verifies the edit, and imports the edited artifact into another workspace.
 
-This package is included in the [RC4 prerelease](../../docs/INSTALL_RC4.md) under [Apache-2.0](../../LICENSE). Native core test admission and the stable release gate remain open.
+This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE). Native core test admission and the stable release gate remain open.

@@ -2,11 +2,11 @@
 
 This native Sley utility combines two typed partial benchmark summaries. It uses checked signed addition for row count, candidate wall time, candidate CPU time, and candidate archive bytes. An all-zero summary is the empty identity. The [Data Pipe](../../docs/DATA_PIPE_V0.md) calls the reducer while its Python host groups rows, preserves case IDs and stream order, and writes JSON Lines output.
 
-The [manifest](program.json) binds the [accepted native graph artifact](artifact/native-graph.json), [authoring recipe](build/graph.json), selected Sley 2.0.1 core, and [seventeen initial cases](tests/cases.json). The JSON recipe builds Sley objects; the accepted SSMC1 graph is the program. The [package probe](../../evidence/catalog/benchmark-summary-reducer-v1.json) verifies the checked-in artifact after a fresh authority-rebased import and checks it against an [independent integer oracle](../../scripts/probe_data_pipe_native.py). This package is included in the [RC4 prerelease](../../docs/INSTALL_RC4.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
+The [manifest](program.json) binds the [accepted native graph artifact](artifact/native-graph.json), [authoring recipe](build/graph.json), selected Sley 2.1.1 core, and [seventeen initial cases](tests/cases.json). The JSON recipe builds Sley objects; the accepted SSMC1 graph is the program. The [package probe](../../evidence/catalog/benchmark-summary-reducer-v2.json) verifies the checked-in artifact after a fresh authority-rebased import and checks it against an [independent integer oracle](../../scripts/probe_data_pipe_native.py). This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
 
 ## Run it
 
-From the repository root, with `CORE` set to the selected Sley 2.0.1 binary:
+From the repository root, with `CORE` set to the selected Sley 2.1.1 binary:
 
 ```sh
 target/debug/sley-tools artifact import \
@@ -33,4 +33,4 @@ target/debug/sley-tools commit --project my-reducer
 target/debug/sley-tools test --project my-reducer
 ```
 
-The [package probe](../../evidence/catalog/benchmark-summary-reducer-v1.json) records the native candidate and receipt, verifies all seventeen cases before and after the edit, exports and reimports the edited graph, and confirms that the unchanged Data Pipe host still produces the independently expected output for valid rows. Native core test admission remains pending on the selected release; these case results are external assertions against native execution.
+The [package probe](../../evidence/catalog/benchmark-summary-reducer-v2.json) records the native candidate and receipt, verifies all seventeen cases before and after the edit, exports and reimports the edited graph, and confirms that the unchanged Data Pipe host still produces the independently expected output for valid rows. Native core test admission remains pending on the selected release; these case results are external assertions against native execution.

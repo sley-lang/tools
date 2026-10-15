@@ -1,6 +1,6 @@
 # Local fresh-install acceptance
 
-`scripts/probe_fresh_install.py` builds a local tools bundle, a Python wheel, a TypeScript tarball, and a standalone MCP npm tarball from this checkout. The MCP tarball includes its pinned runtime dependencies and the TypeScript SDK. The bundle carries the official MCP reference client, CLI launcher probe, and their pinned test dependencies. The probe verifies the selected Sley 2.0.1 core archive, then starts a Bubblewrap environment with the development checkout hidden, networking disabled, a private writable `/tmp`, fresh caches, and a new workspace. Inside that environment it extracts the archives and installs the SDK and MCP packages. All program operations use the installed copies.
+`scripts/probe_fresh_install.py` builds a local tools bundle, a Python wheel, a TypeScript tarball, and a standalone MCP npm tarball from this checkout. The MCP tarball includes its pinned runtime dependencies and the TypeScript SDK. The bundle carries the official MCP reference client, CLI launcher probe, and their pinned test dependencies. The probe verifies the selected Sley 2.1.1 core archive, then starts a Bubblewrap environment with the development checkout hidden, networking disabled, a private writable `/tmp`, fresh caches, and a new workspace. Inside that environment it extracts the archives and installs the SDK and MCP packages. All program operations use the installed copies.
 
 Run from the repository root after building the two tools binaries:
 
@@ -9,11 +9,11 @@ cargo build --locked --offline -p sley-tools-backend --bin sley-tools --bin sley
 python3 scripts/probe_fresh_install.py \
   --tools target/debug/sley-tools \
   --builder target/debug/sley-tools-native-builder \
-  --core-archive /path/to/sley-2.0.1-linux-x86_64.tar.gz \
-  --output evidence/fresh-install/local-v9.json
+  --core-archive /path/to/sley-2.1.1-linux-x86_64.tar.gz \
+  --output evidence/fresh-install/local-v10.json
 ```
 
-The local bundle contains the two tools binaries, all ten native catalog packages, examples, documentation, license and notice, the Playground browser adapter, Repair Lab materials, and the MCP reference client. The probe builds the optional `sley_tools` wheel, `@sley-lang/tools` tarball, and `@sley-lang/tools-mcp` tarball separately. These are local test packages, not published releases. Their hashes and the installed binary hashes are recorded in [the current evidence](../evidence/fresh-install/local-v9.json). That run passed with a clean source checkout, the development checkout hidden, and networking disabled. Reproduction needs Cargo, uv, npm, Python 3.14, Node 20 or later, and Bubblewrap on the build/test host; the installed basic CLI itself does not need those build tools.
+The local bundle contains the two tools binaries, all ten native catalog packages, examples, documentation, license and notice, the Playground browser adapter, Repair Lab materials, and the MCP reference client. The probe builds the optional `sley_tools` wheel, `@sley-lang/tools` tarball, and `@sley-lang/tools-mcp` tarball separately. These are local test packages, not published releases. Their hashes and the installed binary hashes are recorded in [the current evidence](../evidence/fresh-install/local-v10.json). That run passed with a clean source checkout, the development checkout hidden, and networking disabled. Reproduction needs Cargo, uv, npm, Python 3.14, Node 20 or later, and Bubblewrap on the build/test host; the installed basic CLI itself does not need those build tools.
 
 The isolated scenario checks:
 

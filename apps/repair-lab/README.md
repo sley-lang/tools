@@ -2,10 +2,10 @@
 
 The Repair Lab teaches native Sley authoring and repair through disposable, owner-controlled local workspaces. `lab.py` prepares each task and judges actual accepted Sley behavior through the selected `sley-tools` CLI and core. Python manages fixtures, assertions, and reset boundaries; it does not replace the native program's decisions. All eight local exercises are implemented: **RL-01 Create**, **RL-02 Boundary**, **RL-03 Branch**, **RL-04 Tests**, **RL-05 Type**, **RL-06 Stale state**, **RL-07 Authority**, and **RL-08 Portability**. The full curriculum is exercised from an isolated local install; native core test admission remains unavailable.
 
-From the repository root, build or install `sley-tools` and set `CORE` to the verified Sley 2.0.1 binary. This example uses the local optional Lab adapter:
+From the repository root, build or install `sley-tools` and set `CORE` to the verified Sley 2.1.1 binary. This example uses the local optional Lab adapter:
 
 ```sh
-CORE=/path/to/sley-2.0.1-linux-x86_64/bin/sley
+CORE=/path/to/sley-2.1.1-linux-x86_64/bin/sley
 TOOLS=target/debug/sley-tools
 LAB=apps/repair-lab/lab.py
 "$TOOLS" lab list --adapter "$LAB"

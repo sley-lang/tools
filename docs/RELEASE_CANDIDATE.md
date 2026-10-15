@@ -1,6 +1,6 @@
 # Release candidate build
 
-RC5 targets Linux x86_64 with the separately verified Sley 2.0.1 core. It is a prerelease because core-owned native `TestCase` admission and the live coding-agent acceptance run remain open. [Install the published assets](INSTALL_RC5.md) to use it without a checkout.
+RC6 targets Linux x86_64 with the separately verified Sley 2.1.1 core. It is a prerelease because core-owned native `TestCase` admission and the live coding-agent acceptance run remain open. [Install the published assets](INSTALL_RC6.md) to use it without a checkout.
 
 Build from a clean source checkout with Rust 1.93.0. Put release output and temporary files on a filesystem with enough space:
 
@@ -13,7 +13,7 @@ cargo +1.93.0 build --release --locked --offline \
 python3 scripts/probe_release_package.py \
   --tools "$CARGO_TARGET_DIR/release/sley-tools" \
   --builder "$CARGO_TARGET_DIR/release/sley-tools-native-builder" \
-  --core-archive /absolute/path/to/sley-2.0.1-linux-x86_64.tar.gz \
+  --core-archive /absolute/path/to/sley-2.1.1-linux-x86_64.tar.gz \
   --archive-output /absolute/path/to/dist/sley-tools-release-candidate.tar.gz \
   --report /absolute/path/to/report.json
 ```

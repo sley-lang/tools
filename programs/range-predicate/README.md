@@ -2,9 +2,9 @@
 
 This native Sley utility decides whether a signed 64 bit value belongs to an interval. It branches explicitly when `lower > upper`, includes both endpoints by default, and returns five Boolean fields: `within_range`, `invalid_bounds`, `below_lower`, `above_upper`, and `excluded_upper`. The accepted graph makes these decisions; the host only decodes typed inputs and manages the workspace.
 
-The [manifest](program.json) binds the [stored native objects](artifact/native-graph.json), [authoring recipe](build/graph.json), and [eleven public cases](tests/cases.json). The recipe is an input to the native builder, not a Sley source syntax. The [catalog probe](../../evidence/catalog/range-predicate-v1.json) checks the package against the selected core and an independent interval oracle, then verifies fresh import, two native boundary edits, and export replay. This package is included in the [RC4 prerelease](../../docs/INSTALL_RC4.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
+The [manifest](program.json) binds the [stored native objects](artifact/native-graph.json), [authoring recipe](build/graph.json), and [eleven public cases](tests/cases.json). The recipe is an input to the native builder, not a Sley source syntax. The [catalog probe](../../evidence/catalog/range-predicate-v2.json) checks the package against the selected core and an independent interval oracle, then verifies fresh import, two native boundary edits, and export replay. This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
 
-The [Python SDK example](examples/python.py) imports the same native artifact into a fresh local workspace and calls its Sley entrypoint. Python supplies typed inputs and prints the result; it does not decide interval membership. From the repository root with the local SDK installed and `CORE` set to the selected Sley 2.0.1 binary:
+The [Python SDK example](examples/python.py) imports the same native artifact into a fresh local workspace and calls its Sley entrypoint. Python supplies typed inputs and prints the result; it does not decide interval membership. From the repository root with the local SDK installed and `CORE` set to the selected Sley 2.1.1 binary:
 
 ```sh
 python3 programs/range-predicate/examples/python.py \
@@ -15,7 +15,7 @@ python3 programs/range-predicate/examples/python.py \
 
 ## Run it
 
-From the repository root, with `CORE` set to the selected Sley 2.0.1 binary:
+From the repository root, with `CORE` set to the selected Sley 2.1.1 binary:
 
 ```sh
 target/debug/sley-tools artifact import \

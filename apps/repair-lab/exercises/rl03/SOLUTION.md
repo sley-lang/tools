@@ -16,4 +16,4 @@ python3 apps/repair-lab/lab.py judge --workspace "$WORKSPACE" \
   --core "$CORE" --tools "$TOOLS"
 ```
 
-The preparation path imports the accepted [N06 native artifact](../../../../programs/tier-classifier/artifact/native-graph.json) into a disposable workspace and commits a one-object edit that disables the silver branch. The correction is another one-object native commit. The [catalog probe](../../../../evidence/catalog/tier-classifier-v1.json) independently verifies both branch policies and the unchanged bronze and gold categories.
+The preparation path imports the accepted [N06 native artifact](../../../../programs/tier-classifier/artifact/native-graph.json) into a disposable workspace and commits a one-object edit that disables the silver branch. The correction is another one-object native commit. The [catalog probe](../../../../evidence/catalog/tier-classifier-v2.json) independently verifies both branch policies and the unchanged bronze and gold categories.

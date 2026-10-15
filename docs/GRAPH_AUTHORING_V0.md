@@ -29,9 +29,9 @@ sley-tools inspect --project my-range
 
 `init` creates a fresh workspace, lowers the recipe to a native candidate, asks the selected core to validate and commit it, and runs every declared case against the accepted graph. The project binds the recipe digest to its manifest and local accepted state; a changed recipe makes later operations fail with a stale-state error. Case results are exact value comparisons; `test` reports the fixture digest and the number of external assertions. The inputs and expected results in a case file are JSON arrays and native result JSON values. Integer values use canonical decimal strings.
 
-For a Boolean graph, `sley-tools test native-candidate --project my-limit --case zero` constructs a real core `TestCase` candidate from one declared case and runs `candidate.create` and `candidate.validate`. The pinned core library also derives the read-only native test plan and confirms that the new case is selected within the accepted resource grant. It returns `STATICALLY_VALID` only when the core accepts the candidate's structure and authority. It leaves the accepted root unchanged and reports native admission and execution as `NOT_RUN`; the selected 2.0.1 core has no configured production test executor. The [F0 native test probe](../evidence/compatibility/f0-native-test-route-v1.json) separately calls the v3 test route and records its `NATIVE_EXECUTOR_UNAVAILABLE` refusal.
+For a Boolean graph, `sley-tools test native-candidate --project my-limit --case zero` constructs a real core `TestCase` candidate from one declared case and runs `candidate.create` and `candidate.validate`. The pinned core library also derives the read-only native test plan and confirms that the new case is selected within the accepted resource grant. It returns `STATICALLY_VALID` only when the core accepts the candidate's structure and authority. It leaves the accepted root unchanged and reports native admission and execution as `NOT_RUN`; the selected 2.1.1 core has no configured production test executor. The [F0 native test probe](../evidence/compatibility/f0-native-test-route-v1.json) separately calls the v3 test route and records its `NATIVE_EXECUTOR_UNAVAILABLE` refusal.
 
-`int_add_checked`, `int_sub_checked`, and `int_mul_checked` accept two `SInt64` operands and return `CheckedSInt64`, the core's `Result<SInt64, ArithmeticFailure>` type. `int_neg_checked` takes one `SInt64` and returns the same checked type. `result_ok` wraps an `SInt64` value in the success arm. A native success appears in test JSON as `{"ok":"42"}`; arithmetic overflow appears as `{"error":{"code":1}}`. `CheckedSInt64` cannot be an input parameter or constant, and this graph profile has no operation that extracts a checked result for further arithmetic. The RPC and SDKs preserve both arms with exact integers. The [Benchmark Comparator recipe](../examples/graph/benchmark-comparator.json) uses native subtraction for three measurement deltas and native comparisons for separate regression and negative-input flags. A negative measurement sets `invalid_input` while retaining exact deltas; a missing measurement is rejected as an invalid call. Its [nine cases](../examples/graph/benchmark-comparator-cases.json) include equality, mixed regressions, signed boundaries, negative inputs, and overflow. The [probe](../evidence/graph-builder/benchmark-comparator-v3.json) checks those results through CLI, Python, and TypeScript, then separately verifies native checked addition, multiplication, negation, and result construction, including overflow and wrong-type rejection. The [N03 comparator](../programs/benchmark-comparator/README.md) and [N05 reducer](../programs/benchmark-summary-reducer/README.md) catalog packages add portable artifacts, public cases, and worked native policy edits. The [Data Pipe host pipeline](DATA_PIPE_V0.md) and [portable graph profile](ARTIFACT_V0.md#authored-graph-profile-v1) are implemented.
+`int_add_checked`, `int_sub_checked`, and `int_mul_checked` accept two `SInt64` operands and return `CheckedSInt64`, the core's `Result<SInt64, ArithmeticFailure>` type. `int_neg_checked` takes one `SInt64` and returns the same checked type. `result_ok` wraps an `SInt64` value in the success arm. A native success appears in test JSON as `{"ok":"42"}`; arithmetic overflow appears as `{"error":{"code":1}}`. `CheckedSInt64` cannot be an input parameter or constant, and this graph profile has no operation that extracts a checked result for further arithmetic. The RPC and SDKs preserve both arms with exact integers. The [Benchmark Comparator recipe](../examples/graph/benchmark-comparator.json) uses native subtraction for three measurement deltas and native comparisons for separate regression and negative-input flags. A negative measurement sets `invalid_input` while retaining exact deltas; a missing measurement is rejected as an invalid call. Its [nine cases](../examples/graph/benchmark-comparator-cases.json) include equality, mixed regressions, signed boundaries, negative inputs, and overflow. The [probe](../evidence/graph-builder/benchmark-comparator-v4.json) checks those results through CLI, Python, and TypeScript, then separately verifies native checked addition, multiplication, negation, and result construction, including overflow and wrong-type rejection. The [N03 comparator](../programs/benchmark-comparator/README.md) and [N05 reducer](../programs/benchmark-summary-reducer/README.md) catalog packages add portable artifacts, public cases, and worked native policy edits. The [Data Pipe host pipeline](DATA_PIPE_V0.md) and [portable graph profile](ARTIFACT_V0.md#authored-graph-profile-v1) are implemented.
 
 The JSON recipe is an authoring interface, not canonical Sley source. Sley 2 does not provide a canonical text source file: the accepted SSMC1 graph is the program. Rust constructs and validates native objects through the selected public core; the decision or calculation executes in the Sley VM. Python and TypeScript remain host clients. A native program may use host input/output through those clients without moving its advertised computation out of Sley.
 
@@ -126,7 +126,7 @@ An operation operand edit replaces one `left`, `right`, or unary `operand` refer
 ```sh
 python3 scripts/probe_graph_operand_edit.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --spec examples/graph/range-predicate.json \
   --output evidence/graph-builder/range-predicate-operand-v3.json
 ```
@@ -137,14 +137,14 @@ Reproduce the bounded witness with:
 python3 scripts/probe_graph_builder.py \
   --tools target/debug/sley-tools \
   --builder target/debug/sley-tools-native-builder \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --spec examples/graph/range-predicate.json \
   --unsigned-spec examples/graph/unsigned-limit.json \
   --output evidence/graph-builder/range-predicate-v2.json
 python3 scripts/probe_graph_project.py \
   --tools target/debug/sley-tools \
   --builder target/debug/sley-tools-native-builder \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --schema schemas/program-v0.schema.json \
   --spec examples/graph/range-predicate.json \
   --cases examples/graph/range-predicate-cases.json \
@@ -153,7 +153,7 @@ python3 scripts/probe_graph_project.py \
   --output evidence/graph-builder/public-project-v2.json
 python3 scripts/probe_graph_sdk.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --range-spec examples/graph/range-predicate.json \
   --range-cases examples/graph/range-predicate-cases.json \
   --unsigned-spec examples/graph/unsigned-limit.json \
@@ -164,7 +164,7 @@ python3 scripts/probe_graph_sdk.py \
 python3 scripts/probe_graph_edit.py \
   --tools target/debug/sley-tools \
   --builder target/debug/sley-tools-native-builder \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --schema schemas/program-v0.schema.json \
   --spec examples/graph/fixed-limit.json \
   --initial-cases examples/graph/fixed-limit-cases.json \
@@ -172,33 +172,33 @@ python3 scripts/probe_graph_edit.py \
   --output evidence/graph-builder/fixed-limit-edit-v4.json
 python3 scripts/probe_graph_sdk_authoring.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --spec examples/graph/fixed-limit.json \
   --initial-cases examples/graph/fixed-limit-cases.json \
   --updated-cases examples/graph/fixed-limit-after-cases.json \
   --output evidence/bridge/graph-sdk-authoring-v2.json
 python3 scripts/probe_graph_opcode_edit.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --spec examples/graph/fixed-limit.json \
   --initial-cases examples/graph/fixed-limit-cases.json \
   --updated-cases examples/graph/fixed-limit-exclusive-cases.json \
   --output evidence/graph-builder/fixed-limit-opcode-v4.json
 python3 scripts/probe_graph_operand_edit.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --spec examples/graph/range-predicate.json \
   --output evidence/graph-builder/range-predicate-operand-v3.json
 python3 scripts/probe_graph_branch_edit.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --spec examples/graph/range-predicate.json \
   --initial-cases examples/graph/range-predicate-cases.json \
   --updated-cases examples/graph/range-predicate-swapped-cases.json \
   --output evidence/graph-builder/range-predicate-branch-v2.json
 python3 scripts/probe_graph_sdk_creation.py \
   --tools target/debug/sley-tools \
-  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley \
+  --core /path/to/sley-2.1.1-linux-x86_64/bin/sley \
   --range-spec examples/graph/range-predicate.json \
   --range-cases examples/graph/range-predicate-cases.json \
   --fixed-spec examples/graph/fixed-limit.json \
