@@ -2,7 +2,7 @@
 
 Sley Tools release candidates share the package version `0.0.1`; each candidate is identified by its `v0.0.1-rc.N` tag.
 
-## 0.0.1-rc.6 (proposed)
+## 0.0.1-rc.6
 
 Now targets Sley 2.1.1. Linux x86_64.
 
