@@ -32,6 +32,27 @@ def informational_flags(tools: Path) -> None:
     assert usage.returncode == 2 and json.loads(usage.stderr)["code"] == "ST_INPUT_INVALID", usage
 
 
+def argument_and_output_edges(tools: Path, core: Path) -> None:
+    # A non-UTF-8 argument is an input error with a JSON failure, not a panic.
+    for arguments in ([b"doctor", b"--core", b"\xff"], [b"\xff"], [b"--help", b"\xff"]):
+        result = subprocess.run([bytes(tools), *arguments], capture_output=True, timeout=60, check=False)
+        assert result.returncode == 2, (arguments, result)
+        assert json.loads(result.stderr)["code"] == "ST_INPUT_INVALID", (arguments, result)
+    # A reader that closes stdout early (`| head`) must not make the CLI panic;
+    # the exit status still reports the command's own outcome.
+    for arguments, expected in ((["--help"], 0), (["doctor", "--core", str(core)], 0),
+                                (["doctor", "--core", str(tools)], 3)):
+        reader, writer = os.pipe()
+        os.close(reader)
+        try:
+            result = subprocess.run([str(tools), *arguments], stdout=writer, stderr=subprocess.PIPE,
+                                    text=True, timeout=120, check=False)
+        finally:
+            os.close(writer)
+        assert result.returncode == expected, (arguments, result)
+        assert "panicked" not in result.stderr and result.stderr == "", (arguments, result.stderr)
+
+
 def doctor_names_unpinned_release(tools: Path, scratch: Path) -> None:
     release = scratch / "other-core"
     (release / "bin").mkdir(parents=True)
@@ -79,9 +100,10 @@ def main() -> None:
     with tempfile.TemporaryDirectory(prefix="sley-cli-checks-") as temporary:
         scratch = Path(temporary)
         informational_flags(tools)
+        argument_and_output_edges(tools, core)
         doctor_names_unpinned_release(tools, scratch)
         project_commands_skip_runtime_probes(tools, core, scratch)
-    print("cli core checks: informational flags, doctor manifest report, and runtime-probe-free project commands passed")
+    print("cli core checks: informational flags, argument and closed-stdout edges, doctor manifest report, and runtime-probe-free project commands passed")
 
 
 if __name__ == "__main__":

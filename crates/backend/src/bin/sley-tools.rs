@@ -2,7 +2,7 @@
 
 use std::collections::BTreeSet;
 use std::fs::{File, OpenOptions};
-use std::io::{BufReader, Read};
+use std::io::{BufReader, Read, Write};
 use std::os::unix::process::CommandExt;
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -997,8 +997,25 @@ enum CliCommand {
     },
 }
 
-fn parse() -> Result<CliCommand, CliFailure> {
-    let mut args = std::env::args().skip(1);
+/// Command-line arguments after the program name. Paths are reported back in
+/// JSON, so an argument that is not valid UTF-8 is refused as input instead of
+/// panicking inside `std::env::args`.
+fn cli_arguments() -> Result<Vec<String>, CliFailure> {
+    std::env::args_os()
+        .skip(1)
+        .map(|argument| {
+            argument.into_string().map_err(|argument| {
+                CliFailure::invalid(format!(
+                    "command-line argument is not valid UTF-8: {}",
+                    argument.to_string_lossy()
+                ))
+            })
+        })
+        .collect()
+}
+
+fn parse(arguments: Vec<String>) -> Result<CliCommand, CliFailure> {
+    let mut args = arguments.into_iter();
     match args.next().as_deref() {
         Some("rpc") => {
             if args.next().as_deref() != Some("--project") {
@@ -1800,12 +1817,10 @@ where
 
 /// `--version` and `--help` print plain text to stdout and exit 0; every other
 /// command keeps the JSON report/failure contract.
-fn informational_flag() -> Option<String> {
-    let mut args = std::env::args().skip(1);
-    let flag = args.next()?;
-    if args.next().is_some() {
+fn informational_flag(arguments: &[String]) -> Option<String> {
+    let [flag] = arguments else {
         return None;
-    }
+    };
     match flag.as_str() {
         "--version" | "-V" => Some(format!(
             "sley-tools {} (tested core commit {TESTED_CORE_COMMIT})",
@@ -1826,12 +1841,38 @@ fn informational_flag() -> Option<String> {
     }
 }
 
+/// Print one stdout document. A reader that closed the pipe early (for example
+/// `| head`) is not worth a panic: the exit status still reports the command's
+/// outcome. Any other write failure is reported as a JSON failure.
+fn print_stdout(text: &str) {
+    let mut stdout = std::io::stdout().lock();
+    if let Err(error) = writeln!(stdout, "{text}").and_then(|()| stdout.flush())
+        && error.kind() != std::io::ErrorKind::BrokenPipe
+    {
+        exit_with_failure(&CliFailure::failed(format!(
+            "cannot write report to stdout: {error}"
+        )));
+    }
+}
+
+fn exit_with_failure(error: &CliFailure) -> ! {
+    eprintln!(
+        "{}",
+        serde_json::json!({"code": error.code, "category": error.category(), "message": error.message, "core_symbol": error.core_symbol, "core_numeric": error.core_numeric})
+    );
+    std::process::exit(error.exit_status);
+}
+
 fn main() {
-    if let Some(text) = informational_flag() {
-        println!("{text}");
+    let arguments = match cli_arguments() {
+        Ok(arguments) => arguments,
+        Err(error) => exit_with_failure(&error),
+    };
+    if let Some(text) = informational_flag(&arguments) {
+        print_stdout(&text);
         return;
     }
-    let result = parse().and_then(|command| match command {
+    let result = parse(arguments).and_then(|command| match command {
         CliCommand::Rpc { project, workspace } => {
             rpc::serve(&project, workspace.as_deref()).map(|()| (serde_json::Value::Null, 0, false))
         }
@@ -2022,7 +2063,7 @@ fn main() {
     match result {
         Ok((report, exit, was_doctor)) => {
             if !report.is_null() {
-                println!("{report}");
+                print_stdout(&report.to_string());
             }
             if was_doctor && report["status"] != "compatible" {
                 std::process::exit(3);
@@ -2031,12 +2072,49 @@ fn main() {
                 std::process::exit(exit);
             }
         }
-        Err(error) => {
-            eprintln!(
-                "{}",
-                serde_json::json!({"code": error.code, "category": error.category(), "message": error.message, "core_symbol": error.core_symbol, "core_numeric": error.core_numeric})
-            );
-            std::process::exit(error.exit_status);
-        }
+        Err(error) => exit_with_failure(&error),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn arguments(values: &[&str]) -> Vec<String> {
+        values.iter().map(|value| (*value).to_owned()).collect()
+    }
+
+    #[test]
+    fn informational_flags_need_a_single_argument() {
+        let version = informational_flag(&arguments(&["--version"])).expect("version text");
+        assert!(version.starts_with("sley-tools 0.0.1 (tested core commit "));
+        let help = informational_flag(&arguments(&["-h"])).expect("help text");
+        assert!(help.contains("\n  sley-tools doctor --core PATH\n"));
+        assert!(informational_flag(&arguments(&["--version", "extra"])).is_none());
+        assert!(informational_flag(&[]).is_none());
+    }
+
+    #[test]
+    fn parse_reads_the_given_arguments() {
+        let Ok(CliCommand::Run {
+            project,
+            input,
+            check,
+        }) = parse(arguments(&[
+            "run",
+            "--project",
+            "p",
+            "--input",
+            "i.json",
+            "--check",
+        ]))
+        else {
+            panic!("run command");
+        };
+        assert_eq!((project, input, check), ("p".into(), "i.json".into(), true));
+        let Err(error) = parse(Vec::new()) else {
+            panic!("empty arguments are a usage error");
+        };
+        assert_eq!((error.code, error.exit_status), ("ST_INPUT_INVALID", 2));
     }
 }
