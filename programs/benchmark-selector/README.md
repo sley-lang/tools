@@ -2,7 +2,7 @@
 
 This native Sley utility decides whether a matched benchmark row contains any regression and projects the candidate's three measurements. It is useful in the [Data Pipe](../../docs/DATA_PIPE_V0.md), where the host keeps record IDs and stream order while the accepted graph makes the selection and projection decisions.
 
-The [manifest](program.json) binds the [native graph artifact](artifact/native-graph.json), the [authoring recipe](build/graph.json), and the [nine initial cases](tests/cases.json). The artifact contains exact stored Sley objects without workspace authority. The recipe is an authoring input; the accepted SSMC1 graph is the program. The manifest and [catalog probe](../../evidence/catalog/benchmark-selector-v2.json) record the selected core, tools binary, object digest, fresh import, and behavior checks. This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
+The [manifest](program.json) binds the [native graph artifact](artifact/native-graph.json), the [authoring recipe](build/graph.json), and the [nine initial cases](tests/cases.json). The artifact contains exact stored Sley objects without workspace authority. The recipe is an authoring input; the accepted SSMC1 graph is the program. The manifest and [catalog probe](../../evidence/catalog/benchmark-selector-v2.json) record the selected core, tools binary, object digest, fresh import, and behavior checks. This package is included in the [RC7 prerelease](../../docs/INSTALL_RC7.md) under [Apache-2.0](../../LICENSE); the stable release gate remains open.
 
 ## Run it
 

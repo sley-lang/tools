@@ -42,4 +42,4 @@ target/debug/sley-tools test --project my-quota
 
 The [catalog probe](../../evidence/catalog/quota-remaining-v2.json) checks the authored and imported programs, signed extremes and negative inputs, this edit and its reversal, and the restored artifact in another workspace. Production native core test admission remains unavailable; these are external assertions against native execution.
 
-This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE). The stable release gate remains open.
+This package is included in the [RC7 prerelease](../../docs/INSTALL_RC7.md) under [Apache-2.0](../../LICENSE). The stable release gate remains open.

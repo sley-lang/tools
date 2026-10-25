@@ -36,4 +36,4 @@ target/debug/sley-tools test --project my-validator
 
 The edited validator accepts 11 and 12, then rejects 13. Its original source schema remains provenance; raw validation reports `source_schema_alignment=native_edited`. The [catalog probe](../../evidence/catalog/generated-payload-validator-v2.json) compares initial native decisions with an independent exact-number JSON Schema reference, verifies the edit, and imports the edited artifact into another workspace.
 
-This package is included in the [RC6 prerelease](../../docs/INSTALL_RC6.md) under [Apache-2.0](../../LICENSE). Native core test admission and the stable release gate remain open.
+This package is included in the [RC7 prerelease](../../docs/INSTALL_RC7.md) under [Apache-2.0](../../LICENSE). Native core test admission and the stable release gate remain open.

@@ -28,7 +28,7 @@ claude mcp get sley-acceptance
 
 The Codex entry is global; the Claude `local` entry is scoped to the current project. `codex mcp get` showed the saved configuration and `claude mcp get` reported a connected stdio server. These checks establish local configuration syntax and a Claude transport handshake, not a completed coding-agent task. Recheck client syntax on another installation. Start the agent session manually. A reference MCP client remains the vendor-independent protocol check.
 
-For the published RC6 package, first follow the [asset installation guide](INSTALL_RC6.md) in a fresh directory, including its checksum and offline MCP package checks. From that directory, prepare a fresh task workspace with the installed paths:
+For the published RC7 package, first follow the [asset installation guide](INSTALL_RC7.md) in a fresh directory, including its checksum and offline MCP package checks. From that directory, prepare a fresh task workspace with the installed paths:
 
 ```sh
 CORE="$PWD/sley-2.1.1-linux-x86_64/bin/sley"
@@ -58,7 +58,7 @@ The prompt gives the behavior and project, not a candidate or mutation recipe. T
 
 Save the exact prompt and supplied context, client and model identity when available, ordered tool calls and responses, and the final report. Record any human intervention. A pass requires a fresh project, native inspection, proposal, validation, commit, and postcommit calls showing a changed accepted root and the requested behavior. Verify the resulting artifact with external assertions and an independent before/after Review over the declared Release Readiness cases. State native core test admission separately; the selected 2.1.1 core currently reports that production native test execution is unavailable.
 
-After the manual agent session, preserve its transcript and run the independent package check from the same RC6 installation directory:
+After the manual agent session, preserve its transcript and run the independent package check from the same RC7 installation directory:
 
 ```sh
 "$TOOLS" test --project "$PROJECT"
