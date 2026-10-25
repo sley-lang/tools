@@ -2,6 +2,19 @@
 
 Sley Tools release candidates share the package version `0.0.1`; each candidate is identified by its `v0.0.1-rc.N` tag.
 
+## Unreleased
+
+### Fixed
+
+- TypeScript SDK: an RPC response frame that is valid JSON but `null` no longer throws inside the stdout handler, which crashed the host process (including the MCP adapter). Any non-object frame now rejects the pending call with `ST_TRANSPORT_FAILED` and stops the RPC process.
+- Python SDK: `Runtime.load`, `Runtime.create_graph`, `operation_status`, and `cancel_operation` now raise `SleyToolsError` (`ST_TRANSPORT_FAILED`) when the `sley-tools` binary cannot be started, as `open_project` already did; previously they raised a raw `FileNotFoundError` or `PermissionError`. This also keeps commit recovery on its documented `ST_COMMIT_OUTCOME_UNKNOWN` path when the status query cannot start. An operation report that is not a JSON object is mapped the same way instead of raising `AttributeError`.
+- CLI: a command-line argument that is not valid UTF-8 returns an `ST_INPUT_INVALID` JSON failure (exit 2) instead of panicking (exit 101).
+- CLI: a reader that closes stdout early, as in `sley-tools inspect --project p | head`, no longer makes the CLI panic; the exit status still reflects the command's own outcome. Other stdout write failures return an `ST_TRANSPORT_FAILED` JSON failure.
+
+### Tests
+
+- `packages/typescript/tests/frame_probe.mjs` (run in CI) feeds non-object response frames to the TypeScript SDK. `tests/test_python_sdk_lifecycle.py` covers every CLI entry point with a missing binary, commit recovery when the status query cannot start, non-object operation reports, and non-object RPC frames. `tests/test_cli_core_checks.py` covers non-UTF-8 arguments and a closed stdout. New Rust unit tests cover argument parsing and the informational flags.
+
 ## 0.0.1-rc.6
 
 Now targets Sley 2.1.1. Linux x86_64.
