@@ -266,6 +266,14 @@ class Runtime:
             core_numeric=payload.get("core_numeric"),
         )
 
+    def _run_cli(self, arguments: list[str], *, timeout: float) -> subprocess.CompletedProcess[str]:
+        """Run one sley-tools command; a binary that cannot start is a transport failure."""
+        try:
+            return subprocess.run([str(self.tools), *arguments], capture_output=True, text=True,
+                                  timeout=timeout, check=False)
+        except OSError as error:
+            raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", f"cannot start sley-tools: {error}") from error
+
     def load(self, *, artifact: str | Path) -> Program:
         if self._process is not None:
             raise _input_error("runtime already has a loaded program")
@@ -274,9 +282,9 @@ class Runtime:
         self._temporary = Path(tempfile.mkdtemp(prefix="sley-python-sdk-"))
         project = self._temporary / "project"
         try:
-            result = subprocess.run(
-                [str(self.tools), "artifact", "import", str(Path(artifact).resolve()), str(project), "--core", str(self.core)],
-                capture_output=True, text=True, timeout=30, check=False,
+            result = self._run_cli(
+                ["artifact", "import", str(Path(artifact).resolve()), str(project), "--core", str(self.core)],
+                timeout=30,
             )
             if result.returncode:
                 self._raise_cli(result)
@@ -323,10 +331,10 @@ class Runtime:
             spec_path.write_bytes(spec_bytes)
             cases_path.write_bytes(cases_bytes)
             try:
-                result = subprocess.run(
-                    [str(self.tools), "init", str(destination), "--graph", str(spec_path),
+                result = self._run_cli(
+                    ["init", str(destination), "--graph", str(spec_path),
                      "--tests", str(cases_path), "--core", str(self.core)],
-                    capture_output=True, text=True, timeout=120, check=False,
+                    timeout=120,
                 )
             except subprocess.TimeoutExpired as error:
                 raise SleyToolsError("ST_TRANSPORT_FAILED", "transport",
@@ -376,9 +384,9 @@ class Runtime:
         if self._project_path is None or not isinstance(operation_id, str) or re.fullmatch(r"[0-9a-f]{64}", operation_id) is None:
             raise _input_error("operation command needs a loaded project and exact operation ID")
         try:
-            completed = subprocess.run(
-                [str(self.tools), "operation", action, "--project", str(self._project_path), "--id", operation_id],
-                capture_output=True, text=True, timeout=30, check=False,
+            completed = self._run_cli(
+                ["operation", action, "--project", str(self._project_path), "--id", operation_id],
+                timeout=30,
             )
         except subprocess.TimeoutExpired as error:
             raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", f"operation {action} timed out") from error
@@ -388,6 +396,8 @@ class Runtime:
             result = json.loads(completed.stdout)
         except json.JSONDecodeError as error:
             raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", f"operation {action} returned invalid JSON") from error
+        if not isinstance(result, dict):
+            raise SleyToolsError("ST_TRANSPORT_FAILED", "transport", f"operation {action} report is not an object")
         if result.get("state") in ("outcome_unknown", "cancel_requested"):
             self._preserve_temporary = True
         return result

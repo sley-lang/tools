@@ -45,6 +45,51 @@ def missing_tools_is_a_transport_error(project: Path) -> None:
     runtime = Runtime(tools=project / "missing-sley-tools", core=fake)
     expect_error("ST_TRANSPORT_FAILED", lambda: runtime.open_project(project))
     assert runtime._process is None
+    # Every other CLI entry point must map an unstartable binary the same way.
+    expect_error("ST_TRANSPORT_FAILED", lambda: runtime.load(artifact=project / "program.sleyartifact"))
+    assert runtime._temporary is None, "load() left its temporary project behind"
+    recipe = {"contract": "sley-tools.graph-authoring.v0", "parameters": [{"name": "ready", "value_type": "Bool"}],
+              "constants": [], "result": {"kind": "primitive", "value_type": "Bool"}}
+    cases = [{"id": "ready", "inputs": {"ready": True}, "expected": True}]
+    expect_error("ST_TRANSPORT_FAILED", lambda: runtime.create_graph(project=project / "graph", recipe=recipe, cases=cases))
+    runtime._project_path = project
+    expect_error("ST_TRANSPORT_FAILED", lambda: runtime.operation_status("0" * 64))
+    expect_error("ST_TRANSPORT_FAILED", lambda: runtime.cancel_operation("0" * 64))
+
+
+def commit_recovery_survives_missing_tools(project: Path) -> None:
+    # The fake backend exits on an unknown method, so commit loses its
+    # transport; the follow-up status query then cannot start the binary.
+    runtime = Runtime(tools=fake, core=fake)
+    program = runtime.open_project(project)
+    candidate = "c" * 64
+    program._operations[candidate] = "0" * 64
+    runtime.tools = project / "missing-sley-tools"
+    try:
+        error = expect_error("ST_COMMIT_OUTCOME_UNKNOWN", lambda: program.commit(candidate))
+        assert "0" * 64 in str(error), error
+    finally:
+        runtime.close()
+
+
+def non_object_operation_report_is_mapped(project: Path) -> None:
+    script = project / "operation-tools"
+    script.write_text("#!/bin/sh\necho '[1, 2]'\n")
+    script.chmod(0o755)
+    runtime = Runtime(tools=script, core=fake)
+    runtime._project_path = project
+    expect_error("ST_TRANSPORT_FAILED", lambda: runtime.operation_status("0" * 64))
+
+
+def non_object_rpc_frame_is_mapped(project: Path) -> None:
+    for frame in ("null", "[]", "7"):
+        os.environ["FAKE_RPC_NON_OBJECT_FRAME"] = frame
+        try:
+            runtime = Runtime(tools=fake, core=fake)
+            expect_error("ST_TRANSPORT_FAILED", lambda: runtime.open_project(project))
+            assert runtime._process is None
+        finally:
+            del os.environ["FAKE_RPC_NON_OBJECT_FRAME"]
 
 
 def null_rpc_error_data_is_mapped(project: Path) -> None:
@@ -98,6 +143,9 @@ def main() -> None:
             lambda: stuck_rpc_is_stopped_on_close(project),
             lambda: missing_tools_is_a_transport_error(project),
             lambda: null_rpc_error_data_is_mapped(project),
+            lambda: non_object_rpc_frame_is_mapped(project),
+            lambda: non_object_operation_report_is_mapped(project),
+            lambda: commit_recovery_survives_missing_tools(project),
             non_object_cli_failure_is_mapped,
             call_result_is_immutable_value,
             import_stays_light,
