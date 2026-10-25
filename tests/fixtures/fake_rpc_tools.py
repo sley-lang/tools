@@ -5,6 +5,8 @@ It answers the three requests an SDK sends while opening a project, then
 ignores stdin EOF and SIGTERM, like a stuck backend. Its own file doubles as
 the selected "core" binary so the hello digest check passes. With
 FAKE_RPC_NULL_ERROR_DATA=1 the inspect request fails with `"data": null`.
+With FAKE_RPC_NON_OBJECT_FRAME=JSON the inspect response frame is that JSON
+text instead, such as `null` or `[]`.
 """
 
 import hashlib
@@ -40,7 +42,10 @@ def main() -> None:
         if request["method"] == "sleytools.program.inspect" and os.environ.get("FAKE_RPC_NULL_ERROR_DATA"):
             response = {"jsonrpc": "2.0", "id": request["id"],
                         "error": {"code": -32000, "message": "inspect refused", "data": None}}
-        sys.stdout.write(json.dumps(response) + "\n")
+        frame = json.dumps(response)
+        if request["method"] == "sleytools.program.inspect" and "FAKE_RPC_NON_OBJECT_FRAME" in os.environ:
+            frame = os.environ["FAKE_RPC_NON_OBJECT_FRAME"]
+        sys.stdout.write(frame + "\n")
         sys.stdout.flush()
     time.sleep(120)
 

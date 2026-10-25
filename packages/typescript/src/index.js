@@ -566,8 +566,11 @@ export class Runtime {
         this.#stopProcessGroup();
         return;
       }
-      const pending = this.pending.get(response.id);
-      if (response.jsonrpc !== '2.0' || !pending) {
+      // A valid JSON frame can still be null or another non-object; reading
+      // its ID would throw here, outside any caller's promise.
+      const isObject = response !== null && typeof response === 'object' && !Array.isArray(response);
+      const pending = isObject ? this.pending.get(response.id) : undefined;
+      if (!isObject || response.jsonrpc !== '2.0' || !pending) {
         this.#failAll(new SleyToolsError('ST_TRANSPORT_FAILED', 'transport', 'RPC response ID or version differs from request'));
         this.#stopProcessGroup();
         return;

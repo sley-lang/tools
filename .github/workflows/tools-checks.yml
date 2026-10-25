@@ -40,6 +40,7 @@ jobs:
         run: |
           python3 tests/test_python_sdk_lifecycle.py
           node packages/typescript/tests/close_probe.mjs
+          node packages/typescript/tests/frame_probe.mjs
       - name: Download pinned public Sley core
         run: |
           curl --fail --location --silent --show-error --retry 3 \
