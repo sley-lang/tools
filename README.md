@@ -1,12 +1,17 @@
 # Sley Tools
 
+[![Prerelease](https://img.shields.io/github/v/release/sley-lang/tools?include_prereleases&label=prerelease)](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.7)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-3b82f6)](LICENSE)
+[![sleylang.org](https://img.shields.io/badge/sleylang.org-website-22d3ee)](https://sleylang.org)
+[![Follow @SleyLanguage](https://img.shields.io/badge/@SleyLanguage-000000?logo=x&logoColor=white)](https://x.com/SleyLanguage)
+
 Build, run, change, and share small programs that execute in [Sley](https://github.com/sley-lang/sley). This repository contains the command-line toolkit, application adapters, ten ready-to-run native programs, and examples that show how to use them.
 
 **Example:** Release Readiness takes facts about a proposed release and returns an `allow` decision with reasons. You can run it, test its behavior, change its threshold, and export the resulting native program. The decision runs in Sley; the toolkit handles files, input, and the connection to the Sley core.
 
 ## Try a native program
 
-The current release candidate is for Linux x86_64 and uses the separately installed Sley 2.1.1 core. [Download and verify the RC7 packages](docs/INSTALL_RC7.md), then run:
+RC7 is for Linux x86_64 and runs on the separately installed Sley 2.1.1 core (the current Sley core is [2.1.6](https://github.com/sley-lang/sley/releases/tag/v2.1.6); `doctor` accepts only the 2.1.1 core RC7 was built for). [Download and verify the RC7 packages](docs/INSTALL_RC7.md), then run:
 
 ```sh
 CORE="$PWD/sley-2.1.1-linux-x86_64/bin/sley"
@@ -44,12 +49,26 @@ You can inspect the [graph authoring contract](docs/GRAPH_AUTHORING_V0.md), [loc
 
 ## Current status
 
-The Linux x86_64 [RC7 prerelease](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.7) targets the public Sley 2.1.1 core. Its release assets passed an offline fresh install and the documented native, SDK, MCP, pipeline, lab, and importer examples. It is **not a stable release**. On the selected public Sley 2.1.1 core, native `TestCase` candidates can be validated, but the core cannot yet admit or run them. `sley-tools test` runs external assertions against native program execution and reports that native core tests are pending. A compatible released core and a live coding-agent acceptance run are still needed for the full release gate. See [the precise native-test status](docs/F0_NATIVE_TEST_STATUS_PUBLIC.md).
+The Linux x86_64 [RC7 prerelease](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.7) targets the public Sley 2.1.1 core, and its release assets passed an offline fresh install and the documented native, SDK, MCP, pipeline, lab and importer examples. `sley-tools test` checks each program with external assertions against native execution. The 2.1.1 core validates native `TestCase` candidates but does not yet admit or run them, so `test` reports native core tests as pending ([details](docs/F0_NATIVE_TEST_STATUS_PUBLIC.md)).
 
-The Playground is a local optional interface; it is not required for CLI, SDK, or native program use. Hosted Playground qualification remains open.
+The Playground is a local optional interface; it is not required for CLI, SDK, or native program use.
 
 ## Repository layout and license
 
 `crates/` holds the shared Rust backend and CLI, `packages/` the optional Python, TypeScript, and MCP adapters, `programs/` the native examples, `apps/` the local Playground and Repair Lab, and `actions/` the Review GitHub Action. These tools share one backend and release candidate. Each tool has its own README above; each native program has its own package and README.
 
 Licensed under [Apache 2.0](LICENSE). See [NOTICE](NOTICE) for attribution.
+
+## More Sley
+
+- [sley-lang/sley](https://github.com/sley-lang/sley): the Sley language, core and `sley-agent` workbench.
+- [sley-lang/examples](https://github.com/sley-lang/examples): thirty small native programs with their authoring records.
+- [Sley Arena](https://sleylang.org/arena): write a bot in Sley and climb a public ladder.
+
+---
+
+<p align="center">
+  <b>Building with Sley?</b> <a href="https://github.com/sley-lang/tools">Star Sley Tools on GitHub</a> · <a href="https://x.com/SleyLanguage">Follow @SleyLanguage</a> · <a href="https://sleylang.org">sleylang.org</a>
+</p>
+
+<p align="center"><sub>Built by <a href="https://greyforge.tech">Greyforge Labs</a></sub></p>
